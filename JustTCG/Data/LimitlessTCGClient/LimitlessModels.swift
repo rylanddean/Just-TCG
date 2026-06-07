@@ -73,8 +73,47 @@ struct LimitlessPlacement: Identifiable, Codable {
     let losses: Int
     let ties: Int
     let deckListId: String?
+    let playerId: String?
 
     var hasDeckList: Bool { deckListId != nil }
+}
+
+// MARK: - Player profile
+
+struct LimitlessPlayerProfile: Identifiable {
+    let id: String
+    let name: String
+    let country: String
+    let totalPoints: Int
+    let totalPrizeMoney: Int
+    let travelAwards: Int
+    let topCuts: PlayerTopCuts
+    let results: [PlayerTournamentResult]
+}
+
+struct PlayerTopCuts {
+    let internationalWins: Int
+    let internationalTop2: Int
+    let internationalTop4: Int
+    let internationalTop8: Int
+    let regionalWins: Int
+    let regionalTop2: Int
+    let regionalTop4: Int
+    let regionalTop8: Int
+}
+
+struct PlayerTournamentResult: Identifiable {
+    let tournamentId: String
+    let tournamentName: String
+    let date: Date
+    let placement: Int
+    let record: String
+    let archetype: String
+    let points: Int
+    let prizeMoney: Int?
+    let deckListId: String?
+
+    var id: String { "\(tournamentId)-\(placement)" }
 }
 
 // MARK: - Deck list

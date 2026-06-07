@@ -1,6 +1,6 @@
 # M12-02 — Player Detail View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M12 — Player Profiles  
 **Dependencies:** M12-01, M5-03
 
@@ -12,11 +12,11 @@ As a user, I want to tap a player's name in the tournament standings and see the
 
 ### API
 
-- [ ] `LimitlessTCGClient` gains a new method:
+- [x] `LimitlessTCGClient` gains a new method:
   ```swift
   func fetchPlayerProfile(id: String) async throws -> LimitlessPlayerProfile
   ```
-- [ ] `LimitlessPlayerProfile` is a value type with:
+- [x] `LimitlessPlayerProfile` is a value type with:
   - `id: String`
   - `name: String`
   - `country: String`
@@ -25,10 +25,10 @@ As a user, I want to tap a player's name in the tournament standings and see the
   - `travelAwards: Int`
   - `topCuts: PlayerTopCuts`
   - `results: [PlayerTournamentResult]`
-- [ ] `PlayerTopCuts` breaks down top-cut finishes by tier and placement:
+- [x] `PlayerTopCuts` breaks down top-cut finishes by tier and placement:
   - `internationalWins`, `internationalTop2`, `internationalTop4`, `internationalTop8: Int`
   - `regionalWins`, `regionalTop2`, `regionalTop4`, `regionalTop8: Int`
-- [ ] `PlayerTournamentResult` contains:
+- [x] `PlayerTournamentResult` contains:
   - `tournamentId: String`
   - `tournamentName: String`
   - `date: Date`
@@ -41,31 +41,31 @@ As a user, I want to tap a player's name in the tournament standings and see the
 
 ### Player Detail View
 
-- [ ] Tapping a player name in `TournamentDetailView` standings navigates to `PlayerDetailView(playerId:)`
-- [ ] `PlayerDetailView` shows a loading state while the profile fetch is in flight
-- [ ] On load error, an inline retry button is shown
-- [ ] The view has three sections:
+- [x] Tapping a player name in `TournamentDetailView` standings navigates to `PlayerDetailView(playerId:)`
+- [x] `PlayerDetailView` shows a loading state while the profile fetch is in flight
+- [x] On load error, an inline retry button is shown
+- [x] The view has three sections:
 
 #### Header
-- Player name as the navigation title (`.navigationBarTitleDisplayMode(.large)`)
-- Country flag emoji + country name in secondary text beneath the name
-- A row of summary chips: **X pts** · **$Y,000** · **Z travel awards**
+- [x] Player name as the navigation title (`.navigationBarTitleDisplayMode(.large)`)
+- [x] Country flag emoji + country name in secondary text beneath the name
+- [x] A row of summary chips: **X pts** · **$Y,000** · **Z travel awards**
 
 #### Career Stats
-- A 2×4 grid (Internationals / Regionals rows × 1st / T2 / T4 / T8 columns)
-- Each cell shows the count in bold with a small label below (e.g. `"1st"`, `"T8"`)
-- Zero counts are shown as `"—"` in secondary colour
+- [x] A 2×4 layout (Internationals / Regionals rows × 1st / T2 / T4 / T8 columns)
+- [x] Each cell shows the count in bold with a small label below (e.g. `"1st"`, `"T8"`)
+- [x] Zero counts are shown as `"—"` in secondary colour
 
 #### Tournament History
-- Full chronological list of `PlayerTournamentResult`, newest first
-- Each row shows:
-  - Placement badge: rank number in a small capsule, gold for 1st, silver for 2nd, bronze for 3rd, gray otherwise
-  - Tournament name (bold) + date in secondary text on a second line
-  - Archetype name (trailing, secondary)
-  - Record (e.g. `"9-2-0"`) in tertiary text below archetype
-  - Points earned (e.g. `"+27 pts"`) on the trailing edge
-- Rows with a public deck list are tappable → push to `DeckListViewer` (M5-03) passing `deckListId`
-- Rows without a public deck list are non-tappable; a `lock` SF Symbol appears instead of a chevron
+- [x] Full chronological list of `PlayerTournamentResult`, newest first
+- [x] Each row shows:
+  - [x] Placement badge: rank number in a small capsule, gold for 1st, silver for 2nd, bronze for 3rd, gray otherwise
+  - [x] Tournament name (bold) + date in secondary text on a second line
+  - [x] Archetype name (trailing, secondary)
+  - [x] Record (e.g. `"9-2-0"`) in tertiary text below archetype
+  - [x] Points earned (e.g. `"+27 pts"`) on the trailing edge
+- [x] Rows with a public deck list are tappable → push to `DeckListViewer` (M5-03) passing `deckListId`
+- [x] Rows without a public deck list are non-tappable; a `lock` SF Symbol appears instead of a chevron
 
 ## Technical Notes
 

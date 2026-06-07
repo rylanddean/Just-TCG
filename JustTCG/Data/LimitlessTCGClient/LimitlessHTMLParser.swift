@@ -58,7 +58,8 @@ enum LimitlessHTMLParser {
                 wins: wins,
                 losses: losses,
                 ties: ties,
-                deckListId: firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: rowHTML)
+                deckListId: firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: rowHTML),
+                playerId: attrs["player"] ?? firstCapture(#/href="\/players\/(\d+)"/#, in: rowHTML)
             )
         }
     }
@@ -112,6 +113,77 @@ enum LimitlessHTMLParser {
         }
 
         return LimitlessDeckList(listId: listId, entries: entries)
+    }
+
+    // MARK: - Player profile  (/players/{id})
+
+    // Profile header expected attributes:
+    //   data-name, data-country, data-points, data-prize, data-travel on a profile div
+    // Career top cuts in data-* attributes:
+    //   data-ic1, data-ic2, data-ic4, data-ic8 (internationals)
+    //   data-reg1, data-reg2, data-reg4, data-reg8 (regionals)
+    // Tournament results rows anchored by data-placement:
+    //   <tr data-placement="1" data-name="Regional Indianapolis, IN" data-date="2026-05-30"
+    //       data-deck="Charizard ex" data-record="9-2-0" data-points="200"
+    //       data-id="559" data-list="27608" data-prize="1000">
+    static func parsePlayerProfile(id: String, from html: String) -> LimitlessPlayerProfile? {
+        // Pull all data-* attributes from the full page (profile header values live here)
+        let pageAttrs = dataAttributes(in: html)
+
+        let name = pageAttrs["name"]?.htmlDecoded
+            ?? firstCapture(#/<h1[^>]*>([^<]+)<\/h1>/#, in: html)?.htmlDecoded
+            ?? ""
+        let country      = pageAttrs["country"] ?? ""
+        let totalPoints  = pageAttrs["points"].flatMap(Int.init) ?? 0
+        let totalPrize   = pageAttrs["prize"].flatMap(Int.init) ?? 0
+        let travelAwards = pageAttrs["travel"].flatMap(Int.init) ?? 0
+
+        let topCuts = PlayerTopCuts(
+            internationalWins: pageAttrs["ic1"].flatMap(Int.init) ?? 0,
+            internationalTop2: pageAttrs["ic2"].flatMap(Int.init) ?? 0,
+            internationalTop4: pageAttrs["ic4"].flatMap(Int.init) ?? 0,
+            internationalTop8: pageAttrs["ic8"].flatMap(Int.init) ?? 0,
+            regionalWins:      pageAttrs["reg1"].flatMap(Int.init) ?? 0,
+            regionalTop2:      pageAttrs["reg2"].flatMap(Int.init) ?? 0,
+            regionalTop4:      pageAttrs["reg4"].flatMap(Int.init) ?? 0,
+            regionalTop8:      pageAttrs["reg8"].flatMap(Int.init) ?? 0
+        )
+
+        // Tournament results: rows anchored by data-placement
+        let results: [PlayerTournamentResult] = splitRows(html, anchorAttr: "data-placement").compactMap { rowHTML in
+            let attrs = dataAttributes(in: rowHTML)
+            guard
+                let placementStr = attrs["placement"],
+                let placement    = Int(placementStr),
+                let tName        = attrs["name"],
+                let dateStr      = attrs["date"],
+                let deck         = attrs["deck"],
+                let tid          = attrs["id"]
+            else { return nil }
+
+            return PlayerTournamentResult(
+                tournamentId:   tid,
+                tournamentName: tName.htmlDecoded,
+                date:           parseDate(dateStr) ?? Date.distantPast,
+                placement:      placement,
+                record:         attrs["record"] ?? "",
+                archetype:      deck.htmlDecoded,
+                points:         attrs["points"].flatMap(Int.init) ?? 0,
+                prizeMoney:     attrs["prize"].flatMap(Int.init),
+                deckListId:     attrs["list"] ?? firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: rowHTML)
+            )
+        }
+
+        return LimitlessPlayerProfile(
+            id: id,
+            name: name,
+            country: country,
+            totalPoints: totalPoints,
+            totalPrizeMoney: totalPrize,
+            travelAwards: travelAwards,
+            topCuts: topCuts,
+            results: results
+        )
     }
 
     // MARK: - Private helpers

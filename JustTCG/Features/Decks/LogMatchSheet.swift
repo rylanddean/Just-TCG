@@ -74,6 +74,19 @@ struct LogMatchSheet: View {
     private func archetypeSection(vm: LogMatchViewModel) -> some View {
         @Bindable var vm = vm
         Section("Opponent Archetype") {
+            if !vm.metaDecks.isEmpty {
+                Picker("Quick Pick", selection: $vm.quickPickSelection) {
+                    Text("Custom").tag("Custom")
+                    ForEach(vm.metaDecks, id: \.self) { name in
+                        Text(name).tag(name)
+                    }
+                }
+                .pickerStyle(.menu)
+                .onChange(of: vm.quickPickSelection) { _, newValue in
+                    guard newValue != "Custom" else { return }
+                    vm.selectArchetype(Archetype(id: newValue, name: newValue, primaryType: ""))
+                }
+            }
             TextField("e.g. Charizard ex / Pidgeot ex", text: $vm.archetypeQuery)
                 .autocorrectionDisabled()
             ForEach(vm.suggestions) { arch in

@@ -42,6 +42,15 @@ struct LimitlessTCGClient {
         return LimitlessTournamentDetail(id: id, placements: placements)
     }
 
+    func fetchPlayerProfile(id: String) async throws -> LimitlessPlayerProfile {
+        let url = Self.limitlessBase.appendingPathComponent("players").appendingPathComponent(id)
+        let html = try await fetchHTML(from: url)
+        guard let profile = LimitlessHTMLParser.parsePlayerProfile(id: id, from: html) else {
+            throw LimitlessClientError.invalidResponse(200)
+        }
+        return profile
+    }
+
     func fetchDeckList(listId: String) async throws -> LimitlessDeckList {
         let url = Self.limitlessBase
             .appendingPathComponent("decks")

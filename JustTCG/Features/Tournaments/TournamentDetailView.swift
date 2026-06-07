@@ -6,6 +6,7 @@ struct TournamentDetailView: View {
 
     @State private var vm = TournamentDetailViewModel()
     @State private var selectedTab = 0
+    @Environment(FavouritePlayerRepository.self) private var favourites
 
     var body: some View {
         Group {
@@ -102,15 +103,24 @@ struct TournamentDetailView: View {
 
     @ViewBuilder
     private func placementRow(_ p: LimitlessPlacement) -> some View {
-        let row = HStack(spacing: 12) {
+        HStack(spacing: 12) {
             Text("#\(p.rank)")
                 .font(.subheadline.monospacedDigit().weight(.semibold))
                 .foregroundStyle(rankColor(p.rank))
                 .frame(width: 36, alignment: .leading)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(p.playerName)
-                    .font(.body)
+                if let pid = p.playerId {
+                    NavigationLink {
+                        PlayerDetailView(playerID: pid)
+                    } label: {
+                        Text(p.playerName)
+                            .font(.body)
+                    }
+                } else {
+                    Text(p.playerName)
+                        .font(.body)
+                }
                 Text(p.archetype)
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -124,23 +134,39 @@ struct TournamentDetailView: View {
                         .font(.caption.monospacedDigit())
                         .foregroundStyle(.secondary)
                 }
-                if !p.hasDeckList {
-                    Text("Decklist not public")
+                if p.hasDeckList, let listId = p.deckListId {
+                    NavigationLink {
+                        DeckListViewerView(listId: listId, archetype: p.archetype)
+                    } label: {
+                        Image(systemName: "list.bullet")
+                            .font(.caption)
+                            .foregroundStyle(Color.accentColor)
+                    }
+                } else {
+                    Text("No decklist")
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
                 }
             }
         }
         .padding(.vertical, 2)
-
-        if p.hasDeckList, let listId = p.deckListId {
-            NavigationLink {
-                DeckListViewerView(listId: listId, archetype: p.archetype)
+        .swipeActions(edge: .leading) {
+            let isFav = favourites.isFavourite(id: p.playerId ?? p.playerName)
+            Button {
+                if isFav {
+                    favourites.remove(id: p.playerId ?? p.playerName)
+                } else {
+                    favourites.add(FavouritePlayer(
+                        id: p.playerId ?? p.playerName,
+                        name: p.playerName,
+                        country: p.country
+                    ))
+                }
             } label: {
-                row
+                Label(isFav ? "Unfavourite" : "Favourite",
+                      systemImage: isFav ? "star.slash" : "star")
             }
-        } else {
-            row
+            .tint(isFav ? .gray : .yellow)
         }
     }
 

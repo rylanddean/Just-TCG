@@ -90,20 +90,20 @@ Stories are ordered by dependency. Work top to bottom.
 |---|---|---|
 | [M11-01](completed/M11-01-home-screen-shell.md) | Home Screen Shell & Settings Relocation | done |
 | [M11-02](completed/M11-02-match-log-widget.md) | Match Log Widget | done |
-| [M11-03](M11-03-daily-game-streak.md) | Daily Game Streak | todo |
-| [M11-04](M11-04-activity-heatmap-widget.md) | Activity Heatmap Widget | todo |
+| [M11-03](completed/M11-03-daily-game-streak.md) | Daily Game Streak | done |
+| [M11-04](completed/M11-04-activity-heatmap-widget.md) | Activity Heatmap Widget | done |
 
 ## M12 — Player Profiles
 | Story | Title | Status |
 |---|---|---|
-| [M12-01](M12-01-favourite-player-model.md) | FavouritePlayer SwiftData Model | todo |
-| [M12-02](M12-02-player-detail-view.md) | Player Detail View | todo |
-| [M12-03](M12-03-favourite-star-toggle.md) | Favourite Star Toggle & Favourites List | todo |
+| [M12-01](completed/M12-01-favourite-player-model.md) | FavouritePlayer SwiftData Model | done |
+| [M12-02](completed/M12-02-player-detail-view.md) | Player Detail View | done |
+| [M12-03](completed/M12-03-favourite-star-toggle.md) | Favourite Star Toggle & Favourites List | done |
 
 ## M13 — Match Log UX
 | Story | Title | Status |
 |---|---|---|
-| [M13-01](M13-01-log-match-meta-deck-picker.md) | Meta Deck Picker in Log Match Sheet | todo |
+| [M13-01](completed/M13-01-log-match-meta-deck-picker.md) | Meta Deck Picker in Log Match Sheet | done |
 
 ## Bugs
 | Bug | Title | Status |

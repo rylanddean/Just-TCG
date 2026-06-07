@@ -24,6 +24,11 @@ final class LogMatchViewModel {
 
     var showToast: Bool = false
 
+    // MARK: - Meta deck picker
+
+    var quickPickSelection: String = "Custom"
+    var metaDecks: [String] { MetaDeckRepository.shared.all }
+
     // MARK: - Derived
 
     var isValid: Bool {
@@ -61,6 +66,7 @@ final class LogMatchViewModel {
     func selectArchetype(_ archetype: Archetype) {
         archetypeQuery = archetype.name
         suppressSuggestions = true
+        quickPickSelection = "Custom"
     }
 
     func confirm() {
