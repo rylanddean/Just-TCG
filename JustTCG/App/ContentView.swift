@@ -17,6 +17,9 @@ struct ContentView: View {
             AnalyticsView()
                 .tabItem { Label("Analytics", systemImage: "chart.bar") }
                 .tag(3)
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape") }
+                .tag(4)
         }
         .environment(nav)
     }
