@@ -1,6 +1,6 @@
 # M2-04 — Card Picker (Add Cards to Deck)
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M1-05, M2-03
 

@@ -52,6 +52,9 @@ struct DeckBuilderView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { toolbarContent(vm: vm) }
+        .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
+            CardPickerView(deck: deck)
+        }
         .onTapGesture {
             if isRenaming { commitRename(vm: vm) }
         }

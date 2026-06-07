@@ -33,10 +33,11 @@ final class DeckRepository {
     // MARK: - Card operations
 
     // Adds one copy of cardId to the deck. If the card is already present,
-    // increments quantity up to 4. Basic-energy cap (60) is enforced in M2-05.
-    func addCard(cardId: String, to deck: Deck) {
+    // increments quantity up to 4 (or 60 for basic Energy).
+    func addCard(cardId: String, to deck: Deck, isBasicEnergy: Bool = false) {
         if let existing = deck.cards.first(where: { $0.cardId == cardId }) {
-            existing.quantity = min(existing.quantity + 1, 4)
+            let cap = isBasicEnergy ? 60 : 4
+            existing.quantity = min(existing.quantity + 1, cap)
         } else {
             let deckCard = DeckCard(cardId: cardId)
             context.insert(deckCard)
