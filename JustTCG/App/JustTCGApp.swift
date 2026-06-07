@@ -7,6 +7,11 @@ struct JustTCGApp: App {
     let container: ModelContainer
 
     init() {
+        URLCache.shared = URLCache(
+            memoryCapacity: 50 * 1_024 * 1_024,
+            diskCapacity: 500 * 1_024 * 1_024,
+            diskPath: "card_image_cache"
+        )
         do {
             // User-owned data — iCloud sync via CloudKit when capability is configured.
             // cloudKitDatabase: .automatic falls back to local storage gracefully if

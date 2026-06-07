@@ -3,31 +3,35 @@ import SwiftData
 
 struct CardsView: View {
     @Environment(\.modelContext) private var context
+    @Query(filter: #Predicate<CachedCard> { $0.isStandardLegal }, sort: \.name)
+    private var cards: [CachedCard]
+
     @State private var isSyncing = false
-    @State private var hasCards = false
     @State private var syncError: String? = nil
+
+    private let columns = [
+        GridItem(.flexible(minimum: 100)),
+        GridItem(.flexible(minimum: 100)),
+        GridItem(.flexible(minimum: 100)),
+    ]
 
     var body: some View {
         NavigationStack {
             Group {
-                if isSyncing && !hasCards {
-                    VStack(spacing: 12) {
-                        ProgressView()
-                        Text("Loading cards…")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if !hasCards && syncError != nil {
+                if isSyncing && cards.isEmpty {
+                    skeletonGrid
+                } else if cards.isEmpty && syncError != nil {
                     offlineEmptyState
+                } else if !cards.isEmpty {
+                    cardGrid
                 } else {
-                    Text("Cards")
-                        .foregroundStyle(.secondary)
+                    ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             .navigationTitle("Cards")
             .toolbar {
-                if isSyncing && hasCards {
+                if isSyncing && !cards.isEmpty {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         ProgressView()
                             .scaleEffect(0.8)
@@ -38,8 +42,37 @@ struct CardsView: View {
         .task {
             await syncCards(force: false)
         }
-        .refreshable {
-            await syncCards(force: true)
+    }
+
+    // MARK: - Sub-views
+
+    private var cardGrid: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 8) {
+                ForEach(cards) { card in
+                    NavigationLink(destination: CardDetailView(card: card)) {
+                        CardThumbnailView(card: card)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 12)
+            .padding(.top, 8)
+        }
+        .refreshable { await syncCards(force: true) }
+    }
+
+    private var skeletonGrid: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 8) {
+                ForEach(0..<30, id: \.self) { _ in
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.secondary.opacity(0.15))
+                        .aspectRatio(7/10, contentMode: .fit)
+                }
+            }
+            .padding(.horizontal, 12)
+            .padding(.top, 8)
         }
     }
 
@@ -63,6 +96,8 @@ struct CardsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    // MARK: - Sync
+
     private func syncCards(force: Bool) async {
         isSyncing = true
         syncError = nil
@@ -72,7 +107,6 @@ struct CardsView: View {
         } catch {
             syncError = error.localizedDescription
         }
-        hasCards = ((try? repo.fetchAll()) ?? []).isEmpty == false
         isSyncing = false
     }
 }
