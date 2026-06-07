@@ -4,9 +4,49 @@ import SwiftData
 final class CardRepository {
 
     private let context: ModelContext
+    private let client: LimitlessTCGClient
 
-    init(modelContext: ModelContext) {
+    private static let lastRefreshKey = "card_cache_last_refreshed"
+    private static let staleInterval: TimeInterval = 7 * 24 * 60 * 60
+
+    init(modelContext: ModelContext, client: LimitlessTCGClient = LimitlessTCGClient()) {
         self.context = modelContext
+        self.client = client
+    }
+
+    // MARK: - Sync
+
+    // Skips if the cache was refreshed within the last 7 days unless force=true.
+    // Already-cached cards are preserved if the sync fails mid-way;
+    // lastRefreshedAt is only updated on full success.
+    func refreshIfStale(force: Bool = false) async throws {
+        if !force,
+           let last = UserDefaults.standard.object(forKey: Self.lastRefreshKey) as? Date,
+           Date().timeIntervalSince(last) < Self.staleInterval {
+            return
+        }
+        try await syncAllPages()
+    }
+
+    private func syncAllPages() async throws {
+        var page = 1
+        var totalPages = 1
+
+        repeat {
+            let result = try await client.fetchStandardCardPage(page: page)
+
+            if page == 1 {
+                let size = result.pageSize > 0 ? result.pageSize : 250
+                totalPages = max(1, (result.totalCount + size - 1) / size)
+            }
+
+            try upsert(result.data.map { $0.toLimitlessCard() })
+
+            if !result.hasMore { break }
+            page += 1
+        } while page <= totalPages
+
+        UserDefaults.standard.set(Date(), forKey: Self.lastRefreshKey)
     }
 
     // MARK: - Write
