@@ -40,4 +40,33 @@ final class CachedCard {
         self.imageURL = imageURL
         self.cachedAt = cachedAt
     }
+
+    convenience init(from card: LimitlessCard, cachedAt: Date = .now) {
+        self.init(
+            id: card.id,
+            name: card.name,
+            setCode: card.setCode,
+            setName: card.setName,
+            number: card.number,
+            types: card.types,
+            subtypes: card.subtypes,
+            hp: card.hp,
+            isStandardLegal: card.isStandardLegal,
+            imageURL: card.imageURL,
+            cachedAt: cachedAt
+        )
+    }
+
+    func update(from card: LimitlessCard, now: Date = .now) {
+        name = card.name
+        setCode = card.setCode
+        setName = card.setName
+        number = card.number
+        types = card.types
+        subtypes = card.subtypes
+        hp = card.hp
+        isStandardLegal = card.isStandardLegal
+        imageURL = card.imageURL
+        cachedAt = now
+    }
 }

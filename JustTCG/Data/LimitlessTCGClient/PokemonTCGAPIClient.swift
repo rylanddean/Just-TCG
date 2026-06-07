@@ -115,7 +115,7 @@ struct PTCGSet: Decodable {
     let releaseDate: String?
 }
 
-private struct PTCGLegalities: Decodable {
+struct PTCGLegalities: Decodable {
     let unlimited: String?
     let standard: String?
     let expanded: String?

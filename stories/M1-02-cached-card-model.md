@@ -1,6 +1,6 @@
 # M1-02 — CachedCard SwiftData Model
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M1 — Card Browser  
 **Dependencies:** M0
 

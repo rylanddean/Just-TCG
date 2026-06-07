@@ -11,7 +11,7 @@ Stories are ordered by dependency. Work top to bottom.
 | Story | Title | Status |
 |---|---|---|
 | [M1-01](M1-01-limitless-client.md) | Limitless TCG Client Foundation | done |
-| [M1-02](M1-02-cached-card-model.md) | CachedCard SwiftData Model | todo |
+| [M1-02](M1-02-cached-card-model.md) | CachedCard SwiftData Model | done |
 | [M1-03](M1-03-card-cache-sync.md) | Card Cache Sync | todo |
 | [M1-04](M1-04-card-browse-view.md) | Card Browse View | todo |
 | [M1-05](M1-05-card-search-filter.md) | Card Search & Filter | todo |
