@@ -1,6 +1,6 @@
 # M2-02 — Deck List View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M2-01
 
