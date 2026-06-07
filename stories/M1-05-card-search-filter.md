@@ -1,6 +1,6 @@
 # M1-05 — Card Search & Filter
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M1 — Card Browser  
 **Dependencies:** M1-04
 

@@ -88,15 +88,49 @@ final class CardRepository {
         )
     }
 
-    // Filters cards by name query, energy type(s), and set code(s).
-    // Name and set filters run at the database level; type filtering (on a stored
-    // String array) runs in-memory after the DB fetch.
-    func fetch(matching query: String = "", types: [String] = [], sets: [String] = []) throws -> [CachedCard] {
-        let dbResults = try fetchFromDB(query: query, sets: sets)
+    // Filters cards by name query, energy type(s), subtype(s), and set code(s).
+    // Name and set filters run at the DB level; type/subtype filtering runs
+    // in-memory (SwiftData can't query stored [String] arrays efficiently).
+    func fetch(
+        matching query: String = "",
+        types: [String] = [],
+        subtypes: [String] = [],
+        sets: [String] = []
+    ) throws -> [CachedCard] {
+        var results = try fetchFromDB(query: query, sets: sets)
 
-        guard !types.isEmpty else { return dbResults }
-        let typeSet = Set(types)
-        return dbResults.filter { !Set($0.types).isDisjoint(with: typeSet) }
+        if !types.isEmpty {
+            let typeSet = Set(types)
+            results = results.filter { !Set($0.types).isDisjoint(with: typeSet) }
+        }
+        if !subtypes.isEmpty {
+            let subtypeSet = Set(subtypes)
+            results = results.filter { !Set($0.subtypes).isDisjoint(with: subtypeSet) }
+        }
+        return results
+    }
+
+    // Returns true if at least one standard-legal card is cached.
+    // Uses fetchLimit: 1 to avoid loading the full table.
+    func hasAnyStandardCards() throws -> Bool {
+        var descriptor = FetchDescriptor<CachedCard>(
+            predicate: #Predicate { $0.isStandardLegal }
+        )
+        descriptor.fetchLimit = 1
+        return try context.fetch(descriptor).isEmpty == false
+    }
+
+    // Returns all unique (setCode, setName) pairs sorted alphabetically by name.
+    func fetchDistinctSets() throws -> [(code: String, name: String)] {
+        let cards = try context.fetch(
+            FetchDescriptor<CachedCard>(predicate: #Predicate { $0.isStandardLegal })
+        )
+        var seen = Set<String>()
+        var result: [(code: String, name: String)] = []
+        for card in cards where seen.insert(card.setCode).inserted {
+            result.append((card.setCode, card.setName))
+        }
+        return result.sorted { $0.name < $1.name }
     }
 
     // MARK: - Private
