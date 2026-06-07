@@ -1,6 +1,6 @@
 # M6-03 — Practice Gaps & Danger Matchup Surface
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M6 — Meta Comparison  
 **Dependencies:** M6-02
 

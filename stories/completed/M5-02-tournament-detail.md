@@ -1,6 +1,6 @@
 # M5-02 — Tournament Detail View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M5 — Tournament Feed  
 **Dependencies:** M5-01
 

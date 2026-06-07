@@ -1,24 +1,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var nav = AppNavigationState()
+
     var body: some View {
-        TabView {
+        TabView(selection: $nav.selectedTab) {
             DecksView()
-                .tabItem {
-                    Label("Decks", systemImage: "rectangle.stack")
-                }
+                .tabItem { Label("Decks", systemImage: "rectangle.stack") }
+                .tag(0)
             CardsView()
-                .tabItem {
-                    Label("Cards", systemImage: "square.grid.2x2")
-                }
+                .tabItem { Label("Cards", systemImage: "square.grid.2x2") }
+                .tag(1)
             TournamentsView()
-                .tabItem {
-                    Label("Tournaments", systemImage: "trophy")
-                }
+                .tabItem { Label("Tournaments", systemImage: "trophy") }
+                .tag(2)
             AnalyticsView()
-                .tabItem {
-                    Label("Analytics", systemImage: "chart.bar")
-                }
+                .tabItem { Label("Analytics", systemImage: "chart.bar") }
+                .tag(3)
         }
+        .environment(nav)
     }
 }

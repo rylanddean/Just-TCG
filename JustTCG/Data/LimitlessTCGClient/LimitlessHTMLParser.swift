@@ -47,14 +47,34 @@ enum LimitlessHTMLParser {
                 let deck    = attrs["deck"]
             else { return nil }
 
+            // Try explicit data-wins/losses/ties; fall back to parsing data-record="W-L-T"
+            let (wins, losses, ties) = parseRecord(attrs: attrs, rowHTML: rowHTML)
+
             return LimitlessPlacement(
                 rank: rank,
                 playerName: name.htmlDecoded,
                 country: attrs["country"] ?? "",
                 archetype: deck.htmlDecoded,
+                wins: wins,
+                losses: losses,
+                ties: ties,
                 deckListId: firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: rowHTML)
             )
         }
+    }
+
+    private static func parseRecord(attrs: [String: String], rowHTML: String) -> (Int, Int, Int) {
+        if let w = attrs["wins"].flatMap(Int.init),
+           let l = attrs["losses"].flatMap(Int.init),
+           let t = attrs["ties"].flatMap(Int.init) {
+            return (w, l, t)
+        }
+        if let record = attrs["record"] {
+            let parts = record.split(separator: "-").compactMap { Int($0) }
+            if parts.count >= 3 { return (parts[0], parts[1], parts[2]) }
+            if parts.count == 2 { return (parts[0], parts[1], 0) }
+        }
+        return (0, 0, 0)
     }
 
     // MARK: - Deck list  (/decks/list/{id})

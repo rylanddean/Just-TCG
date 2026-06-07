@@ -1,6 +1,6 @@
 # M4-01 — Matchup Stats Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M4 — Analytics  
 **Dependencies:** M3-01
 

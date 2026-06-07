@@ -1,6 +1,6 @@
 # M4-02 — Matchup Analytics View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M4 — Analytics  
 **Dependencies:** M4-01
 

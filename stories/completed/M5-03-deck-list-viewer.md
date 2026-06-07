@@ -1,6 +1,6 @@
 # M5-03 — Tournament Deck List Viewer
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M5 — Tournament Feed  
 **Dependencies:** M5-02, M1-02
 

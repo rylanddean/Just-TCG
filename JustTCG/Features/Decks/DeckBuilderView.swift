@@ -73,13 +73,30 @@ struct DeckBuilderView: View {
     // MARK: - Matches section
 
     private var matchesSection: some View {
-        let count = deck.matches.count
+        let sorted = deck.matches.sorted { $0.date > $1.date }
+        let preview = Array(sorted.prefix(5))
         return Section {
-            Label(
-                count == 1 ? "1 match logged" : "\(count) matches logged",
-                systemImage: "sportscourt"
-            )
-            .foregroundStyle(.secondary)
+            if preview.isEmpty {
+                Label("No matches logged yet", systemImage: "sportscourt")
+                    .foregroundStyle(.secondary)
+            } else {
+                ForEach(preview) { match in
+                    NavigationLink {
+                        MatchDetailView(match: match)
+                    } label: {
+                        MatchRow(match: match)
+                    }
+                }
+                if sorted.count > 5 {
+                    NavigationLink("See all \(sorted.count) matches") {
+                        MatchHistoryView(deck: deck)
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(Color.accentColor)
+                }
+            }
+        } header: {
+            Text("Match History")
         }
     }
 

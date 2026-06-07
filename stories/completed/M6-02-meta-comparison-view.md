@@ -1,6 +1,6 @@
 # M6-02 — Meta Comparison View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M6 — Meta Comparison  
 **Dependencies:** M6-01, M4-01
 

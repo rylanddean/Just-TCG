@@ -1,6 +1,6 @@
 # M4-03 — Win Rate Trend Chart
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M4 — Analytics  
 **Dependencies:** M4-02
 

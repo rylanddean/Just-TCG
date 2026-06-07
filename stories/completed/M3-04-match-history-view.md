@@ -1,6 +1,6 @@
 # M3-04 — Match History View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M3 — Match Tracker  
 **Dependencies:** M3-03
 

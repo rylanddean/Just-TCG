@@ -1,6 +1,6 @@
 # M6-01 — Meta Share Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M6 — Meta Comparison  
 **Dependencies:** M5-02
 

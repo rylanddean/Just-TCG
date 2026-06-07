@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v1"
+    static let seededKey = "bundled_cards_seeded_v2"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",

@@ -55,3 +55,17 @@ Stories are ordered by dependency. Work top to bottom.
 | [M6-01](M6-01-meta-share-engine.md) | Meta Share Engine | todo |
 | [M6-02](M6-02-meta-comparison-view.md) | Meta Comparison View | todo |
 | [M6-03](M6-03-practice-gaps.md) | Practice Gaps & Danger Matchup Surface | todo |
+
+## M7 — Advanced Card Filters
+| Story | Title | Status |
+|---|---|---|
+| [M7-01](M7-01-extended-card-model.md) | Extended Card Data Model | todo |
+| [M7-02](M7-02-card-data-pipeline-retreat-weakness.md) | Card Data Pipeline: Retreat, Weakness & Resistance | todo |
+| [M7-03](M7-03-advanced-filter-state.md) | Advanced Filter State & Predicate Engine | todo |
+| [M7-04](M7-04-advanced-filter-sheet-ui.md) | Advanced Filter Sheet UI | todo |
+
+## M8 — Card Sorting
+| Story | Title | Status |
+|---|---|---|
+| [M8-01](M8-01-card-sort-state.md) | Card Sort State & Repository Integration | todo |
+| [M8-02](M8-02-sort-controls-ui.md) | Sort Controls UI | todo |
