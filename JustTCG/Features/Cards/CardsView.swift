@@ -162,7 +162,11 @@ struct CardsView: View {
                 Button {
                     sortOrder = order
                 } label: {
-                    Label(order.menuLabel, systemImage: sortOrder == order ? "checkmark" : "")
+                    Label {
+                        Text(order.menuLabel)
+                    } icon: {
+                        if sortOrder == order { Image(systemName: "checkmark") }
+                    }
                 }
             }
         } label: {
@@ -201,12 +205,21 @@ struct CardsView: View {
     // MARK: - Data loading
 
     private func initialLoad() async {
-        // First launch: seed from bundled JSON so cards appear instantly.
-        // No-op on every subsequent launch (UserDefaults flag check).
+        let seededKey = UserDefaults.standard.bool(forKey: BundledCardSeeder.seededKey)
+        let lastRefresh = UserDefaults.standard.object(forKey: CardRepository.lastRefreshKey) as? Date
+        print("[CardsView] initialLoad start — seededKey=\(seededKey) lastRefresh=\(lastRefresh?.description ?? "nil")")
+
         await BundledCardSeeder.seedIfNeeded(context: context)
+        print("[CardsView] seedIfNeeded complete")
 
         let repo = CardRepository(modelContext: context)
-        hasCards = (try? repo.hasAnyStandardCards()) ?? false
+        do {
+            hasCards = try repo.hasAnyStandardCards()
+            print("[CardsView] post-seed hasCards=\(hasCards)")
+        } catch {
+            print("[CardsView] hasAnyStandardCards error: \(error)")
+        }
+
         if hasCards {
             await loadCards()
             loadFilterMetadata(repo: repo)
@@ -214,16 +227,25 @@ struct CardsView: View {
 
         isSyncing = true
         syncError = nil
+        print("[CardsView] starting refreshIfStale")
         do {
             try await repo.refreshIfStale(force: false)
+            print("[CardsView] refreshIfStale complete")
         } catch {
+            print("[CardsView] refreshIfStale error: \(error)")
             syncError = error.localizedDescription
         }
         isSyncing = false
 
-        hasCards = (try? repo.hasAnyStandardCards()) ?? false
+        do {
+            hasCards = try repo.hasAnyStandardCards()
+            print("[CardsView] post-sync hasCards=\(hasCards) cards.count=\(cards.count)")
+        } catch {
+            print("[CardsView] post-sync hasAnyStandardCards error: \(error)")
+        }
         await loadCards()
         loadFilterMetadata(repo: repo)
+        print("[CardsView] initialLoad done — cards.count=\(cards.count)")
     }
 
     private func forceRefresh() async {

@@ -23,8 +23,10 @@ final class CardRepository {
         if !force,
            let last = UserDefaults.standard.object(forKey: Self.lastRefreshKey) as? Date,
            Date().timeIntervalSince(last) < Self.staleInterval {
+            print("[CardRepository] cache fresh (last=\(last)), skipping network sync")
             return
         }
+        print("[CardRepository] starting network sync (force=\(force))")
         try await syncAllPages()
     }
 
@@ -33,7 +35,9 @@ final class CardRepository {
         var totalPages = 1
 
         repeat {
+            print("[CardRepository] fetching page \(page)/\(totalPages)")
             let result = try await client.fetchStandardCardPage(page: page)
+            print("[CardRepository] page \(page) — \(result.data.count) cards, hasMore=\(result.hasMore), total=\(result.totalCount)")
 
             if page == 1 {
                 let size = result.pageSize > 0 ? result.pageSize : 250
@@ -46,6 +50,7 @@ final class CardRepository {
             page += 1
         } while page <= totalPages
 
+        print("[CardRepository] sync complete — \(totalPages) pages")
         UserDefaults.standard.set(Date(), forKey: Self.lastRefreshKey)
     }
 

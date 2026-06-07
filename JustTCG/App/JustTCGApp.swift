@@ -12,28 +12,43 @@ struct JustTCGApp: App {
             diskCapacity: 500 * 1_024 * 1_024,
             diskPath: "card_image_cache"
         )
+        container = Self.makeContainer()
+    }
+
+    private static func makeContainer(afterCacheReset: Bool = false) -> ModelContainer {
+        let userDataConfig = ModelConfiguration(
+            "UserData",
+            schema: Schema([Deck.self, DeckCard.self, Match.self]),
+            cloudKitDatabase: .automatic
+        )
+        let cardCacheConfig = ModelConfiguration(
+            "CardCache",
+            schema: Schema([CachedCard.self]),
+            cloudKitDatabase: .none
+        )
         do {
-            // User-owned data — iCloud sync via CloudKit when capability is configured.
-            // cloudKitDatabase: .automatic falls back to local storage gracefully if
-            // the iCloud entitlement is not yet present.
-            let userDataConfig = ModelConfiguration(
-                "UserData",
-                schema: Schema([Deck.self, DeckCard.self, Match.self]),
-                cloudKitDatabase: .automatic
-            )
-            // Card cache — always local only, never synced.
-            let cardCacheConfig = ModelConfiguration(
-                "CardCache",
-                schema: Schema([CachedCard.self]),
-                cloudKitDatabase: .none
-            )
-            container = try ModelContainer(
+            return try ModelContainer(
                 for: Schema([Deck.self, DeckCard.self, Match.self, CachedCard.self]),
                 configurations: [userDataConfig, cardCacheConfig]
             )
         } catch {
+            if !afterCacheReset {
+                // CardCache schema changed (new fields); it's a pure cache so wipe and retry.
+                deleteCardCacheStore()
+                return makeContainer(afterCacheReset: true)
+            }
             fatalError("SwiftData container setup failed: \(error)")
         }
+    }
+
+    private static func deleteCardCacheStore() {
+        let base = URL.applicationSupportDirectory
+        for ext in ["store", "store-wal", "store-shm"] {
+            try? FileManager.default.removeItem(at: base.appending(path: "CardCache.\(ext)"))
+        }
+        // Reset seed/refresh flags so the seeder re-runs and network sync isn't suppressed.
+        UserDefaults.standard.removeObject(forKey: BundledCardSeeder.seededKey)
+        UserDefaults.standard.removeObject(forKey: CardRepository.lastRefreshKey)
     }
 
     var body: some Scene {

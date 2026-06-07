@@ -18,7 +18,21 @@ enum BundledCardSeeder {
     // Must be called from MainActor (the view's .task or similar) so that context
     // operations happen on the right thread.
     static func seedIfNeeded(context: ModelContext) async {
-        guard !UserDefaults.standard.bool(forKey: seededKey) else { return }
+        if UserDefaults.standard.bool(forKey: seededKey) {
+            var check = FetchDescriptor<CachedCard>()
+            check.fetchLimit = 1
+            let storeEmpty = (try? context.fetch(check).isEmpty) ?? true
+            if !storeEmpty {
+                print("[BundledCardSeeder] skipped — already seeded (\(seededKey))")
+                return
+            }
+            // Flag is set but store is empty — schema migration wiped the store without
+            // clearing UserDefaults. Reset both flags and fall through to re-seed.
+            print("[BundledCardSeeder] flag set but store empty — re-seeding")
+            UserDefaults.standard.removeObject(forKey: seededKey)
+            UserDefaults.standard.removeObject(forKey: CardRepository.lastRefreshKey)
+        }
+        print("[BundledCardSeeder] seeding from bundled JSON...")
 
         typealias SetCardPair = (releaseDate: Date?, cards: [CardSeedEntry])
 
@@ -30,8 +44,7 @@ enum BundledCardSeeder {
             result.reserveCapacity(20)
             for code in setFiles {
                 guard
-                    let url = Bundle.main.url(forResource: code, withExtension: "json",
-                                              subdirectory: "CardData"),
+                    let url = Bundle.main.url(forResource: code, withExtension: "json"),
                     let data = try? Data(contentsOf: url),
                     let payload = try? decoder.decode(CardSetPayload.self, from: data)
                 else { continue }
@@ -77,7 +90,10 @@ enum BundledCardSeeder {
             }
         }
 
+        let total = pairs.reduce(0) { $0 + $1.cards.count }
+        print("[BundledCardSeeder] inserting \(total) cards from \(pairs.count) sets")
         try? context.save()
+        print("[BundledCardSeeder] save complete")
         // Mark the card cache fresh so CardRepository skips the network sync on launch.
         UserDefaults.standard.set(Date(), forKey: CardRepository.lastRefreshKey)
         UserDefaults.standard.set(true, forKey: seededKey)

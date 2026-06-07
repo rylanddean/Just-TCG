@@ -66,18 +66,16 @@ struct CardFilterView: View {
     private var basicSection: some View {
         Section {
             DisclosureGroup(isExpanded: $basicExpanded) {
-                subSection("Type") {
-                    ForEach(allTypes, id: \.self) { type in
-                        selectionRow(label: type, isSelected: filterState.types.contains(type)) {
-                            filterState.types.formSymmetricDifference([type])
-                        }
+                groupLabel("Type")
+                ForEach(allTypes, id: \.self) { type in
+                    selectionRow(label: type, isSelected: filterState.types.contains(type)) {
+                        filterState.types.formSymmetricDifference([type])
                     }
                 }
-                subSection("Subtype") {
-                    ForEach(allSubtypes, id: \.self) { sub in
-                        selectionRow(label: sub, isSelected: filterState.subtypes.contains(sub)) {
-                            filterState.subtypes.formSymmetricDifference([sub])
-                        }
+                groupLabel("Subtype")
+                ForEach(allSubtypes, id: \.self) { sub in
+                    selectionRow(label: sub, isSelected: filterState.subtypes.contains(sub)) {
+                        filterState.subtypes.formSymmetricDifference([sub])
                     }
                 }
             } label: {
@@ -90,29 +88,26 @@ struct CardFilterView: View {
         Section {
             DisclosureGroup(isExpanded: $setLegalityExpanded) {
                 if !availableSets.isEmpty {
-                    subSection("Set") {
-                        ForEach(availableSets, id: \.code) { set in
-                            selectionRow(label: set.name, isSelected: filterState.sets.contains(set.code)) {
-                                filterState.sets.formSymmetricDifference([set.code])
-                            }
+                    groupLabel("Set")
+                    ForEach(availableSets, id: \.code) { set in
+                        selectionRow(label: set.name, isSelected: filterState.sets.contains(set.code)) {
+                            filterState.sets.formSymmetricDifference([set.code])
                         }
                     }
                 }
                 if !hideRegulationMark && !availableRegulationMarks.isEmpty {
-                    subSection("Regulation Mark") {
-                        ForEach(availableRegulationMarks, id: \.self) { mark in
-                            selectionRow(label: mark, isSelected: filterState.regulationMarks.contains(mark)) {
-                                filterState.regulationMarks.formSymmetricDifference([mark])
-                            }
+                    groupLabel("Regulation Mark")
+                    ForEach(availableRegulationMarks, id: \.self) { mark in
+                        selectionRow(label: mark, isSelected: filterState.regulationMarks.contains(mark)) {
+                            filterState.regulationMarks.formSymmetricDifference([mark])
                         }
                     }
                 }
                 if !availableRarities.isEmpty {
-                    subSection("Rarity") {
-                        ForEach(availableRarities, id: \.self) { rarity in
-                            selectionRow(label: rarity, isSelected: filterState.rarities.contains(rarity)) {
-                                filterState.rarities.formSymmetricDifference([rarity])
-                            }
+                    groupLabel("Rarity")
+                    ForEach(availableRarities, id: \.self) { rarity in
+                        selectionRow(label: rarity, isSelected: filterState.rarities.contains(rarity)) {
+                            filterState.rarities.formSymmetricDifference([rarity])
                         }
                     }
                 }
@@ -138,15 +133,12 @@ struct CardFilterView: View {
     private var matchupSection: some View {
         Section {
             DisclosureGroup(isExpanded: $matchupExpanded) {
-                subSection("Weakness") {
-                    typeMultiSelect(selection: $filterState.weaknessTypes)
-                }
-                subSection("Resistance") {
-                    typeMultiSelect(selection: $filterState.resistanceTypes)
-                }
-                subSection("Attacking Energy") {
-                    typeMultiSelect(selection: $filterState.attackingEnergyTypes)
-                }
+                groupLabel("Weakness")
+                typeMultiSelect(selection: $filterState.weaknessTypes)
+                groupLabel("Resistance")
+                typeMultiSelect(selection: $filterState.resistanceTypes)
+                groupLabel("Attacking Energy")
+                typeMultiSelect(selection: $filterState.attackingEnergyTypes)
             } label: {
                 Text("Matchup").font(.headline)
             }
@@ -276,16 +268,11 @@ struct CardFilterView: View {
 
     // MARK: - Helpers
 
-    @ViewBuilder
-    private func subSection<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .padding(.top, 8)
-                .padding(.bottom, 4)
-            content()
-        }
+    private func groupLabel(_ title: String) -> some View {
+        Text(title)
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(.secondary)
+            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 2, trailing: 16))
     }
 
     private func typeMultiSelect(selection: Binding<Set<String>>) -> some View {
@@ -308,6 +295,7 @@ struct CardFilterView: View {
                 }
             }
         }
+        .buttonStyle(.plain)
     }
 
     private func rangeField(

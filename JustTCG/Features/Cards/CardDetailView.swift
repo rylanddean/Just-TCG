@@ -44,6 +44,58 @@ struct CardDetailView: View {
                             .foregroundStyle(.secondary)
                     }
 
+                    let hasCombatStats = card.weaknessType != nil || card.resistanceType != nil || card.retreatCost != nil
+                    if hasCombatStats {
+                        Divider().padding(.vertical, 4)
+                        HStack(alignment: .top, spacing: 0) {
+                            CombatStatColumn(label: "Weakness") {
+                                if let w = card.weaknessType {
+                                    HStack(spacing: 4) {
+                                        EnergyBadge(type: w)
+                                        Text("×2")
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                } else {
+                                    Text("—").font(.callout).foregroundStyle(.tertiary)
+                                }
+                            }
+                            Divider().frame(maxHeight: 36)
+                            CombatStatColumn(label: "Resistance") {
+                                if let r = card.resistanceType {
+                                    HStack(spacing: 4) {
+                                        EnergyBadge(type: r)
+                                        Text("-30")
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                } else {
+                                    Text("—").font(.callout).foregroundStyle(.tertiary)
+                                }
+                            }
+                            Divider().frame(maxHeight: 36)
+                            CombatStatColumn(label: "Retreat") {
+                                if let cost = card.retreatCost {
+                                    if cost == 0 {
+                                        Text("Free")
+                                            .font(.callout)
+                                            .foregroundStyle(.tertiary)
+                                    } else {
+                                        HStack(spacing: 3) {
+                                            ForEach(0..<min(cost, 5), id: \.self) { _ in
+                                                Circle()
+                                                    .fill(Color.secondary.opacity(0.5))
+                                                    .frame(width: 14, height: 14)
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    Text("—").font(.callout).foregroundStyle(.tertiary)
+                                }
+                            }
+                        }
+                    }
+
                     if !card.rulesText.isEmpty {
                         Divider().padding(.vertical, 4)
                         VStack(alignment: .leading, spacing: 10) {
@@ -115,6 +167,24 @@ private struct ZoomableCardImage: View {
                 EmptyView()
             }
         }
+    }
+}
+
+// MARK: - Combat stat column
+
+private struct CombatStatColumn<Content: View>: View {
+    let label: String
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        VStack(spacing: 6) {
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            content()
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
     }
 }
 

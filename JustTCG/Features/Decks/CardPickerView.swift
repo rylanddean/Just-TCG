@@ -120,7 +120,11 @@ struct CardPickerView: View {
                 Button {
                     sortOrder = order
                 } label: {
-                    Label(order.menuLabel, systemImage: sortOrder == order ? "checkmark" : "")
+                    Label {
+                        Text(order.menuLabel)
+                    } icon: {
+                        if sortOrder == order { Image(systemName: "checkmark") }
+                    }
                 }
             }
         } label: {
