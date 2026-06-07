@@ -91,6 +91,7 @@ Stories are ordered by dependency. Work top to bottom.
 | [M11-01](completed/M11-01-home-screen-shell.md) | Home Screen Shell & Settings Relocation | done |
 | [M11-02](completed/M11-02-match-log-widget.md) | Match Log Widget | done |
 | [M11-03](M11-03-daily-game-streak.md) | Daily Game Streak | todo |
+| [M11-04](M11-04-activity-heatmap-widget.md) | Activity Heatmap Widget | todo |
 
 ## M12 — Player Profiles
 | Story | Title | Status |
@@ -99,9 +100,15 @@ Stories are ordered by dependency. Work top to bottom.
 | [M12-02](M12-02-player-detail-view.md) | Player Detail View | todo |
 | [M12-03](M12-03-favourite-star-toggle.md) | Favourite Star Toggle & Favourites List | todo |
 
+## M13 — Match Log UX
+| Story | Title | Status |
+|---|---|---|
+| [M13-01](M13-01-log-match-meta-deck-picker.md) | Meta Deck Picker in Log Match Sheet | todo |
+
 ## Bugs
 | Bug | Title | Status |
 |---|---|---|
 | [BUG-01](completed/BUG-01-energy-card-import.md) | Energy Cards Fail to Import from PTCGL Clipboard | done |
 | [BUG-02](completed/BUG-02-basic-energy-card-data.md) | Basic Energy Cards Missing from Bundled Card JSON | done |
 | [BUG-03](completed/BUG-03-deck-builder-add-cards.md) | "Add Cards" Button Doesn't Work in Deck Builder | done |
+| [BUG-04](completed/BUG-04-analytics-deck-name-encoding.md) | Analytics View Renders Deck Names with Garbled Characters | done |
