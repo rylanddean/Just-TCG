@@ -1,6 +1,6 @@
 # M2-01 — Deck & DeckCard SwiftData Models
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M0
 

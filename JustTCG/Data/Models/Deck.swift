@@ -9,6 +9,10 @@ final class Deck {
     var createdAt: Date
     var updatedAt: Date
 
+    @Relationship(deleteRule: .cascade) var cards: [DeckCard] = []
+    // matches relationship — fully populated in M3-01
+    @Relationship(deleteRule: .cascade) var matches: [Match] = []
+
     init(name: String, format: String = "Standard") {
         self.id = UUID()
         self.name = name

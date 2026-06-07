@@ -20,7 +20,7 @@ Stories are ordered by dependency. Work top to bottom.
 ## M2 — Deck Builder
 | Story | Title | Status |
 |---|---|---|
-| [M2-01](M2-01-deck-models.md) | Deck & DeckCard SwiftData Models | todo |
+| [M2-01](M2-01-deck-models.md) | Deck & DeckCard SwiftData Models | done |
 | [M2-02](M2-02-deck-list-view.md) | Deck List View | todo |
 | [M2-03](M2-03-new-deck-flow.md) | New Deck Flow & Deck Detail View | todo |
 | [M2-04](M2-04-card-picker.md) | Card Picker (Add Cards to Deck) | todo |
