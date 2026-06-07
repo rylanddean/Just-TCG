@@ -83,3 +83,10 @@ Stories are ordered by dependency. Work top to bottom.
 | [M11-01](completed/M11-01-home-screen-shell.md) | Home Screen Shell & Settings Relocation | done |
 | [M11-02](M11-02-match-log-widget.md) | Match Log Widget | todo |
 | [M11-03](M11-03-daily-game-streak.md) | Daily Game Streak | todo |
+
+## Bugs
+| Bug | Title | Status |
+|---|---|---|
+| [BUG-01](completed/BUG-01-energy-card-import.md) | Energy Cards Fail to Import from PTCGL Clipboard | done |
+| [BUG-02](completed/BUG-02-basic-energy-card-data.md) | Basic Energy Cards Missing from Bundled Card JSON | done |
+| [BUG-03](completed/BUG-03-deck-builder-add-cards.md) | "Add Cards" Button Doesn't Work in Deck Builder | done |

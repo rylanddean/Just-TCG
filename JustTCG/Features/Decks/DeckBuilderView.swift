@@ -25,6 +25,12 @@ struct DeckBuilderView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
+            CardPickerView(deck: deck)
+        }
+        .sheet(isPresented: $showLogMatch) {
+            LogMatchSheet(deck: deck)
+        }
         .task {
             if viewModel == nil {
                 let vm = DeckBuilderViewModel(deck: deck, modelContext: context)
@@ -58,12 +64,6 @@ struct DeckBuilderView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbarContent(vm: vm) }
-            .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
-                CardPickerView(deck: deck)
-            }
-            .sheet(isPresented: $showLogMatch) {
-                LogMatchSheet(deck: deck)
-            }
             .onTapGesture {
                 if isRenaming { commitRename(vm: vm) }
             }
