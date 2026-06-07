@@ -16,13 +16,17 @@ struct CardPickerView: View {
     @State private var showFilterSheet = false
     @State private var sortOrder: CardSortOrder = .expansion
 
+    @State private var isLoading = false
     @State private var cardForDetail: CachedCard? = nil
     @State private var searchTask: Task<Void, Never>? = nil
 
     var body: some View {
         NavigationStack {
             Group {
-                if cards.isEmpty && (!searchText.isEmpty || !filterState.isEmpty) {
+                if isLoading {
+                    ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if cards.isEmpty && (!searchText.isEmpty || !filterState.isEmpty) {
                     noResultsState
                 } else {
                     pickerList
@@ -163,10 +167,15 @@ struct CardPickerView: View {
     // MARK: - Data
 
     private func loadInitial() async {
+        isLoading = true
+        await Task.yield()  // let SwiftUI render the ProgressView before the sync DB fetch
         let repo = CardRepository(modelContext: context)
-        availableSets = (try? repo.fetchDistinctSets()) ?? []
-        availableRarities = (try? repo.fetchDistinctRarities()) ?? []
-        await loadCards()
+        if let seed = try? repo.fetchPickerSeed(sortOrder: sortOrder) {
+            cards = seed.cards
+            availableSets = seed.availableSets
+            availableRarities = seed.availableRarities
+        }
+        isLoading = false
     }
 
     private func loadCards() async {

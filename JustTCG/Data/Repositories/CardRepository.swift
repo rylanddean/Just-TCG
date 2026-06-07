@@ -1,6 +1,12 @@
 import Foundation
 import SwiftData
 
+struct CardPickerSeed {
+    let cards: [CachedCard]
+    let availableSets: [(code: String, name: String)]
+    let availableRarities: [String]
+}
+
 final class CardRepository {
 
     private let context: ModelContext
@@ -159,6 +165,36 @@ final class CardRepository {
             if let r = card.rarity { freq[r, default: 0] += 1 }
         }
         return freq.keys.sorted { freq[$0, default: 0] > freq[$1, default: 0] }
+    }
+
+    // Single-fetch seed for CardPickerView: returns the card list plus derived
+    // sets and rarities so the picker open costs one DB round-trip instead of three.
+    func fetchPickerSeed(sortOrder: CardSortOrder = .expansion) throws -> CardPickerSeed {
+        let cards = try context.fetch(
+            FetchDescriptor<CachedCard>(
+                predicate: #Predicate { $0.isStandardLegal },
+                sortBy: sortOrder.sortDescriptors
+            )
+        )
+
+        // Derive sets ordered by release date (newest first) from already-fetched data
+        var setDate: [String: Date] = [:]
+        var setNames: [String: String] = [:]
+        var rarityFreq: [String: Int] = [:]
+        for card in cards {
+            if setDate[card.setCode] == nil {
+                setDate[card.setCode] = card.setReleaseDate
+                setNames[card.setCode] = card.setName
+            }
+            if let r = card.rarity { rarityFreq[r, default: 0] += 1 }
+        }
+
+        let sets = setDate.keys
+            .sorted { (setDate[$0] ?? .distantPast) > (setDate[$1] ?? .distantPast) }
+            .map { (code: $0, name: setNames[$0] ?? "") }
+        let rarities = rarityFreq.keys.sorted { rarityFreq[$0, default: 0] > rarityFreq[$1, default: 0] }
+
+        return CardPickerSeed(cards: cards, availableSets: sets, availableRarities: rarities)
     }
 
     // MARK: - Private
