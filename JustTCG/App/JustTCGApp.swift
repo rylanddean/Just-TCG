@@ -5,6 +5,7 @@ import SwiftData
 struct JustTCGApp: App {
 
     let container: ModelContainer
+    let playerRepo: FavouritePlayerRepository
 
     init() {
         URLCache.shared = URLCache(
@@ -13,12 +14,13 @@ struct JustTCGApp: App {
             diskPath: "card_image_cache"
         )
         container = Self.makeContainer()
+        playerRepo = FavouritePlayerRepository(context: container.mainContext)
     }
 
     private static func makeContainer(afterCacheReset: Bool = false) -> ModelContainer {
         let userDataConfig = ModelConfiguration(
             "UserData",
-            schema: Schema([Deck.self, DeckCard.self, Match.self]),
+            schema: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self]),
             cloudKitDatabase: .automatic
         )
         let cardCacheConfig = ModelConfiguration(
@@ -28,7 +30,7 @@ struct JustTCGApp: App {
         )
         do {
             return try ModelContainer(
-                for: Schema([Deck.self, DeckCard.self, Match.self, CachedCard.self]),
+                for: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, CachedCard.self]),
                 configurations: [userDataConfig, cardCacheConfig]
             )
         } catch {
@@ -54,6 +56,7 @@ struct JustTCGApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(playerRepo)
         }
         .modelContainer(container)
     }

@@ -95,6 +95,8 @@
 		G1H2I3J4K5L6M7N8O9P0Q1R2 /* ActivityHeatmapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = H1I2J3K4L5M6N7O8P9Q0R1S2 /* ActivityHeatmapEngine.swift */; };
 		I1J2K3L4M5N6O7P8Q9R0S1T2 /* ActivityHeatmapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = J1K2L3M4N5O6P7Q8R9S0T1U2 /* ActivityHeatmapWidget.swift */; };
 		K1L2M3N4O5P6Q7R8S9T0U1V2 /* ActivityHeatmapEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */; };
+		Q1R2S3T4U5V6W7X8Y9Z0A1B2 /* FavouritePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = O1P2Q3R4S5T6U7V8W9X0Y1Z2 /* FavouritePlayer.swift */; };
+		R1S2T3U4V5W6X7Y8Z9A0B1C2 /* FavouritePlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = P1Q2R3S4T5U6V7W8X9Y0Z1A2 /* FavouritePlayerRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,8 @@
 		H1I2J3K4L5M6N7O8P9Q0R1S2 /* ActivityHeatmapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapEngine.swift; sourceTree = "<group>"; };
 		J1K2L3M4N5O6P7Q8R9S0T1U2 /* ActivityHeatmapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapWidget.swift; sourceTree = "<group>"; };
 		L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapEngineTests.swift; sourceTree = "<group>"; };
+		O1P2Q3R4S5T6U7V8W9X0Y1Z2 /* FavouritePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlayer.swift; sourceTree = "<group>"; };
+		P1Q2R3S4T5U6V7W8X9Y0Z1A2 /* FavouritePlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePlayerRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -418,9 +422,27 @@
 				41A07D979DF2128C6E93492E /* Decks */,
 				A038B5A618DD44788174BF52 /* Settings */,
 				38775128112E49559B6140F7 /* Home */,
+				M1N2O3P4Q5R6S7T8U9V0W1X2 /* Players */,
 				59952C84DDBF5B8750DE20B5 /* Tournaments */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		M1N2O3P4Q5R6S7T8U9V0W1X2 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				P1Q2R3S4T5U6V7W8X9Y0Z1A2 /* FavouritePlayerRepository.swift */,
+				N1O2P3Q4R5S6T7U8V9W0X1Y2 /* Models */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		N1O2P3Q4R5S6T7U8V9W0X1Y2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				O1P2Q3R4S5T6U7V8W9X0Y1Z2 /* FavouritePlayer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E24509116A64457EA32E6387 /* Analytics */ = {
@@ -601,6 +623,8 @@
 				C7E7C923598B409BA423756A /* DeckImportLookup.swift in Sources */,
 				4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */,
 				D9407C2AB518110FD5AD7D77 /* JustTCGApp.swift in Sources */,
+				Q1R2S3T4U5V6W7X8Y9Z0A1B2 /* FavouritePlayer.swift in Sources */,
+				R1S2T3U4V5W6X7Y8Z9A0B1C2 /* FavouritePlayerRepository.swift in Sources */,
 				A48C3BDC4794CC52321EC163 /* LimitlessClientError.swift in Sources */,
 				BB7D33B52324692CB727B726 /* LimitlessHTMLParser.swift in Sources */,
 				DDA85F94ACDB0081769D2621 /* LimitlessModels.swift in Sources */,
