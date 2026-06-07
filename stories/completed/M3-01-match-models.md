@@ -1,6 +1,6 @@
 # M3-01 — Match SwiftData Model & Enums
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M3 — Match Tracker  
 **Dependencies:** M2-01
 
@@ -9,17 +9,17 @@ As a developer, I need a `Match` SwiftData model with all supporting enums so th
 
 ## Acceptance Criteria
 
-- [ ] `Match` `@Model` class in `Data/Models/Match.swift`:
+- [x] `Match` `@Model` class in `Data/Models/Match.swift`:
   - `id: UUID`, `date: Date`, `opponentArchetype: String`, `result: MatchResult`, `format: MatchFormat`, `eventType: EventType`, `notes: String`, `deck: Deck?`
-- [ ] `MatchResult` enum: `.win`, `.loss`, `.tie` — `String` raw value, `Codable`
-- [ ] `MatchFormat` enum: `.bo1`, `.bo3` — `String` raw value, `Codable`
-- [ ] `EventType` enum: `.casual`, `.leagueChallenge`, `.regionals`, `.internationalChampionship`, `.worldChampionship` — `String` raw value, `Codable`
-- [ ] `Match` registered in the CloudKit-backed `ModelConfiguration`
-- [ ] `MatchRepository` in `Data/Repositories/MatchRepository.swift`:
+- [x] `MatchResult` enum: `.win`, `.loss`, `.tie` — `String` raw value, `Codable`
+- [x] `MatchFormat` enum: `.bo1`, `.bo3` — `String` raw value, `Codable`
+- [x] `EventType` enum: `.casual`, `.leagueChallenge`, `.regionals`, `.internationalChampionship`, `.worldChampionship` — `String` raw value, `Codable`
+- [x] `Match` registered in the CloudKit-backed `ModelConfiguration`
+- [x] `MatchRepository` in `Data/Repositories/MatchRepository.swift`:
   - `func logMatch(deck: Deck, archetype: String, result: MatchResult, format: MatchFormat, eventType: EventType, notes: String, date: Date) -> Match`
   - `func deleteMatch(_ match: Match)`
   - `func updateMatch(_ match: Match, notes: String)`
-- [ ] Wire the `matches` relationship stub back into `Deck` (declared in M2-01)
+- [x] Wire the `matches` relationship stub back into `Deck` (declared in M2-01)
 
 ## Technical Notes
 

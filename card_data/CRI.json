@@ -1,0 +1,4701 @@
+{
+  "set": {
+    "id": "CRI",
+    "apiId": "me4",
+    "name": "Chaos Rising",
+    "releaseDate": "2026/05/22",
+    "total": 122,
+    "printedTotal": 86,
+    "series": "Mega Evolution",
+    "symbolURL": "https://images.scrydex.com/pokemon/me4-symbol/symbol",
+    "logoURL": "https://images.scrydex.com/pokemon/me4-logo/logo"
+  },
+  "cards": [
+    {
+      "id": "me4-77",
+      "name": "Emma",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "77",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-77/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-77/large",
+      "rulesText": [
+        "Your opponent reveals their hand, and you draw a card for each Pokémon you find there."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Akira Komayama",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-92",
+      "name": "Claydol",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "92",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-92/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-92/large",
+      "rulesText": [
+        "Devolution Ray · 50\nIf your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand."
+      ],
+      "attacks": [
+        {
+          "name": "Devolution Ray",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "50",
+          "text": "If your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "matazo",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-91",
+      "name": "Xerneas",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "91",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-91/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-91/large",
+      "rulesText": [
+        "Geo Storm · 30×\nThis attack does 30 damage for each Psychic Energy attached to all of your Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Geo Storm",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "30×",
+          "text": "This attack does 30 damage for each Psychic Energy attached to all of your Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "YASHIRO Nanaco",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-90",
+      "name": "Ampharos",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "90",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-90/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-90/large",
+      "rulesText": [
+        "[Ability] Synchro Pulse\nIf you have the same number of cards in your hand as your opponent, attacks used by this Pokémon do 80 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+        "Flashing Bolt · 140\nDuring your next turn, this Pokémon can't use Flashing Bolt."
+      ],
+      "attacks": [
+        {
+          "name": "Flashing Bolt",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "140",
+          "text": "During your next turn, this Pokémon can't use Flashing Bolt."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Synchro Pulse",
+          "text": "If you have the same number of cards in your hand as your opponent, attacks used by this Pokémon do 80 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "saino misaki",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-89",
+      "name": "Frogadier",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "89",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-89/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-89/large",
+      "rulesText": [
+        "Summoning Jutsu\nSearch your deck for up to 3 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Aqua Edge · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Summoning Jutsu",
+          "cost": [
+            "Water"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 3 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Aqua Edge",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Susumu Maeya",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-88",
+      "name": "Froakie",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "88",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-88/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-88/large",
+      "rulesText": [
+        "Collect\nDraw a card.",
+        "Water Gun · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Collect",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Draw a card."
+        },
+        {
+          "name": "Water Gun",
+          "cost": [
+            "Water"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Susumu Maeya",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-87",
+      "name": "Chespin",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "87",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-87/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-87/large",
+      "rulesText": [
+        "Beat · 10",
+        "Spike Sting · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Beat",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Spike Sting",
+          "cost": [
+            "Grass",
+            "Grass"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Atsushi Furusawa",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-86",
+      "name": "Nitro Fire Energy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "86",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-86/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-86/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Fire Energy.\n \nIf this card is discarded by an effect of an attack used by the Fire Pokémon this card is attached to, put this card into your hand after attack damage and effects."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-85",
+      "name": "Magnetic Metal Energy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "85",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-85/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-85/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Metal Energy.\n\nThe Metal Pokémon this card is attached to has no Retreat Cost."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-84",
+      "name": "Bubbly Water Energy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "84",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-84/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-84/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Water Energy.\n\nThe Water Pokémon this card is attached to recovers from all Special Conditions and can't be affected by any Special Conditions."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-83",
+      "name": "Transformation Tome",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "83",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-83/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-83/large",
+      "rulesText": [
+        "You must play 2 Transformation Tome cards at once. (This effect works one time for 2 cards.)\n \nChoose a Basic Pokémon in your discard pile and switch it with 1 of your Basic Pokémon in play. Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Toyste Beach",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-82",
+      "name": "Special Red Card",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "82",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-82/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-82/large",
+      "rulesText": [
+        "You can use this card only if your opponent has 3 or fewer Prize cards remaining.\n\nYour opponent shuffles their hand and puts it on the bottom of their deck. If they put any cards on the bottom of their deck in this way, they draw 3 cards."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-81",
+      "name": "Roxie's Performance",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "81",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-81/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-81/large",
+      "rulesText": [
+        "During your opponent's next turn, their Poisoned Pokémon can't retreat. (This includes newly Poisoned Pokémon.)"
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Nobusawa/Mochipuyo",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-80",
+      "name": "Prism Tower",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "80",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-80/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-80/large",
+      "rulesText": [
+        "Once during each player's turn, that player may discard 2 cards from their hand in order to draw a card."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-79",
+      "name": "Philippe",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "79",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-79/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-79/large",
+      "rulesText": [
+        "Attach up to 2 Basic Metal Energy cards from your discard pile to 1 of your Metal Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Souichirou Gunjima",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-78",
+      "name": "Great Haul Net",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "78",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-78/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-78/large",
+      "rulesText": [
+        "Choose 1 or both:\n• Shuffle up to 3 Water Pokémon from your discard pile into your deck.\n• Shuffle up to 3 Basic Water Energy cards from your discard pile into your deck."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Toyste Beach",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-93",
+      "name": "Crobat",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "93",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-93/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-93/large",
+      "rulesText": [
+        "[Ability] Nighttime Maneuvers\nOnce during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
+        "Poison Sound Wave · 80\nYour opponent's Active Pokémon is now Confused and Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Sound Wave",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "80",
+          "text": "Your opponent's Active Pokémon is now Confused and Poisoned."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Nighttime Maneuvers",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Kazuhisa Uragami",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-76",
+      "name": "AZ's Tranquility",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "76",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-76/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-76/large",
+      "rulesText": [
+        "Switch your Active Pokémon with 1 of your Benched Pokémon. If you moved a Pokémon ex to your Bench in this way, heal 80 damage from that Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "GIDORA",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-75",
+      "name": "Ange Floette",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "75",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-75/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-75/large",
+      "rulesText": [
+        "You can put this card into play only if you discard a Prism Tower in play, and you can put this card into play during the same turn you play Prism Tower.\nEach Mega Floette ex in play (both yours and your opponent's) gets +150 HP."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-74",
+      "name": "Adversity Policy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "74",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-74/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-74/large",
+      "rulesText": [
+        "If the Pokémon this card is attached to has Weakness to your opponent's Active Pokémon's type, is in the Active Spot, and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), draw 3 cards."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Ayaka Yoshida",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-73",
+      "name": "Cinccino ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "73",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 240,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-73/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-73/large",
+      "rulesText": [
+        "[Ability] Smooth Coat\nIf any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+        "Energized Slap · 40×\nThis attack does 40 damage for each Energy attached to this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Energized Slap",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each Energy attached to this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Smooth Coat",
+          "text": "If any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-72",
+      "name": "Minccino",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "72",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-72/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-72/large",
+      "rulesText": [
+        "Take Down · 30\nThis Pokémon also does 10 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Take Down",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "This Pokémon also does 10 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "ryoma uratsuka",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-71",
+      "name": "Watchog",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "71",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-71/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-71/large",
+      "rulesText": [
+        "Snap Inspection\nFlip 3 coins. If any of them are heads, your opponent reveals their hand. For each heads, choose a card you find there and shuffle it into your opponent's deck.",
+        "Low Kick · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Snap Inspection",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Flip 3 coins. If any of them are heads, your opponent reveals their hand. For each heads, choose a card you find there and shuffle it into your opponent's deck."
+        },
+        {
+          "name": "Low Kick",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kouki Saitou",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-70",
+      "name": "Patrat",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "70",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-70/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-70/large",
+      "rulesText": [
+        "[Ability] Watchful Eye\nDamage counters on each Pokémon (both yours and your opponent's) can't be moved to other Pokémon.",
+        "Bite · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Bite",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Watchful Eye",
+          "text": "Damage counters on each Pokémon (both yours and your opponent's) can't be moved to other Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Souichirou Gunjima",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-69",
+      "name": "Tauros",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "69",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-69/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-69/large",
+      "rulesText": [
+        "Target Together\nChoose 1 of your opponent's Pokémon and flip a coin for each of your Pokémon in play that has \"Tauros\" in its name. This attack does 50 damage to the chosen Pokémon for each heads. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Target Together",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Choose 1 of your opponent's Pokémon and flip a coin for each of your Pokémon in play that has \"Tauros\" in its name. This attack does 50 damage to the chosen Pokémon for each heads. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Satoshi Ito",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-68",
+      "name": "Goodra",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "68",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-68/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-68/large",
+      "rulesText": [
+        "[Ability] Slimy Sliding\nWhen your opponent's Active Pokémon retreats, your opponent flips a coin. If tails, Energy for its Retreat Cost is not discarded, and they don't switch Pokémon. The effect of Slimy Sliding doesn't stack.",
+        "Dragon Pulse · 160\nDiscard the top card of your deck."
+      ],
+      "attacks": [
+        {
+          "name": "Dragon Pulse",
+          "cost": [
+            "Water",
+            "Psychic"
+          ],
+          "damage": "160",
+          "text": "Discard the top card of your deck."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Slimy Sliding",
+          "text": "When your opponent's Active Pokémon retreats, your opponent flips a coin. If tails, Energy for its Retreat Cost is not discarded, and they don't switch Pokémon. The effect of Slimy Sliding doesn't stack.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Tonji Matsuno",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-67",
+      "name": "Sliggoo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "67",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-67/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-67/large",
+      "rulesText": [
+        "Gentle Slap · 70"
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Slap",
+          "cost": [
+            "Water",
+            "Psychic"
+          ],
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Yoriyuki Ikegami",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-66",
+      "name": "Goomy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "66",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-66/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-66/large",
+      "rulesText": [
+        "Absorb · 30\nHeal 30 damage from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Absorb",
+          "cost": [
+            "Water",
+            "Psychic"
+          ],
+          "damage": "30",
+          "text": "Heal 30 damage from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Anesaki Dynamic",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-65",
+      "name": "Mega Dragalge ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "65",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-65/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-65/large",
+      "rulesText": [
+        "Corrosive Liquid\nDiscard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
+        "Pernicious Poison\nYour opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Corrosive Liquid",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon."
+        },
+        {
+          "name": "Pernicious Poison",
+          "cost": [
+            "Water",
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-64",
+      "name": "Cobalion ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "64",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 210,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-64/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-64/large",
+      "rulesText": [
+        "[Ability] Metal Road\nOnce during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon.",
+        "Power Tackle · 200\nDuring your next turn, this Pokémon can't use attacks.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Power Tackle",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "200",
+          "text": "During your next turn, this Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Metal Road",
+          "text": "Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-63",
+      "name": "Ferrothorn",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "63",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-63/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-63/large",
+      "rulesText": [
+        "[Ability] Startling Drop\nDuring your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck.",
+        "Special Whip · 70+\nIf this Pokémon has any Special Energy attached, this attack does 70 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Special Whip",
+          "cost": [
+            "Metal",
+            "Metal"
+          ],
+          "damage": "70+",
+          "text": "If this Pokémon has any Special Energy attached, this attack does 70 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Startling Drop",
+          "text": "During your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Haru Akasaka",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-108",
+      "name": "Energy Retrieval",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "108",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-108/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-108/large",
+      "rulesText": [
+        "Put up to 2 Basic Energy cards from your discard pile into your hand."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-122",
+      "name": "Mega Greninja ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "122",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-122/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-122/large",
+      "rulesText": [
+        "[Ability] Mortal Shuriken\nOnce during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+        "Ninja Spinner · 120+\nYou may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ninja Spinner",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "120+",
+          "text": "You may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mortal Shuriken",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "takuyoa",
+      "rarity": "Mega Hyper Rare"
+    },
+    {
+      "id": "me4-121",
+      "name": "Roxie's Performance",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "121",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-121/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-121/large",
+      "rulesText": [
+        "During your opponent's next turn, their Poisoned Pokémon can't retreat. (This includes newly Poisoned Pokémon.)"
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Tomowaka",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-120",
+      "name": "AZ's Tranquility",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "120",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-120/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-120/large",
+      "rulesText": [
+        "Switch your Active Pokémon with 1 of your Benched Pokémon. If you moved a Pokémon ex to your Bench in this way, heal 80 damage from that Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "OKACHEKE",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-119",
+      "name": "Cinccino ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "119",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 240,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-119/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-119/large",
+      "rulesText": [
+        "[Ability] Smooth Coat\nIf any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+        "Energized Slap · 40×\nThis attack does 40 damage for each Energy attached to this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Energized Slap",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each Energy attached to this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Smooth Coat",
+          "text": "If any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Keisin",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-118",
+      "name": "Mega Dragalge ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "118",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-118/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-118/large",
+      "rulesText": [
+        "Corrosive Liquid\nDiscard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
+        "Pernicious Poison\nYour opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Corrosive Liquid",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon."
+        },
+        {
+          "name": "Pernicious Poison",
+          "cost": [
+            "Water",
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kazumasa Yasukunio",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-117",
+      "name": "Mega Floette ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "117",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 250,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-117/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-117/large",
+      "rulesText": [
+        "Gentle Light\nHeal 30 damage from each Pokémon (both yours and your opponent's).",
+        "Eternity Bloom · 200\nSearch your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Light",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Heal 30 damage from each Pokémon (both yours and your opponent's)."
+        },
+        {
+          "name": "Eternity Bloom",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "200",
+          "text": "Search your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Teeziro",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-116",
+      "name": "Mega Greninja ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "116",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-116/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-116/large",
+      "rulesText": [
+        "[Ability] Mortal Shuriken\nOnce during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+        "Ninja Spinner · 120+\nYou may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ninja Spinner",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "120+",
+          "text": "You may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mortal Shuriken",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Susumu Maeya",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me4-115",
+      "name": "Tool Scrapper",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "115",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-115/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-115/large",
+      "rulesText": [
+        "Choose up to 2 Pokémon Tools attached to Pokémon (yours or your opponent's) and discard them."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-114",
+      "name": "Surfing Beach",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "114",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-114/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-114/large",
+      "rulesText": [
+        "Once during each player's turn, that player may switch their Active Water Pokémon with 1 of their Benched Water Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "AYUMI ODASHIMA",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-113",
+      "name": "Special Red Card",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "113",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-113/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-113/large",
+      "rulesText": [
+        "You can use this card only if your opponent has 3 or fewer Prize cards remaining.\n\nYour opponent shuffles their hand and puts it on the bottom of their deck. If they put any cards on the bottom of their deck in this way, they draw 3 cards."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-112",
+      "name": "Roxie's Performance",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "112",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-112/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-112/large",
+      "rulesText": [
+        "During your opponent's next turn, their Poisoned Pokémon can't retreat. (This includes newly Poisoned Pokémon.)"
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Nobusawa/Mochipuyo",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-111",
+      "name": "Prism Tower",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "111",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-111/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-111/large",
+      "rulesText": [
+        "Once during each player's turn, that player may discard 2 cards from their hand in order to draw a card."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-110",
+      "name": "Philippe",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "110",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-110/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-110/large",
+      "rulesText": [
+        "Attach up to 2 Basic Metal Energy cards from your discard pile to 1 of your Metal Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Souichirou Gunjima",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-109",
+      "name": "Jumbo Ice Cream",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "109",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-109/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-109/large",
+      "rulesText": [
+        "Heal 80 damage from your Active Pokémon that has 3 or more Energy attached."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "AYUMI ODASHIMA",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-62",
+      "name": "Ferroseed",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "62",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-62/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-62/large",
+      "rulesText": [
+        "Rolling Tackle · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Rolling Tackle",
+          "cost": [
+            "Metal",
+            "Metal"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "OKUBO",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-107",
+      "name": "Emma",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "107",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-107/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-107/large",
+      "rulesText": [
+        "Your opponent reveals their hand, and you draw a card for each Pokémon you find there."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Akira Komayama",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-106",
+      "name": "AZ's Tranquility",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "106",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-106/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-106/large",
+      "rulesText": [
+        "Switch your Active Pokémon with 1 of your Benched Pokémon. If you moved a Pokémon ex to your Bench in this way, heal 80 damage from that Pokémon."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "GIDORA",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-105",
+      "name": "Cinccino ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "105",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 240,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-105/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-105/large",
+      "rulesText": [
+        "[Ability] Smooth Coat\nIf any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+        "Energized Slap · 40×\nThis attack does 40 damage for each Energy attached to this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Energized Slap",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each Energy attached to this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Smooth Coat",
+          "text": "If any damage is done to this Pokémon by attacks, flip a coin. If heads, prevent that damage.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-104",
+      "name": "Mega Dragalge ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "104",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-104/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-104/large",
+      "rulesText": [
+        "Corrosive Liquid\nDiscard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
+        "Pernicious Poison\nYour opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Corrosive Liquid",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon."
+        },
+        {
+          "name": "Pernicious Poison",
+          "cost": [
+            "Water",
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-103",
+      "name": "Cobalion ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "103",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 210,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-103/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-103/large",
+      "rulesText": [
+        "[Ability] Metal Road\nOnce during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon.",
+        "Power Tackle · 200\nDuring your next turn, this Pokémon can't use attacks.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Power Tackle",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "200",
+          "text": "During your next turn, this Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Metal Road",
+          "text": "Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-102",
+      "name": "Gourgeist ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "102",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 270,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-102/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-102/large",
+      "rulesText": [
+        "Horrifying Rondo · 30+\nThis attack does 50 more damage for each of your Benched Pokémon that has any damage counters on it.",
+        "Ghostly Touch · 140\nDiscard a random card from your opponent's hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Horrifying Rondo",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "30+",
+          "text": "This attack does 50 more damage for each of your Benched Pokémon that has any damage counters on it."
+        },
+        {
+          "name": "Ghostly Touch",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "140",
+          "text": "Discard a random card from your opponent's hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-101",
+      "name": "Mega Floette ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "101",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 250,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-101/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-101/large",
+      "rulesText": [
+        "Gentle Light\nHeal 30 damage from each Pokémon (both yours and your opponent's).",
+        "Eternity Bloom · 200\nSearch your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Light",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Heal 30 damage from each Pokémon (both yours and your opponent's)."
+        },
+        {
+          "name": "Eternity Bloom",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "200",
+          "text": "Search your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "aky CG Works",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-100",
+      "name": "Mega Greninja ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "100",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-100/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-100/large",
+      "rulesText": [
+        "[Ability] Mortal Shuriken\nOnce during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+        "Ninja Spinner · 120+\nYou may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ninja Spinner",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "120+",
+          "text": "You may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mortal Shuriken",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "takuyoa",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-99",
+      "name": "Mega Pyroar ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "99",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 340,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-99/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-99/large",
+      "rulesText": [
+        "Ferocious Bellow · 80\nDuring your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance).",
+        "Fiery Big Bang · 290-\nThis attack does 10 less damage for each damage counter on this Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ferocious Bellow",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "During your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance)."
+        },
+        {
+          "name": "Fiery Big Bang",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "290-",
+          "text": "This attack does 10 less damage for each damage counter on this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Keisuke Azuma",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-98",
+      "name": "Beedrill ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "98",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-98/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-98/large",
+      "rulesText": [
+        "Rumbling Bees · 110×\nThis attack does 110 damage for each of your Beedrill and Beedrill ex in play.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Rumbling Bees",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "110×",
+          "text": "This attack does 110 damage for each of your Beedrill and Beedrill ex in play."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me4-97",
+      "name": "Watchog",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "97",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-97/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-97/large",
+      "rulesText": [
+        "Snap Inspection\nFlip 3 coins. If any of them are heads, your opponent reveals their hand. For each heads, choose a card you find there and shuffle it into your opponent's deck.",
+        "Low Kick · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Snap Inspection",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Flip 3 coins. If any of them are heads, your opponent reveals their hand. For each heads, choose a card you find there and shuffle it into your opponent's deck."
+        },
+        {
+          "name": "Low Kick",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-96",
+      "name": "Tauros",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "96",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-96/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-96/large",
+      "rulesText": [
+        "Target Together\nChoose 1 of your opponent's Pokémon and flip a coin for each of your Pokémon in play that has \"Tauros\" in its name. This attack does 50 damage to the chosen Pokémon for each heads. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Target Together",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Choose 1 of your opponent's Pokémon and flip a coin for each of your Pokémon in play that has \"Tauros\" in its name. This attack does 50 damage to the chosen Pokémon for each heads. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Tsuyoshi Nagano",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-95",
+      "name": "Sliggoo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "95",
+      "supertype": "Pokémon",
+      "types": [
+        "Dragon"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-95/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-95/large",
+      "rulesText": [
+        "Gentle Slap · 70"
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Slap",
+          "cost": [
+            "Water",
+            "Psychic"
+          ],
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "aspara",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-94",
+      "name": "Metang",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "94",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-94/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-94/large",
+      "rulesText": [
+        "Metal Claw · 30",
+        "Guard Press · 70\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+      ],
+      "attacks": [
+        {
+          "name": "Metal Claw",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Guard Press",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "70",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kurata So",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me4-16",
+      "name": "Remoraid",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "16",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-16/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-16/large",
+      "rulesText": [
+        "Sharp Fin · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Sharp Fin",
+          "cost": [
+            "Water"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Mori You",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-31",
+      "name": "Deoxys",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "31",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-31/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-31/large",
+      "rulesText": [
+        "Genome Charge\nSearch your deck for up to 2 Basic Psychic Energy cards and attach them to this Pokémon. Then, shuffle your deck.",
+        "Psychic · 80+\nThis attack does 20 more damage for each Energy attached to your opponent's Active Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Genome Charge",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Psychic Energy cards and attach them to this Pokémon. Then, shuffle your deck."
+        },
+        {
+          "name": "Psychic",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "80+",
+          "text": "This attack does 20 more damage for each Energy attached to your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Shiburingaru",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-30",
+      "name": "Emolga",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "30",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-30/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-30/large",
+      "rulesText": [
+        "Minor Errand-Running\nSearch your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Sky Return · 30\nPut this Pokémon and all attached cards into your hand."
+      ],
+      "attacks": [
+        {
+          "name": "Minor Errand-Running",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Sky Return",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "30",
+          "text": "Put this Pokémon and all attached cards into your hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kazumasa Yasukuni",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-29",
+      "name": "Ampharos",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "29",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-29/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-29/large",
+      "rulesText": [
+        "[Ability] Synchro Pulse\nIf you have the same number of cards in your hand as your opponent, attacks used by this Pokémon do 80 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+        "Flashing Bolt · 140\nDuring your next turn, this Pokémon can't use Flashing Bolt."
+      ],
+      "attacks": [
+        {
+          "name": "Flashing Bolt",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "140",
+          "text": "During your next turn, this Pokémon can't use Flashing Bolt."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Synchro Pulse",
+          "text": "If you have the same number of cards in your hand as your opponent, attacks used by this Pokémon do 80 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "CHORISO",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-28",
+      "name": "Flaaffy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "28",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-28/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-28/large",
+      "rulesText": [
+        "Disconnect · 40\nDuring your opponent's next turn, they can't play any Item cards from their hand."
+      ],
+      "attacks": [
+        {
+          "name": "Disconnect",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "40",
+          "text": "During your opponent's next turn, they can't play any Item cards from their hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "miki kudo",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-27",
+      "name": "Mareep",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "27",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-27/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-27/large",
+      "rulesText": [
+        "Thunder Wave · 20\nFlip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+      ],
+      "attacks": [
+        {
+          "name": "Thunder Wave",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "UKUMO viti",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-26",
+      "name": "Golisopod",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "26",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-26/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-26/large",
+      "rulesText": [
+        "Critical Slash · 30\nIf your opponent's Pokémon is Knocked Out by damage from this attack, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon.",
+        "Boundless Power · 150\nDuring your next turn, this Pokémon can't use attacks."
+      ],
+      "attacks": [
+        {
+          "name": "Critical Slash",
+          "cost": [
+            "Water"
+          ],
+          "damage": "30",
+          "text": "If your opponent's Pokémon is Knocked Out by damage from this attack, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+        },
+        {
+          "name": "Boundless Power",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "150",
+          "text": "During your next turn, this Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Takeshi Nakamura",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-25",
+      "name": "Wimpod",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "25",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-25/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-25/large",
+      "rulesText": [
+        "Gnaw · 10",
+        "Corkscrew Punch · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Gnaw",
+          "cost": [
+            "Water"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Corkscrew Punch",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "0313",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-24",
+      "name": "Avalugg",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "24",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-24/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-24/large",
+      "rulesText": [
+        "Iceberg Breaker · 60×\nDiscard the top 6 cards of your deck, and this attack does 60 damage for each Basic Water Energy card you discarded in this way.",
+        "Frost Stamp · 160"
+      ],
+      "attacks": [
+        {
+          "name": "Iceberg Breaker",
+          "cost": [
+            "Water"
+          ],
+          "damage": "60×",
+          "text": "Discard the top 6 cards of your deck, and this attack does 60 damage for each Basic Water Energy card you discarded in this way."
+        },
+        {
+          "name": "Frost Stamp",
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Tomoki Sone",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-23",
+      "name": "Bergmite",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "23",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-23/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-23/large",
+      "rulesText": [
+        "Chilly · 10",
+        "Frost Breath · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Chilly",
+          "cost": [
+            "Water"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Frost Breath",
+          "cost": [
+            "Water",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Anesaki Dynamic",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-22",
+      "name": "Mega Greninja ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "22",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-22/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-22/large",
+      "rulesText": [
+        "[Ability] Mortal Shuriken\nOnce during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+        "Ninja Spinner · 120+\nYou may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ninja Spinner",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "120+",
+          "text": "You may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Mortal Shuriken",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "takuyoa",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-21",
+      "name": "Frogadier",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "21",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-21/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-21/large",
+      "rulesText": [
+        "Summoning Jutsu\nSearch your deck for up to 3 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Aqua Edge · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Summoning Jutsu",
+          "cost": [
+            "Water"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 3 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Aqua Edge",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Nelnal",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-20",
+      "name": "Froakie",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "20",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-20/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-20/large",
+      "rulesText": [
+        "Collect\nDraw a card.",
+        "Water Gun · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Collect",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Draw a card."
+        },
+        {
+          "name": "Water Gun",
+          "cost": [
+            "Water"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kariya",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-19",
+      "name": "Keldeo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "19",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-19/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-19/large",
+      "rulesText": [
+        "Shoot Through · 20\nThis attack also does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Reflect Energy · 70\nMove an Energy from this Pokémon to 1 of your Benched Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Shoot Through",
+          "cost": [
+            "Water"
+          ],
+          "damage": "20",
+          "text": "This attack also does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Reflect Energy",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "70",
+          "text": "Move an Energy from this Pokémon to 1 of your Benched Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Mitsuhiro Arita",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-18",
+      "name": "Delibird",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "18",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-18/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-18/large",
+      "rulesText": [
+        "Pleasing Present\nEach player may attach up to 3 Basic Energy cards from their hand to their Pokémon in any way they like. Your opponent does this first.",
+        "Flap · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Pleasing Present",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Each player may attach up to 3 Basic Energy cards from their hand to their Pokémon in any way they like. Your opponent does this first."
+        },
+        {
+          "name": "Flap",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Saboteri",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-17",
+      "name": "Octillery",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "17",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-17/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-17/large",
+      "rulesText": [
+        "Jet of Ink · 30\nDuring your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips 2 coins. If either of them is tails, that attack doesn't happen.",
+        "Tantrum · 120\nThis Pokémon is now Confused."
+      ],
+      "attacks": [
+        {
+          "name": "Jet of Ink",
+          "cost": [
+            "Water"
+          ],
+          "damage": "30",
+          "text": "During your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips 2 coins. If either of them is tails, that attack doesn't happen."
+        },
+        {
+          "name": "Tantrum",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "120",
+          "text": "This Pokémon is now Confused."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "matazo",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-32",
+      "name": "Deoxys",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "32",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-32/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-32/large",
+      "rulesText": [
+        "Psyspear · 120\nIf this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack also does 120 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Psyspear",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "120",
+          "text": "If this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack also does 120 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "nagimiso",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-15",
+      "name": "Mega Pyroar ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "15",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 340,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-15/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-15/large",
+      "rulesText": [
+        "Ferocious Bellow · 80\nDuring your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance).",
+        "Fiery Big Bang · 290-\nThis attack does 10 less damage for each damage counter on this Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Ferocious Bellow",
+          "cost": [
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "During your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance)."
+        },
+        {
+          "name": "Fiery Big Bang",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "290-",
+          "text": "This attack does 10 less damage for each damage counter on this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Keisuke Azuma",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-14",
+      "name": "Litleo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "14",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-14/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-14/large",
+      "rulesText": [
+        "Tackle · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Mina Nakai",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-13",
+      "name": "Delphox",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "13",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-13/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-13/large",
+      "rulesText": [
+        "[Ability] Flaring Magic\nOnce during your turn, you may discard a Basic Fire Energy card from your hand in order to use this Ability. Draw cards until you have 7 cards in your hand.",
+        "Energized Storm · 30×\nThis attack does 30 damage for each Energy attached to all Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Energized Storm",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "30×",
+          "text": "This attack does 30 damage for each Energy attached to all Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Flaring Magic",
+          "text": "Once during your turn, you may discard a Basic Fire Energy card from your hand in order to use this Ability. Draw cards until you have 7 cards in your hand.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Gemi",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-12",
+      "name": "Braixen",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "12",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-12/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-12/large",
+      "rulesText": [
+        "Flamethrower · 80\nDiscard an Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Flamethrower",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "80",
+          "text": "Discard an Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Taiga Kasai",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-11",
+      "name": "Fennekin",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "11",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-11/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-11/large",
+      "rulesText": [
+        "Call for Family\nSearch your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+        "Steady Firebreathing · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Call for Family",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck."
+        },
+        {
+          "name": "Steady Firebreathing",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "saino misaki",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-10",
+      "name": "Ho-Oh",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "10",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-10/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-10/large",
+      "rulesText": [
+        "Flames of Revival\nPut up to 3 Basic Pokémon from your discard pile onto your Bench.",
+        "Bright Wing · 130\nDiscard a Fire Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Flames of Revival",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Put up to 3 Basic Pokémon from your discard pile onto your Bench."
+        },
+        {
+          "name": "Bright Wing",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Fire"
+          ],
+          "damage": "130",
+          "text": "Discard a Fire Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Takumi Wada",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-9",
+      "name": "Ninetales",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "9",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-9/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-9/large",
+      "rulesText": [
+        "Nine-Tailed Transfer\nMove all damage counters from 1 of your Benched Pokémon to your opponent's Active Pokémon.",
+        "Will-O-Wisp · 70"
+      ],
+      "attacks": [
+        {
+          "name": "Nine-Tailed Transfer",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Move all damage counters from 1 of your Benched Pokémon to your opponent's Active Pokémon."
+        },
+        {
+          "name": "Will-O-Wisp",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Ryuta Fuse",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-8",
+      "name": "Vulpix",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "8",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-8/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-8/large",
+      "rulesText": [
+        "Singe\nYour opponent's Active Pokémon is now Burned."
+      ],
+      "attacks": [
+        {
+          "name": "Singe",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Burned."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Yoshimoto Yoshimon",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-7",
+      "name": "Chesnaught",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "7",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 180,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-7/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-7/large",
+      "rulesText": [
+        "[Ability] Needly Armor\nIf this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 3 damage counters on the Attacking Pokémon for each Grass Energy attached to this Pokémon.",
+        "Impound · 160\nDuring your opponent's next turn, the Defending Pokémon can't retreat."
+      ],
+      "attacks": [
+        {
+          "name": "Impound",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "During your opponent's next turn, the Defending Pokémon can't retreat."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Needly Armor",
+          "text": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 3 damage counters on the Attacking Pokémon for each Grass Energy attached to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Uta",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-6",
+      "name": "Quilladin",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "6",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-6/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-6/large",
+      "rulesText": [
+        "Leafy Charge · 20\nSearch your deck for a Basic Grass Energy card and attach it to this Pokémon. Then, shuffle your deck.",
+        "Vine Whip · 80"
+      ],
+      "attacks": [
+        {
+          "name": "Leafy Charge",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": "Search your deck for a Basic Grass Energy card and attach it to this Pokémon. Then, shuffle your deck."
+        },
+        {
+          "name": "Vine Whip",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Hideki Ishikawa",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-5",
+      "name": "Chespin",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "5",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-5/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-5/large",
+      "rulesText": [
+        "Beat · 10",
+        "Spike Sting · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Beat",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Spike Sting",
+          "cost": [
+            "Grass",
+            "Grass"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "HACCAN",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-4",
+      "name": "Carnivine",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "4",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-4/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-4/large",
+      "rulesText": [
+        "Chomp Whole · 80+\nIf your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Chomp Whole",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "80+",
+          "text": "If your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Heisuke Kitazawa",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-3",
+      "name": "Beedrill ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "3",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-3/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-3/large",
+      "rulesText": [
+        "Rumbling Bees · 110×\nThis attack does 110 damage for each of your Beedrill and Beedrill ex in play.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Rumbling Bees",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "110×",
+          "text": "This attack does 110 damage for each of your Beedrill and Beedrill ex in play."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "toriyufu",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-2",
+      "name": "Kakuna",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "2",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-2/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-2/large",
+      "rulesText": [
+        "[Ability] Exoskeleton\nThis Pokémon takes 20 less damage from attacks (after applying Weakness and Resistance).",
+        "Hang Down · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Hang Down",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Exoskeleton",
+          "text": "This Pokémon takes 20 less damage from attacks (after applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Mugi Hamada",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-47",
+      "name": "Claydol",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "47",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-47/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-47/large",
+      "rulesText": [
+        "Devolution Ray · 50\nIf your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand."
+      ],
+      "attacks": [
+        {
+          "name": "Devolution Ray",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "50",
+          "text": "If your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Oswaldo KATO",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-61",
+      "name": "Metagross",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "61",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 180,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-61/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-61/large",
+      "rulesText": [
+        "Bounce Back · 60\nSwitch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
+        "Metallic Hammer · 150+\nYou may discard 3 Metal Energy from this Pokémon and have this attack do 150 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Bounce Back",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "60",
+          "text": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)"
+        },
+        {
+          "name": "Metallic Hammer",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "150+",
+          "text": "You may discard 3 Metal Energy from this Pokémon and have this attack do 150 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Bun Toujo",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-60",
+      "name": "Metang",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "60",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-60/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-60/large",
+      "rulesText": [
+        "Metal Claw · 30",
+        "Guard Press · 70\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+      ],
+      "attacks": [
+        {
+          "name": "Metal Claw",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Guard Press",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "70",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Kazumasa Yasukuni",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-59",
+      "name": "Beldum",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "59",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-59/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-59/large",
+      "rulesText": [
+        "Headbutt · 10",
+        "Beam · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Headbutt",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Beam",
+          "cost": [
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "toi8",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-58",
+      "name": "Skrelp",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "58",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-58/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-58/large",
+      "rulesText": [
+        "Hook · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Hook",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Shimaris Yukichi",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-57",
+      "name": "Garbodor",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "57",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-57/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-57/large",
+      "rulesText": [
+        "[Ability] Gloomy Garbage\nAttacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage (before applying Weakness and Resistance).",
+        "Sludge Bomb · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Sludge Bomb",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Gloomy Garbage",
+          "text": "Attacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage (before applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "HYOGONOSUKE",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-56",
+      "name": "Trubbish",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "56",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-56/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-56/large",
+      "rulesText": [
+        "Acid Spray · 10\nFlip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Acid Spray",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10",
+          "text": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Souichirou Gunjima",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-55",
+      "name": "Krookodile ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "55",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-55/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-55/large",
+      "rulesText": [
+        "Corner · 80\nDuring your opponent's next turn, the Defending Pokémon can't retreat.",
+        "Strong Bite · 140+\nIf this Pokémon has a Pokémon Tool attached, this attack does 140 more damage.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Corner",
+          "cost": [
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "During your opponent's next turn, the Defending Pokémon can't retreat."
+        },
+        {
+          "name": "Strong Bite",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "140+",
+          "text": "If this Pokémon has a Pokémon Tool attached, this attack does 140 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-54",
+      "name": "Skuntank",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "54",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-54/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-54/large",
+      "rulesText": [
+        "Rear Kick · 40",
+        "Smash Turn · 100\nSwitch this Pokémon with 1 of your Benched Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Rear Kick",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "40",
+          "text": ""
+        },
+        {
+          "name": "Smash Turn",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": "Switch this Pokémon with 1 of your Benched Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Yuriko Akase",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-53",
+      "name": "Stunky",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "53",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-53/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-53/large",
+      "rulesText": [
+        "Scratch · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Scratch",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Nobuhiro Imagawa",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-52",
+      "name": "Qwilfish",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "52",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-52/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-52/large",
+      "rulesText": [
+        "[Ability] Poison Point\nIf this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), the Attacking Pokémon is now Poisoned.",
+        "Venoshock · 30+\nIf your opponent's Active Pokémon is Poisoned, this attack does 50 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Venoshock",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30+",
+          "text": "If your opponent's Active Pokémon is Poisoned, this attack does 50 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Poison Point",
+          "text": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), the Attacking Pokémon is now Poisoned.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "nisimono",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-51",
+      "name": "Crobat",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "51",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-51/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-51/large",
+      "rulesText": [
+        "[Ability] Nighttime Maneuvers\nOnce during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
+        "Poison Sound Wave · 80\nYour opponent's Active Pokémon is now Confused and Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Sound Wave",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "80",
+          "text": "Your opponent's Active Pokémon is now Confused and Poisoned."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Nighttime Maneuvers",
+          "text": "Once during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "IKEDA Saki",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-50",
+      "name": "Golbat",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "50",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-50/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-50/large",
+      "rulesText": [
+        "Covert Flight · 30\nDuring your opponent's next turn, prevent all damage done to this Pokémon by attacks from Basic Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Covert Flight",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30",
+          "text": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Basic Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Mousho",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-49",
+      "name": "Zubat",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "49",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 40,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-49/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-49/large",
+      "rulesText": [
+        "Supersonic\nYour opponent's Active Pokémon is now Confused."
+      ],
+      "attacks": [
+        {
+          "name": "Supersonic",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Confused."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Mékayu",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-48",
+      "name": "Mega Gallade ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "48",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-48/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-48/large",
+      "rulesText": [
+        "Gale Slash · 50+\nIf this Pokémon has no damage counters on it, this attack does 150 more damage.",
+        "Marvelous Edge · 240",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gale Slash",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "50+",
+          "text": "If this Pokémon has no damage counters on it, this attack does 150 more damage."
+        },
+        {
+          "name": "Marvelous Edge",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "240",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-1",
+      "name": "Weedle",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "1",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-1/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-1/large",
+      "rulesText": [
+        "Surprise Attack · 30\nFlip a coin. If tails, this attack does nothing."
+      ],
+      "attacks": [
+        {
+          "name": "Surprise Attack",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "30",
+          "text": "Flip a coin. If tails, this attack does nothing."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "sowsow",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-46",
+      "name": "Baltoy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "46",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-46/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-46/large",
+      "rulesText": [
+        "Continuous Spin · 30×\nFlip a coin until you get tails. This attack does 30 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Continuous Spin",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "30×",
+          "text": "Flip a coin until you get tails. This attack does 30 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Tomomi Ozaki",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-45",
+      "name": "Donphan",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "45",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-45/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-45/large",
+      "rulesText": [
+        "No Reprieve · 20\nDuring your next turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+        "Smashing Headbutt · 180\nDiscard 2 Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "No Reprieve",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "20",
+          "text": "During your next turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance)."
+        },
+        {
+          "name": "Smashing Headbutt",
+          "cost": [
+            "Fighting",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "180",
+          "text": "Discard 2 Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Julie Hang",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-44",
+      "name": "Phanpy",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "44",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-44/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-44/large",
+      "rulesText": [
+        "Mud-Slap · 10",
+        "Rollout · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Mud-Slap",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Rollout",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Akino Fukuji",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-43",
+      "name": "Sudowoodo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "43",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-43/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-43/large",
+      "rulesText": [
+        "Trials and Trip-ulations\nSearch your deck for up to 2 Transformation Tome cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Rock Hurl · 30\nThis attack's damage isn't affected by Resistance."
+      ],
+      "attacks": [
+        {
+          "name": "Trials and Trip-ulations",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Transformation Tome cards, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Rock Hurl",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "30",
+          "text": "This attack's damage isn't affected by Resistance."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "GOTO minori",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-42",
+      "name": "Xerneas",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "42",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-42/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-42/large",
+      "rulesText": [
+        "Geo Storm · 30×\nThis attack does 30 damage for each Psychic Energy attached to all of your Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Geo Storm",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "30×",
+          "text": "This attack does 30 damage for each Psychic Energy attached to all of your Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "KEIICHIRO ITO",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-41",
+      "name": "Gourgeist ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "41",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 270,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-41/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-41/large",
+      "rulesText": [
+        "Horrifying Rondo · 30+\nThis attack does 50 more damage for each of your Benched Pokémon that has any damage counters on it.",
+        "Ghostly Touch · 140\nDiscard a random card from your opponent's hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Horrifying Rondo",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "30+",
+          "text": "This attack does 50 more damage for each of your Benched Pokémon that has any damage counters on it."
+        },
+        {
+          "name": "Ghostly Touch",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "140",
+          "text": "Discard a random card from your opponent's hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-40",
+      "name": "Pumpkaboo",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "40",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-40/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-40/large",
+      "rulesText": [
+        "Stampede · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Stampede",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Jerky",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-39",
+      "name": "Trevenant",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "39",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-39/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-39/large",
+      "rulesText": [
+        "Cursed Roots · 30\nDuring your opponent's next turn, Energy can't be attached from your opponent's hand to the Defending Pokémon.",
+        "Overwhelming Pain · 60+\nThis attack does 10 more damage for each damage counter on all of your opponent's Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Cursed Roots",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "30",
+          "text": "During your opponent's next turn, Energy can't be attached from your opponent's hand to the Defending Pokémon."
+        },
+        {
+          "name": "Overwhelming Pain",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "60+",
+          "text": "This attack does 10 more damage for each damage counter on all of your opponent's Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "Uninori",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me4-38",
+      "name": "Phantump",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "38",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-38/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-38/large",
+      "rulesText": [
+        "[Ability] Spiteful Evolution\nOnce during your turn, you may use this Ability. Choose a card in your hand that evolves from this Pokémon and put it onto this Pokémon to evolve it. If you do, place 2 damage counters on the Pokémon you evolved in this way. You can't use this Ability during your first turn.",
+        "Mumble · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Mumble",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Spiteful Evolution",
+          "text": "Once during your turn, you may use this Ability. Choose a card in your hand that evolves from this Pokémon and put it onto this Pokémon to evolve it. If you do, place 2 damage counters on the Pokémon you evolved in this way. You can't use this Ability during your first turn.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": "Taiga Kasai",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-37",
+      "name": "Meowstic",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "37",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-37/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-37/large",
+      "rulesText": [
+        "Tricky Steps · 80\nYou may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Tricky Steps",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "mingo",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-36",
+      "name": "Espurr",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "36",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-36/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-36/large",
+      "rulesText": [
+        "Buddy Attack · 10+\nIf you played Emma from your hand during this turn, this attack does 60 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Buddy Attack",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10+",
+          "text": "If you played Emma from your hand during this turn, this attack does 60 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "sowsow",
+      "rarity": "Common"
+    },
+    {
+      "id": "me4-35",
+      "name": "Mega Floette ex",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "35",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 250,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-35/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-35/large",
+      "rulesText": [
+        "Gentle Light\nHeal 30 damage from each Pokémon (both yours and your opponent's).",
+        "Eternity Bloom · 200\nSearch your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Light",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Heal 30 damage from each Pokémon (both yours and your opponent's)."
+        },
+        {
+          "name": "Eternity Bloom",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "200",
+          "text": "Search your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "aky CG Works",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me4-34",
+      "name": "Deoxys",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "34",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-34/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-34/large",
+      "rulesText": [
+        "Psyspeed · 30\nYou may draw cards until you have 5 cards in your hand."
+      ],
+      "attacks": [
+        {
+          "name": "Psyspeed",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "30",
+          "text": "You may draw cards until you have 5 cards in your hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "hncl",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me4-33",
+      "name": "Deoxys",
+      "setCode": "CRI",
+      "setName": "Chaos Rising",
+      "number": "33",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me4-33/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me4-33/large",
+      "rulesText": [
+        "Psy Protection · 80\nDuring your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability."
+      ],
+      "attacks": [
+        {
+          "name": "Psy Protection",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": "GOSSAN",
+      "rarity": "Uncommon"
+    }
+  ]
+}

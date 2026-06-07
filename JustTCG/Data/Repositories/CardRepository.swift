@@ -6,7 +6,7 @@ final class CardRepository {
     private let context: ModelContext
     private let client: LimitlessTCGClient
 
-    private static let lastRefreshKey = "card_cache_last_refreshed"
+    static let lastRefreshKey = "card_cache_last_refreshed"
     private static let staleInterval: TimeInterval = 7 * 24 * 60 * 60
 
     init(modelContext: ModelContext, client: LimitlessTCGClient = LimitlessTCGClient()) {

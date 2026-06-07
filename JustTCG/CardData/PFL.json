@@ -1,0 +1,5090 @@
+{
+  "set": {
+    "id": "PFL",
+    "apiId": "me2",
+    "name": "Phantasmal Flames",
+    "releaseDate": "2025/11/14",
+    "total": 130,
+    "printedTotal": 94,
+    "series": "Mega Evolution",
+    "symbolURL": "https://images.pokemontcg.io/me2/symbol.png",
+    "logoURL": "https://images.pokemontcg.io/me2/logo.png"
+  },
+  "cards": [
+    {
+      "id": "me2-1",
+      "name": "Oddish",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "1",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/1.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/1_hires.png",
+      "rulesText": [
+        "Seed Bomb · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Seed Bomb",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "MINAMINAMI Take",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-2",
+      "name": "Gloom",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "2",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/2.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/2_hires.png",
+      "rulesText": [
+        "Disperse Drool · 20\nThis attack also does 20 damage to each Benched Pokémon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Disperse Drool",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": "This attack also does 20 damage to each Benched Pokémon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Yoriyuki Ikegami",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-3",
+      "name": "Vileplume",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "3",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/3.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/3_hires.png",
+      "rulesText": [
+        "Pollen Bomb · 30\nYour opponent's Active Pokémon is now Asleep and Poisoned.",
+        "Lively Flower · 60+\nIf this Pokémon was healed during this turn, this attack does 120 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Pollen Bomb",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "30",
+          "text": "Your opponent's Active Pokémon is now Asleep and Poisoned."
+        },
+        {
+          "name": "Lively Flower",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "60+",
+          "text": "If this Pokémon was healed during this turn, this attack does 120 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shibuzoh.",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-4",
+      "name": "Mega Heracross ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "4",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 280,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/4.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/4_hires.png",
+      "rulesText": [
+        "Juggernaut Horn · 100+\nIf this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage.",
+        "Mountain Ramming · 170\nDiscard the top 2 cards of your opponent's deck.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Juggernaut Horn",
+          "cost": [
+            "Grass",
+            "Grass"
+          ],
+          "damage": "100+",
+          "text": "If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage."
+        },
+        {
+          "name": "Mountain Ramming",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Grass"
+          ],
+          "damage": "170",
+          "text": "Discard the top 2 cards of your opponent's deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-5",
+      "name": "Lotad",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "5",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/5.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/5_hires.png",
+      "rulesText": [
+        "Headbutt · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Headbutt",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Wintr Wandr",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-6",
+      "name": "Lombre",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "6",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/6.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/6_hires.png",
+      "rulesText": [
+        "Mega Drain · 30\nHeal 30 damage from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Mega Drain",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "Heal 30 damage from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shigenori Negishi",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-7",
+      "name": "Ludicolo",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "7",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/7.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/7_hires.png",
+      "rulesText": [
+        "[Ability] Excited Heal\nOnce during your turn, if you have any Grass Mega Evolution Pokémon ex in play, you may use this Ability. Heal 60 damage from 1 of your Pokémon.",
+        "Lunge Out · 120"
+      ],
+      "attacks": [
+        {
+          "name": "Lunge Out",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "120",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Heal",
+          "text": "Once during your turn, if you have any Grass Mega Evolution Pokémon ex in play, you may use this Ability. Heal 60 damage from 1 of your Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Anesaki Dynamic",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-8",
+      "name": "Genesect",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "8",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/8.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/8_hires.png",
+      "rulesText": [
+        "Bug's Cannon\nThis attack does 20 damage to 1 of your opponent's Pokémon for each Grass Energy attached to this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Speed Attack · 110"
+      ],
+      "attacks": [
+        {
+          "name": "Bug's Cannon",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "This attack does 20 damage to 1 of your opponent's Pokémon for each Grass Energy attached to this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Speed Attack",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "110",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Mitsuhiro Arita",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-9",
+      "name": "Nymble",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "9",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/9.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/9_hires.png",
+      "rulesText": [
+        "Flail Around · 10×\nFlip 3 coins. This attack does 10 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Flail Around",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "10×",
+          "text": "Flip 3 coins. This attack does 10 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Yuka Morii",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-10",
+      "name": "Lokix",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "10",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/10.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/10_hires.png",
+      "rulesText": [
+        "Low Kick · 30",
+        "Jumping Shot · 150\nShuffle this Pokémon and all attached cards into your deck."
+      ],
+      "attacks": [
+        {
+          "name": "Low Kick",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Jumping Shot",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "150",
+          "text": "Shuffle this Pokémon and all attached cards into your deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Taiga Kasai",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-11",
+      "name": "Charmander",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "11",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/11.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/11_hires.png",
+      "rulesText": [
+        "[Ability] Agile\nIf this Pokémon has no Energy attached, it has no Retreat Cost.",
+        "Live Coal · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Live Coal",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Agile",
+          "text": "If this Pokémon has no Energy attached, it has no Retreat Cost.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "HYOGONOSUKE",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-12",
+      "name": "Charmeleon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "12",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/12.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/12_hires.png",
+      "rulesText": [
+        "Steady Firebreathing · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Steady Firebreathing",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Uninori",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-13",
+      "name": "Mega Charizard X ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "13",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 360,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/13.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/13_hires.png",
+      "rulesText": [
+        "Inferno X · 90×\nDiscard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Inferno X",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "90×",
+          "text": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "takuyoa",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-14",
+      "name": "Moltres",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "14",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/14.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/14_hires.png",
+      "rulesText": [
+        "Fighting Wings · 20+\nIf your opponent's Active Pokémon is a Pokémon ex, this attack does 90 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Fighting Wings",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "20+",
+          "text": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 90 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Kazumasa Yasukuni",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-15",
+      "name": "Darumaka",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "15",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/15.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/15_hires.png",
+      "rulesText": [
+        "Blaze Ball · 10+\nThis attack does 20 more damage for each Fire Energy attached to this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Blaze Ball",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "10+",
+          "text": "This attack does 20 more damage for each Fire Energy attached to this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "NC Empire",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-16",
+      "name": "Darmanitan",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "16",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/16.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/16_hires.png",
+      "rulesText": [
+        "Blaze Ball · 40+\nThis attack does 40 more damage for each Fire Energy attached to this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Blaze Ball",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40+",
+          "text": "This attack does 40 more damage for each Fire Energy attached to this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Uta",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-17",
+      "name": "Reshiram",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "17",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/17.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/17_hires.png",
+      "rulesText": [
+        "Combustion · 30",
+        "Burning Flare · 240\nThis Pokémon also does 60 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Combustion",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Burning Flare",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Fire",
+            "Fire"
+          ],
+          "damage": "240",
+          "text": "This Pokémon also does 60 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "AKIRA EGAWA",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-18",
+      "name": "Oricorio ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "18",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 190,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/18.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/18_hires.png",
+      "rulesText": [
+        "[Ability] Excited Turbo\nAs often as you like during your turn, if you have any Fire Mega Evolution Pokémon ex in play, you may use this Ability. Attach a Basic Fire Energy card from your hand to 1 of your Benched Fire Pokémon.",
+        "Fire Wing · 110",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Fire Wing",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "110",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Turbo",
+          "text": "As often as you like during your turn, if you have any Fire Mega Evolution Pokémon ex in play, you may use this Ability. Attach a Basic Fire Energy card from your hand to 1 of your Benched Fire Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "akagi",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-19",
+      "name": "Charcadet",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "19",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/19.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/19_hires.png",
+      "rulesText": [
+        "Gather Strength\nSearch your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Chop · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Gather Strength",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Chop",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Tomokazu Komiya",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-20",
+      "name": "Ceruledge",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "20",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/20.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/20_hires.png",
+      "rulesText": [
+        "Infernal Slash · 220\nDiscard 4 Basic Fire Energy cards from your hand. If you can't discard 4 cards in this way, this attack does nothing."
+      ],
+      "attacks": [
+        {
+          "name": "Infernal Slash",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "220",
+          "text": "Discard 4 Basic Fire Energy cards from your hand. If you can't discard 4 cards in this way, this attack does nothing."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Gemi",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-21",
+      "name": "Seel",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "21",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/21.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/21_hires.png",
+      "rulesText": [
+        "Bubble Drain · 20\nHeal 20 damage from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Bubble Drain",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": "Heal 20 damage from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "svlt",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-22",
+      "name": "Dewgong",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "22",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/22.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/22_hires.png",
+      "rulesText": [
+        "[Ability] Thick Fat\nThis Pokémon takes 30 less damage from attacks from your opponent's Fire or Water Pokémon (after applying Weakness and Resistance).",
+        "Slam · 70×\nFlip 2 coins. This attack does 70 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Slam",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "70×",
+          "text": "Flip 2 coins. This attack does 70 damage for each heads."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Thick Fat",
+          "text": "This Pokémon takes 30 less damage from attacks from your opponent's Fire or Water Pokémon (after applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Taira Akitsu",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-23",
+      "name": "Swinub",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "23",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/23.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/23_hires.png",
+      "rulesText": [
+        "Stampede · 10",
+        "Icy Snow · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Stampede",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Icy Snow",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "imoniii",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-24",
+      "name": "Piloswine",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "24",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/24.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/24_hires.png",
+      "rulesText": [
+        "Rising Lunge · 30+\nFlip a coin. If heads, this attack does 30 more damage.",
+        "Frost Smash · 70"
+      ],
+      "attacks": [
+        {
+          "name": "Rising Lunge",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "30+",
+          "text": "Flip a coin. If heads, this attack does 30 more damage."
+        },
+        {
+          "name": "Frost Smash",
+          "cost": [
+            "Water",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shinya Komatsu",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-25",
+      "name": "Mamoswine",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "25",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 180,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/25.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/25_hires.png",
+      "rulesText": [
+        "Wreck · 120+\nIf a Stadium is in play, this attack does 120 more damage. Then, discard that Stadium.",
+        "Blizzard Edge · 200\nDiscard 2 Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Wreck",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "120+",
+          "text": "If a Stadium is in play, this attack does 120 more damage. Then, discard that Stadium."
+        },
+        {
+          "name": "Blizzard Edge",
+          "cost": [
+            "Water",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "200",
+          "text": "Discard 2 Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Takumi Wada",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-26",
+      "name": "Suicune",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "26",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/26.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/26_hires.png",
+      "rulesText": [
+        "Crystal Fall · 30+\nIf you have at least 4 Water Energy in play, this attack does 90 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Crystal Fall",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "30+",
+          "text": "If you have at least 4 Water Energy in play, this attack does 90 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Takeshi Nakamura",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-27",
+      "name": "Piplup",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "27",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/27.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/27_hires.png",
+      "rulesText": [
+        "Call for Support\nSearch your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Tackle · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Call for Support",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Hideki Ishikawa",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-28",
+      "name": "Prinplup",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "28",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/28.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/28_hires.png",
+      "rulesText": [
+        "Peck · 20",
+        "Targeted Dive\nThis attack does 70 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Peck",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        },
+        {
+          "name": "Targeted Dive",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "This attack does 70 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Atsuya Uki",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-29",
+      "name": "Rotom ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "29",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 190,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/29.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/29_hires.png",
+      "rulesText": [
+        "[Ability] Multi Adapter\nEach of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+        "Thunderbolt · 130\nDiscard all Energy from this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Thunderbolt",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "130",
+          "text": "Discard all Energy from this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Multi Adapter",
+          "text": "Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-30",
+      "name": "Yamper",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "30",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/30.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/30_hires.png",
+      "rulesText": [
+        "Play Rough · 20+\nFlip a coin. If heads, this attack does 20 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Play Rough",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "20+",
+          "text": "Flip a coin. If heads, this attack does 20 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Ayako Ozaki",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-31",
+      "name": "Boltund",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "31",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/31.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/31_hires.png",
+      "rulesText": [
+        "Electric Run · 70+\nFlip a coin. If heads, this attack does 70 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Electric Run",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "70+",
+          "text": "Flip a coin. If heads, this attack does 70 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Orca",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-32",
+      "name": "Pawmi",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "32",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/32.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/32_hires.png",
+      "rulesText": [
+        "Growl\nDuring your opponent's next turn, attacks used by the Defending Pokémon do 30 less damage (before applying Weakness and Resistance).",
+        "Tiny Charge · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Growl",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "",
+          "text": "During your opponent's next turn, attacks used by the Defending Pokémon do 30 less damage (before applying Weakness and Resistance)."
+        },
+        {
+          "name": "Tiny Charge",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shimaris Yukichi",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-33",
+      "name": "Pawmo",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "33",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/33.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/33_hires.png",
+      "rulesText": [
+        "Electric Punch · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Electric Punch",
+          "cost": [
+            "Lightning",
+            "Lightning"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Taiga Kayama",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-34",
+      "name": "Pawmot",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "34",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/34.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/34_hires.png",
+      "rulesText": [
+        "Voltaic Fist · 130\nYou may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed."
+      ],
+      "attacks": [
+        {
+          "name": "Voltaic Fist",
+          "cost": [
+            "Lightning",
+            "Lightning"
+          ],
+          "damage": "130",
+          "text": "You may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "satoma",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-35",
+      "name": "Misdreavus",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "35",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/35.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/35_hires.png",
+      "rulesText": [
+        "Petty Grudge · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Petty Grudge",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Mousho",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-36",
+      "name": "Mismagius ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "36",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/36.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/36_hires.png",
+      "rulesText": [
+        "[Ability] Swirling Prose\nAs long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused.",
+        "Hexa-Magic · 150\nYou may draw cards until you have 6 cards in your hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Hexa-Magic",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "150",
+          "text": "You may draw cards until you have 6 cards in your hand."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Swirling Prose",
+          "text": "As long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-37",
+      "name": "Snubbull",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "37",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/37.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/37_hires.png",
+      "rulesText": [
+        "Tackle · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Tackle",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Gapao",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-38",
+      "name": "Granbull",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "38",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/38.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/38_hires.png",
+      "rulesText": [
+        "Bite · 50",
+        "Finishing Blow · 90+\nIf your opponent's Active Pokémon already has any damage counters on it, this attack does 90 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Bite",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        },
+        {
+          "name": "Finishing Blow",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "90+",
+          "text": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 90 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Ryuta Fuse",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-39",
+      "name": "Cresselia",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "39",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/39.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/39_hires.png",
+      "rulesText": [
+        "Swelling Light\nSearch your deck for up to 2 Basic Psychic Energy cards and attach them to this Pokémon. Then, shuffle your deck.",
+        "Aurora Beam · 90"
+      ],
+      "attacks": [
+        {
+          "name": "Swelling Light",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Psychic Energy cards and attach them to this Pokémon. Then, shuffle your deck."
+        },
+        {
+          "name": "Aurora Beam",
+          "cost": [
+            "Psychic",
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "90",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Raita Kazama",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-40",
+      "name": "Meloetta",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "40",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/40.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/40_hires.png",
+      "rulesText": [
+        "Soothing Melody\nHeal 120 damage from 1 of your Benched Psychic Pokémon.",
+        "Magical Shot · 50"
+      ],
+      "attacks": [
+        {
+          "name": "Soothing Melody",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Heal 120 damage from 1 of your Benched Psychic Pokémon."
+        },
+        {
+          "name": "Magical Shot",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "MINAMINAMI Take",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-41",
+      "name": "Mega Diancie ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "41",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 270,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/41.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/41_hires.png",
+      "rulesText": [
+        "[Ability] Diamond Coat\nThis Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+        "Garland Ray · 120×\nDiscard up to 2 Energy cards from this Pokémon, and this attack does 120 damage for each card you discarded in this way.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Garland Ray",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "120×",
+          "text": "Discard up to 2 Energy cards from this Pokémon, and this attack does 120 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Diamond Coat",
+          "text": "This Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "aky CG Works",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-42",
+      "name": "Mimikyu",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "42",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/42.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/42_hires.png",
+      "rulesText": [
+        "Call for Family\nSearch your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck.",
+        "Scratch · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Call for Family",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
+        },
+        {
+          "name": "Scratch",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "miki kudo",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-43",
+      "name": "Milcery",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "43",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/43.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/43_hires.png",
+      "rulesText": [
+        "Draining Kiss · 10\nHeal 10 damage from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Draining Kiss",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10",
+          "text": "Heal 10 damage from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Taiga Kayama",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-44",
+      "name": "Alcremie",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "44",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/44.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/44_hires.png",
+      "rulesText": [
+        "Sweet Circle · 20×\nThis attack does 20 damage for each of your Pokémon in play."
+      ],
+      "attacks": [
+        {
+          "name": "Sweet Circle",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "20×",
+          "text": "This attack does 20 damage for each of your Pokémon in play."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Narumi Sato",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-45",
+      "name": "Zacian",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "45",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/45.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/45_hires.png",
+      "rulesText": [
+        "Limit Break · 50+\nIf your opponent has 3 or fewer Prize cards remaining, this attack does 90 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Limit Break",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "50+",
+          "text": "If your opponent has 3 or fewer Prize cards remaining, this attack does 90 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "kawayoo",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-46",
+      "name": "Bramblin",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "46",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/46.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/46_hires.png",
+      "rulesText": [
+        "Sneaky Placement\nPlace 1 damage counter on 1 of your opponent's Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Sneaky Placement",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Place 1 damage counter on 1 of your opponent's Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Takeshi Nakamura",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-47",
+      "name": "Brambleghast",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "47",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/47.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/47_hires.png",
+      "rulesText": [
+        "[Ability] Prison Panic\nOnce during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Make your opponent's Active Pokémon Confused.",
+        "Psychic Sphere · 80"
+      ],
+      "attacks": [
+        {
+          "name": "Psychic Sphere",
+          "cost": [
+            "Psychic",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Prison Panic",
+          "text": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Make your opponent's Active Pokémon Confused.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Tetsu Kayama",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-48",
+      "name": "Paldean Tauros",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "48",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/48.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/48_hires.png",
+      "rulesText": [
+        "Raging Charge · 40×\nThis attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it.",
+        "Double-Edge · 70\nThis Pokémon also does 20 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Raging Charge",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it."
+        },
+        {
+          "name": "Double-Edge",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "70",
+          "text": "This Pokémon also does 20 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Souichirou Gunjima",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-49",
+      "name": "Gligar",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "49",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/49.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/49_hires.png",
+      "rulesText": [
+        "Poison Jab · 10\nYour opponent's Active Pokémon is now Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Jab",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "10",
+          "text": "Your opponent's Active Pokémon is now Poisoned."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Kazumasa Yasukuni",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-50",
+      "name": "Gliscor",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "50",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/50.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/50_hires.png",
+      "rulesText": [
+        "Poison Ring · 50\nYour opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Ring",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "50",
+          "text": "Your opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Dsuke",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-51",
+      "name": "Trapinch",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "51",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/51.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/51_hires.png",
+      "rulesText": [
+        "Double Headbutt · 10×\nFlip 2 coins. This attack does 10 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Double Headbutt",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "10×",
+          "text": "Flip 2 coins. This attack does 10 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Uta",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-52",
+      "name": "Vibrava",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "52",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/52.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/52_hires.png",
+      "rulesText": [
+        "Super Vibration · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Super Vibration",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Miki Tanaka",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-53",
+      "name": "Flygon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "53",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/53.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/53_hires.png",
+      "rulesText": [
+        "[Ability] Sandy Flapping\nOnce during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon. Discard the top 2 cards of your opponent's deck.",
+        "Cutting Wind · 130"
+      ],
+      "attacks": [
+        {
+          "name": "Cutting Wind",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "130",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sandy Flapping",
+          "text": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon. Discard the top 2 cards of your opponent's deck.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Jerky",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-54",
+      "name": "Gastly",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "54",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/54.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/54_hires.png",
+      "rulesText": [
+        "Petty Grudge · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Petty Grudge",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Saboteri",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-55",
+      "name": "Haunter",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "55",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/55.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/55_hires.png",
+      "rulesText": [
+        "Spooky Shot · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Spooky Shot",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Rianti Hidayat",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-56",
+      "name": "Mega Gengar ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "56",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 350,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/56.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/56_hires.png",
+      "rulesText": [
+        "[Ability] Shadowy Concealment\nIf 1 of your Darkness Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, that player takes 1 fewer Prize card. The effect of Shadowy Concealment doesn't stack.",
+        "Void Gale · 230\nMove an Energy from this Pokémon to 1 of your Benched Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Void Gale",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "230",
+          "text": "Move an Energy from this Pokémon to 1 of your Benched Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Shadowy Concealment",
+          "text": "If 1 of your Darkness Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, that player takes 1 fewer Prize card. The effect of Shadowy Concealment doesn't stack.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-57",
+      "name": "Murkrow",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "57",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/57.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/57_hires.png",
+      "rulesText": [
+        "Ambush · 10+\nFlip a coin. If heads, this attack does 20 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Ambush",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10+",
+          "text": "Flip a coin. If heads, this attack does 20 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Tomokazu Komiya",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-58",
+      "name": "Honchkrow",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "58",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/58.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/58_hires.png",
+      "rulesText": [
+        "Wind of Darkness · 30",
+        "Sniping Feathers\nDiscard 2 Energy from this Pokémon, and this attack does 120 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Wind of Darkness",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Sniping Feathers",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard 2 Energy from this Pokémon, and this attack does 120 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Anesaki Dynamic",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-59",
+      "name": "Sableye",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "59",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/59.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/59_hires.png",
+      "rulesText": [
+        "Cocky Claw · 20+\nIf you have any Stage 2 Darkness Pokémon on your Bench, this attack does 70 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Cocky Claw",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "20+",
+          "text": "If you have any Stage 2 Darkness Pokémon on your Bench, this attack does 70 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "osare",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-60",
+      "name": "Carvanha",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "60",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/60.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/60_hires.png",
+      "rulesText": [
+        "Reckless Charge · 30\nThis Pokémon also does 10 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Reckless Charge",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30",
+          "text": "This Pokémon also does 10 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shin Nagasawa",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-61",
+      "name": "Mega Sharpedo ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "61",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/61.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/61_hires.png",
+      "rulesText": [
+        "Greedy Fang · 70\nDraw 2 cards.",
+        "Hungry Jaws · 120+\nIf this Pokémon has any damage counters on it, this attack does 150 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Greedy Fang",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "70",
+          "text": "Draw 2 cards."
+        },
+        {
+          "name": "Hungry Jaws",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "120+",
+          "text": "If this Pokémon has any damage counters on it, this attack does 150 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-62",
+      "name": "Seviper",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "62",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/62.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/62_hires.png",
+      "rulesText": [
+        "[Ability] Excited Power\nIf you have any Darkness Mega Evolution Pokémon ex in play, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+        "Pitch-Black Fangs · 120"
+      ],
+      "attacks": [
+        {
+          "name": "Pitch-Black Fangs",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "120",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Power",
+          "text": "If you have any Darkness Mega Evolution Pokémon ex in play, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "hncl",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-63",
+      "name": "Absol",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "63",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/63.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/63_hires.png",
+      "rulesText": [
+        "Allure\nDraw 2 cards.",
+        "Dark Cutter · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Allure",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Draw 2 cards."
+        },
+        {
+          "name": "Dark Cutter",
+          "cost": [
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Takumi Wada",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-64",
+      "name": "Sandile",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "64",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/64.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/64_hires.png",
+      "rulesText": [
+        "Ram · 10",
+        "Rear Kick · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Ram",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Rear Kick",
+          "cost": [
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Taiga Kasai",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-65",
+      "name": "Krokorok",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "65",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/65.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/65_hires.png",
+      "rulesText": [
+        "Bite · 30",
+        "Confront · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Bite",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30",
+          "text": ""
+        },
+        {
+          "name": "Confront",
+          "cost": [
+            "Darkness",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Uninori",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-66",
+      "name": "Krookodile",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "66",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/66.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/66_hires.png",
+      "rulesText": [
+        "Vengeful Fang · 60+\nIf any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 160 more damage.",
+        "Hammer In · 160"
+      ],
+      "attacks": [
+        {
+          "name": "Vengeful Fang",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "60+",
+          "text": "If any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 160 more damage."
+        },
+        {
+          "name": "Hammer In",
+          "cost": [
+            "Darkness",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Ryuta Fuse",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-67",
+      "name": "Toxel",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "67",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/67.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/67_hires.png",
+      "rulesText": [
+        "Call for Family\nSearch your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+        "Playful Kick · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Call for Family",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck."
+        },
+        {
+          "name": "Playful Kick",
+          "cost": [
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "OKACHEKE",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-68",
+      "name": "Toxtricity",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "68",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/68.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/68_hires.png",
+      "rulesText": [
+        "[Ability] Sinister Surge\nOnce during your turn, you may use this Ability. Search your deck for a Basic Darkness Energy card and attach it to 1 of your Benched Darkness Pokémon. Then, shuffle your deck. If you attached Energy to a Pokémon in this way, place 2 damage counters on that Pokémon.",
+        "Gentle Slap · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Slap",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sinister Surge",
+          "text": "Once during your turn, you may use this Ability. Search your deck for a Basic Darkness Energy card and attach it to 1 of your Benched Darkness Pokémon. Then, shuffle your deck. If you attached Energy to a Pokémon in this way, place 2 damage counters on that Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "DOM",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-69",
+      "name": "Eternatus",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "69",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/69.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/69_hires.png",
+      "rulesText": [
+        "Shatter · 50\nDiscard a Stadium in play.",
+        "Power Rush · 130\nFlip a coin. If tails, during your next turn, this Pokémon can't use attacks."
+      ],
+      "attacks": [
+        {
+          "name": "Shatter",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "50",
+          "text": "Discard a Stadium in play."
+        },
+        {
+          "name": "Power Rush",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "130",
+          "text": "Flip a coin. If tails, during your next turn, this Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "akagi",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-70",
+      "name": "Empoleon ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "70",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/70.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/70_hires.png",
+      "rulesText": [
+        "[Ability] Emperor's Stance\nPrevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)",
+        "Iron Feathers · 210\nDuring your opponent's next turn, this Pokémon takes 60 less damage from attacks (after applying Weakness and Resistance).",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Iron Feathers",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "During your opponent's next turn, this Pokémon takes 60 less damage from attacks (after applying Weakness and Resistance)."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emperor's Stance",
+          "text": "Prevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-71",
+      "name": "Bronzor",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "71",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/71.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/71_hires.png",
+      "rulesText": [
+        "Iron Defense\nFlip a coin. If heads, during your opponent's next turn, prevent all damage done to this Pokémon by attacks.",
+        "Rollout · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Iron Defense",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Flip a coin. If heads, during your opponent's next turn, prevent all damage done to this Pokémon by attacks."
+        },
+        {
+          "name": "Rollout",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "OKUBO",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-72",
+      "name": "Bronzong",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "72",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/72.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/72_hires.png",
+      "rulesText": [
+        "Triple Draw\nDraw 3 cards.",
+        "Tool Drop · 40×\nThis attack does 40 damage for each Pokémon Tool attached to all Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Triple Draw",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Draw 3 cards."
+        },
+        {
+          "name": "Tool Drop",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each Pokémon Tool attached to all Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Masako Tomii",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-73",
+      "name": "Togedemaru",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "73",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/73.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/73_hires.png",
+      "rulesText": [
+        "Find a Friend\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Gnaw · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Find a Friend",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Gnaw",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Bun Toujo",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-74",
+      "name": "Duraludon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "74",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/74.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/74_hires.png",
+      "rulesText": [
+        "Hyper Beam · 70\nDiscard an Energy from your opponent's Active Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Hyper Beam",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Metal"
+          ],
+          "damage": "70",
+          "text": "Discard an Energy from your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shinji Kanda",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-75",
+      "name": "Archaludon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "75",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 180,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/75.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/75_hires.png",
+      "rulesText": [
+        "Coated Attack · 120\nDuring your opponent's next turn, prevent all damage done to this Pokémon by attacks from Basic Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Coated Attack",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Metal"
+          ],
+          "damage": "120",
+          "text": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Basic Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "toriyufu",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-76",
+      "name": "Jigglypuff",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "76",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/76.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/76_hires.png",
+      "rulesText": [
+        "Ball Roll · 20×\nFlip a coin until you get tails. This attack does 20 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Ball Roll",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "20×",
+          "text": "Flip a coin until you get tails. This attack does 20 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Naoyo Kimura",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-77",
+      "name": "Wigglytuff",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "77",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/77.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/77_hires.png",
+      "rulesText": [
+        "Round · 40×\nThis attack does 40 damage for each of your Pokémon in play that has the Round attack.",
+        "Seismic Toss · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Round",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each of your Pokémon in play that has the Round attack."
+        },
+        {
+          "name": "Seismic Toss",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "En Morikura",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-78",
+      "name": "Aipom",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "78",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/78.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/78_hires.png",
+      "rulesText": [
+        "Astonish · 20\nChoose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck."
+      ],
+      "attacks": [
+        {
+          "name": "Astonish",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": "Choose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Saboteri",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-79",
+      "name": "Ambipom",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "79",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/79.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/79_hires.png",
+      "rulesText": [
+        "Slap · 50",
+        "Dual Tail\nDiscard 2 Energy from this Pokémon, and this attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Slap",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        },
+        {
+          "name": "Dual Tail",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard 2 Energy from this Pokémon, and this attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "hncl",
+      "rarity": "Rare"
+    },
+    {
+      "id": "me2-80",
+      "name": "Smeargle",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "80",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/80.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/80_hires.png",
+      "rulesText": [
+        "Energizing Sketch\nFlip 3 coins. Attach an amount of Basic Energy up to the number of heads from your discard pile to your Benched Pokémon in any way you like.",
+        "Hook · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Energizing Sketch",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Flip 3 coins. Attach an amount of Basic Energy up to the number of heads from your discard pile to your Benched Pokémon in any way you like."
+        },
+        {
+          "name": "Hook",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "REND",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-81",
+      "name": "Zigzagoon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "81",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/81.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/81_hires.png",
+      "rulesText": [
+        "Surprise Attack · 30\nFlip a coin. If tails, this attack does nothing."
+      ],
+      "attacks": [
+        {
+          "name": "Surprise Attack",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "Flip a coin. If tails, this attack does nothing."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Dsuke",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-82",
+      "name": "Linoone",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "82",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/82.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/82_hires.png",
+      "rulesText": [
+        "[Ability] Excited Dash\nOnce during your turn, if this Pokémon is on your Bench, and if you have any Mega Evolution Pokémon ex in play, you may use this Ability. Switch this Pokémon with your Active Pokémon.",
+        "Slash · 70"
+      ],
+      "attacks": [
+        {
+          "name": "Slash",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "70",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Dash",
+          "text": "Once during your turn, if this Pokémon is on your Bench, and if you have any Mega Evolution Pokémon ex in play, you may use this Ability. Switch this Pokémon with your Active Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "nagimiso",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-83",
+      "name": "Buneary",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "83",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/83.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/83_hires.png",
+      "rulesText": [
+        "Run Around\nSwitch this Pokémon with 1 of your Benched Pokémon.",
+        "Kick · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Run Around",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Switch this Pokémon with 1 of your Benched Pokémon."
+        },
+        {
+          "name": "Kick",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "tono",
+      "rarity": "Common"
+    },
+    {
+      "id": "me2-84",
+      "name": "Mega Lopunny ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "84",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/84.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/84_hires.png",
+      "rulesText": [
+        "Gale Thrust · 60+\nIf this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage.",
+        "Spiky Hopper · 160\nThis attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gale Thrust",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "60+",
+          "text": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage."
+        },
+        {
+          "name": "Spiky Hopper",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me2-85",
+      "name": "Battle Cage",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "85",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/85.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/85_hires.png",
+      "rulesText": [
+        "Prevent all damage counters from being placed on Benched Pokémon (both yours and your opponent's) by effects of attacks and Abilities from the opponent's Pokémon. (Damage from attacks is still taken.)",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-86",
+      "name": "Blowtorch",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "86",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/86.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/86_hires.png",
+      "rulesText": [
+        "You can use this card only if you discard a Basic Fire Energy card from your hand.  Discard a Pokémon Tool or Special Energy card from 1 of your opponent's Pokémon, or discard a Stadium in play.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Toyste Beach",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-87",
+      "name": "Dawn",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "87",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/87.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/87_hires.png",
+      "rulesText": [
+        "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Yuu Nishida",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-88",
+      "name": "Dizzying Valley",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "88",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/88.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/88_hires.png",
+      "rulesText": [
+        "Confused Pokémon (both yours and your opponent's) don't recover from that Special Condition when they evolve or devolve.",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "AYUMI ODASHIMA",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-89",
+      "name": "Firebreather",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "89",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/89.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/89_hires.png",
+      "rulesText": [
+        "Search your deck for up to 7 Basic Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Naoki Saito",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-90",
+      "name": "Grimsley's Move",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "90",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/90.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/90_hires.png",
+      "rulesText": [
+        "Look at the top 7 cards of your deck and put a Darkness Pokémon you find there onto your Bench. Shuffle the other cards and put them on the bottom of your deck. You can't use this card during your first turn.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "GIDORA",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-91",
+      "name": "Jumbo Ice Cream",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "91",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/91.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/91_hires.png",
+      "rulesText": [
+        "Heal 80 damage from your Active Pokémon that has 3 or more Energy attached.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "AYUMI ODASHIMA",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-92",
+      "name": "Punk Helmet",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "92",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/92.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/92_hires.png",
+      "rulesText": [
+        "If the Darkness Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 4 damage counters on the Attacking Pokémon.",
+        "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-93",
+      "name": "Sacred Charm",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "93",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/93.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/93_hires.png",
+      "rulesText": [
+        "The Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon that have an Ability (after applying Weakness and Resistance).",
+        "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Toyste Beach",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-94",
+      "name": "Wondrous Patch",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "94",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/94.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/94_hires.png",
+      "rulesText": [
+        "Attach a Basic Psychic Energy card from your discard pile to 1 of your Benched Psychic Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me2-95",
+      "name": "Ludicolo",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "95",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/95.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/95_hires.png",
+      "rulesText": [
+        "[Ability] Excited Heal\nOnce during your turn, if you have any Grass Mega Evolution Pokémon ex in play, you may use this Ability. Heal 60 damage from 1 of your Pokémon.",
+        "Lunge Out · 120"
+      ],
+      "attacks": [
+        {
+          "name": "Lunge Out",
+          "cost": [
+            "Grass",
+            "Colorless"
+          ],
+          "damage": "120",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Heal",
+          "text": "Once during your turn, if you have any Grass Mega Evolution Pokémon ex in play, you may use this Ability. Heal 60 damage from 1 of your Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Jerky",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-96",
+      "name": "Nymble",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "96",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 50,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/96.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/96_hires.png",
+      "rulesText": [
+        "Flail Around · 10×\nFlip 3 coins. This attack does 10 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Flail Around",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "10×",
+          "text": "Flip 3 coins. This attack does 10 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Nakamura Ippan",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-97",
+      "name": "Dewgong",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "97",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/97.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/97_hires.png",
+      "rulesText": [
+        "[Ability] Thick Fat\nThis Pokémon takes 30 less damage from attacks from your opponent's Fire or Water Pokémon (after applying Weakness and Resistance).",
+        "Slam · 70×\nFlip 2 coins. This attack does 70 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Slam",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "70×",
+          "text": "Flip 2 coins. This attack does 70 damage for each heads."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Thick Fat",
+          "text": "This Pokémon takes 30 less damage from attacks from your opponent's Fire or Water Pokémon (after applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "satoma",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-98",
+      "name": "Piplup",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "98",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/98.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/98_hires.png",
+      "rulesText": [
+        "Call for Support\nSearch your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Tackle · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Call for Support",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Jiro Sasumo",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-99",
+      "name": "Yamper",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "99",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/99.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/99_hires.png",
+      "rulesText": [
+        "Play Rough · 20+\nFlip a coin. If heads, this attack does 20 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Play Rough",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "20+",
+          "text": "Flip a coin. If heads, this attack does 20 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "tono",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-100",
+      "name": "Zacian",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "100",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/100.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/100_hires.png",
+      "rulesText": [
+        "Limit Break · 50+\nIf your opponent has 3 or fewer Prize cards remaining, this attack does 90 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Limit Break",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "50+",
+          "text": "If your opponent has 3 or fewer Prize cards remaining, this attack does 90 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Yoriyuki Ikegami",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-101",
+      "name": "Flygon",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "101",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/101.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/101_hires.png",
+      "rulesText": [
+        "[Ability] Sandy Flapping\nOnce during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon. Discard the top 2 cards of your opponent's deck.",
+        "Cutting Wind · 130"
+      ],
+      "attacks": [
+        {
+          "name": "Cutting Wind",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "130",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sandy Flapping",
+          "text": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon. Discard the top 2 cards of your opponent's deck.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Ryota Murayama",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-102",
+      "name": "Paldean Wooper",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "102",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/102.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/102_hires.png",
+      "rulesText": [
+        "Trip Over · 10+\nFlip a coin. If heads, this attack does 20 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Trip Over",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10+",
+          "text": "Flip a coin. If heads, this attack does 20 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "H",
+      "artist": "OKACHEKE",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-103",
+      "name": "Toxtricity",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "103",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/103.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/103_hires.png",
+      "rulesText": [
+        "[Ability] Sinister Surge\nOnce during your turn, you may use this Ability. Search your deck for a Basic Darkness Energy card and attach it to 1 of your Benched Darkness Pokémon. Then, shuffle your deck. If you attached Energy to a Pokémon in this way, place 2 damage counters on that Pokémon.",
+        "Gentle Slap · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Gentle Slap",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sinister Surge",
+          "text": "Once during your turn, you may use this Ability. Search your deck for a Basic Darkness Energy card and attach it to 1 of your Benched Darkness Pokémon. Then, shuffle your deck. If you attached Energy to a Pokémon in this way, place 2 damage counters on that Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Terada Tera",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-104",
+      "name": "Togedemaru",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "104",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/104.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/104_hires.png",
+      "rulesText": [
+        "Find a Friend\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Gnaw · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Find a Friend",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Gnaw",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Orca",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-105",
+      "name": "Wigglytuff",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "105",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/105.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/105_hires.png",
+      "rulesText": [
+        "Round · 40×\nThis attack does 40 damage for each of your Pokémon in play that has the Round attack.",
+        "Seismic Toss · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Round",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each of your Pokémon in play that has the Round attack."
+        },
+        {
+          "name": "Seismic Toss",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "REND",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-106",
+      "name": "Meowth",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "106",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/106.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/106_hires.png",
+      "rulesText": [
+        "Fury Swipes · 20×\nFlip 3 coins. This attack does 20 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Fury Swipes",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20×",
+          "text": "Flip 3 coins. This attack does 20 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "H",
+      "artist": "Uninori",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-107",
+      "name": "Ambipom",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "107",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/107.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/107_hires.png",
+      "rulesText": [
+        "Slap · 50",
+        "Dual Tail\nDiscard 2 Energy from this Pokémon, and this attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Slap",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        },
+        {
+          "name": "Dual Tail",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard 2 Energy from this Pokémon, and this attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Shigenori Negishi",
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me2-108",
+      "name": "Mega Heracross ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "108",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 280,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/108.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/108_hires.png",
+      "rulesText": [
+        "Juggernaut Horn · 100+\nIf this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage.",
+        "Mountain Ramming · 170\nDiscard the top 2 cards of your opponent's deck.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Juggernaut Horn",
+          "cost": [
+            "Grass",
+            "Grass"
+          ],
+          "damage": "100+",
+          "text": "If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage."
+        },
+        {
+          "name": "Mountain Ramming",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Grass"
+          ],
+          "damage": "170",
+          "text": "Discard the top 2 cards of your opponent's deck."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-109",
+      "name": "Mega Charizard X ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "109",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 360,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/109.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/109_hires.png",
+      "rulesText": [
+        "Inferno X · 90×\nDiscard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Inferno X",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "90×",
+          "text": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "takuyoa",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-110",
+      "name": "Oricorio ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "110",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 190,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/110.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/110_hires.png",
+      "rulesText": [
+        "[Ability] Excited Turbo\nAs often as you like during your turn, if you have any Fire Mega Evolution Pokémon ex in play, you may use this Ability. Attach a Basic Fire Energy card from your hand to 1 of your Benched Fire Pokémon.",
+        "Fire Wing · 110",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Fire Wing",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "110",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Excited Turbo",
+          "text": "As often as you like during your turn, if you have any Fire Mega Evolution Pokémon ex in play, you may use this Ability. Attach a Basic Fire Energy card from your hand to 1 of your Benched Fire Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-111",
+      "name": "Rotom ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "111",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 190,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/111.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/111_hires.png",
+      "rulesText": [
+        "[Ability] Multi Adapter\nEach of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+        "Thunderbolt · 130\nDiscard all Energy from this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Thunderbolt",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "130",
+          "text": "Discard all Energy from this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Multi Adapter",
+          "text": "Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-112",
+      "name": "Mismagius ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "112",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/112.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/112_hires.png",
+      "rulesText": [
+        "[Ability] Swirling Prose\nAs long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused.",
+        "Hexa-Magic · 150\nYou may draw cards until you have 6 cards in your hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Hexa-Magic",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "150",
+          "text": "You may draw cards until you have 6 cards in your hand."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Swirling Prose",
+          "text": "As long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-113",
+      "name": "Mega Sharpedo ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "113",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/113.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/113_hires.png",
+      "rulesText": [
+        "Greedy Fang · 70\nDraw 2 cards.",
+        "Hungry Jaws · 120+\nIf this Pokémon has any damage counters on it, this attack does 150 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Greedy Fang",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "70",
+          "text": "Draw 2 cards."
+        },
+        {
+          "name": "Hungry Jaws",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "120+",
+          "text": "If this Pokémon has any damage counters on it, this attack does 150 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-114",
+      "name": "Empoleon ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "114",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/114.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/114_hires.png",
+      "rulesText": [
+        "[Ability] Emperor's Stance\nPrevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)",
+        "Iron Feathers · 210\nDuring your opponent's next turn, this Pokémon takes 60 less damage from attacks (after applying Weakness and Resistance).",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Iron Feathers",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "During your opponent's next turn, this Pokémon takes 60 less damage from attacks (after applying Weakness and Resistance)."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Emperor's Stance",
+          "text": "Prevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-115",
+      "name": "Mega Lopunny ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "115",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/115.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/115_hires.png",
+      "rulesText": [
+        "Gale Thrust · 60+\nIf this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage.",
+        "Spiky Hopper · 160\nThis attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gale Thrust",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "60+",
+          "text": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage."
+        },
+        {
+          "name": "Spiky Hopper",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "5ban Graphics",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-116",
+      "name": "Battle Cage",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "116",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/116.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/116_hires.png",
+      "rulesText": [
+        "Prevent all damage counters from being placed on Benched Pokémon (both yours and your opponent's) by effects of attacks and Abilities from the opponent's Pokémon. (Damage from attacks is still taken.)",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "MARINA Chikazawa",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-117",
+      "name": "Blowtorch",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "117",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/117.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/117_hires.png",
+      "rulesText": [
+        "You can use this card only if you discard a Basic Fire Energy card from your hand.  Discard a Pokémon Tool or Special Energy card from 1 of your opponent's Pokémon, or discard a Stadium in play.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Toyste Beach",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-118",
+      "name": "Dawn",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "118",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/118.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/118_hires.png",
+      "rulesText": [
+        "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Yuu Nishida",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-119",
+      "name": "Firebreather",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "119",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/119.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/119_hires.png",
+      "rulesText": [
+        "Search your deck for up to 7 Basic Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Naoki Saito",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-120",
+      "name": "Grimsley's Move",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "120",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/120.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/120_hires.png",
+      "rulesText": [
+        "Look at the top 7 cards of your deck and put a Darkness Pokémon you find there onto your Bench. Shuffle the other cards and put them on the bottom of your deck. You can't use this card during your first turn.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "GIDORA",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-121",
+      "name": "Punk Helmet",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "121",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/121.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/121_hires.png",
+      "rulesText": [
+        "If the Darkness Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 4 damage counters on the Attacking Pokémon.",
+        "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-122",
+      "name": "Sacred Charm",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "122",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/122.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/122_hires.png",
+      "rulesText": [
+        "The Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon that have an Ability (after applying Weakness and Resistance).",
+        "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Toyste Beach",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-123",
+      "name": "Switch",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "123",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/123.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/123_hires.png",
+      "rulesText": [
+        "Switch your Active Pokémon with 1 of your Benched Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Studio Bora Inc.",
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-124",
+      "name": "Ignition Energy",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "124",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/124.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/124_hires.png",
+      "rulesText": [
+        "If this card is attached to 1 of your Pokémon, discard it at the end of your turn.  As long as this card is attached to a Pokémon, it provides Colorless Energy.  If this card is attached to an Evolution Pokémon, it provides ColorlessColorlessColorless Energy instead."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me2-125",
+      "name": "Mega Charizard X ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "125",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 360,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/125.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/125_hires.png",
+      "rulesText": [
+        "Inferno X · 90×\nDiscard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Inferno X",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "90×",
+          "text": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "danciao",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me2-126",
+      "name": "Rotom ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "126",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 190,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/126.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/126_hires.png",
+      "rulesText": [
+        "[Ability] Multi Adapter\nEach of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+        "Thunderbolt · 130\nDiscard all Energy from this Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Thunderbolt",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "130",
+          "text": "Discard all Energy from this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Multi Adapter",
+          "text": "Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "I",
+      "artist": "Yoshimi Miyoshi",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me2-127",
+      "name": "Mega Sharpedo ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "127",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/127.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/127_hires.png",
+      "rulesText": [
+        "Greedy Fang · 70\nDraw 2 cards.",
+        "Hungry Jaws · 120+\nIf this Pokémon has any damage counters on it, this attack does 150 more damage.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Greedy Fang",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "70",
+          "text": "Draw 2 cards."
+        },
+        {
+          "name": "Hungry Jaws",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "120+",
+          "text": "If this Pokémon has any damage counters on it, this attack does 150 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "nagimiso",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me2-128",
+      "name": "Mega Lopunny ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "128",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/128.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/128_hires.png",
+      "rulesText": [
+        "Gale Thrust · 60+\nIf this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage.",
+        "Spiky Hopper · 160\nThis attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gale Thrust",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "60+",
+          "text": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage."
+        },
+        {
+          "name": "Spiky Hopper",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Kinu Nishimura",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me2-129",
+      "name": "Dawn",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "129",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/129.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/129_hires.png",
+      "rulesText": [
+        "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "Atsushi Furusawa",
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me2-130",
+      "name": "Mega Charizard X ex",
+      "setCode": "PFL",
+      "setName": "Phantasmal Flames",
+      "number": "130",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 360,
+      "isStandardLegal": true,
+      "imageURL": "https://images.pokemontcg.io/me2/130.png",
+      "largeImageURL": "https://images.pokemontcg.io/me2/130_hires.png",
+      "rulesText": [
+        "Inferno X · 90×\nDiscard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Inferno X",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "90×",
+          "text": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": "takuyoa",
+      "rarity": "Mega Hyper Rare"
+    }
+  ]
+}

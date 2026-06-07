@@ -1,6 +1,6 @@
 # M0 — Project Setup
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** Foundation  
 **Dependencies:** none
 

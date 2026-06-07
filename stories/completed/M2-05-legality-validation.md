@@ -1,6 +1,6 @@
 # M2-05 — Deck Legality Validation
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M2-04
 
@@ -9,17 +9,17 @@ As a user, I want real-time feedback on whether my deck is tournament-legal so t
 
 ## Acceptance Criteria
 
-- [ ] The deck detail view shows a validation status banner:
+- [x] The deck detail view shows a validation status banner:
   - Green "Legal deck" when all rules pass
   - Yellow warning(s) for non-blocking issues
   - Red error(s) for blocking issues
-- [ ] Validation rules enforced:
+- [x] Validation rules enforced:
   - **Error:** Total card count ≠ 60
   - **Error:** Any non-Standard-legal card present
   - **Error:** More than 4 copies of a named card (excluding basic Energy)
   - **Warning:** No Basic Pokémon in the deck
-- [ ] Tapping a validation error scrolls to / highlights the offending card(s)
-- [ ] Validation runs reactively — updates within 100ms of any deck change
+- [x] Tapping a validation error scrolls to / highlights the offending card(s)
+- [x] Validation runs reactively — updates within 100ms of any deck change
 
 ## Technical Notes
 

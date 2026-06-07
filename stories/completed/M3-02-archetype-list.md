@@ -1,6 +1,6 @@
 # M3-02 — Bundled Archetype List
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M3 — Match Tracker  
 **Dependencies:** M0
 
@@ -9,13 +9,13 @@ As a user, when I log a match I want to pick my opponent's deck from a curated l
 
 ## Acceptance Criteria
 
-- [ ] A `archetypes.json` file is bundled in the app target (not in Assets.xcassets — just in the bundle)
-- [ ] The JSON contains at least the top 20 current Standard meta archetypes for the current rotation (2025–2026 season)
-- [ ] Each archetype entry has: `id: String`, `name: String`, `primaryType: String` (e.g. `"Fire"`)
-- [ ] `ArchetypeRepository` in `Domain/Entities/ArchetypeRepository.swift` loads and returns the list, sorted alphabetically
-- [ ] The archetype list is accessed synchronously (loaded once at app start, held in memory)
-- [ ] Fuzzy search: `ArchetypeRepository.search(query: String) -> [Archetype]` returns archetypes whose name contains the query (case-insensitive)
-- [ ] If the user types an archetype not in the list, their freeform input is accepted as-is
+- [x] A `archetypes.json` file is bundled in the app target (not in Assets.xcassets — just in the bundle)
+- [x] The JSON contains at least the top 20 current Standard meta archetypes for the current rotation (2025–2026 season)
+- [x] Each archetype entry has: `id: String`, `name: String`, `primaryType: String` (e.g. `"Fire"`)
+- [x] `ArchetypeRepository` in `Domain/Entities/ArchetypeRepository.swift` loads and returns the list, sorted alphabetically
+- [x] The archetype list is accessed synchronously (loaded once at app start, held in memory)
+- [x] Fuzzy search: `ArchetypeRepository.search(query: String) -> [Archetype]` returns archetypes whose name contains the query (case-insensitive)
+- [x] If the user types an archetype not in the list, their freeform input is accepted as-is
 
 ## Technical Notes
 

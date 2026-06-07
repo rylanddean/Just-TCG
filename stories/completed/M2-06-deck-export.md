@@ -1,6 +1,6 @@
 # M2-06 — Deck Export
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M2-03
 
@@ -9,8 +9,8 @@ As a user, I want to export my deck list as text in PTCGL format so that I can c
 
 ## Acceptance Criteria
 
-- [ ] An export button (share icon) in the deck detail view toolbar opens the iOS `ShareSheet`
-- [ ] The exported text matches PTCGL copy-paste format exactly:
+- [x] An export button (share icon) in the deck detail view toolbar opens the iOS `ShareSheet`
+- [x] The exported text matches PTCGL copy-paste format exactly:
   ```
   Pokémon: 12
   4 Charizard ex OBF 223
@@ -24,9 +24,9 @@ As a user, I want to export my deck list as text in PTCGL format so that I can c
 
   Total Cards: 60
   ```
-- [ ] Cards within each section are sorted alphabetically by name
-- [ ] The share sheet includes both "Copy" and standard share destinations
-- [ ] Export works on incomplete decks (< 60 cards) — Total Cards reflects the actual count
+- [x] Cards within each section are sorted alphabetically by name
+- [x] The share sheet includes both "Copy" and standard share destinations
+- [x] Export works on incomplete decks (< 60 cards) — Total Cards reflects the actual count
 
 ## Technical Notes
 

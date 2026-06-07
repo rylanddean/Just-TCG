@@ -178,6 +178,10 @@ struct CardsView: View {
     // MARK: - Data loading
 
     private func initialLoad() async {
+        // First launch: seed from bundled JSON so cards appear instantly.
+        // No-op on every subsequent launch (UserDefaults flag check).
+        await BundledCardSeeder.seedIfNeeded(context: context)
+
         let repo = CardRepository(modelContext: context)
         hasCards = (try? repo.hasAnyStandardCards()) ?? false
         if hasCards {

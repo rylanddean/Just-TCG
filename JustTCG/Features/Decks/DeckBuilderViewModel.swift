@@ -9,31 +9,17 @@ final class DeckBuilderViewModel {
     private let cardRepo: CardRepository
 
     private(set) var cachedCards: [String: CachedCard] = [:]
-
-    private let trainerSubtypes: Set<String> = ["Supporter", "Item", "Stadium", "Tool"]
+    private(set) var validationErrors: [DeckValidationError] = []
 
     var totalCount: Int { deck.cards.reduce(0) { $0 + $1.quantity } }
 
-    var pokemonCards: [DeckCard] {
-        sorted(deck.cards.filter {
-            guard let c = cachedCards[$0.cardId] else { return false }
-            return !c.types.isEmpty
-        })
-    }
+    private var groups: DeckGrouper.Groups { DeckGrouper.group(deck.cards, cardMap: cachedCards) }
 
-    var trainerCards: [DeckCard] {
-        sorted(deck.cards.filter {
-            guard let c = cachedCards[$0.cardId] else { return false }
-            return c.types.isEmpty && !Set(c.subtypes).isDisjoint(with: trainerSubtypes)
-        })
-    }
+    var pokemonCards: [DeckCard] { groups.pokemon }
+    var trainerCards: [DeckCard] { groups.trainer }
+    var energyCards:  [DeckCard] { groups.energy }
 
-    var energyCards: [DeckCard] {
-        sorted(deck.cards.filter {
-            guard let c = cachedCards[$0.cardId] else { return false }
-            return c.types.isEmpty && Set(c.subtypes).isDisjoint(with: trainerSubtypes)
-        })
-    }
+    var exportString: String { DeckExporter.export(deck, cards: Array(cachedCards.values)) }
 
     init(deck: Deck, modelContext: ModelContext) {
         self.deck = deck
@@ -45,6 +31,7 @@ final class DeckBuilderViewModel {
         let ids = deck.cards.map { $0.cardId }
         let cards = (try? cardRepo.fetch(ids: ids)) ?? []
         cachedCards = Dictionary(uniqueKeysWithValues: cards.map { ($0.id, $0) })
+        revalidate()
     }
 
     func rename(to name: String) {
@@ -60,12 +47,16 @@ final class DeckBuilderViewModel {
         } else {
             deckRepo.setQuantity(quantity, cardId: deckCard.cardId, in: deck)
         }
+        revalidate()
     }
 
-    private func sorted(_ cards: [DeckCard]) -> [DeckCard] {
-        cards.sorted {
-            (cachedCards[$0.cardId]?.name ?? $0.cardId) <
-            (cachedCards[$1.cardId]?.name ?? $1.cardId)
-        }
+    func cardIds(forName name: String) -> [String] {
+        deck.cards
+            .filter { cachedCards[$0.cardId]?.name == name }
+            .map { $0.cardId }
+    }
+
+    private func revalidate() {
+        validationErrors = DeckValidator.validate(deck, cards: Array(cachedCards.values))
     }
 }

@@ -1,0 +1,4793 @@
+{
+  "set": {
+    "id": "POR",
+    "apiId": "me3",
+    "name": "Perfect Order",
+    "releaseDate": "2026/03/27",
+    "total": 124,
+    "printedTotal": 88,
+    "series": "Mega Evolution",
+    "symbolURL": "https://images.scrydex.com/pokemon/me3-symbol/symbol",
+    "logoURL": "https://images.scrydex.com/pokemon/me3-logo/logo"
+  },
+  "cards": [
+    {
+      "id": "me3-78",
+      "name": "Lumiose Galette",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "78",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-78/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-78/large",
+      "rulesText": [
+        "Heal 20 damage and remove a Special Condition from your Active Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-93",
+      "name": "Dedenne",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "93",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-93/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-93/large",
+      "rulesText": [
+        "Tail Generator\nChoose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like.",
+        "Thunder Shock · 30\nFlip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+      ],
+      "attacks": [
+        {
+          "name": "Tail Generator",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "",
+          "text": "Choose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like."
+        },
+        {
+          "name": "Thunder Shock",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-92",
+      "name": "Aurorus",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "92",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-92/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-92/large",
+      "rulesText": [
+        "[Ability] Tundra Wall\nAll of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
+        "Freezing Chill · 150\nDuring your opponent's next turn, the Defending Pokémon can't use attacks."
+      ],
+      "attacks": [
+        {
+          "name": "Freezing Chill",
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless"
+          ],
+          "damage": "150",
+          "text": "During your opponent's next turn, the Defending Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Tundra Wall",
+          "text": "All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-91",
+      "name": "Talonflame",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "91",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-91/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-91/large",
+      "rulesText": [
+        "[Ability] Sky Hunt\nOnce during your turn, you may use this Ability. Flip a coin. If heads, discard a random card from your opponent's hand.",
+        "Fire Wing · 110"
+      ],
+      "attacks": [
+        {
+          "name": "Fire Wing",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "110",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sky Hunt",
+          "text": "Once during your turn, you may use this Ability. Flip a coin. If heads, discard a random card from your opponent's hand.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-90",
+      "name": "Rowlet",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "90",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-90/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-90/large",
+      "rulesText": [
+        "Find a Friend\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Tackle · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Find a Friend",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-89",
+      "name": "Spewpa",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "89",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-89/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-89/large",
+      "rulesText": [
+        "Hide\nFlip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Hide",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-88",
+      "name": "Telepathic Psychic Energy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "88",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-88/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-88/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Psychic Energy. When you attach this card from your hand to a Psychic Pokémon, search your deck for up to 2 Basic Psychic Pokémon and put them onto your Bench. Then, shuffle your deck."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-87",
+      "name": "Rocky Fighting Energy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "87",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-87/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-87/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Fighting Energy. Prevent all effects of attacks used by your opponent's Pokémon done to the Fighting Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)"
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-86",
+      "name": "Growing Grass Energy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "86",
+      "supertype": "Energy",
+      "types": [],
+      "subtypes": [
+        "Special"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-86/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-86/large",
+      "rulesText": [
+        "As long as this card is attached to a Pokémon, it provides Grass Energy. The Grass Pokémon this card is attached to gets +20 HP."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-85",
+      "name": "Tarragon",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "85",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-85/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-85/large",
+      "rulesText": [
+        "Put up to 4 in any combination of Fighting Pokémon and Basic Fighting Energy cards from your discard pile into your hand.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-84",
+      "name": "Rosa's Encouragement",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "84",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-84/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-84/large",
+      "rulesText": [
+        "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-83",
+      "name": "Potion",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "83",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-83/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-83/large",
+      "rulesText": [
+        "Heal 30 damage from 1 of your Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-82",
+      "name": "Pokémon Catcher",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "82",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-82/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-82/large",
+      "rulesText": [
+        "Flip a coin. If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-81",
+      "name": "Poké Pad",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "81",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-81/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-81/large",
+      "rulesText": [
+        "Search your deck for a Pokémon that doesn't have a Rule Box, reveal it, and put it into your hand. Then, shuffle your deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-80",
+      "name": "Poké Ball",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "80",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-80/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-80/large",
+      "rulesText": [
+        "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-79",
+      "name": "Naveen",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "79",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-79/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-79/large",
+      "rulesText": [
+        "Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can't draw any cards in this way, you can't use this card.)",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-94",
+      "name": "Clefairy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "94",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-94/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-94/large",
+      "rulesText": [
+        "Follow Me\nSwitch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+        "Flop · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Follow Me",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot."
+        },
+        {
+          "name": "Flop",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-77",
+      "name": "Lumiose City",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "77",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-77/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-77/large",
+      "rulesText": [
+        "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-76",
+      "name": "Judge",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "76",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-76/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-76/large",
+      "rulesText": [
+        "Each player shuffles their hand into their deck and draws 4 cards.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-75",
+      "name": "Jacinthe",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "75",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-75/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-75/large",
+      "rulesText": [
+        "Heal 150 damage from 1 of your Psychic Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-74",
+      "name": "Hole-Digging Shovel",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "74",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-74/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-74/large",
+      "rulesText": [
+        "Discard the top 2 cards of your deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-73",
+      "name": "Energy Swatter",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "73",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-73/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-73/large",
+      "rulesText": [
+        "Your opponent reveals their hand, and you choose an Energy card you find there and put it on the bottom of their deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-72",
+      "name": "Energy Search",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "72",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-72/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-72/large",
+      "rulesText": [
+        "Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-71",
+      "name": "Crushing Hammer",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "71",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-71/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-71/large",
+      "rulesText": [
+        "Flip a coin. If heads, discard an Energy from 1 of your opponent's Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-70",
+      "name": "Core Memory",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "70",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Pokémon Tool"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-70/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-70/large",
+      "rulesText": [
+        "Geobuster · 350\nDiscard all Energy from this Pokémon.",
+        "The Mega Zygarde ex this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.)",
+        "You may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
+      ],
+      "attacks": [
+        {
+          "name": "Geobuster",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "350",
+          "text": "Discard all Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-69",
+      "name": "Antique Sail Fossil",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "69",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-69/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-69/large",
+      "rulesText": [
+        "[Ability] Protective Sail\nWhenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to this Pokémon.",
+        "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [
+        {
+          "name": "Protective Sail",
+          "text": "Whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-68",
+      "name": "Antique Jaw Fossil",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "68",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-68/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-68/large",
+      "rulesText": [
+        "[Ability] Intimidating Jaw\nAs long as this Pokémon is in the Active Spot, attacks used by your opponent's Active Pokémon do 30 less damage (before applying Weakness and Resistance).",
+        "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [
+        {
+          "name": "Intimidating Jaw",
+          "text": "As long as this Pokémon is in the Active Spot, attacks used by your opponent's Active Pokémon do 30 less damage (before applying Weakness and Resistance).",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-67",
+      "name": "Furfrou",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "67",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-67/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-67/large",
+      "rulesText": [
+        "Hand Trim\nDiscard random cards from your opponent's hand until they have 5 cards in their hand.",
+        "Headbutt · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Hand Trim",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard random cards from your opponent's hand until they have 5 cards in their hand."
+        },
+        {
+          "name": "Headbutt",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-66",
+      "name": "Fletchling",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "66",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-66/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-66/large",
+      "rulesText": [
+        "Chirp\nSearch your deck for up to 2 Pokémon with Fighting Resistance, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Peck · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Chirp",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 Pokémon with Fighting Resistance, reveal them, and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Peck",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-65",
+      "name": "Diggersby",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "65",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-65/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-65/large",
+      "rulesText": [
+        "Earthquake · 140\nThis attack also does 30 damage to each of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Whap Down · 100"
+      ],
+      "attacks": [
+        {
+          "name": "Earthquake",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "140",
+          "text": "This attack also does 30 damage to each of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Whap Down",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "100",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-64",
+      "name": "Bunnelby",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "64",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-64/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-64/large",
+      "rulesText": [
+        "Smash Kick · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Smash Kick",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-109",
+      "name": "Forest of Vitality",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "109",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-109/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-109/large",
+      "rulesText": [
+        "Each player's Grass Pokémon can evolve into Grass Pokémon during the turn they play those Pokémon, except during their first turn.",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-124",
+      "name": "Mega Zygarde ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "124",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-124/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-124/large",
+      "rulesText": [
+        "Gaia Wave · 200\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+        "Nullifying Zero\nFor each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gaia Wave",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "200",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        },
+        {
+          "name": "Nullifying Zero",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "",
+          "text": "For each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Mega Hyper Rare"
+    },
+    {
+      "id": "me3-123",
+      "name": "Rosa's Encouragement",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "123",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-123/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-123/large",
+      "rulesText": [
+        "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-122",
+      "name": "Jacinthe",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "122",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-122/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-122/large",
+      "rulesText": [
+        "Heal 150 damage from 1 of your Psychic Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-121",
+      "name": "Meowth ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "121",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-121/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-121/large",
+      "rulesText": [
+        "[Ability] Last-Ditch Catch\nOnce during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+        "Tuck Tail · 60\nPut this Pokémon and all attached cards into your hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Tuck Tail",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": "Put this Pokémon and all attached cards into your hand."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Last-Ditch Catch",
+          "text": "Once during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-120",
+      "name": "Mega Zygarde ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "120",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-120/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-120/large",
+      "rulesText": [
+        "Gaia Wave · 200\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+        "Nullifying Zero\nFor each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gaia Wave",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "200",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        },
+        {
+          "name": "Nullifying Zero",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "",
+          "text": "For each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-119",
+      "name": "Mega Clefable ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "119",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-119/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-119/large",
+      "rulesText": [
+        "[Ability] Luminous Wing\nPrevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+        "Shooting Moons · 120+\nYou may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Shooting Moons",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "120+",
+          "text": "You may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Luminous Wing",
+          "text": "Prevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-118",
+      "name": "Mega Starmie ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "118",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-118/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-118/large",
+      "rulesText": [
+        "Jetting Blow · 120\nThis attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Nebula Beam · 210\nThis attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Jetting Blow",
+          "cost": [
+            "Water"
+          ],
+          "damage": "120",
+          "text": "This attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Nebula Beam",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Special Illustration Rare"
+    },
+    {
+      "id": "me3-117",
+      "name": "Wondrous Patch",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "117",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-117/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-117/large",
+      "rulesText": [
+        "Attach a Basic Psychic Energy card from your discard pile to 1 of your Benched Psychic Pokémon.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-116",
+      "name": "Tarragon",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "116",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-116/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-116/large",
+      "rulesText": [
+        "Put up to 4 in any combination of Fighting Pokémon and Basic Fighting Energy cards from your discard pile into your hand.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-115",
+      "name": "Sacred Ash",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "115",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-115/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-115/large",
+      "rulesText": [
+        "Shuffle up to 5 Pokémon from your discard pile into your deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-114",
+      "name": "Rosa's Encouragement",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "114",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-114/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-114/large",
+      "rulesText": [
+        "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-113",
+      "name": "Poké Pad",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "113",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-113/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-113/large",
+      "rulesText": [
+        "Search your deck for a Pokémon that doesn't have a Rule Box, reveal it, and put it into your hand. Then, shuffle your deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-112",
+      "name": "Naveen",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "112",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-112/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-112/large",
+      "rulesText": [
+        "Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can't draw any cards in this way, you can't use this card.)",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-111",
+      "name": "Lumiose City",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "111",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Stadium"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-111/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-111/large",
+      "rulesText": [
+        "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.",
+        "You may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-110",
+      "name": "Jacinthe",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "110",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Supporter"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-110/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-110/large",
+      "rulesText": [
+        "Heal 150 damage from 1 of your Psychic Pokémon.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-63",
+      "name": "Snorlax",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "63",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-63/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-63/large",
+      "rulesText": [
+        "Gormandizer\nFlip a coin until you get tails. Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon. Then, shuffle your deck.",
+        "Collapse · 160\nThis Pokémon is now Asleep."
+      ],
+      "attacks": [
+        {
+          "name": "Gormandizer",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Flip a coin until you get tails. Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon. Then, shuffle your deck."
+        },
+        {
+          "name": "Collapse",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "This Pokémon is now Asleep."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-108",
+      "name": "Energy Recycler",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "108",
+      "supertype": "Trainer",
+      "types": [],
+      "subtypes": [
+        "Item"
+      ],
+      "hp": null,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-108/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-108/large",
+      "rulesText": [
+        "Shuffle up to 5 Basic Energy cards from your discard pile into your deck.",
+        "You may play any number of Item cards during your turn."
+      ],
+      "attacks": [],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-107",
+      "name": "Meowth ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "107",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-107/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-107/large",
+      "rulesText": [
+        "[Ability] Last-Ditch Catch\nOnce during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+        "Tuck Tail · 60\nPut this Pokémon and all attached cards into your hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Tuck Tail",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": "Put this Pokémon and all attached cards into your hand."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Last-Ditch Catch",
+          "text": "Once during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-106",
+      "name": "Mega Skarmory ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "106",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-106/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-106/large",
+      "rulesText": [
+        "Sonic Ripper\nShuffle all Energy attached to this Pokémon into your deck, and this attack does 220 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Sonic Ripper",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Shuffle all Energy attached to this Pokémon into your deck, and this attack does 220 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-105",
+      "name": "Yveltal ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "105",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 210,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-105/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-105/large",
+      "rulesText": [
+        "Soul Destroyer\nKnock Out each of your opponent's Pokémon that has 50 HP or less remaining.",
+        "Dark Strike · 210\nDuring your next turn, this Pokémon can't use Dark Strike.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Soul Destroyer",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Knock Out each of your opponent's Pokémon that has 50 HP or less remaining."
+        },
+        {
+          "name": "Dark Strike",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "During your next turn, this Pokémon can't use Dark Strike."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-104",
+      "name": "Mega Zygarde ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "104",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-104/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-104/large",
+      "rulesText": [
+        "Gaia Wave · 200\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+        "Nullifying Zero\nFor each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gaia Wave",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "200",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        },
+        {
+          "name": "Nullifying Zero",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "",
+          "text": "For each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-103",
+      "name": "Mega Clefable ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "103",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-103/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-103/large",
+      "rulesText": [
+        "[Ability] Luminous Wing\nPrevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+        "Shooting Moons · 120+\nYou may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Shooting Moons",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "120+",
+          "text": "You may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Luminous Wing",
+          "text": "Prevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-102",
+      "name": "Mega Starmie ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "102",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-102/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-102/large",
+      "rulesText": [
+        "Jetting Blow · 120\nThis attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Nebula Beam · 210\nThis attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Jetting Blow",
+          "cost": [
+            "Water"
+          ],
+          "damage": "120",
+          "text": "This attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Nebula Beam",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-101",
+      "name": "Salazzle ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "101",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-101/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-101/large",
+      "rulesText": [
+        "Nasty Plot\nSearch your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.",
+        "Dire Nails · 100\nYour opponent's Active Pokémon is now Burned and Poisoned. Switch this Pokémon with 1 of your Benched Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Nasty Plot",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Dire Nails",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "100",
+          "text": "Your opponent's Active Pokémon is now Burned and Poisoned. Switch this Pokémon with 1 of your Benched Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-100",
+      "name": "Decidueye ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "100",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-100/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-100/large",
+      "rulesText": [
+        "[Ability] Sniper's Eye\nIf your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
+        "Crushing Arrow · 240\nDiscard an Energy from your opponent's Active Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Crushing Arrow",
+          "cost": [
+            "Grass",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "240",
+          "text": "Discard an Energy from your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sniper's Eye",
+          "text": "If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Ultra Rare"
+    },
+    {
+      "id": "me3-99",
+      "name": "Raticate",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "99",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-99/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-99/large",
+      "rulesText": [
+        "Scrape Off · 20\nBefore doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+        "Retaliatory Incisors · 40×\nThis attack does 40 damage for each damage counter on all of your Benched Rattata."
+      ],
+      "attacks": [
+        {
+          "name": "Scrape Off",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon."
+        },
+        {
+          "name": "Retaliatory Incisors",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each damage counter on all of your Benched Rattata."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-98",
+      "name": "Doublade",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "98",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-98/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-98/large",
+      "rulesText": [
+        "Weaponized Swords · 60×\nReveal any number of Honedge, Doublade, and Aegislash from your hand, and this attack does 60 damage for each card you revealed in this way."
+      ],
+      "attacks": [
+        {
+          "name": "Weaponized Swords",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60×",
+          "text": "Reveal any number of Honedge, Doublade, and Aegislash from your hand, and this attack does 60 damage for each card you revealed in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-97",
+      "name": "Drapion",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "97",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-97/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-97/large",
+      "rulesText": [
+        "Wrack Down · 60",
+        "Hazardous Tail · 100\nThis Pokémon also does 70 damage to itself. Your opponent's Active Pokémon is now Paralyzed and Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Wrack Down",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "60",
+          "text": ""
+        },
+        {
+          "name": "Hazardous Tail",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "100",
+          "text": "This Pokémon also does 70 damage to itself. Your opponent's Active Pokémon is now Paralyzed and Poisoned."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-96",
+      "name": "Probopass",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "96",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-96/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-96/large",
+      "rulesText": [
+        "Rolling Rocks · 60",
+        "Obliterating Nose · 260\nDiscard 3 Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Rolling Rocks",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "60",
+          "text": ""
+        },
+        {
+          "name": "Obliterating Nose",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "260",
+          "text": "Discard 3 Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-95",
+      "name": "Espurr",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "95",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-95/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-95/large",
+      "rulesText": [
+        "Nap\nHeal 20 damage from this Pokémon.",
+        "Stampede · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Nap",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Heal 20 damage from this Pokémon."
+        },
+        {
+          "name": "Stampede",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Illustration Rare"
+    },
+    {
+      "id": "me3-16",
+      "name": "Salazzle ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "16",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-16/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-16/large",
+      "rulesText": [
+        "Nasty Plot\nSearch your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.",
+        "Dire Nails · 100\nYour opponent's Active Pokémon is now Burned and Poisoned. Switch this Pokémon with 1 of your Benched Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Nasty Plot",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "",
+          "text": "Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Dire Nails",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "100",
+          "text": "Your opponent's Active Pokémon is now Burned and Poisoned. Switch this Pokémon with 1 of your Benched Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-31",
+      "name": "Mega Clefable ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "31",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-31/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-31/large",
+      "rulesText": [
+        "[Ability] Luminous Wing\nPrevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+        "Shooting Moons · 120+\nYou may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Shooting Moons",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "120+",
+          "text": "You may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Luminous Wing",
+          "text": "Prevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-30",
+      "name": "Clefairy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "30",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-30/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-30/large",
+      "rulesText": [
+        "Follow Me\nSwitch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+        "Flop · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Follow Me",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot."
+        },
+        {
+          "name": "Flop",
+          "cost": [
+            "Psychic",
+            "Psychic"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-29",
+      "name": "Dedenne",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "29",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-29/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-29/large",
+      "rulesText": [
+        "Tail Generator\nChoose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like.",
+        "Thunder Shock · 30\nFlip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+      ],
+      "attacks": [
+        {
+          "name": "Tail Generator",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "",
+          "text": "Choose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like."
+        },
+        {
+          "name": "Thunder Shock",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-28",
+      "name": "Luxray",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "28",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-28/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-28/large",
+      "rulesText": [
+        "Incessant Onslaught · 70×\nThis attack does 70 damage for each Prize card you have taken.",
+        "Strong Volt · 200\nDiscard 2 Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Incessant Onslaught",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "70×",
+          "text": "This attack does 70 damage for each Prize card you have taken."
+        },
+        {
+          "name": "Strong Volt",
+          "cost": [
+            "Lightning",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "200",
+          "text": "Discard 2 Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-27",
+      "name": "Luxio",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "27",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-27/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-27/large",
+      "rulesText": [
+        "[Ability] Fighting Roar\nIf your opponent's Active Pokémon is a Pokémon ex, this Pokémon can evolve during your first turn or the turn you play it.",
+        "Static Shock · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Static Shock",
+          "cost": [
+            "Lightning",
+            "Colorless"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Fighting Roar",
+          "text": "If your opponent's Active Pokémon is a Pokémon ex, this Pokémon can evolve during your first turn or the turn you play it.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-26",
+      "name": "Shinx",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "26",
+      "supertype": "Pokémon",
+      "types": [
+        "Lightning"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-26/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-26/large",
+      "rulesText": [
+        "Double Scratch · 10×\nFlip 2 coins. This attack does 10 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Double Scratch",
+          "cost": [
+            "Lightning"
+          ],
+          "damage": "10×",
+          "text": "Flip 2 coins. This attack does 10 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-25",
+      "name": "Volcanion",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "25",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-25/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-25/large",
+      "rulesText": [
+        "Strength · 50",
+        "Powerful Steam · 90×\nFlip a coin for each Water Energy attached to this Pokémon. This attack does 90 damage for each heads."
+      ],
+      "attacks": [
+        {
+          "name": "Strength",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": ""
+        },
+        {
+          "name": "Powerful Steam",
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless"
+          ],
+          "damage": "90×",
+          "text": "Flip a coin for each Water Energy attached to this Pokémon. This attack does 90 damage for each heads."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-24",
+      "name": "Aurorus",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "24",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-24/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-24/large",
+      "rulesText": [
+        "[Ability] Tundra Wall\nAll of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
+        "Freezing Chill · 150\nDuring your opponent's next turn, the Defending Pokémon can't use attacks."
+      ],
+      "attacks": [
+        {
+          "name": "Freezing Chill",
+          "cost": [
+            "Water",
+            "Water",
+            "Colorless"
+          ],
+          "damage": "150",
+          "text": "During your opponent's next turn, the Defending Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Tundra Wall",
+          "text": "All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-23",
+      "name": "Amaura",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "23",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-23/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-23/large",
+      "rulesText": [
+        "Icy Wind · 50\nYour opponent's Active Pokémon is now Asleep."
+      ],
+      "attacks": [
+        {
+          "name": "Icy Wind",
+          "cost": [
+            "Water",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": "Your opponent's Active Pokémon is now Asleep."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-22",
+      "name": "Lapras ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "22",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 210,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-22/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-22/large",
+      "rulesText": [
+        "Hydro Turn · 30×\nThis attack does 30 damage for each Water Energy attached to this Pokémon. Switch this Pokémon with 1 of your Benched Pokémon.",
+        "Surf · 140",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Hydro Turn",
+          "cost": [
+            "Water"
+          ],
+          "damage": "30×",
+          "text": "This attack does 30 damage for each Water Energy attached to this Pokémon. Switch this Pokémon with 1 of your Benched Pokémon."
+        },
+        {
+          "name": "Surf",
+          "cost": [
+            "Water",
+            "Water",
+            "Water"
+          ],
+          "damage": "140",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "I",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-21",
+      "name": "Mega Starmie ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "21",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 330,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-21/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-21/large",
+      "rulesText": [
+        "Jetting Blow · 120\nThis attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Nebula Beam · 210\nThis attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Jetting Blow",
+          "cost": [
+            "Water"
+          ],
+          "damage": "120",
+          "text": "This attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        },
+        {
+          "name": "Nebula Beam",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-20",
+      "name": "Staryu",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "20",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-20/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-20/large",
+      "rulesText": [
+        "Water Gun · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Water Gun",
+          "cost": [
+            "Water"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-19",
+      "name": "Dewgong",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "19",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-19/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-19/large",
+      "rulesText": [
+        "[Ability] Wash Out\nAs often as you like during your turn, you may use this Ability. Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+        "Wave Splash · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Wave Splash",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Wash Out",
+          "text": "As often as you like during your turn, you may use this Ability. Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-18",
+      "name": "Seel",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "18",
+      "supertype": "Pokémon",
+      "types": [
+        "Water"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-18/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-18/large",
+      "rulesText": [
+        "Rain Splash · 10",
+        "Wave Splash · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Rain Splash",
+          "cost": [
+            "Water"
+          ],
+          "damage": "10",
+          "text": ""
+        },
+        {
+          "name": "Wave Splash",
+          "cost": [
+            "Water",
+            "Water"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-17",
+      "name": "Turtonator",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "17",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-17/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-17/large",
+      "rulesText": [
+        "[Ability] Shell Spikes\nIf this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), discard an Energy from the Attacking Pokémon.",
+        "Heat Breath · 80+\nFlip a coin. If heads, this attack does 80 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Heat Breath",
+          "cost": [
+            "Fire",
+            "Fire",
+            "Colorless"
+          ],
+          "damage": "80+",
+          "text": "Flip a coin. If heads, this attack does 80 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Shell Spikes",
+          "text": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), discard an Energy from the Attacking Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-32",
+      "name": "Mawile",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "32",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-32/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-32/large",
+      "rulesText": [
+        "Double Eater · 60×\nDiscard up to 2 Energy cards from your hand, and this attack does 60 damage for each card you discarded in this way."
+      ],
+      "attacks": [
+        {
+          "name": "Double Eater",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "60×",
+          "text": "Discard up to 2 Energy cards from your hand, and this attack does 60 damage for each card you discarded in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-15",
+      "name": "Salandit",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "15",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-15/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-15/large",
+      "rulesText": [
+        "Fire Claws · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Fire Claws",
+          "cost": [
+            "Fire"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-14",
+      "name": "Talonflame",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "14",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-14/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-14/large",
+      "rulesText": [
+        "[Ability] Sky Hunt\nOnce during your turn, you may use this Ability. Flip a coin. If heads, discard a random card from your opponent's hand.",
+        "Fire Wing · 110"
+      ],
+      "attacks": [
+        {
+          "name": "Fire Wing",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "110",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sky Hunt",
+          "text": "Once during your turn, you may use this Ability. Flip a coin. If heads, discard a random card from your opponent's hand.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-13",
+      "name": "Fletchinder",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "13",
+      "supertype": "Pokémon",
+      "types": [
+        "Fire"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-13/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-13/large",
+      "rulesText": [
+        "Flare · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Flare",
+          "cost": [
+            "Fire",
+            "Fire"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-12",
+      "name": "Decidueye ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "12",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2",
+        "ex"
+      ],
+      "hp": 320,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-12/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-12/large",
+      "rulesText": [
+        "[Ability] Sniper's Eye\nIf your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
+        "Crushing Arrow · 240\nDiscard an Energy from your opponent's Active Pokémon.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Crushing Arrow",
+          "cost": [
+            "Grass",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "240",
+          "text": "Discard an Energy from your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sniper's Eye",
+          "text": "If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-11",
+      "name": "Dartrix",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "11",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-11/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-11/large",
+      "rulesText": [
+        "Leafage · 20",
+        "Feather Shot\nDiscard all Energy from this Pokémon, and this attack does 90 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      ],
+      "attacks": [
+        {
+          "name": "Leafage",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": ""
+        },
+        {
+          "name": "Feather Shot",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Discard all Energy from this Pokémon, and this attack does 90 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-10",
+      "name": "Rowlet",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "10",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-10/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-10/large",
+      "rulesText": [
+        "Find a Friend\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+        "Tackle · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Find a Friend",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+        },
+        {
+          "name": "Tackle",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-9",
+      "name": "Vivillon",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "9",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-9/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-9/large",
+      "rulesText": [
+        "[Ability] Grand Wing\nOnce during your turn, you may use this Ability. Your opponent shuffles their hand and puts it on the bottom of their deck. If they put any cards on the bottom of their deck in this way, they draw 4 cards.",
+        "Blow Through · 60+\nIf a Stadium is in play, this attack does 60 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Blow Through",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "60+",
+          "text": "If a Stadium is in play, this attack does 60 more damage."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Grand Wing",
+          "text": "Once during your turn, you may use this Ability. Your opponent shuffles their hand and puts it on the bottom of their deck. If they put any cards on the bottom of their deck in this way, they draw 4 cards.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-8",
+      "name": "Spewpa",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "8",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-8/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-8/large",
+      "rulesText": [
+        "Hide\nFlip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Hide",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-7",
+      "name": "Scatterbug",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "7",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 40,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-7/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-7/large",
+      "rulesText": [
+        "Gnaw · 20"
+      ],
+      "attacks": [
+        {
+          "name": "Gnaw",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-6",
+      "name": "Serperior",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "6",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 160,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-6/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-6/large",
+      "rulesText": [
+        "Regal Command · 20×\nThis attack does 20 damage for each of your Pokémon in play.",
+        "Solar Coiling · 100+\nIf Rosa's Encouragement is in your discard pile, this attack does 150 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Regal Command",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "20×",
+          "text": "This attack does 20 damage for each of your Pokémon in play."
+        },
+        {
+          "name": "Solar Coiling",
+          "cost": [
+            "Grass",
+            "Grass",
+            "Grass"
+          ],
+          "damage": "100+",
+          "text": "If Rosa's Encouragement is in your discard pile, this attack does 150 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-5",
+      "name": "Servine",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "5",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-5/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-5/large",
+      "rulesText": [
+        "Solar Cutter · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Solar Cutter",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-4",
+      "name": "Snivy",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "4",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-4/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-4/large",
+      "rulesText": [
+        "Reckless Charge · 30\nThis Pokémon also does 10 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Reckless Charge",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "30",
+          "text": "This Pokémon also does 10 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-3",
+      "name": "Shaymin",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "3",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-3/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-3/large",
+      "rulesText": [
+        "Send Flowers\nSearch your deck for an Energy card and attach it to 1 of your Benched Grass Pokémon. Then, shuffle your deck.",
+        "Leaf Step · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Send Flowers",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "",
+          "text": "Search your deck for an Energy card and attach it to 1 of your Benched Grass Pokémon. Then, shuffle your deck."
+        },
+        {
+          "name": "Leaf Step",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-2",
+      "name": "Ariados",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "2",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 110,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-2/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-2/large",
+      "rulesText": [
+        "Poison Ring · 50\nYour opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Ring",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "50",
+          "text": "Your opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-47",
+      "name": "Mega Zygarde ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "47",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 310,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-47/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-47/large",
+      "rulesText": [
+        "Gaia Wave · 200\nDuring your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+        "Nullifying Zero\nFor each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Gaia Wave",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "200",
+          "text": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance)."
+        },
+        {
+          "name": "Nullifying Zero",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "",
+          "text": "For each of your opponent's Pokémon, flip a coin. If heads, this attack does 150 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-62",
+      "name": "Meowth ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "62",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 170,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-62/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-62/large",
+      "rulesText": [
+        "[Ability] Last-Ditch Catch\nOnce during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+        "Tuck Tail · 60\nPut this Pokémon and all attached cards into your hand.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Tuck Tail",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": "Put this Pokémon and all attached cards into your hand."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Last-Ditch Catch",
+          "text": "Once during your turn, when you play this Pokémon from your hand onto your Bench, you may use this Ability. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck. You can't use more than 1 Ability that has \"Last-Ditch\" in its name each turn.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-61",
+      "name": "Raticate",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "61",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-61/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-61/large",
+      "rulesText": [
+        "Scrape Off · 20\nBefore doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+        "Retaliatory Incisors · 40×\nThis attack does 40 damage for each damage counter on all of your Benched Rattata."
+      ],
+      "attacks": [
+        {
+          "name": "Scrape Off",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "20",
+          "text": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon."
+        },
+        {
+          "name": "Retaliatory Incisors",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "40×",
+          "text": "This attack does 40 damage for each damage counter on all of your Benched Rattata."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-60",
+      "name": "Rattata",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "60",
+      "supertype": "Pokémon",
+      "types": [
+        "Colorless"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 40,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-60/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-60/large",
+      "rulesText": [
+        "Take Down · 30\nThis Pokémon also does 10 damage to itself."
+      ],
+      "attacks": [
+        {
+          "name": "Take Down",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "30",
+          "text": "This Pokémon also does 10 damage to itself."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-59",
+      "name": "Klefki",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "59",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-59/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-59/large",
+      "rulesText": [
+        "Memory Lock · 30\nChoose 1 of your opponent's Active Pokémon's attacks. During your opponent's next turn, that Pokémon can't use that attack."
+      ],
+      "attacks": [
+        {
+          "name": "Memory Lock",
+          "cost": [
+            "Metal"
+          ],
+          "damage": "30",
+          "text": "Choose 1 of your opponent's Active Pokémon's attacks. During your opponent's next turn, that Pokémon can't use that attack."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-58",
+      "name": "Aegislash",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "58",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-58/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-58/large",
+      "rulesText": [
+        "Slash · 80",
+        "Metal Slash · 230\nDuring your next turn, this Pokémon can't use attacks."
+      ],
+      "attacks": [
+        {
+          "name": "Slash",
+          "cost": [
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": ""
+        },
+        {
+          "name": "Metal Slash",
+          "cost": [
+            "Metal",
+            "Colorless",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "230",
+          "text": "During your next turn, this Pokémon can't use attacks."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-57",
+      "name": "Doublade",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "57",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-57/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-57/large",
+      "rulesText": [
+        "Weaponized Swords · 60×\nReveal any number of Honedge, Doublade, and Aegislash from your hand, and this attack does 60 damage for each card you revealed in this way."
+      ],
+      "attacks": [
+        {
+          "name": "Weaponized Swords",
+          "cost": [
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60×",
+          "text": "Reveal any number of Honedge, Doublade, and Aegislash from your hand, and this attack does 60 damage for each card you revealed in this way."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-56",
+      "name": "Honedge",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "56",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-56/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-56/large",
+      "rulesText": [
+        "Cut · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Cut",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-55",
+      "name": "Mega Skarmory ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "55",
+      "supertype": "Pokémon",
+      "types": [
+        "Metal"
+      ],
+      "subtypes": [
+        "Basic",
+        "MEGA",
+        "ex"
+      ],
+      "hp": 260,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-55/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-55/large",
+      "rulesText": [
+        "Sonic Ripper\nShuffle all Energy attached to this Pokémon into your deck, and this attack does 220 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Sonic Ripper",
+          "cost": [
+            "Metal",
+            "Metal",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Shuffle all Energy attached to this Pokémon into your deck, and this attack does 220 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-54",
+      "name": "Chien-Pao",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "54",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-54/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-54/large",
+      "rulesText": [
+        "Strafe · 20\nYou may switch this Pokémon with 1 of your Benched Pokémon.",
+        "Rising Blade · 80+\nIf your opponent's Active Pokémon is a Pokémon ex, this attack does 80 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Strafe",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "20",
+          "text": "You may switch this Pokémon with 1 of your Benched Pokémon."
+        },
+        {
+          "name": "Rising Blade",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "80+",
+          "text": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 80 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-53",
+      "name": "Yveltal ex",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "53",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic",
+        "ex"
+      ],
+      "hp": 210,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-53/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-53/large",
+      "rulesText": [
+        "Soul Destroyer\nKnock Out each of your opponent's Pokémon that has 50 HP or less remaining.",
+        "Dark Strike · 210\nDuring your next turn, this Pokémon can't use Dark Strike.",
+        "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+      ],
+      "attacks": [
+        {
+          "name": "Soul Destroyer",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Knock Out each of your opponent's Pokémon that has 50 HP or less remaining."
+        },
+        {
+          "name": "Dark Strike",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Colorless"
+          ],
+          "damage": "210",
+          "text": "During your next turn, this Pokémon can't use Dark Strike."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Double Rare"
+    },
+    {
+      "id": "me3-52",
+      "name": "Drapion",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "52",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-52/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-52/large",
+      "rulesText": [
+        "Wrack Down · 60",
+        "Hazardous Tail · 100\nThis Pokémon also does 70 damage to itself. Your opponent's Active Pokémon is now Paralyzed and Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Wrack Down",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "60",
+          "text": ""
+        },
+        {
+          "name": "Hazardous Tail",
+          "cost": [
+            "Darkness",
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "100",
+          "text": "This Pokémon also does 70 damage to itself. Your opponent's Active Pokémon is now Paralyzed and Poisoned."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-51",
+      "name": "Skorupi",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "51",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-51/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-51/large",
+      "rulesText": [
+        "Poison Jab · 20\nYour opponent's Active Pokémon is now Poisoned."
+      ],
+      "attacks": [
+        {
+          "name": "Poison Jab",
+          "cost": [
+            "Darkness",
+            "Darkness"
+          ],
+          "damage": "20",
+          "text": "Your opponent's Active Pokémon is now Poisoned."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-50",
+      "name": "Gengar",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "50",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-50/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-50/large",
+      "rulesText": [
+        "[Ability] Infinite Shadow\nIf this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, put it into your hand instead of the discard pile. (Discard all attached cards.)",
+        "Mind Jack · 10+\nThis attack does 30 more damage for each of your opponent's Benched Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Mind Jack",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "10+",
+          "text": "This attack does 30 more damage for each of your opponent's Benched Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Infinite Shadow",
+          "text": "If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, put it into your hand instead of the discard pile. (Discard all attached cards.)",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-49",
+      "name": "Haunter",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "49",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-49/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-49/large",
+      "rulesText": [
+        "Haunt\nPlace 3 damage counters on your opponent's Active Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Haunt",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "",
+          "text": "Place 3 damage counters on your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-48",
+      "name": "Gastly",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "48",
+      "supertype": "Pokémon",
+      "types": [
+        "Darkness"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-48/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-48/large",
+      "rulesText": [
+        "Surprise Attack · 30\nFlip a coin. If tails, this attack does nothing."
+      ],
+      "attacks": [
+        {
+          "name": "Surprise Attack",
+          "cost": [
+            "Darkness"
+          ],
+          "damage": "30",
+          "text": "Flip a coin. If tails, this attack does nothing."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-1",
+      "name": "Spinarak",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "1",
+      "supertype": "Pokémon",
+      "types": [
+        "Grass"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-1/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-1/large",
+      "rulesText": [
+        "Gooey Thread · 10\nDuring your opponent's next turn, the Defending Pokémon can't retreat."
+      ],
+      "attacks": [
+        {
+          "name": "Gooey Thread",
+          "cost": [
+            "Grass"
+          ],
+          "damage": "10",
+          "text": "During your opponent's next turn, the Defending Pokémon can't retreat."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-46",
+      "name": "Hawlucha",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "46",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-46/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-46/large",
+      "rulesText": [
+        "Vengeful Kick · 30+\nIf your Benched Pokémon have any damage counters on them, this attack does 60 more damage."
+      ],
+      "attacks": [
+        {
+          "name": "Vengeful Kick",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "30+",
+          "text": "If your Benched Pokémon have any damage counters on them, this attack does 60 more damage."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-45",
+      "name": "Tyrantrum",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "45",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 2"
+      ],
+      "hp": 180,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-45/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-45/large",
+      "rulesText": [
+        "[Ability] Tyrannically Gutsy\nIf this Pokémon has any Special Energy attached, it gets +150 HP.",
+        "Wreak Havoc · 160\nFlip a coin until you get tails. For each heads, discard the top card of your opponent's deck."
+      ],
+      "attacks": [
+        {
+          "name": "Wreak Havoc",
+          "cost": [
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "160",
+          "text": "Flip a coin until you get tails. For each heads, discard the top card of your opponent's deck."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Tyrannically Gutsy",
+          "text": "If this Pokémon has any Special Energy attached, it gets +150 HP.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-44",
+      "name": "Tyrunt",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "44",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-44/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-44/large",
+      "rulesText": [
+        "Get Angry · 20×\nThis attack does 20 damage for each damage counter on this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Get Angry",
+          "cost": [
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "20×",
+          "text": "This attack does 20 damage for each damage counter on this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-43",
+      "name": "Barbaracle",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "43",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 130,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-43/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-43/large",
+      "rulesText": [
+        "[Ability] Stone Arms\nOnce during your turn, you may use this Ability. Attach a Basic Fighting Energy card from your hand to 1 of your Fighting Pokémon.",
+        "Hammer In · 80"
+      ],
+      "attacks": [
+        {
+          "name": "Hammer In",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": ""
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Stone Arms",
+          "text": "Once during your turn, you may use this Ability. Attach a Basic Fighting Energy card from your hand to 1 of your Fighting Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-42",
+      "name": "Binacle",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "42",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 80,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-42/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-42/large",
+      "rulesText": [
+        "Double Draw\nDraw 2 cards.",
+        "Scratch · 30"
+      ],
+      "attacks": [
+        {
+          "name": "Double Draw",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "",
+          "text": "Draw 2 cards."
+        },
+        {
+          "name": "Scratch",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "30",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-41",
+      "name": "Landorus",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "41",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-41/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-41/large",
+      "rulesText": [
+        "Rock Tumble · 50\nThis attack's damage isn't affected by Resistance.",
+        "Screw Knuckle · 120\nPut an Energy attached to this Pokémon into your hand."
+      ],
+      "attacks": [
+        {
+          "name": "Rock Tumble",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "50",
+          "text": "This attack's damage isn't affected by Resistance."
+        },
+        {
+          "name": "Screw Knuckle",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "120",
+          "text": "Put an Energy attached to this Pokémon into your hand."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Rare"
+    },
+    {
+      "id": "me3-40",
+      "name": "Hippowdon",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "40",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 150,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-40/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-40/large",
+      "rulesText": [
+        "Twister Spewing · 80\nIf you played Tarragon from your hand during this turn, discard the top 3 cards of your opponent's deck.",
+        "Heavy Impact · 130"
+      ],
+      "attacks": [
+        {
+          "name": "Twister Spewing",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "80",
+          "text": "If you played Tarragon from your hand during this turn, discard the top 3 cards of your opponent's deck."
+        },
+        {
+          "name": "Heavy Impact",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "130",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-39",
+      "name": "Hippopotas",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "39",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-39/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-39/large",
+      "rulesText": [
+        "Sand Attack · 10\nDuring your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips a coin. If tails, that attack doesn't happen.",
+        "Bite · 60"
+      ],
+      "attacks": [
+        {
+          "name": "Sand Attack",
+          "cost": [
+            "Fighting"
+          ],
+          "damage": "10",
+          "text": "During your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips a coin. If tails, that attack doesn't happen."
+        },
+        {
+          "name": "Bite",
+          "cost": [
+            "Fighting",
+            "Colorless",
+            "Colorless"
+          ],
+          "damage": "60",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-38",
+      "name": "Probopass",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "38",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 140,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-38/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-38/large",
+      "rulesText": [
+        "Rolling Rocks · 60",
+        "Obliterating Nose · 260\nDiscard 3 Energy from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Rolling Rocks",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "60",
+          "text": ""
+        },
+        {
+          "name": "Obliterating Nose",
+          "cost": [
+            "Fighting",
+            "Fighting",
+            "Fighting",
+            "Colorless"
+          ],
+          "damage": "260",
+          "text": "Discard 3 Energy from this Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-37",
+      "name": "Nosepass",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "37",
+      "supertype": "Pokémon",
+      "types": [
+        "Fighting"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 90,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-37/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-37/large",
+      "rulesText": [
+        "Rolling Rocks · 40"
+      ],
+      "attacks": [
+        {
+          "name": "Rolling Rocks",
+          "cost": [
+            "Fighting",
+            "Fighting"
+          ],
+          "damage": "40",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-36",
+      "name": "Aromatisse",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "36",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 120,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-36/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-36/large",
+      "rulesText": [
+        "[Ability] Scent Collection\nOnce during your turn, you may use this Ability. Search your deck for up to 2 Basic Psychic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+        "Draining Kiss · 50\nHeal 30 damage from this Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Draining Kiss",
+          "cost": [
+            "Psychic",
+            "Colorless"
+          ],
+          "damage": "50",
+          "text": "Heal 30 damage from this Pokémon."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Scent Collection",
+          "text": "Once during your turn, you may use this Ability. Search your deck for up to 2 Basic Psychic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+          "type": "Ability"
+        }
+      ],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-35",
+      "name": "Spritzee",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "35",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 70,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-35/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-35/large",
+      "rulesText": [
+        "Sweet Scent\nHeal 30 damage from 1 of your Pokémon.",
+        "Ram · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Sweet Scent",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Heal 30 damage from 1 of your Pokémon."
+        },
+        {
+          "name": "Ram",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    },
+    {
+      "id": "me3-34",
+      "name": "Meowstic",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "34",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Stage 1"
+      ],
+      "hp": 100,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-34/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-34/large",
+      "rulesText": [
+        "Perplex\nYour opponent's Active Pokémon is now Confused.",
+        "Psychic · 30+\nThis attack does 30 more damage for each Energy attached to your opponent's Active Pokémon."
+      ],
+      "attacks": [
+        {
+          "name": "Perplex",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "",
+          "text": "Your opponent's Active Pokémon is now Confused."
+        },
+        {
+          "name": "Psychic",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "30+",
+          "text": "This attack does 30 more damage for each Energy attached to your opponent's Active Pokémon."
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "me3-33",
+      "name": "Espurr",
+      "setCode": "POR",
+      "setName": "Perfect Order",
+      "number": "33",
+      "supertype": "Pokémon",
+      "types": [
+        "Psychic"
+      ],
+      "subtypes": [
+        "Basic"
+      ],
+      "hp": 60,
+      "isStandardLegal": true,
+      "imageURL": "https://images.scrydex.com/pokemon/me3-33/small",
+      "largeImageURL": "https://images.scrydex.com/pokemon/me3-33/large",
+      "rulesText": [
+        "Nap\nHeal 20 damage from this Pokémon.",
+        "Stampede · 10"
+      ],
+      "attacks": [
+        {
+          "name": "Nap",
+          "cost": [
+            "Colorless"
+          ],
+          "damage": "",
+          "text": "Heal 20 damage from this Pokémon."
+        },
+        {
+          "name": "Stampede",
+          "cost": [
+            "Psychic"
+          ],
+          "damage": "10",
+          "text": ""
+        }
+      ],
+      "abilities": [],
+      "regulationMark": "J",
+      "artist": null,
+      "rarity": "Common"
+    }
+  ]
+}

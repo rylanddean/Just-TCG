@@ -12,7 +12,9 @@ struct DeckBuilderView: View {
     @State private var isRenaming = false
     @State private var renameText = ""
     @FocusState private var renameFocused: Bool
-    @State private var showCardPicker = false  // wired up in M2-04
+    @State private var showCardPicker = false
+    @State private var showLogMatch = false
+    @State private var highlightedCardIds: Set<String> = []
 
     var body: some View {
         Group {
@@ -36,38 +38,122 @@ struct DeckBuilderView: View {
 
     @ViewBuilder
     private func builderList(vm: DeckBuilderViewModel) -> some View {
-        List {
-            pokemonSection(vm: vm)
-            trainerSection(vm: vm)
-            energySection(vm: vm)
+        ScrollViewReader { proxy in
+            List {
+                validationSection(vm: vm, proxy: proxy)
+                pokemonSection(vm: vm)
+                trainerSection(vm: vm)
+                energySection(vm: vm)
 
-            Section {
-                Button {
-                    showCardPicker = true
-                } label: {
-                    Label("Add Cards", systemImage: "plus")
-                        .frame(maxWidth: .infinity, alignment: .center)
+                Section {
+                    Button {
+                        showCardPicker = true
+                    } label: {
+                        Label("Add Cards", systemImage: "plus")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                }
+
+                matchesSection
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar { toolbarContent(vm: vm) }
+            .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
+                CardPickerView(deck: deck)
+            }
+            .sheet(isPresented: $showLogMatch) {
+                LogMatchSheet(deck: deck)
+            }
+            .onTapGesture {
+                if isRenaming { commitRename(vm: vm) }
+            }
+        }
+    }
+
+    // MARK: - Matches section
+
+    private var matchesSection: some View {
+        let count = deck.matches.count
+        return Section {
+            Label(
+                count == 1 ? "1 match logged" : "\(count) matches logged",
+                systemImage: "sportscourt"
+            )
+            .foregroundStyle(.secondary)
+        }
+    }
+
+    // MARK: - Validation banner
+
+    @ViewBuilder
+    private func validationSection(vm: DeckBuilderViewModel, proxy: ScrollViewProxy) -> some View {
+        let errors = vm.validationErrors
+        let fatals = errors.filter { $0.isFatal }
+        let warnings = errors.filter { !$0.isFatal }
+
+        Section {
+            if errors.isEmpty {
+                Label("Legal deck", systemImage: "checkmark.circle.fill")
+                    .foregroundStyle(.green)
+            } else {
+                ForEach(fatals) { err in
+                    validationRow(err, color: .red, vm: vm, proxy: proxy)
+                }
+                ForEach(warnings) { err in
+                    validationRow(err, color: .yellow, vm: vm, proxy: proxy)
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar { toolbarContent(vm: vm) }
-        .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
-            CardPickerView(deck: deck)
-        }
-        .onTapGesture {
-            if isRenaming { commitRename(vm: vm) }
+    }
+
+    @ViewBuilder
+    private func validationRow(
+        _ error: DeckValidationError,
+        color: Color,
+        vm: DeckBuilderViewModel,
+        proxy: ScrollViewProxy
+    ) -> some View {
+        let icon = error.isFatal ? "xmark.circle.fill" : "exclamationmark.triangle.fill"
+        if let name = error.affectedCardName {
+            Button {
+                scrollToCards(named: name, vm: vm, proxy: proxy)
+            } label: {
+                Label(error.message, systemImage: icon)
+                    .foregroundStyle(color)
+            }
+            .buttonStyle(.plain)
+        } else {
+            Label(error.message, systemImage: icon)
+                .foregroundStyle(color)
         }
     }
+
+    private func scrollToCards(named name: String, vm: DeckBuilderViewModel, proxy: ScrollViewProxy) {
+        let ids = vm.cardIds(forName: name)
+        guard let firstId = ids.first else { return }
+        withAnimation { highlightedCardIds = Set(ids) }
+        proxy.scrollTo(firstId, anchor: .center)
+        Task {
+            try? await Task.sleep(nanoseconds: 1_500_000_000)
+            highlightedCardIds = []
+        }
+    }
+
+    // MARK: - Card sections
 
     @ViewBuilder
     private func pokemonSection(vm: DeckBuilderViewModel) -> some View {
         if !vm.pokemonCards.isEmpty {
             Section(sectionTitle("Pokémon", cards: vm.pokemonCards)) {
                 ForEach(vm.pokemonCards) { dc in
-                    DeckCardRow(deckCard: dc, cachedCard: vm.cachedCards[dc.cardId]) {
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) {
                         vm.setQuantity($0, for: dc)
                     }
+                    .id(dc.cardId)
                 }
             }
         }
@@ -78,9 +164,14 @@ struct DeckBuilderView: View {
         if !vm.trainerCards.isEmpty {
             Section(sectionTitle("Trainer", cards: vm.trainerCards)) {
                 ForEach(vm.trainerCards) { dc in
-                    DeckCardRow(deckCard: dc, cachedCard: vm.cachedCards[dc.cardId]) {
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) {
                         vm.setQuantity($0, for: dc)
                     }
+                    .id(dc.cardId)
                 }
             }
         }
@@ -91,9 +182,14 @@ struct DeckBuilderView: View {
         if !vm.energyCards.isEmpty {
             Section(sectionTitle("Energy", cards: vm.energyCards)) {
                 ForEach(vm.energyCards) { dc in
-                    DeckCardRow(deckCard: dc, cachedCard: vm.cachedCards[dc.cardId]) {
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) {
                         vm.setQuantity($0, for: dc)
                     }
+                    .id(dc.cardId)
                 }
             }
         }
@@ -135,16 +231,18 @@ struct DeckBuilderView: View {
             }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
+            Button { showLogMatch = true } label: {
+                Image(systemName: "plus")
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
             if showsDoneButton {
                 Button("Done") { dismiss() }
                     .fontWeight(.semibold)
             } else {
-                Button {
-                    // M2-06 export
-                } label: {
+                ShareLink(item: vm.exportString) {
                     Image(systemName: "square.and.arrow.up")
                 }
-                .disabled(true)
             }
         }
     }
@@ -160,6 +258,7 @@ struct DeckBuilderView: View {
 private struct DeckCardRow: View {
     let deckCard: DeckCard
     let cachedCard: CachedCard?
+    var isHighlighted: Bool = false
     let onQuantityChange: (Int) -> Void
 
     var body: some View {
@@ -215,5 +314,7 @@ private struct DeckCardRow: View {
             }
         }
         .padding(.vertical, 4)
+        .listRowBackground(isHighlighted ? Color.yellow.opacity(0.25) : nil)
+        .animation(.easeInOut(duration: 0.3), value: isHighlighted)
     }
 }

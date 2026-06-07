@@ -1,0 +1,22 @@
+[
+  { "id": "arceus-vstar-giratina",       "name": "Arceus VSTAR / Giratina",       "primaryType": "Colorless" },
+  { "id": "ceruledge-ex",                "name": "Ceruledge ex",                  "primaryType": "Fire"      },
+  { "id": "charizard-ex-pidgeot-ex",     "name": "Charizard ex / Pidgeot ex",     "primaryType": "Fire"      },
+  { "id": "chien-pao-ex-baxcalibur",     "name": "Chien-Pao ex / Baxcalibur",    "primaryType": "Water"     },
+  { "id": "dragapult-ex",                "name": "Dragapult ex",                  "primaryType": "Psychic"   },
+  { "id": "gardevoir-ex",                "name": "Gardevoir ex",                  "primaryType": "Psychic"   },
+  { "id": "gholdengo-ex",                "name": "Gholdengo ex",                  "primaryType": "Metal"     },
+  { "id": "giratina-vstar",              "name": "Giratina VSTAR",                "primaryType": "Psychic"   },
+  { "id": "iron-thorns-ex",              "name": "Iron Thorns ex",                "primaryType": "Lightning" },
+  { "id": "iron-valiant-ex",             "name": "Iron Valiant ex",               "primaryType": "Psychic"   },
+  { "id": "klawf-stall",                 "name": "Klawf Stall",                   "primaryType": "Fighting"  },
+  { "id": "lost-box-comfey",             "name": "Lost Box Comfey",               "primaryType": "Psychic"   },
+  { "id": "lugia-vstar",                 "name": "Lugia VSTAR",                   "primaryType": "Colorless" },
+  { "id": "miraidon-ex",                 "name": "Miraidon ex",                   "primaryType": "Lightning" },
+  { "id": "radiant-charizard-turbo",     "name": "Radiant Charizard / Turbo",     "primaryType": "Fire"      },
+  { "id": "raging-bolt-ex",              "name": "Raging Bolt ex",                "primaryType": "Lightning" },
+  { "id": "regidrago-vstar",             "name": "Regidrago VSTAR",               "primaryType": "Dragon"    },
+  { "id": "roaring-moon-ex",             "name": "Roaring Moon ex",               "primaryType": "Darkness"  },
+  { "id": "snorlax-stall",               "name": "Snorlax Stall",                 "primaryType": "Colorless" },
+  { "id": "terapagos-ex",                "name": "Terapagos ex",                  "primaryType": "Colorless" }
+]
