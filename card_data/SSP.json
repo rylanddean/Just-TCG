@@ -44,7 +44,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-2",
@@ -79,7 +82,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-3",
@@ -114,7 +120,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-4",
@@ -160,7 +169,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-5",
@@ -195,7 +207,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-6",
@@ -239,7 +254,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-7",
@@ -283,7 +301,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-8",
@@ -318,7 +339,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-9",
@@ -361,7 +385,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-10",
@@ -407,7 +434,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-11",
@@ -453,7 +483,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-12",
@@ -489,7 +522,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-13",
@@ -533,7 +569,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-14",
@@ -577,7 +616,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-15",
@@ -624,7 +666,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-16",
@@ -659,7 +704,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-17",
@@ -694,7 +742,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-18",
@@ -740,7 +791,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-19",
@@ -787,7 +841,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-20",
@@ -832,7 +889,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-21",
@@ -875,7 +935,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-22",
@@ -910,7 +973,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-23",
@@ -945,7 +1011,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-24",
@@ -990,7 +1059,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-25",
@@ -1036,7 +1108,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-26",
@@ -1080,7 +1155,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-27",
@@ -1126,7 +1204,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-28",
@@ -1172,7 +1253,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-29",
@@ -1208,7 +1292,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-30",
@@ -1244,7 +1331,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-31",
@@ -1287,7 +1377,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-32",
@@ -1322,7 +1415,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-33",
@@ -1368,7 +1464,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-34",
@@ -1415,7 +1514,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-35",
@@ -1461,7 +1563,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-36",
@@ -1511,7 +1616,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-37",
@@ -1556,7 +1664,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-38",
@@ -1603,7 +1714,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-39",
@@ -1650,7 +1764,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-40",
@@ -1695,7 +1812,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-41",
@@ -1730,7 +1850,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-42",
@@ -1776,7 +1899,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-43",
@@ -1811,7 +1937,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-44",
@@ -1856,7 +1985,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-45",
@@ -1901,7 +2033,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-46",
@@ -1937,7 +2072,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-47",
@@ -1981,7 +2119,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-48",
@@ -2032,7 +2173,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-49",
@@ -2075,7 +2219,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-50",
@@ -2110,7 +2257,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-51",
@@ -2145,7 +2295,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-52",
@@ -2188,7 +2341,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-53",
@@ -2224,7 +2380,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-54",
@@ -2269,7 +2428,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-55",
@@ -2307,7 +2469,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-56",
@@ -2351,7 +2516,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-57",
@@ -2399,7 +2567,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-58",
@@ -2434,7 +2605,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-59",
@@ -2477,7 +2651,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-60",
@@ -2526,7 +2703,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-61",
@@ -2570,7 +2750,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-62",
@@ -2615,7 +2798,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-63",
@@ -2661,7 +2847,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-64",
@@ -2697,7 +2886,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-65",
@@ -2743,7 +2935,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-66",
@@ -2778,7 +2973,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-67",
@@ -2825,7 +3023,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-68",
@@ -2872,7 +3073,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": null,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-69",
@@ -2920,7 +3124,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-70",
@@ -2956,7 +3163,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-71",
@@ -2992,7 +3202,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-72",
@@ -3036,7 +3249,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-73",
@@ -3071,7 +3287,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-74",
@@ -3116,7 +3335,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-75",
@@ -3151,7 +3373,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-76",
@@ -3197,7 +3422,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-77",
@@ -3244,7 +3472,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-78",
@@ -3279,7 +3510,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-79",
@@ -3324,7 +3558,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-80",
@@ -3360,7 +3597,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-81",
@@ -3406,7 +3646,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-82",
@@ -3451,7 +3694,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-83",
@@ -3497,7 +3743,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-84",
@@ -3542,7 +3791,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-85",
@@ -3586,7 +3838,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-86",
@@ -3638,7 +3893,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-87",
@@ -3682,7 +3940,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-88",
@@ -3729,7 +3990,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-89",
@@ -3774,7 +4038,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-90",
@@ -3811,7 +4078,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-91",
@@ -3863,7 +4133,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-92",
@@ -3910,7 +4183,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-93",
@@ -3953,7 +4229,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-94",
@@ -3988,7 +4267,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-95",
@@ -4033,7 +4315,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-96",
@@ -4080,7 +4365,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-97",
@@ -4126,7 +4414,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-98",
@@ -4161,7 +4452,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-99",
@@ -4206,7 +4500,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-100",
@@ -4251,7 +4548,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-101",
@@ -4298,7 +4598,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-102",
@@ -4333,7 +4636,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-103",
@@ -4379,7 +4685,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 4,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-104",
@@ -4424,7 +4733,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-105",
@@ -4469,7 +4781,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-106",
@@ -4519,7 +4834,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-107",
@@ -4563,7 +4881,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-108",
@@ -4607,7 +4928,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-109",
@@ -4652,7 +4976,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-110",
@@ -4699,7 +5026,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-111",
@@ -4735,7 +5065,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-112",
@@ -4770,7 +5103,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-113",
@@ -4816,7 +5152,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-114",
@@ -4851,7 +5190,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-115",
@@ -4896,7 +5238,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-116",
@@ -4944,7 +5289,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-117",
@@ -4989,7 +5337,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-118",
@@ -5035,7 +5386,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-119",
@@ -5087,7 +5441,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-120",
@@ -5122,7 +5479,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-121",
@@ -5167,7 +5527,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-122",
@@ -5202,7 +5565,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-123",
@@ -5237,7 +5603,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-124",
@@ -5273,7 +5642,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-125",
@@ -5309,7 +5681,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-126",
@@ -5345,7 +5720,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-127",
@@ -5392,7 +5770,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-128",
@@ -5436,7 +5817,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-129",
@@ -5483,7 +5867,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-130",
@@ -5529,7 +5916,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-131",
@@ -5575,7 +5965,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-132",
@@ -5623,7 +6016,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-133",
@@ -5674,7 +6070,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-134",
@@ -5719,7 +6118,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-135",
@@ -5765,7 +6167,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-136",
@@ -5801,7 +6206,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-137",
@@ -5847,7 +6255,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-138",
@@ -5892,7 +6303,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-139",
@@ -5937,7 +6351,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-140",
@@ -5983,7 +6400,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-141",
@@ -6029,7 +6449,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-142",
@@ -6080,7 +6503,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-143",
@@ -6123,7 +6549,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-144",
@@ -6169,7 +6598,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-145",
@@ -6204,7 +6636,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-146",
@@ -6240,7 +6675,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-147",
@@ -6285,7 +6723,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-148",
@@ -6320,7 +6761,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-149",
@@ -6355,7 +6799,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-150",
@@ -6398,7 +6845,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-151",
@@ -6446,7 +6896,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-152",
@@ -6482,7 +6935,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-153",
@@ -6529,7 +6985,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-154",
@@ -6575,7 +7034,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-155",
@@ -6621,7 +7083,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-156",
@@ -6667,7 +7132,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-157",
@@ -6702,7 +7170,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-158",
@@ -6746,7 +7217,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-159",
@@ -6798,7 +7272,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-160",
@@ -6848,7 +7325,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-161",
@@ -6894,7 +7374,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-162",
@@ -6922,7 +7405,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-163",
@@ -6948,7 +7434,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-164",
@@ -6975,7 +7464,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-165",
@@ -7000,7 +7492,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-166",
@@ -7025,7 +7520,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-167",
@@ -7050,7 +7548,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-168",
@@ -7076,7 +7577,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-169",
@@ -7102,7 +7606,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-170",
@@ -7127,7 +7634,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-171",
@@ -7152,7 +7662,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-172",
@@ -7177,7 +7690,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-173",
@@ -7202,7 +7718,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-174",
@@ -7227,7 +7746,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-175",
@@ -7252,7 +7774,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-176",
@@ -7279,7 +7804,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-177",
@@ -7304,7 +7832,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-178",
@@ -7329,7 +7860,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-179",
@@ -7354,7 +7888,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-180",
@@ -7379,7 +7916,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-181",
@@ -7404,7 +7944,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-182",
@@ -7431,7 +7974,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-183",
@@ -7458,7 +8004,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-184",
@@ -7484,7 +8033,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-185",
@@ -7511,7 +8063,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-186",
@@ -7538,7 +8093,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-187",
@@ -7563,7 +8121,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-188",
@@ -7601,7 +8162,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-189",
@@ -7626,7 +8190,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-190",
@@ -7651,7 +8218,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-191",
@@ -7677,7 +8247,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-192",
@@ -7712,7 +8285,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-193",
@@ -7756,7 +8332,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-194",
@@ -7799,7 +8378,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-195",
@@ -7844,7 +8426,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-196",
@@ -7889,7 +8474,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-197",
@@ -7935,7 +8523,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-198",
@@ -7970,7 +8561,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-199",
@@ -8005,7 +8599,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-200",
@@ -8048,7 +8645,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-201",
@@ -8093,7 +8693,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-202",
@@ -8129,7 +8732,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-203",
@@ -8176,7 +8782,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-204",
@@ -8221,7 +8830,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-205",
@@ -8256,7 +8868,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-206",
@@ -8301,7 +8916,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-207",
@@ -8336,7 +8954,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv8-208",
@@ -8371,7 +8992,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-209",
@@ -8407,7 +9031,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-210",
@@ -8452,7 +9079,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-211",
@@ -8498,7 +9128,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-212",
@@ -8533,7 +9166,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-213",
@@ -8576,7 +9212,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-214",
@@ -8623,7 +9262,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-215",
@@ -8669,7 +9311,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-216",
@@ -8714,7 +9359,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv8-217",
@@ -8760,7 +9408,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-218",
@@ -8811,7 +9462,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv8-219",
@@ -8859,7 +9513,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-220",
@@ -8905,7 +9562,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-221",
@@ -8957,7 +9617,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-222",
@@ -9007,7 +9670,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-223",
@@ -9059,7 +9725,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-224",
@@ -9105,7 +9774,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-225",
@@ -9156,7 +9828,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-226",
@@ -9207,7 +9882,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-227",
@@ -9252,7 +9930,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-228",
@@ -9304,7 +9985,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-229",
@@ -9329,7 +10013,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-230",
@@ -9354,7 +10041,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-231",
@@ -9379,7 +10069,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-232",
@@ -9404,7 +10097,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-233",
@@ -9429,7 +10125,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-234",
@@ -9454,7 +10153,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-235",
@@ -9479,7 +10181,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-236",
@@ -9525,7 +10230,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv8-237",
@@ -9571,7 +10279,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv8-238",
@@ -9619,7 +10330,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-239",
@@ -9665,7 +10379,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv8-240",
@@ -9717,7 +10434,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv8-241",
@@ -9763,7 +10483,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv8-242",
@@ -9814,7 +10537,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-243",
@@ -9839,7 +10565,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-244",
@@ -9864,7 +10593,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-245",
@@ -9889,7 +10621,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-246",
@@ -9914,7 +10649,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-247",
@@ -9962,7 +10700,10 @@
       ],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv8-248",
@@ -10013,7 +10754,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": 3,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-249",
@@ -10039,7 +10783,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-250",
@@ -10064,7 +10811,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-251",
@@ -10089,7 +10839,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv8-252",
@@ -10113,7 +10866,10 @@
       "abilities": [],
       "regulationMark": "G",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     }
   ]
 }

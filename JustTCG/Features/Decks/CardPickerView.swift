@@ -9,10 +9,12 @@ struct CardPickerView: View {
 
     @State private var cards: [CachedCard] = []
     @State private var availableSets: [(code: String, name: String)] = []
+    @State private var availableRarities: [String] = []
 
     @State private var searchText = ""
     @State private var filterState = CardFilterState()
     @State private var showFilterSheet = false
+    @State private var sortOrder: CardSortOrder = .expansion
 
     @State private var cardForDetail: CachedCard? = nil
     @State private var searchTask: Task<Void, Never>? = nil
@@ -34,12 +36,20 @@ struct CardPickerView: View {
                     filterButton
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    sortMenu
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
                         .fontWeight(.semibold)
                 }
             }
             .sheet(isPresented: $showFilterSheet) {
-                CardFilterView(filterState: $filterState, availableSets: availableSets)
+                CardFilterView(
+                    filterState: $filterState,
+                    availableSets: availableSets,
+                    availableRarities: availableRarities,
+                    hideRegulationMark: true
+                )
             }
             .sheet(item: $cardForDetail) { card in
                 NavigationStack {
@@ -58,6 +68,7 @@ struct CardPickerView: View {
         .task { await loadInitial() }
         .onChange(of: searchText) { _, _ in scheduleSearch() }
         .onChange(of: filterState) { _, _ in Task { await loadCards() } }
+        .onChange(of: sortOrder) { _, _ in Task { await loadCards() } }
     }
 
     // MARK: - Sub-views
@@ -103,6 +114,24 @@ struct CardPickerView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    private var sortMenu: some View {
+        Menu {
+            ForEach(CardSortOrder.allCases) { order in
+                Button {
+                    sortOrder = order
+                } label: {
+                    Label(order.menuLabel, systemImage: sortOrder == order ? "checkmark" : "")
+                }
+            }
+        } label: {
+            Image(systemName: sortOrder == .expansion
+                  ? "arrow.up.arrow.down"
+                  : "arrow.up.arrow.down.circle.fill")
+        }
+        .accessibilityLabel("Sort cards")
+        .accessibilityValue(sortOrder.menuLabel)
+    }
+
     private var filterButton: some View {
         Button { showFilterSheet = true } label: {
             Image(systemName: filterState.isEmpty
@@ -114,15 +143,8 @@ struct CardPickerView: View {
     private var filterChipsRow: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(Array(filterState.types).sorted(), id: \.self) { type in
-                    FilterChip(label: type) { filterState.types.remove(type) }
-                }
-                ForEach(Array(filterState.subtypes).sorted(), id: \.self) { subtype in
-                    FilterChip(label: subtype) { filterState.subtypes.remove(subtype) }
-                }
-                ForEach(Array(filterState.sets).sorted(), id: \.self) { setCode in
-                    let name = availableSets.first(where: { $0.code == setCode })?.name ?? setCode
-                    FilterChip(label: name) { filterState.sets.remove(setCode) }
+                ForEach(filterState.activeChips) { chip in
+                    FilterChip(label: chip.label) { filterState.clearChip(id: chip.id) }
                 }
                 Button("Clear all") { filterState = CardFilterState() }
                     .font(.caption.weight(.medium))
@@ -139,17 +161,13 @@ struct CardPickerView: View {
     private func loadInitial() async {
         let repo = CardRepository(modelContext: context)
         availableSets = (try? repo.fetchDistinctSets()) ?? []
+        availableRarities = (try? repo.fetchDistinctRarities()) ?? []
         await loadCards()
     }
 
     private func loadCards() async {
         let repo = CardRepository(modelContext: context)
-        cards = (try? repo.fetch(
-            matching: searchText,
-            types: Array(filterState.types),
-            subtypes: Array(filterState.subtypes),
-            sets: Array(filterState.sets)
-        )) ?? cards
+        cards = (try? repo.fetch(matching: searchText, filterState: filterState, sortOrder: sortOrder)) ?? cards
     }
 
     private func scheduleSearch() {

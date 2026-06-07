@@ -99,26 +99,16 @@ final class CardRepository {
         )
     }
 
-    // Filters cards by name query, energy type(s), subtype(s), and set code(s).
-    // Name and set filters run at the DB level; type/subtype filtering runs
-    // in-memory (SwiftData can't query stored [String] arrays efficiently).
+    // Fetches cards matching a text query, applies all active filter criteria,
+    // and orders results by sortOrder.
     func fetch(
         matching query: String = "",
-        types: [String] = [],
-        subtypes: [String] = [],
-        sets: [String] = []
+        filterState: CardFilterState = CardFilterState(),
+        sortOrder: CardSortOrder = .expansion
     ) throws -> [CachedCard] {
-        var results = try fetchFromDB(query: query, sets: sets)
-
-        if !types.isEmpty {
-            let typeSet = Set(types)
-            results = results.filter { !Set($0.types).isDisjoint(with: typeSet) }
-        }
-        if !subtypes.isEmpty {
-            let subtypeSet = Set(subtypes)
-            results = results.filter { !Set($0.subtypes).isDisjoint(with: subtypeSet) }
-        }
-        return results
+        let results = try fetchFromDB(query: query, sets: Array(filterState.sets), sortOrder: sortOrder)
+        if filterState.isEmpty { return results }
+        return results.filter { filterState.passes($0) }
     }
 
     // Returns true if at least one standard-legal card is cached.
@@ -131,23 +121,49 @@ final class CardRepository {
         return try context.fetch(descriptor).isEmpty == false
     }
 
-    // Returns all unique (setCode, setName) pairs sorted alphabetically by name.
+    // Returns all unique (setCode, setName) pairs sorted by release date (newest first).
     func fetchDistinctSets() throws -> [(code: String, name: String)] {
         let cards = try context.fetch(
-            FetchDescriptor<CachedCard>(predicate: #Predicate { $0.isStandardLegal })
+            FetchDescriptor<CachedCard>(
+                predicate: #Predicate { $0.isStandardLegal },
+                sortBy: [SortDescriptor(\.setReleaseDate, order: .reverse)]
+            )
         )
         var seen = Set<String>()
         var result: [(code: String, name: String)] = []
         for card in cards where seen.insert(card.setCode).inserted {
             result.append((card.setCode, card.setName))
         }
-        return result.sorted { $0.name < $1.name }
+        return result
+    }
+
+    func fetchDistinctRegulationMarks() throws -> [String] {
+        let cards = try context.fetch(
+            FetchDescriptor<CachedCard>(predicate: #Predicate { $0.isStandardLegal })
+        )
+        return Array(Set(cards.compactMap(\.regulationMark))).sorted()
+    }
+
+    // Returns distinct rarity strings sorted by frequency (most common first).
+    func fetchDistinctRarities() throws -> [String] {
+        let cards = try context.fetch(
+            FetchDescriptor<CachedCard>(predicate: #Predicate { $0.isStandardLegal })
+        )
+        var freq: [String: Int] = [:]
+        for card in cards {
+            if let r = card.rarity { freq[r, default: 0] += 1 }
+        }
+        return freq.keys.sorted { freq[$0, default: 0] > freq[$1, default: 0] }
     }
 
     // MARK: - Private
 
-    private func fetchFromDB(query: String, sets: [String]) throws -> [CachedCard] {
-        let sort = [SortDescriptor<CachedCard>(\.name)]
+    private func fetchFromDB(
+        query: String,
+        sets: [String],
+        sortOrder: CardSortOrder = .expansion
+    ) throws -> [CachedCard] {
+        let sort = sortOrder.sortDescriptors
 
         switch (query.isEmpty, sets.isEmpty) {
         case (true, true):

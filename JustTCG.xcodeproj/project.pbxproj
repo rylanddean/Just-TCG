@@ -45,6 +45,7 @@
 		841BF986B871E06DD291CEF3 /* MetaComparisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0849AF53AF5D6D54EEC0AB9 /* MetaComparisonViewModel.swift */; };
 		8A9B674EF63DE83F9DEA5A8F /* MatchupStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030FFFBC315CBF4B1D0D8 /* MatchupStat.swift */; };
 		8D2E1F7A787F4B9BEAF91139 /* CardFilterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA05BB59302B1B18EACB6BC /* CardFilterState.swift */; };
+		CCB12345678901234567890B /* CardSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB12345678901234567890A /* CardSortOrder.swift */; };
 		9154268D5602293D82C098A1 /* NewDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578C366B776417D9038E2D2 /* NewDeckSheet.swift */; };
 		9417C047FCE65B12EB59F8A7 /* TEF.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CB8C3B289EB7D0AD0CEF47E /* TEF.json */; };
 		97898D62BA7F1D3EDC9A8512 /* DeckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D65C5B2B40D3F117AE5A9 /* DeckRepository.swift */; };
@@ -153,6 +154,7 @@
 		C5D703009C418C7BB30FA974 /* TournamentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsView.swift; sourceTree = "<group>"; };
 		C994362EE885E7FC9DA5CAC0 /* POR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = POR.json; sourceTree = "<group>"; };
 		CCA05BB59302B1B18EACB6BC /* CardFilterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterState.swift; sourceTree = "<group>"; };
+		CCB12345678901234567890A /* CardSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortOrder.swift; sourceTree = "<group>"; };
 		D043668B713197F64C052D34 /* DeckGrouper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGrouper.swift; sourceTree = "<group>"; };
 		D20C60E6A4314B7A8934D461 /* CachedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedCard.swift; sourceTree = "<group>"; };
 		D7E3D9ECE43E5A253DC8F585 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				E7EC87D56806FD5AD17B15A5 /* CardDetailView.swift */,
 				CCA05BB59302B1B18EACB6BC /* CardFilterState.swift */,
+				CCB12345678901234567890A /* CardSortOrder.swift */,
 				801DF201F0CB7DDDF1F115B9 /* CardFilterView.swift */,
 				B5FA3AC7D11468A157F134E6 /* CardsView.swift */,
 				E8EB4BE028006730FBE11F38 /* CardThumbnailView.swift */,
@@ -502,6 +505,7 @@
 				054D4151E3B4540536E02D89 /* CachedCard.swift in Sources */,
 				211ACB78C19896B452479CFF /* CardDetailView.swift in Sources */,
 				8D2E1F7A787F4B9BEAF91139 /* CardFilterState.swift in Sources */,
+				CCB12345678901234567890B /* CardSortOrder.swift in Sources */,
 				317655BE48B94CBC10BB12FF /* CardFilterView.swift in Sources */,
 				8015ECE8B576F77FF695665F /* CardPickerView.swift in Sources */,
 				35BDE895C258A20F6A0962F4 /* CardRepository.swift in Sources */,

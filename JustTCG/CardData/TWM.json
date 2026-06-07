@@ -54,7 +54,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yoriyuki Ikegami",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-2",
@@ -98,7 +101,10 @@
       ],
       "regulationMark": "H",
       "artist": "LINNE",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-3",
@@ -145,7 +151,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "HYOGONOSUKE",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-4",
@@ -180,7 +189,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Saya Tsuruta",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-5",
@@ -222,7 +234,10 @@
       ],
       "regulationMark": "H",
       "artist": "Anesaki Dynamic",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-6",
@@ -257,7 +272,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Naoyo Kimura",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-7",
@@ -302,7 +320,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Ounishi",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-8",
@@ -351,7 +372,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toshinao Aoki",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-9",
@@ -396,7 +420,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Orca",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-10",
@@ -441,7 +468,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Orca",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-11",
@@ -486,7 +516,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kuroimori",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-12",
@@ -522,7 +555,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Katsunori Sato",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-13",
@@ -569,7 +605,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Oswaldo KATO",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-14",
@@ -614,7 +653,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Tomomi Ozaki",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-15",
@@ -657,7 +699,10 @@
       ],
       "regulationMark": "H",
       "artist": "GOSSAN",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-16",
@@ -702,7 +747,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "toriyufu",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-17",
@@ -737,7 +785,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKUBO",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-18",
@@ -779,7 +830,10 @@
       ],
       "regulationMark": "H",
       "artist": "Saboteri",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-19",
@@ -826,7 +880,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mitsuhiro Arita",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-20",
@@ -868,7 +925,10 @@
       ],
       "regulationMark": "H",
       "artist": "MINAMINAMI Take",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-21",
@@ -912,7 +972,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Souichirou Gunjima",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-22",
@@ -956,7 +1019,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kouki Saitou",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-23",
@@ -1003,7 +1069,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "aky CG Works",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-24",
@@ -1048,7 +1117,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Sanosuke Sakuma",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-25",
@@ -1097,7 +1169,10 @@
       ],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-26",
@@ -1133,7 +1208,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "sowsow",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-27",
@@ -1169,7 +1247,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "KEIICHIRO ITO",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-28",
@@ -1205,7 +1286,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Gapao",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-29",
@@ -1257,7 +1341,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "PLANETA Mochizuki",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-30",
@@ -1304,7 +1391,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Teeziro",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-31",
@@ -1340,7 +1430,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Jerky",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-32",
@@ -1387,7 +1480,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Scav",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-33",
@@ -1431,7 +1527,10 @@
       ],
       "regulationMark": "H",
       "artist": "Takumi Wada",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-34",
@@ -1476,7 +1575,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "osare",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-35",
@@ -1523,7 +1625,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKUBO",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-36",
@@ -1568,7 +1673,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Saya Tsuruta",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-37",
@@ -1613,7 +1721,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Rond",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-38",
@@ -1655,7 +1766,10 @@
       ],
       "regulationMark": "H",
       "artist": "saino misaki",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-39",
@@ -1700,7 +1814,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Oku",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-40",
@@ -1753,7 +1870,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-41",
@@ -1798,7 +1918,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kedamahadaitai Yawarakai",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-42",
@@ -1843,7 +1966,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKACHEKE",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-43",
@@ -1888,7 +2014,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Nisota Niso",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-44",
@@ -1931,7 +2060,10 @@
       ],
       "regulationMark": "H",
       "artist": "saino misaki",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-45",
@@ -1977,7 +2109,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Gemi",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-46",
@@ -2021,7 +2156,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Gapao",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-47",
@@ -2058,7 +2196,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kouki Saitou",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-48",
@@ -2105,7 +2246,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kurata So",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-49",
@@ -2140,7 +2284,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Scav",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-50",
@@ -2184,7 +2331,10 @@
       ],
       "regulationMark": "H",
       "artist": "Taira Akitsu",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-51",
@@ -2220,7 +2370,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mékayu",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-52",
@@ -2266,7 +2419,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Oku",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-53",
@@ -2309,7 +2465,10 @@
       ],
       "regulationMark": "H",
       "artist": "Makura Tami",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-54",
@@ -2354,7 +2513,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "rika",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-55",
@@ -2398,7 +2560,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "aspara",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-56",
@@ -2442,7 +2607,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yuka Morii",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-57",
@@ -2477,7 +2645,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Hitoshi Ariga",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-58",
@@ -2523,7 +2694,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKACHEKE",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-59",
@@ -2558,7 +2732,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Narumi Sato",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-60",
@@ -2601,7 +2778,10 @@
       ],
       "regulationMark": "H",
       "artist": "Ligton",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-61",
@@ -2645,7 +2825,10 @@
       ],
       "regulationMark": "H",
       "artist": "PLANETA Mochizuki",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-62",
@@ -2682,7 +2865,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "nagimiso",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-63",
@@ -2729,7 +2915,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "kawayoo",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-64",
@@ -2780,7 +2969,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-65",
@@ -2826,7 +3018,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GOSSAN",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-66",
@@ -2871,7 +3066,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yuu Nishida",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-67",
@@ -2907,7 +3105,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Takumi Wada",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-68",
@@ -2955,7 +3156,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "PLANETA Yamashita",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-69",
@@ -2990,7 +3194,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shimaris Yukichi",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-70",
@@ -3034,7 +3241,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Taiga Kayama",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-71",
@@ -3069,7 +3279,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Atsuya Uki",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-72",
@@ -3111,7 +3324,10 @@
       ],
       "regulationMark": "H",
       "artist": "kodama",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-73",
@@ -3156,7 +3372,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "nisimono",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-74",
@@ -3203,7 +3422,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mina Nakai",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-75",
@@ -3238,7 +3460,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Teeziro",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-76",
@@ -3283,7 +3508,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Anesaki Dynamic",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-77",
@@ -3330,7 +3558,10 @@
       ],
       "regulationMark": "H",
       "artist": "PLANETA Mochizuki",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-78",
@@ -3366,7 +3597,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Sanosuke Sakuma",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-79",
@@ -3413,7 +3647,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "satoma",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-80",
@@ -3455,7 +3692,10 @@
       ],
       "regulationMark": "H",
       "artist": "Kariya",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-81",
@@ -3490,7 +3730,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Uninori",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-82",
@@ -3534,7 +3777,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Masako Tomii",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-83",
@@ -3569,7 +3815,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shinji Kanda",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-84",
@@ -3616,7 +3865,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Dsuke",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-85",
@@ -3661,7 +3913,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mousho",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-86",
@@ -3705,7 +3960,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yukiko Baba",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-87",
@@ -3750,7 +4008,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "mingo",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-88",
@@ -3793,7 +4054,10 @@
       ],
       "regulationMark": "H",
       "artist": "Ligton",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-89",
@@ -3835,7 +4099,10 @@
       ],
       "regulationMark": "H",
       "artist": "Akira Komayama",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-90",
@@ -3871,7 +4138,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "mingo",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-91",
@@ -3917,7 +4187,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Asako Ito",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-92",
@@ -3966,7 +4239,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Uta",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 4,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-93",
@@ -4012,7 +4288,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "DOM",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-94",
@@ -4061,7 +4340,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "akagi",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-95",
@@ -4104,7 +4386,10 @@
       ],
       "regulationMark": "H",
       "artist": "kodama",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-96",
@@ -4146,7 +4431,10 @@
       ],
       "regulationMark": "H",
       "artist": "Kouki Saitou",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-97",
@@ -4191,7 +4479,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Tetsu Kayama",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-98",
@@ -4236,7 +4527,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Nisota Niso",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-99",
@@ -4281,7 +4575,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Whisker",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-100",
@@ -4327,7 +4624,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "SIE NANAHARA",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-101",
@@ -4364,7 +4664,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "AKIRA EGAWA",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-102",
@@ -4413,7 +4716,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKUBO",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-103",
@@ -4448,7 +4754,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kouki Saitou",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-104",
@@ -4494,7 +4803,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Aya Kusube",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-105",
@@ -4541,7 +4853,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Takeshi Nakamura",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-106",
@@ -4592,7 +4907,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-107",
@@ -4628,7 +4946,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shigenori Negishi",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-108",
@@ -4663,7 +4984,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Miki Tanaka",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-109",
@@ -4707,7 +5031,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kazumasa Yasukuni",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-110",
@@ -4753,7 +5080,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Anesaki Dynamic",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-111",
@@ -4796,7 +5126,10 @@
       ],
       "regulationMark": "H",
       "artist": "Souichirou Gunjima",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-112",
@@ -4845,7 +5178,10 @@
       ],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-113",
@@ -4890,7 +5226,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shibuzoh.",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-114",
@@ -4935,7 +5274,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "kawayoo",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-115",
@@ -4981,7 +5323,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Tomokazu Komiya",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-116",
@@ -5027,7 +5372,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Krgc",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-117",
@@ -5074,7 +5422,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shiburingaru",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-118",
@@ -5121,7 +5472,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "danciao",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-119",
@@ -5167,7 +5521,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "toi8",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-120",
@@ -5202,7 +5559,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Gapao",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-121",
@@ -5248,7 +5608,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "takashi shiraishi",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-122",
@@ -5294,7 +5657,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Dsuke",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-123",
@@ -5338,7 +5704,10 @@
       ],
       "regulationMark": "H",
       "artist": "AKIRA EGAWA",
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-124",
@@ -5384,7 +5753,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shigenori Negishi",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-125",
@@ -5430,7 +5802,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Hasuno",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-126",
@@ -5475,7 +5850,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Teeziro",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-127",
@@ -5511,7 +5889,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "OKACHEKE",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-128",
@@ -5556,7 +5937,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Scav",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-129",
@@ -5599,7 +5983,10 @@
       ],
       "regulationMark": "H",
       "artist": "cochi8i",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-130",
@@ -5649,7 +6036,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-131",
@@ -5692,7 +6082,10 @@
       ],
       "regulationMark": "H",
       "artist": "Jerky",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-132",
@@ -5734,7 +6127,10 @@
       ],
       "regulationMark": "H",
       "artist": "miki kudo",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-133",
@@ -5780,7 +6176,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "HYOGONOSUKE",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-134",
@@ -5826,7 +6225,10 @@
       ],
       "regulationMark": "H",
       "artist": "Iwamoto05",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-135",
@@ -5872,7 +6274,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "satoma",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-136",
@@ -5920,7 +6325,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Souichirou Gunjima",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-137",
@@ -5965,7 +6373,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mugi Hamada",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-138",
@@ -6009,7 +6420,10 @@
       ],
       "regulationMark": "H",
       "artist": "KEIICHIRO ITO",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-139",
@@ -6054,7 +6468,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shibuzoh.",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-140",
@@ -6099,7 +6516,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Susumu Maeya",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-141",
@@ -6147,7 +6567,10 @@
       ],
       "regulationMark": "H",
       "artist": "aky CG Works",
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-142",
@@ -6172,7 +6595,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "AYUMI ODASHIMA",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-143",
@@ -6197,7 +6623,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "AYUMI ODASHIMA",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-144",
@@ -6222,7 +6651,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Akira Komayama",
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-145",
@@ -6247,7 +6679,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "kantaro",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-146",
@@ -6273,7 +6708,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "MARINA Chikazawa",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-147",
@@ -6298,7 +6736,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Hideki Ishikawa",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-148",
@@ -6323,7 +6764,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Eske Yoshinob",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-149",
@@ -6348,7 +6792,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "MARINA Chikazawa",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-150",
@@ -6374,7 +6821,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-151",
@@ -6399,7 +6849,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GOSSAN",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-152",
@@ -6427,7 +6880,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-153",
@@ -6452,7 +6908,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "AYUMI ODASHIMA",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-154",
@@ -6477,7 +6936,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GIDORA",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-155",
@@ -6502,7 +6964,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Atsushi Furusawa",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-156",
@@ -6527,7 +6992,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Studio Bora Inc.",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-157",
@@ -6552,7 +7020,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "hncl",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-158",
@@ -6578,7 +7049,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Studio Bora Inc.",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-159",
@@ -6603,7 +7077,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-160",
@@ -6628,7 +7105,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Naoki Saito",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-161",
@@ -6653,7 +7133,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "hncl",
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-162",
@@ -6681,7 +7164,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-163",
@@ -6709,7 +7195,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-164",
@@ -6738,7 +7227,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "inose yukie",
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-165",
@@ -6766,7 +7258,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-166",
@@ -6790,7 +7285,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-167",
@@ -6817,7 +7315,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "ACE SPEC Rare"
+      "rarity": "ACE SPEC Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-168",
@@ -6864,7 +7365,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yukihiro Tada",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-169",
@@ -6909,7 +7413,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Shinya Komatsu",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-170",
@@ -6951,7 +7458,10 @@
       ],
       "regulationMark": "H",
       "artist": "Akira Komayama",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-171",
@@ -6993,7 +7503,10 @@
       ],
       "regulationMark": "H",
       "artist": "Saboteri",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-172",
@@ -7040,7 +7553,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Masa",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-173",
@@ -7084,7 +7600,10 @@
       ],
       "regulationMark": "H",
       "artist": "Krgc",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-174",
@@ -7127,7 +7646,10 @@
       ],
       "regulationMark": "H",
       "artist": "matazo",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-175",
@@ -7171,7 +7693,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "takashi shiraishi",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-176",
@@ -7217,7 +7742,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Fujimoto Gold",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-177",
@@ -7252,7 +7780,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Tonji Matsuno",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-178",
@@ -7287,7 +7818,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Mitsuhiro Arita",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-179",
@@ -7332,7 +7866,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "REND",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-180",
@@ -7378,7 +7915,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GOTO minori",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "sv6-181",
@@ -7423,7 +7963,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GIDORA",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-182",
@@ -7472,7 +8015,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Kariya",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-183",
@@ -7507,7 +8053,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yuriko Akase",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-184",
@@ -7553,7 +8102,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Dsuke",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "sv6-185",
@@ -7598,7 +8150,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Katsunori Sato",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-186",
@@ -7641,7 +8196,10 @@
       ],
       "regulationMark": "H",
       "artist": "osare",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-187",
@@ -7687,7 +8245,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toshinao Aoki",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-188",
@@ -7733,7 +8294,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Narumi Sato",
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-189",
@@ -7780,7 +8344,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "aky CG Works",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-190",
@@ -7829,7 +8396,10 @@
       ],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-191",
@@ -7881,7 +8451,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "PLANETA Yamashita",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-192",
@@ -7934,7 +8507,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-193",
@@ -7978,7 +8554,10 @@
       ],
       "regulationMark": "H",
       "artist": "PLANETA Mochizuki",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-194",
@@ -8029,7 +8608,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-195",
@@ -8077,7 +8659,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "PLANETA Yamashita",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-196",
@@ -8124,7 +8709,10 @@
       ],
       "regulationMark": "H",
       "artist": "PLANETA Mochizuki",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-197",
@@ -8173,7 +8761,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "PLANETA Hiiragi",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "sv6-198",
@@ -8224,7 +8815,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-199",
@@ -8273,7 +8867,10 @@
       ],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-200",
@@ -8323,7 +8920,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-201",
@@ -8369,7 +8969,10 @@
       ],
       "regulationMark": "H",
       "artist": "PLANETA Tsuji",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-202",
@@ -8417,7 +9020,10 @@
       ],
       "regulationMark": "H",
       "artist": "aky CG Works",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-203",
@@ -8442,7 +9048,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Akira Komayama",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-204",
@@ -8467,7 +9076,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "kantaro",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-205",
@@ -8492,7 +9104,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GOSSAN",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-206",
@@ -8517,7 +9132,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GIDORA",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-207",
@@ -8542,7 +9160,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Atsushi Furusawa",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-208",
@@ -8567,7 +9188,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "hncl",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-209",
@@ -8592,7 +9216,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Naoki Saito",
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-210",
@@ -8639,7 +9266,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Saboteri",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-211",
@@ -8688,7 +9318,10 @@
       ],
       "regulationMark": "H",
       "artist": "Yano Keiji",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-212",
@@ -8741,7 +9374,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yano Keiji",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "sv6-213",
@@ -8792,7 +9428,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Yano Keiji",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "sv6-214",
@@ -8843,7 +9482,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "akagi",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "sv6-215",
@@ -8892,7 +9534,10 @@
       ],
       "regulationMark": "H",
       "artist": "Yano Keiji",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "sv6-216",
@@ -8940,7 +9585,10 @@
       ],
       "regulationMark": "H",
       "artist": "MINAMINAMI Take",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-217",
@@ -8965,7 +9613,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "En Morikura",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-218",
@@ -8990,7 +9641,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Teeziro",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-219",
@@ -9015,7 +9669,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toshinao Aoki",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-220",
@@ -9040,7 +9697,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "GIDORA",
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-221",
@@ -9089,7 +9749,10 @@
       ],
       "regulationMark": "H",
       "artist": "5ban Graphics",
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "sv6-222",
@@ -9137,7 +9800,10 @@
       ],
       "regulationMark": "H",
       "artist": "aky CG Works",
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "sv6-223",
@@ -9162,7 +9828,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "AYUMI ODASHIMA",
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-224",
@@ -9187,7 +9856,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Eske Yoshinob",
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-225",
@@ -9213,7 +9885,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": "Toyste Beach",
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "sv6-226",
@@ -9237,7 +9912,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Hyper Rare"
+      "rarity": "Hyper Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     }
   ]
 }

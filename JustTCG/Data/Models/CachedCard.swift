@@ -17,6 +17,17 @@ final class CachedCard {
     var rulesText: [String]
     var cachedAt: Date
 
+    var regulationMark: String?
+    var rarity: String?
+    var hasAbility: Bool
+    var maxDamage: Int?
+    var attackEnergyCosts: [String]
+    var retreatCost: Int?
+    var weaknessType: String?
+    var resistanceType: String?
+    var setReleaseDate: Date?
+    var numberSortKey: String
+
     init(
         id: String,
         name: String,
@@ -30,7 +41,17 @@ final class CachedCard {
         imageURL: String,
         largeImageURL: String? = nil,
         rulesText: [String] = [],
-        cachedAt: Date = .now
+        cachedAt: Date = .now,
+        regulationMark: String? = nil,
+        rarity: String? = nil,
+        hasAbility: Bool = false,
+        maxDamage: Int? = nil,
+        attackEnergyCosts: [String] = [],
+        retreatCost: Int? = nil,
+        weaknessType: String? = nil,
+        resistanceType: String? = nil,
+        setReleaseDate: Date? = nil,
+        numberSortKey: String = ""
     ) {
         self.id = id
         self.name = name
@@ -45,6 +66,16 @@ final class CachedCard {
         self.largeImageURL = largeImageURL
         self.rulesText = rulesText
         self.cachedAt = cachedAt
+        self.regulationMark = regulationMark
+        self.rarity = rarity
+        self.hasAbility = hasAbility
+        self.maxDamage = maxDamage
+        self.attackEnergyCosts = attackEnergyCosts
+        self.retreatCost = retreatCost
+        self.weaknessType = weaknessType
+        self.resistanceType = resistanceType
+        self.setReleaseDate = setReleaseDate
+        self.numberSortKey = numberSortKey
     }
 
     convenience init(from card: LimitlessCard, cachedAt: Date = .now) {

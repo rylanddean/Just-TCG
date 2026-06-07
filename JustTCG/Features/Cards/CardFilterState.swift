@@ -1,7 +1,149 @@
-struct CardFilterState: Equatable {
-    var types: Set<String> = []
-    var sets: Set<String> = []
-    var subtypes: Set<String> = []
+import SwiftData
 
-    var isEmpty: Bool { types.isEmpty && sets.isEmpty && subtypes.isEmpty }
+struct FilterChipItem: Identifiable {
+    let id: String
+    let label: String
+}
+
+struct CardFilterState: Equatable {
+    // Basic
+    var types: Set<String> = []
+    var subtypes: Set<String> = []
+    var sets: Set<String> = []
+
+    // Set & Legality
+    var regulationMarks: Set<String> = []
+    var rarities: Set<String> = []
+
+    // Stats
+    var hpMin: Int? = nil
+    var hpMax: Int? = nil
+    var damageMin: Int? = nil
+    var damageMax: Int? = nil
+    var retreatCosts: Set<Int> = []
+    var hasAbility: Bool? = nil
+
+    // Matchup
+    var weaknessTypes: Set<String> = []
+    var resistanceTypes: Set<String> = []
+    var attackingEnergyTypes: Set<String> = []
+
+    var isEmpty: Bool {
+        types.isEmpty &&
+        subtypes.isEmpty &&
+        sets.isEmpty &&
+        regulationMarks.isEmpty &&
+        rarities.isEmpty &&
+        hpMin == nil &&
+        hpMax == nil &&
+        damageMin == nil &&
+        damageMax == nil &&
+        retreatCosts.isEmpty &&
+        hasAbility == nil &&
+        weaknessTypes.isEmpty &&
+        resistanceTypes.isEmpty &&
+        attackingEnergyTypes.isEmpty
+    }
+
+    // Post-fetch in-memory filter. Applies all active criteria to a single card.
+    func passes(_ card: CachedCard) -> Bool {
+        if !types.isEmpty, Set(card.types).isDisjoint(with: types) { return false }
+        if !subtypes.isEmpty, Set(card.subtypes).isDisjoint(with: subtypes) { return false }
+        if !sets.isEmpty, !sets.contains(card.setCode) { return false }
+        if !regulationMarks.isEmpty {
+            guard let mark = card.regulationMark, regulationMarks.contains(mark) else { return false }
+        }
+        if !rarities.isEmpty {
+            guard let rarity = card.rarity, rarities.contains(rarity) else { return false }
+        }
+        if let min = hpMin, (card.hp ?? 0) < min { return false }
+        if let max = hpMax, (card.hp ?? 0) > max { return false }
+        if let min = damageMin {
+            guard let dmg = card.maxDamage, dmg >= min else { return false }
+        }
+        if let max = damageMax {
+            guard let dmg = card.maxDamage, dmg <= max else { return false }
+        }
+        if !retreatCosts.isEmpty {
+            guard let rc = card.retreatCost, retreatCosts.contains(rc) else { return false }
+        }
+        if let wantAbility = hasAbility, card.hasAbility != wantAbility { return false }
+        if !weaknessTypes.isEmpty {
+            guard let wt = card.weaknessType, weaknessTypes.contains(wt) else { return false }
+        }
+        if !resistanceTypes.isEmpty {
+            guard let rt = card.resistanceType, resistanceTypes.contains(rt) else { return false }
+        }
+        if !attackingEnergyTypes.isEmpty {
+            let costs = Set(card.attackEnergyCosts)
+            if costs.isDisjoint(with: attackingEnergyTypes) { return false }
+        }
+        return true
+    }
+
+    // Chip descriptions for the active-filters row. Each chip has an id matching
+    // the filter group key so clearChip can remove the whole group at once.
+    var activeChips: [FilterChipItem] {
+        var chips: [FilterChipItem] = []
+
+        if !types.isEmpty {
+            chips.append(FilterChipItem(id: "types", label: types.sorted().joined(separator: ", ")))
+        }
+        if !subtypes.isEmpty {
+            chips.append(FilterChipItem(id: "subtypes", label: subtypes.sorted().joined(separator: ", ")))
+        }
+        if !sets.isEmpty {
+            chips.append(FilterChipItem(id: "sets", label: "Set: \(sets.count)"))
+        }
+        if !regulationMarks.isEmpty {
+            chips.append(FilterChipItem(id: "marks", label: "Mark: \(regulationMarks.sorted().joined(separator: ", "))"))
+        }
+        if !rarities.isEmpty {
+            chips.append(FilterChipItem(id: "rarities", label: "Rarity: \(rarities.count)"))
+        }
+        if hpMin != nil || hpMax != nil {
+            let lo = hpMin.map(String.init) ?? "Any"
+            let hi = hpMax.map(String.init) ?? "Any"
+            chips.append(FilterChipItem(id: "hp", label: "HP: \(lo)–\(hi)"))
+        }
+        if damageMin != nil || damageMax != nil {
+            let lo = damageMin.map(String.init) ?? "Any"
+            let hi = damageMax.map(String.init) ?? "Any"
+            chips.append(FilterChipItem(id: "damage", label: "Dmg: \(lo)–\(hi)"))
+        }
+        if !retreatCosts.isEmpty {
+            chips.append(FilterChipItem(id: "retreat", label: "Retreat: \(retreatCosts.sorted().map(String.init).joined(separator: ", "))"))
+        }
+        if let ab = hasAbility {
+            chips.append(FilterChipItem(id: "ability", label: ab ? "Has Ability" : "No Ability"))
+        }
+        if !weaknessTypes.isEmpty {
+            chips.append(FilterChipItem(id: "weakness", label: "Weak: \(weaknessTypes.sorted().joined(separator: ", "))"))
+        }
+        if !resistanceTypes.isEmpty {
+            chips.append(FilterChipItem(id: "resistance", label: "Resist: \(resistanceTypes.sorted().joined(separator: ", "))"))
+        }
+        if !attackingEnergyTypes.isEmpty {
+            chips.append(FilterChipItem(id: "energy", label: "Energy: \(attackingEnergyTypes.sorted().joined(separator: ", "))"))
+        }
+        return chips
+    }
+
+    mutating func clearChip(id: String) {
+        switch id {
+        case "types":      types = []
+        case "subtypes":   subtypes = []
+        case "sets":       sets = []
+        case "marks":      regulationMarks = []
+        case "rarities":   rarities = []
+        case "hp":         hpMin = nil; hpMax = nil
+        case "damage":     damageMin = nil; damageMax = nil
+        case "retreat":    retreatCosts = []
+        case "ability":    hasAbility = nil
+        case "weakness":   weaknessTypes = []
+        case "resistance": resistanceTypes = []
+        case "energy":     attackingEnergyTypes = []
+        default: break
+        }
+    }
 }

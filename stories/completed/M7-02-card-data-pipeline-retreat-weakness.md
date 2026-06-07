@@ -1,6 +1,6 @@
 # M7-02 — Card Data Pipeline: Retreat, Weakness & Resistance
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M7 — Advanced Card Filters  
 **Dependencies:** M7-01
 
@@ -10,19 +10,19 @@ As a user, I want to filter cards by retreat cost, weakness type, and resistance
 
 ## Acceptance Criteria
 
-- [ ] The card JSON schema gains three new optional fields per Pokémon card:
+- [x] The card JSON schema gains three new optional fields per Pokémon card:
   - `retreatCost: Int?` — number of energy symbols in the retreat cost (0–4; `null` for Trainers/Energy)
   - `weaknessType: String?` — energy type of the weakness (e.g. `"Fire"`); `null` if none
   - `resistanceType: String?` — energy type of the resistance (e.g. `"Metal"`); `null` if none
-- [ ] All 15 bundled set JSON files are regenerated with these fields populated
-- [ ] `CardSeedEntry` adds matching `Decodable` properties (all optional, default `nil`)
-- [ ] `CachedCard` adds matching stored properties:
+- [x] All 15 bundled set JSON files are regenerated with these fields populated
+- [x] `CardSeedEntry` adds matching `Decodable` properties (all optional, default `nil`)
+- [x] `CachedCard` adds matching stored properties:
   - `retreatCost: Int?`
   - `weaknessType: String?`
   - `resistanceType: String?`
-- [ ] `BundledCardSeeder` maps the three new fields into `CachedCard`
-- [ ] `seededKey` bumped to `"bundled_cards_seeded_v3"`
-- [ ] Cards that are Trainer or Energy cards have `nil` for all three fields (expected behaviour)
+- [x] `BundledCardSeeder` maps the three new fields into `CachedCard`
+- [x] `seededKey` bumped to `"bundled_cards_seeded_v4"`
+- [x] Cards that are Trainer or Energy cards have `nil` for all three fields (expected behaviour)
 
 ## Data Pipeline Notes
 

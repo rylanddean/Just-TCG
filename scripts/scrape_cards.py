@@ -167,6 +167,9 @@ def transform_card(raw: dict) -> dict:
         "regulationMark": raw.get("regulationMark"),
         "artist": raw.get("artist"),
         "rarity": raw.get("rarity"),
+        "retreatCost": raw.get("convertedRetreatCost"),
+        "weaknessType": (raw.get("weaknesses") or [{}])[0].get("type") if raw.get("weaknesses") else None,
+        "resistanceType": (raw.get("resistances") or [{}])[0].get("type") if raw.get("resistances") else None,
     }
 
 

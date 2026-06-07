@@ -1,6 +1,6 @@
 # M7-01 — Extended Card Data Model
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M7 — Advanced Card Filters  
 **Dependencies:** M1-02, M1-03
 
@@ -10,19 +10,19 @@ As a developer, I want `CachedCard` to store the rich card data that already exi
 
 ## Acceptance Criteria
 
-- [ ] `CachedCard` gains the following new stored properties:
+- [x] `CachedCard` gains the following new stored properties:
   - `regulationMark: String?` — single letter (e.g. `"H"`, `"I"`, `"J"`)
   - `rarity: String?` — as printed (e.g. `"Common"`, `"Illustration Rare"`, `"Special Illustration Rare"`)
   - `hasAbility: Bool` — `true` if the card has one or more abilities
   - `maxDamage: Int?` — highest numeric damage value across all attacks (nil for Trainers/Energy)
   - `attackEnergyCosts: [String]` — deduplicated, sorted list of energy types that appear across all attack costs (e.g. `["Colorless", "Grass"]`)
-- [ ] `CardSeedEntry` gains matching decodable fields (using existing JSON keys): `regulationMark`, `rarity`, `attacks`, `abilities`
-- [ ] `BundledCardSeeder` maps these fields when constructing `CachedCard` instances:
+- [x] `CardSeedEntry` gains matching decodable fields (using existing JSON keys): `regulationMark`, `rarity`, `attacks`, `abilities`
+- [x] `BundledCardSeeder` maps these fields when constructing `CachedCard` instances:
   - `hasAbility = !entry.abilities.isEmpty`
   - `maxDamage` = parse numeric prefix from each `attack.damage` string (strip `"+"` suffix; `"180+"` → `180`), take the max; nil if no attacks
   - `attackEnergyCosts` = `Set(entry.attacks.flatMap(\.cost)).sorted()`
-- [ ] `seededKey` bumped to `"bundled_cards_seeded_v2"` to force a re-seed on next launch
-- [ ] All new `CachedCard` properties have sensible defaults in the `init` so existing code paths compile without change
+- [x] `seededKey` bumped to `"bundled_cards_seeded_v3"` to force a re-seed on next launch
+- [x] All new `CachedCard` properties have sensible defaults in the `init` so existing code paths compile without change
 
 ## Technical Notes
 

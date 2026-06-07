@@ -44,7 +44,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-2",
@@ -80,7 +83,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-3",
@@ -128,7 +134,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-4",
@@ -163,7 +172,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-5",
@@ -209,7 +221,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-6",
@@ -255,7 +270,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-7",
@@ -303,7 +321,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-8",
@@ -338,7 +359,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-9",
@@ -374,7 +398,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-10",
@@ -419,7 +446,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-11",
@@ -462,7 +492,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-12",
@@ -506,7 +539,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-13",
@@ -551,7 +587,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-14",
@@ -596,7 +635,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-15",
@@ -641,7 +683,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-16",
@@ -676,7 +721,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-17",
@@ -719,7 +767,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-18",
@@ -755,7 +806,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-19",
@@ -800,7 +854,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-20",
@@ -845,7 +902,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-21",
@@ -891,7 +951,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-22",
@@ -941,7 +1004,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-23",
@@ -977,7 +1043,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-24",
@@ -1021,7 +1090,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-25",
@@ -1067,7 +1139,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-26",
@@ -1102,7 +1177,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-27",
@@ -1137,7 +1215,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-28",
@@ -1179,7 +1260,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": null,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-29",
@@ -1225,7 +1309,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-30",
@@ -1273,7 +1360,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-31",
@@ -1308,7 +1398,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-32",
@@ -1353,7 +1446,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-33",
@@ -1398,7 +1494,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-34",
@@ -1444,7 +1543,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 3,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-35",
@@ -1489,7 +1591,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-36",
@@ -1539,7 +1644,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 4,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-37",
@@ -1575,7 +1683,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-38",
@@ -1619,7 +1730,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-39",
@@ -1654,7 +1768,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-40",
@@ -1689,7 +1806,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-41",
@@ -1733,7 +1853,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-42",
@@ -1768,7 +1891,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-43",
@@ -1803,7 +1929,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-44",
@@ -1849,7 +1978,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-45",
@@ -1884,7 +2016,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-46",
@@ -1919,7 +2054,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-47",
@@ -1964,7 +2102,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-48",
@@ -2000,7 +2141,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-49",
@@ -2035,7 +2179,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-50",
@@ -2085,7 +2232,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": null,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-51",
@@ -2120,7 +2270,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-52",
@@ -2155,7 +2308,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-53",
@@ -2200,7 +2356,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-54",
@@ -2235,7 +2394,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-55",
@@ -2277,7 +2439,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-56",
@@ -2319,7 +2484,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-57",
@@ -2355,7 +2523,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-58",
@@ -2399,7 +2570,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-59",
@@ -2443,7 +2617,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-60",
@@ -2490,7 +2667,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-61",
@@ -2532,7 +2712,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-62",
@@ -2567,7 +2750,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-63",
@@ -2611,7 +2797,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-64",
@@ -2657,7 +2846,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-65",
@@ -2702,7 +2894,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-66",
@@ -2748,7 +2943,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-67",
@@ -2783,7 +2981,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-68",
@@ -2828,7 +3029,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-69",
@@ -2875,7 +3079,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-70",
@@ -2923,7 +3130,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 4,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-71",
@@ -2958,7 +3168,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-72",
@@ -3003,7 +3216,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-73",
@@ -3047,7 +3263,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 3,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-74",
@@ -3090,7 +3309,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-75",
@@ -3125,7 +3347,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-76",
@@ -3160,7 +3385,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-77",
@@ -3208,7 +3436,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-78",
@@ -3243,7 +3474,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-79",
@@ -3278,7 +3512,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-80",
@@ -3314,7 +3551,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-81",
@@ -3360,7 +3600,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-82",
@@ -3395,7 +3638,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-83",
@@ -3431,7 +3677,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-84",
@@ -3475,7 +3724,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 4,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-85",
@@ -3521,7 +3773,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 3,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-86",
@@ -3571,7 +3826,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-87",
@@ -3613,7 +3871,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-88",
@@ -3659,7 +3920,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": null,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-89",
@@ -3694,7 +3958,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-90",
@@ -3739,7 +4006,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-91",
@@ -3775,7 +4045,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-92",
@@ -3811,7 +4084,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-93",
@@ -3859,7 +4135,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-94",
@@ -3909,7 +4188,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-95",
@@ -3955,7 +4237,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Rare"
+      "rarity": "Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-96",
@@ -3990,7 +4275,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-97",
@@ -4032,7 +4320,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-98",
@@ -4067,7 +4358,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-99",
@@ -4113,7 +4407,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-100",
@@ -4162,7 +4459,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-101",
@@ -4206,7 +4506,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-102",
@@ -4241,7 +4544,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-103",
@@ -4276,7 +4582,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-104",
@@ -4323,7 +4632,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Double Rare"
+      "rarity": "Double Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-105",
@@ -4368,7 +4680,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-106",
@@ -4415,7 +4730,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-107",
@@ -4459,7 +4777,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-108",
@@ -4504,7 +4825,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-109",
@@ -4549,7 +4873,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-110",
@@ -4592,7 +4919,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-111",
@@ -4637,7 +4967,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-112",
@@ -4684,7 +5017,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-113",
@@ -4709,7 +5045,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-114",
@@ -4734,7 +5073,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-115",
@@ -4759,7 +5101,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-116",
@@ -4784,7 +5129,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-117",
@@ -4809,7 +5157,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-118",
@@ -4834,7 +5185,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-119",
@@ -4859,7 +5213,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-120",
@@ -4884,7 +5241,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-121",
@@ -4909,7 +5269,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-122",
@@ -4934,7 +5297,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-123",
@@ -4959,7 +5325,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-124",
@@ -4984,7 +5353,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-125",
@@ -5009,7 +5381,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-126",
@@ -5034,7 +5409,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-127",
@@ -5059,7 +5437,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-128",
@@ -5084,7 +5465,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-129",
@@ -5109,7 +5493,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-130",
@@ -5134,7 +5521,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-131",
@@ -5159,7 +5549,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Common"
+      "rarity": "Common",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-132",
@@ -5184,7 +5577,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Uncommon"
+      "rarity": "Uncommon",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-133",
@@ -5219,7 +5615,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-134",
@@ -5255,7 +5654,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-135",
@@ -5301,7 +5703,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-136",
@@ -5344,7 +5749,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-137",
@@ -5387,7 +5795,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-138",
@@ -5432,7 +5843,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-139",
@@ -5468,7 +5882,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-140",
@@ -5513,7 +5930,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-141",
@@ -5557,7 +5977,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-142",
@@ -5601,7 +6024,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": null
     },
     {
       "id": "me1-143",
@@ -5636,7 +6062,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-144",
@@ -5678,7 +6107,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-145",
@@ -5724,7 +6156,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-146",
@@ -5760,7 +6195,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-147",
@@ -5804,7 +6242,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 4,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-148",
@@ -5846,7 +6287,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-149",
@@ -5882,7 +6326,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-150",
@@ -5930,7 +6377,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-151",
@@ -5965,7 +6415,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-152",
@@ -6010,7 +6463,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Lightning",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-153",
@@ -6053,7 +6509,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-154",
@@ -6098,7 +6557,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Illustration Rare"
+      "rarity": "Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-155",
@@ -6146,7 +6608,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-156",
@@ -6196,7 +6661,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Water",
+      "resistanceType": null
     },
     {
       "id": "me1-157",
@@ -6246,7 +6714,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 4,
+      "weaknessType": "Metal",
+      "resistanceType": null
     },
     {
       "id": "me1-158",
@@ -6296,7 +6767,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-159",
@@ -6343,7 +6817,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-160",
@@ -6391,7 +6868,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-161",
@@ -6441,7 +6921,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-162",
@@ -6491,7 +6974,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 2,
+      "weaknessType": "Fire",
+      "resistanceType": "Grass"
     },
     {
       "id": "me1-163",
@@ -6540,7 +7026,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-164",
@@ -6587,7 +7076,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-165",
@@ -6612,7 +7104,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-166",
@@ -6637,7 +7132,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-167",
@@ -6662,7 +7160,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-168",
@@ -6687,7 +7188,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-169",
@@ -6712,7 +7216,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-170",
@@ -6737,7 +7244,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-171",
@@ -6762,7 +7272,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-172",
@@ -6787,7 +7300,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-173",
@@ -6812,7 +7328,10 @@
       "abilities": [],
       "regulationMark": "H",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-174",
@@ -6837,7 +7356,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-175",
@@ -6862,7 +7384,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-176",
@@ -6887,7 +7412,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Ultra Rare"
+      "rarity": "Ultra Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-177",
@@ -6935,7 +7463,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 4,
+      "weaknessType": "Fire",
+      "resistanceType": null
     },
     {
       "id": "me1-178",
@@ -6982,7 +7513,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-179",
@@ -7030,7 +7564,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     },
     {
       "id": "me1-180",
@@ -7080,7 +7617,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 2,
+      "weaknessType": "Grass",
+      "resistanceType": null
     },
     {
       "id": "me1-181",
@@ -7129,7 +7669,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 1,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-182",
@@ -7176,7 +7719,10 @@
       ],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": 3,
+      "weaknessType": "Fighting",
+      "resistanceType": null
     },
     {
       "id": "me1-183",
@@ -7201,7 +7747,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-184",
@@ -7226,7 +7775,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-185",
@@ -7251,7 +7803,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-186",
@@ -7276,7 +7831,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Special Illustration Rare"
+      "rarity": "Special Illustration Rare",
+      "retreatCost": null,
+      "weaknessType": null,
+      "resistanceType": null
     },
     {
       "id": "me1-187",
@@ -7323,7 +7881,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Mega Hyper Rare"
+      "rarity": "Mega Hyper Rare",
+      "retreatCost": 2,
+      "weaknessType": "Darkness",
+      "resistanceType": "Fighting"
     },
     {
       "id": "me1-188",
@@ -7371,7 +7932,10 @@
       "abilities": [],
       "regulationMark": "I",
       "artist": null,
-      "rarity": "Mega Hyper Rare"
+      "rarity": "Mega Hyper Rare",
+      "retreatCost": 2,
+      "weaknessType": "Psychic",
+      "resistanceType": null
     }
   ]
 }
