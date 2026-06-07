@@ -1,6 +1,6 @@
 # M1-01 — Limitless TCG Client Foundation
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M1 — Card Browser  
 **Dependencies:** M0
 
