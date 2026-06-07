@@ -27,6 +27,7 @@ final class CachedCard {
     var resistanceType: String?
     var setReleaseDate: Date?
     var numberSortKey: String
+    var roleTags: [String]
 
     init(
         id: String,
@@ -51,7 +52,8 @@ final class CachedCard {
         weaknessType: String? = nil,
         resistanceType: String? = nil,
         setReleaseDate: Date? = nil,
-        numberSortKey: String = ""
+        numberSortKey: String = "",
+        roleTags: [String] = []
     ) {
         self.id = id
         self.name = name
@@ -76,6 +78,7 @@ final class CachedCard {
         self.resistanceType = resistanceType
         self.setReleaseDate = setReleaseDate
         self.numberSortKey = numberSortKey
+        self.roleTags = roleTags
     }
 
     convenience init(from card: LimitlessCard, cachedAt: Date = .now) {

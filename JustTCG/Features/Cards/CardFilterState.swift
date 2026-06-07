@@ -28,6 +28,15 @@ struct CardFilterState: Equatable {
     var resistanceTypes: Set<String> = []
     var attackingEnergyTypes: Set<String> = []
 
+    // Role
+    var roleTags: Set<String> = []
+
+    static let allRoleTags: [String] = [
+        "Draw", "Search", "Energy Acceleration", "Healing",
+        "Damage Reduction", "Damage Boost", "Disruption", "Status",
+        "Spread Damage", "Survivability", "Mobility", "Prize Control", "Lock",
+    ]
+
     var isEmpty: Bool {
         types.isEmpty &&
         subtypes.isEmpty &&
@@ -42,7 +51,8 @@ struct CardFilterState: Equatable {
         hasAbility == nil &&
         weaknessTypes.isEmpty &&
         resistanceTypes.isEmpty &&
-        attackingEnergyTypes.isEmpty
+        attackingEnergyTypes.isEmpty &&
+        roleTags.isEmpty
     }
 
     // Post-fetch in-memory filter. Applies all active criteria to a single card.
@@ -78,6 +88,7 @@ struct CardFilterState: Equatable {
             let costs = Set(card.attackEnergyCosts)
             if costs.isDisjoint(with: attackingEnergyTypes) { return false }
         }
+        if !roleTags.isEmpty, Set(card.roleTags).isDisjoint(with: roleTags) { return false }
         return true
     }
 
@@ -126,6 +137,15 @@ struct CardFilterState: Equatable {
         if !attackingEnergyTypes.isEmpty {
             chips.append(FilterChipItem(id: "energy", label: "Energy: \(attackingEnergyTypes.sorted().joined(separator: ", "))"))
         }
+        if !roleTags.isEmpty {
+            let label: String
+            if roleTags.count > 2 {
+                label = "Role: \(roleTags.count) roles"
+            } else {
+                label = "Role: \(roleTags.sorted().joined(separator: ", "))"
+            }
+            chips.append(FilterChipItem(id: "roleTags", label: label))
+        }
         return chips
     }
 
@@ -143,6 +163,7 @@ struct CardFilterState: Equatable {
         case "weakness":   weaknessTypes = []
         case "resistance": resistanceTypes = []
         case "energy":     attackingEnergyTypes = []
+        case "roleTags":   roleTags = []
         default: break
         }
     }

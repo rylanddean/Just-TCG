@@ -13,6 +13,7 @@ struct CardFilterView: View {
     @State private var setLegalityExpanded = true
     @State private var statsExpanded = true
     @State private var matchupExpanded = true
+    @State private var roleExpanded = true
 
     init(
         filterState: Binding<CardFilterState>,
@@ -45,6 +46,7 @@ struct CardFilterView: View {
                 setLegalitySection
                 statsSection
                 matchupSection
+                roleSection
             }
             .navigationTitle("Filters")
             .navigationBarTitleDisplayMode(.inline)
@@ -143,6 +145,38 @@ struct CardFilterView: View {
                 Text("Matchup").font(.headline)
             }
         }
+    }
+
+    private var roleSection: some View {
+        Section {
+            DisclosureGroup(isExpanded: $roleExpanded) {
+                let columns = [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)]
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
+                    ForEach(CardFilterState.allRoleTags, id: \.self) { tag in
+                        roleTagChip(tag)
+                    }
+                }
+                .padding(.vertical, 4)
+            } label: {
+                Text("Card Role").font(.headline)
+            }
+        }
+    }
+
+    private func roleTagChip(_ tag: String) -> some View {
+        let selected = filterState.roleTags.contains(tag)
+        return Button(action: { filterState.roleTags.formSymmetricDifference([tag]) }) {
+            Text(tag)
+                .font(.callout.weight(.medium))
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(selected ? Color.accentColor : Color.clear)
+                .foregroundStyle(selected ? Color.white : Color.accentColor)
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(Color.accentColor, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Stats controls

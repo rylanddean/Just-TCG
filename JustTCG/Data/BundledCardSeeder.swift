@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v5"
+    static let seededKey = "bundled_cards_seeded_v6"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -63,6 +63,10 @@ enum BundledCardSeeder {
                 let numericPrefix = Int(entry.number.prefix(while: { $0.isNumber })) ?? 0
                 let numberSortKey = String(format: "%03d", numericPrefix) + entry.number
 
+                let roleTags = CardTagClassifier.tags(
+                    abilities: entry.abilities,
+                    attacks: entry.attacks
+                )
                 context.insert(CachedCard(
                     id: entry.id,
                     name: entry.name,
@@ -85,18 +89,115 @@ enum BundledCardSeeder {
                     weaknessType: entry.weaknessType,
                     resistanceType: entry.resistanceType,
                     setReleaseDate: releaseDate,
-                    numberSortKey: numberSortKey
+                    numberSortKey: numberSortKey,
+                    roleTags: roleTags
                 ))
             }
         }
 
         let total = pairs.reduce(0) { $0 + $1.cards.count }
         print("[BundledCardSeeder] inserting \(total) cards from \(pairs.count) sets")
+
+        // QA: log top-5 role tag combinations for spot-checking classifier output.
+        var tagComboCounts: [String: Int] = [:]
+        for (_, cards) in pairs {
+            for entry in cards {
+                let combo = CardTagClassifier.tags(abilities: entry.abilities, attacks: entry.attacks).joined(separator: "+")
+                tagComboCounts[combo, default: 0] += 1
+            }
+        }
+        let top5 = tagComboCounts.sorted { $0.value > $1.value }.prefix(5)
+        print("[BundledCardSeeder] top-5 tag combos: \(top5.map { "\($0.key.isEmpty ? "(none)" : $0.key): \($0.value)" }.joined(separator: ", "))")
+
         try? context.save()
         print("[BundledCardSeeder] save complete")
         // Mark the card cache fresh so CardRepository skips the network sync on launch.
         UserDefaults.standard.set(Date(), forKey: CardRepository.lastRefreshKey)
         UserDefaults.standard.set(true, forKey: seededKey)
+    }
+}
+
+// MARK: - CardTagClassifier
+
+private enum CardTagClassifier {
+    // Returns a sorted, deduplicated array of canonical role tag strings for a card.
+    static func tags(abilities: [AbilitySeedEntry], attacks: [AttackSeedEntry]) -> [String] {
+        let allTexts = abilities.map(\.text) + attacks.map(\.text)
+        var result: Set<String> = []
+
+        for text in allTexts where !text.isEmpty {
+            if text.localizedCaseInsensitiveContains("draw") && text.localizedCaseInsensitiveContains("card") {
+                result.insert("Draw")
+            }
+            if text.localizedCaseInsensitiveContains("search your deck") || text.localizedCaseInsensitiveContains("look at the top") {
+                result.insert("Search")
+            }
+            if (text.localizedCaseInsensitiveContains("attach") && text.localizedCaseInsensitiveContains("energy"))
+                || (text.localizedCaseInsensitiveContains("move") && text.localizedCaseInsensitiveContains("energy")) {
+                result.insert("Energy Acceleration")
+            }
+            if text.localizedCaseInsensitiveContains("heal")
+                || text.range(of: "remove.*damage counter", options: [.regularExpression, .caseInsensitive]) != nil {
+                result.insert("Healing")
+            }
+            if text.localizedCaseInsensitiveContains("less damage")
+                || text.range(of: "prevent.*damage", options: [.regularExpression, .caseInsensitive]) != nil
+                || text.range(of: "reduce.*damage", options: [.regularExpression, .caseInsensitive]) != nil
+                || text.localizedCaseInsensitiveContains("prevent all effects") {
+                result.insert("Damage Reduction")
+            }
+            if text.localizedCaseInsensitiveContains("more damage") || text.localizedCaseInsensitiveContains("additional damage") {
+                result.insert("Damage Boost")
+            }
+            if text.localizedCaseInsensitiveContains("discard")
+                || text.localizedCaseInsensitiveContains("lost zone")
+                || text.localizedCaseInsensitiveContains("can't play")
+                || text.localizedCaseInsensitiveContains("devolve")
+                || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("opponent's hand"))
+                || (text.localizedCaseInsensitiveContains("opponent") && text.localizedCaseInsensitiveContains("cost") && text.localizedCaseInsensitiveContains("more")) {
+                result.insert("Disruption")
+            }
+            // Status uses exact capitalised strings as printed on cards
+            if text.contains("Poisoned") || text.contains("Burned") || text.contains("Paralyzed")
+                || text.contains("Asleep") || text.contains("Confused") {
+                result.insert("Status")
+            }
+            // Spread Damage uses exact capitalised strings for bench/each cases; regex for placed counters
+            if (text.localizedCaseInsensitiveContains("damage counter")
+                && (text.contains("Benched") || text.contains("each of your opponent's Pokémon")))
+                || text.range(of: #"(?:put|place) \d+ damage counter"#, options: [.regularExpression, .caseInsensitive]) != nil {
+                result.insert("Spread Damage")
+            }
+            if text.localizedCaseInsensitiveContains("switch")
+                || text.contains("no Retreat Cost")
+                || (text.contains("Retreat Cost") && text.localizedCaseInsensitiveContains("less"))
+                || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("into your deck")) {
+                result.insert("Mobility")
+            }
+            if text.contains("Prize card")
+                && (text.localizedCaseInsensitiveContains("take") || text.localizedCaseInsensitiveContains("more")
+                    || text.localizedCaseInsensitiveContains("fewer") || text.localizedCaseInsensitiveContains("additional")) {
+                result.insert("Prize Control")
+            }
+            if text.localizedCaseInsensitiveContains("can't play")
+                || text.localizedCaseInsensitiveContains("can't use")
+                || text.localizedCaseInsensitiveContains("can't be put")
+                || text.localizedCaseInsensitiveContains("can't be moved")
+                || text.range(of: "lose.*Ability", options: [.regularExpression, .caseInsensitive]) != nil
+                || text.contains("no Abilities") {
+                result.insert("Lock")
+            }
+        }
+
+        // Survivability — ability text only
+        for text in abilities.map(\.text) where !text.isEmpty {
+            if text.contains("not Knocked Out")
+                || text.range(of: "remaining HP.*10", options: .regularExpression) != nil {
+                result.insert("Survivability")
+            }
+        }
+
+        return result.sorted()
     }
 }
 
@@ -163,18 +264,31 @@ struct CardSeedEntry: Decodable, Sendable {
 }
 
 struct AttackSeedEntry: Decodable, Sendable {
+    let name: String
     let cost: [String]
     let damage: String
+    let text: String
 
-    private enum CodingKeys: String, CodingKey { case cost, damage }
+    private enum CodingKeys: String, CodingKey { case name, cost, damage, text }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        name = try c.decodeIfPresent(String.self, forKey: .name) ?? ""
         cost = try c.decodeIfPresent([String].self, forKey: .cost) ?? []
         damage = try c.decodeIfPresent(String.self, forKey: .damage) ?? ""
+        text = try c.decodeIfPresent(String.self, forKey: .text) ?? ""
     }
 }
 
 struct AbilitySeedEntry: Decodable, Sendable {
     let name: String
+    let text: String
+
+    private enum CodingKeys: String, CodingKey { case name, text }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        name = try c.decode(String.self, forKey: .name)
+        text = try c.decodeIfPresent(String.self, forKey: .text) ?? ""
+    }
 }
