@@ -7,8 +7,10 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 16) {
+                    MatchLogWidget()
                     Text("More coming soon")
                         .foregroundStyle(.secondary)
+                        .font(.subheadline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal)
                 }

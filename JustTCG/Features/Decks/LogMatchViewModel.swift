@@ -68,6 +68,7 @@ final class LogMatchViewModel {
         let defaults = UserDefaults.standard
         defaults.set(eventType.rawValue, forKey: "last_event_type")
         defaults.set(format.rawValue, forKey: "last_match_format")
+        defaults.set(deck.id.uuidString, forKey: "last_deck_id")
         matchRepo.logMatch(
             deck: deck,
             archetype: archetypeQuery.trimmingCharacters(in: .whitespaces),
