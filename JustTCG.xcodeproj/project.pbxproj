@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		052E05AE02E2FC4FBE60C472 /* TournamentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D703009C418C7BB30FA974 /* TournamentsView.swift */; };
 		5BCF93CA79B3433198C010BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24C9C672E4F400BB4FE0436 /* SettingsView.swift */; };
+		BEBD2A0F49B64C88B35AFE49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E64F710CD374197AED95AB6 /* HomeView.swift */; };
 		054D4151E3B4540536E02D89 /* CachedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C60E6A4314B7A8934D461 /* CachedCard.swift */; };
 		0CD2909D1E7CC479331B1D5C /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89E58DD008395476275E5 /* DeckDetailView.swift */; };
 		0FB8D2F04F834C6E5303467E /* WinRateChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A92BC258919210EFD5215FC /* WinRateChartView.swift */; };
@@ -173,6 +174,7 @@
 		F52104F510A1B4C61D831AE3 /* MEG.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MEG.json; sourceTree = "<group>"; };
 		FF175B45B56DB5971B50D682 /* SFA.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SFA.json; sourceTree = "<group>"; };
 		A24C9C672E4F400BB4FE0436 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4E64F710CD374197AED95AB6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5277F4550B414B868C11853D /* DeckListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListParser.swift; sourceTree = "<group>"; };
 		D5F7C858595E47B2AD02FECE /* DeckImportLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckImportLookup.swift; sourceTree = "<group>"; };
 		16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDeckSheet.swift; sourceTree = "<group>"; };
@@ -363,6 +365,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		38775128112E49559B6140F7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E64F710CD374197AED95AB6 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+
 		CDBCBADEFC96C75C61CF6B32 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +381,7 @@
 				963A7D7855F5559A4A0BDBA4 /* Cards */,
 				41A07D979DF2128C6E93492E /* Decks */,
 				A038B5A618DD44788174BF52 /* Settings */,
+				38775128112E49559B6140F7 /* Home */,
 				59952C84DDBF5B8750DE20B5 /* Tournaments */,
 			);
 			path = Features;
@@ -569,6 +581,7 @@
 				5CE7B4EB08848F2E306BBE6F /* MetaShareEngine.swift in Sources */,
 				9154268D5602293D82C098A1 /* NewDeckSheet.swift in Sources */,
 				5BCF93CA79B3433198C010BF /* SettingsView.swift in Sources */,
+				BEBD2A0F49B64C88B35AFE49 /* HomeView.swift in Sources */,
 				A747778A55F5FEF40ACE1463 /* PokemonTCGAPIClient.swift in Sources */,
 				A068F430A3A48253E0C2EA11 /* PracticeGapEngine.swift in Sources */,
 				C7EA0302B1C1BDD27658F5AF /* TournamentDetailView.swift in Sources */,

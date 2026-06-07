@@ -5,20 +5,20 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $nav.selectedTab) {
+            HomeView()
+                .tabItem { Label("Home", systemImage: "house") }
+                .tag(0)
             DecksView()
                 .tabItem { Label("Decks", systemImage: "rectangle.stack") }
-                .tag(0)
+                .tag(1)
             CardsView()
                 .tabItem { Label("Cards", systemImage: "square.grid.2x2") }
-                .tag(1)
+                .tag(2)
             TournamentsView()
                 .tabItem { Label("Tournaments", systemImage: "trophy") }
-                .tag(2)
+                .tag(3)
             AnalyticsView()
                 .tabItem { Label("Analytics", systemImage: "chart.bar") }
-                .tag(3)
-            SettingsView()
-                .tabItem { Label("Settings", systemImage: "gearshape") }
                 .tag(4)
         }
         .environment(nav)

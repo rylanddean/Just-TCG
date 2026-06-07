@@ -69,3 +69,17 @@ Stories are ordered by dependency. Work top to bottom.
 |---|---|---|
 | [M8-01](M8-01-card-sort-state.md) | Card Sort State & Repository Integration | todo |
 | [M8-02](M8-02-sort-controls-ui.md) | Sort Controls UI | todo |
+
+## M10 — Deck Import
+| Story | Title | Status |
+|---|---|---|
+| [M10-01](completed/M10-01-deck-list-parser.md) | Deck List Parser | done |
+| [M10-02](completed/M10-02-deck-import-card-lookup.md) | Deck Import Card Lookup | done |
+| [M10-03](completed/M10-03-import-deck-sheet.md) | Import Deck Sheet | done |
+
+## M11 — Home Screen
+| Story | Title | Status |
+|---|---|---|
+| [M11-01](completed/M11-01-home-screen-shell.md) | Home Screen Shell & Settings Relocation | done |
+| [M11-02](M11-02-match-log-widget.md) | Match Log Widget | todo |
+| [M11-03](M11-03-daily-game-streak.md) | Daily Game Streak | todo |
