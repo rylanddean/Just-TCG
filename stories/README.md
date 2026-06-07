@@ -22,7 +22,7 @@ Stories are ordered by dependency. Work top to bottom.
 |---|---|---|
 | [M2-01](M2-01-deck-models.md) | Deck & DeckCard SwiftData Models | done |
 | [M2-02](M2-02-deck-list-view.md) | Deck List View | done |
-| [M2-03](M2-03-new-deck-flow.md) | New Deck Flow & Deck Detail View | todo |
+| [M2-03](M2-03-new-deck-flow.md) | New Deck Flow & Deck Detail View | done |
 | [M2-04](M2-04-card-picker.md) | Card Picker (Add Cards to Deck) | todo |
 | [M2-05](M2-05-legality-validation.md) | Deck Legality Validation | todo |
 | [M2-06](M2-06-deck-export.md) | Deck Export | todo |

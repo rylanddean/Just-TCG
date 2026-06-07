@@ -88,6 +88,17 @@ final class CardRepository {
         )
     }
 
+    // Fetches a specific set of cards by ID — used by DeckBuilderViewModel to
+    // resolve card metadata for the cards already in a deck.
+    func fetch(ids: [String]) throws -> [CachedCard] {
+        guard !ids.isEmpty else { return [] }
+        return try context.fetch(
+            FetchDescriptor<CachedCard>(
+                predicate: #Predicate<CachedCard> { ids.contains($0.id) }
+            )
+        )
+    }
+
     // Filters cards by name query, energy type(s), subtype(s), and set code(s).
     // Name and set filters run at the DB level; type/subtype filtering runs
     // in-memory (SwiftData can't query stored [String] arrays efficiently).

@@ -1,6 +1,8 @@
 import SwiftUI
 
-// Placeholder — full implementation in M2-03.
+// Routing shim — DecksView uses DeckDetailMode to distinguish create vs edit.
+// .create presents NewDeckSheet (owns its own NavigationStack inside a sheet).
+// .edit(deck) renders DeckBuilderView directly inside the caller's NavigationStack.
 enum DeckDetailMode {
     case create
     case edit(Deck)
@@ -9,16 +11,12 @@ enum DeckDetailMode {
 struct DeckDetailView: View {
     let mode: DeckDetailMode
 
-    private var title: String {
-        switch mode {
-        case .create: return "New Deck"
-        case .edit(let deck): return deck.name
-        }
-    }
-
     var body: some View {
-        Text(title)
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
+        switch mode {
+        case .create:
+            NewDeckSheet()
+        case .edit(let deck):
+            DeckBuilderView(deck: deck)
+        }
     }
 }

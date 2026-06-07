@@ -1,6 +1,6 @@
 # M2-03 — New Deck Flow & Deck Detail View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M2 — Deck Builder  
 **Dependencies:** M2-02
 
