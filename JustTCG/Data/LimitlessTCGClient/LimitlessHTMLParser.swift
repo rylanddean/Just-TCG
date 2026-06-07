@@ -171,13 +171,34 @@ enum LimitlessHTMLParser {
 private extension String {
     var htmlDecoded: String {
         var s = self
-        let entities: [(String, String)] = [
+
+        // Named entities — covers characters common in Pokémon names and tournament titles
+        let named: [(String, String)] = [
             ("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"),
             ("&quot;", "\""), ("&apos;", "'"), ("&#39;", "'"),
+            ("&ndash;", "–"), ("&mdash;", "—"), ("&nbsp;", "\u{A0}"), ("&hellip;", "…"),
+            ("&eacute;", "é"), ("&ecirc;", "ê"), ("&egrave;", "è"), ("&euml;", "ë"),
+            ("&aacute;", "á"), ("&acirc;", "â"), ("&agrave;", "à"), ("&auml;", "ä"),
+            ("&iacute;", "í"), ("&icirc;", "î"), ("&igrave;", "ì"), ("&iuml;", "ï"),
+            ("&oacute;", "ó"), ("&ocirc;", "ô"), ("&ograve;", "ò"), ("&ouml;", "ö"),
+            ("&uacute;", "ú"), ("&ucirc;", "û"), ("&ugrave;", "ù"), ("&uuml;", "ü"),
         ]
-        for (entity, char) in entities {
+        for (entity, char) in named {
             s = s.replacingOccurrences(of: entity, with: char)
         }
+
+        // Decimal numeric references: &#NNNN;
+        s = s.replacing(/&#(\d+);/) { match in
+            guard let cp = UInt32(match.1), let scalar = Unicode.Scalar(cp) else { return String(match.0) }
+            return String(Character(scalar))
+        }
+
+        // Hex numeric references: &#xNNNN; or &#XNNNN;
+        s = s.replacing(/&#[xX]([0-9a-fA-F]+);/) { match in
+            guard let cp = UInt32(match.1, radix: 16), let scalar = Unicode.Scalar(cp) else { return String(match.0) }
+            return String(Character(scalar))
+        }
+
         return s
     }
 }
