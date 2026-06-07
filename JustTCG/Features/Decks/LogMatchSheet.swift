@@ -87,7 +87,7 @@ struct LogMatchSheet: View {
                     vm.selectArchetype(Archetype(id: newValue, name: newValue, primaryType: ""))
                 }
             }
-            TextField("e.g. Charizard ex / Pidgeot ex", text: $vm.archetypeQuery)
+            TextField("e.g. Dragapult ex", text: $vm.archetypeQuery)
                 .autocorrectionDisabled()
             ForEach(vm.suggestions) { arch in
                 Button {

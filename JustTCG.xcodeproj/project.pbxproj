@@ -78,8 +78,6 @@
 		E341B4DA8499A11F0849A4F8 /* MatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459783A5E756DE81AE3CDE20 /* MatchHistoryView.swift */; };
 		E35DF9D0C96F0DA43859A630 /* LogMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55695AE905DCDFE6937983B4 /* LogMatchViewModel.swift */; };
 		E837CCEBAD9DA2E14FFD363B /* archetypes.json in Resources */ = {isa = PBXBuildFile; fileRef = BFD001D562436733C407108B /* archetypes.json */; };
-		W1X2Y3Z4A5B6C7D8E9F0G1H2 /* metaDecks.json in Resources */ = {isa = PBXBuildFile; fileRef = X1Y2Z3A4B5C6D7E8F9G0H1I2 /* metaDecks.json */; };
-		Y1Z2A3B4C5D6E7F8G9H0I1J2 /* MetaDeckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = Z1A2B3C4D5E6F7G8H9I0J1K2 /* MetaDeckRepository.swift */; };
 		E8B896E6950653F1FC018B64 /* AppNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317126C33B49BC2A0F29791C /* AppNavigationState.swift */; };
 		F00EEC022711486169331803 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382781E56B17CEC0AB19AC36 /* Match.swift */; };
 		AAB1C2D3E4F5678901234567 /* SVE.json in Resources */ = {isa = PBXBuildFile; fileRef = BBF1C2D3E4F5678901234567 /* SVE.json */; };
@@ -170,8 +168,6 @@
 		B5FA3AC7D11468A157F134E6 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		BB608DEF985492EF9ED10FBE /* MatchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRepository.swift; sourceTree = "<group>"; };
 		BFD001D562436733C407108B /* archetypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = archetypes.json; sourceTree = "<group>"; };
-		X1Y2Z3A4B5C6D7E8F9G0H1I2 /* metaDecks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = metaDecks.json; sourceTree = "<group>"; };
-		Z1A2B3C4D5E6F7G8H9I0J1K2 /* MetaDeckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDeckRepository.swift; sourceTree = "<group>"; };
 		C0D89E58DD008395476275E5 /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
 		C35472C816F6B3006423D59D /* TournamentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailViewModel.swift; sourceTree = "<group>"; };
 		C5D703009C418C7BB30FA974 /* TournamentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentsView.swift; sourceTree = "<group>"; };
@@ -240,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				BFD001D562436733C407108B /* archetypes.json */,
-				X1Y2Z3A4B5C6D7E8F9G0H1I2 /* metaDecks.json */,
 				1F32F4731902830EADA605FE /* Assets.xcassets */,
 				788BED1EE440389CEC401878 /* App */,
 				0E0A82675B4AD4F7A64B0B78 /* CardData */,
@@ -387,7 +382,6 @@
 				4AF030FFFBC315CBF4B1D0D8 /* MatchupStat.swift */,
 				A96DDA8E3FA2C87569BDBEAF /* MatchupStatsEngine.swift */,
 				8A23BEB0C7D19B741C113C5B /* MetaShareEngine.swift */,
-				Z1A2B3C4D5E6F7G8H9I0J1K2 /* MetaDeckRepository.swift */,
 				50C1110B1955725F5F6B8F20 /* PracticeGapEngine.swift */,
 			);
 			path = Entities;
@@ -592,7 +586,6 @@
 				22EDC60DD0FC21687D965DC5 /* TWM.json in Resources */,
 				120D3E29129B83A9A3A6AA16 /* WHT.json in Resources */,
 				E837CCEBAD9DA2E14FFD363B /* archetypes.json in Resources */,
-				W1X2Y3Z4A5B6C7D8E9F0G1H2 /* metaDecks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +601,6 @@
 				E8B896E6950653F1FC018B64 /* AppNavigationState.swift in Sources */,
 				4B56AB3482D64309DC044B06 /* Archetype.swift in Sources */,
 				5F421FCCB93E80574B6109A0 /* ArchetypeRepository.swift in Sources */,
-				Y1Z2A3B4C5D6E7F8G9H0I1J2 /* MetaDeckRepository.swift in Sources */,
 				266C7E248BC2BCFF0DAC9EBA /* BundledCardSeeder.swift in Sources */,
 				054D4151E3B4540536E02D89 /* CachedCard.swift in Sources */,
 				211ACB78C19896B452479CFF /* CardDetailView.swift in Sources */,

@@ -27,7 +27,7 @@ final class LogMatchViewModel {
     // MARK: - Meta deck picker
 
     var quickPickSelection: String = "Custom"
-    var metaDecks: [String] { MetaDeckRepository.shared.all }
+    var metaDecks: [String] { ArchetypeRepository.shared.metaOrdered.map(\.name) }
 
     // MARK: - Derived
 
