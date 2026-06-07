@@ -202,14 +202,12 @@ struct CardPickerView: View {
         let qty = deckQuantity(for: card)
         let totalCount = deck.cards.reduce(0) { $0 + $1.quantity }
         guard totalCount < 60 else { return true }
-        let isBasicEnergy = card.subtypes.contains("Basic Energy")
-        return !isBasicEnergy && qty >= 4
+        return !card.isBasicEnergy && qty >= 4
     }
 
     private func addCard(_ card: CachedCard) {
-        let isBasicEnergy = card.subtypes.contains("Basic Energy")
         DeckRepository(modelContext: context)
-            .addCard(cardId: card.id, to: deck, isBasicEnergy: isBasicEnergy)
+            .addCard(cardId: card.id, to: deck, isBasicEnergy: card.isBasicEnergy)
     }
 }
 

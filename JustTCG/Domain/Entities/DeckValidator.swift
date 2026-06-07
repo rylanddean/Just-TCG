@@ -15,10 +15,8 @@ struct DeckValidator {
         for deckCard in deck.cards {
             guard let card = cardMap[deckCard.cardId] else { continue }
 
-            let isBasicEnergy = card.subtypes.contains("Basic Energy")
-
             // Error: > 4 copies of a named card (excluding Basic Energy)
-            if !isBasicEnergy && deckCard.quantity > 4 {
+            if !card.isBasicEnergy && deckCard.quantity > 4 {
                 errors.append(.duplicateCard(name: card.name, count: deckCard.quantity))
             }
 

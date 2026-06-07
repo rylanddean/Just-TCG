@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v7"
+    static let seededKey = "bundled_cards_seeded_v8"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -71,6 +71,7 @@ enum BundledCardSeeder {
                 context.insert(CachedCard(
                     id: entry.id,
                     name: entry.name,
+                    supertype: entry.supertype,
                     setCode: entry.setCode,
                     setName: entry.setName,
                     number: entry.number,
@@ -216,6 +217,7 @@ private struct SetMetadataSeed: Decodable {
 struct CardSeedEntry: Decodable, Sendable {
     let id: String
     let name: String
+    let supertype: String
     let setCode: String
     let setName: String
     let number: String
@@ -235,7 +237,7 @@ struct CardSeedEntry: Decodable, Sendable {
     let resistanceType: String?
 
     private enum CodingKeys: String, CodingKey {
-        case id, name, setCode, setName, number, types, subtypes, hp, isStandardLegal
+        case id, name, supertype, setCode, setName, number, types, subtypes, hp, isStandardLegal
         case imageURL, largeImageURL, rulesText, regulationMark, rarity, attacks, abilities
         case retreatCost, weaknessType, resistanceType
     }
@@ -244,6 +246,7 @@ struct CardSeedEntry: Decodable, Sendable {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         id = try c.decode(String.self, forKey: .id)
         name = try c.decode(String.self, forKey: .name)
+        supertype = try c.decodeIfPresent(String.self, forKey: .supertype) ?? ""
         setCode = try c.decode(String.self, forKey: .setCode)
         setName = try c.decode(String.self, forKey: .setName)
         number = try c.decode(String.self, forKey: .number)

@@ -5,6 +5,7 @@ import SwiftData
 final class CachedCard {
     @Attribute(.unique) var id: String
     var name: String
+    var supertype: String
     var setCode: String
     var setName: String
     var number: String
@@ -16,6 +17,8 @@ final class CachedCard {
     var largeImageURL: String?
     var rulesText: [String]
     var cachedAt: Date
+
+    var isBasicEnergy: Bool { supertype == "Energy" && subtypes.contains("Basic") }
 
     var regulationMark: String?
     var rarity: String?
@@ -32,6 +35,7 @@ final class CachedCard {
     init(
         id: String,
         name: String,
+        supertype: String = "",
         setCode: String,
         setName: String,
         number: String,
@@ -57,6 +61,7 @@ final class CachedCard {
     ) {
         self.id = id
         self.name = name
+        self.supertype = supertype
         self.setCode = setCode
         self.setName = setName
         self.number = number
@@ -85,6 +90,7 @@ final class CachedCard {
         self.init(
             id: card.id,
             name: card.name,
+            supertype: card.supertype,
             setCode: card.setCode,
             setName: card.setName,
             number: card.number,
@@ -101,6 +107,7 @@ final class CachedCard {
 
     func update(from card: LimitlessCard, now: Date = .now) {
         name = card.name
+        supertype = card.supertype
         setCode = card.setCode
         setName = card.setName
         number = card.number

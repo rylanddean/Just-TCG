@@ -1,6 +1,6 @@
 # BUG-06 — Basic Energy Triggers False "Max 4 Copies" Warning
 
-**Status:** open  
+**Status:** completed  
 **Area:** M2 — Deck Builder / Deck Validation  
 **Related stories:** M2-04, BUG-01, BUG-02
 
@@ -33,11 +33,11 @@ The reason the **warning** appears but the editor still **lets** you exceed 4: `
 
 ## Acceptance Criteria
 
-- [ ] Basic Energy can be added/set in any quantity with **no** "max 4 copies" warning
-- [ ] Special Energy and all other named cards are still correctly capped at 4 (warning still fires for them)
-- [ ] Basic Energy is distinguished from Basic Pokémon (both share the `"Basic"` subtype) reliably
-- [ ] `addCard` cap, `CardPickerView` `isAtMax`/`addCard`, and `DeckValidator` all agree on what counts as Basic Energy
-- [ ] No regression to the "no Basic Pokémon" warning or the 60-card total check
+- [x] Basic Energy can be added/set in any quantity with **no** "max 4 copies" warning
+- [x] Special Energy and all other named cards are still correctly capped at 4 (warning still fires for them)
+- [x] Basic Energy is distinguished from Basic Pokémon (both share the `"Basic"` subtype) reliably
+- [x] `addCard` cap, `CardPickerView` `isAtMax`/`addCard`, and `DeckValidator` all agree on what counts as Basic Energy
+- [x] No regression to the "no Basic Pokémon" warning or the 60-card total check
 
 ## Technical Notes
 

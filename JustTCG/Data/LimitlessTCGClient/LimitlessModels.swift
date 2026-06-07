@@ -5,6 +5,7 @@ import Foundation
 struct LimitlessCard {
     let id: String
     let name: String
+    let supertype: String
     let setCode: String
     let setName: String
     let number: String

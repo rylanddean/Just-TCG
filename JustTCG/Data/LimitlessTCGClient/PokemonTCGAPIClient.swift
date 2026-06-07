@@ -107,6 +107,7 @@ struct PTCGCard: Decodable {
         return LimitlessCard(
             id: id,
             name: name,
+            supertype: supertype ?? "",
             setCode: set.ptcgoCode ?? set.id.uppercased(),
             setName: set.name,
             number: number,
