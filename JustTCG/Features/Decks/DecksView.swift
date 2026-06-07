@@ -7,6 +7,7 @@ struct DecksView: View {
 
     @State private var deckToDelete: Deck? = nil
     @State private var showNewDeckSheet = false
+    @State private var showImportSheet = false
 
     var body: some View {
         NavigationStack {
@@ -19,7 +20,10 @@ struct DecksView: View {
             }
             .navigationTitle("Decks")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button { showImportSheet = true } label: {
+                        Image(systemName: "arrow.down.doc")
+                    }
                     Button { showNewDeckSheet = true } label: {
                         Image(systemName: "plus")
                     }
@@ -43,6 +47,9 @@ struct DecksView: View {
             }
             .sheet(isPresented: $showNewDeckSheet) {
                 DeckDetailView(mode: .create)
+            }
+            .sheet(isPresented: $showImportSheet) {
+                ImportDeckSheet()
             }
         }
     }

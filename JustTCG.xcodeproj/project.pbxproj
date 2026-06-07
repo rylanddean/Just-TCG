@@ -80,6 +80,11 @@
 		F00EEC022711486169331803 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382781E56B17CEC0AB19AC36 /* Match.swift */; };
 		FCF7B6112B6EF4FEAC3CEE59 /* BLK.json in Resources */ = {isa = PBXBuildFile; fileRef = A2CEA587906975F3F9CE093A /* BLK.json */; };
 		FF596F467A68810278206B9F /* MatchupStatsEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0D84F2703502AA3AC278E /* MatchupStatsEngineTests.swift */; };
+		759FE409FAF54EF9AA5A8781 /* DeckListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277F4550B414B868C11853D /* DeckListParser.swift */; };
+		C7E7C923598B409BA423756A /* DeckImportLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F7C858595E47B2AD02FECE /* DeckImportLookup.swift */; };
+		4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */; };
+		70B778299C8F497F9E0E86FB /* DeckListParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75822006599645869CF21693 /* DeckListParserTests.swift */; };
+		92238196D628448A863D3D92 /* DeckImportLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +173,11 @@
 		F52104F510A1B4C61D831AE3 /* MEG.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MEG.json; sourceTree = "<group>"; };
 		FF175B45B56DB5971B50D682 /* SFA.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SFA.json; sourceTree = "<group>"; };
 		A24C9C672E4F400BB4FE0436 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5277F4550B414B868C11853D /* DeckListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListParser.swift; sourceTree = "<group>"; };
+		D5F7C858595E47B2AD02FECE /* DeckImportLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckImportLookup.swift; sourceTree = "<group>"; };
+		16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDeckSheet.swift; sourceTree = "<group>"; };
+		75822006599645869CF21693 /* DeckListParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListParserTests.swift; sourceTree = "<group>"; };
+		16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckImportLookupTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -213,6 +223,8 @@
 			children = (
 				04A0D84F2703502AA3AC278E /* MatchupStatsEngineTests.swift */,
 				4944AC762F953B6B276E7586 /* MetaShareEngineTests.swift */,
+				75822006599645869CF21693 /* DeckListParserTests.swift */,
+				16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */,
 			);
 			path = JustTCGTests;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 				8C1407251B14D2C6292AC2C4 /* DeckBuilderViewModel.swift */,
 				C0D89E58DD008395476275E5 /* DeckDetailView.swift */,
 				6DFC1BF7B9DC52AD69F3ADD4 /* DecksView.swift */,
+				16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */,
 				96C8C10D565D7C6CD8E8E399 /* LogMatchSheet.swift */,
 				55695AE905DCDFE6937983B4 /* LogMatchViewModel.swift */,
 				9DA91B66714D8734DA85A0C1 /* MatchDetailView.swift */,
@@ -385,10 +398,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B393C3326C1D40B5B72702B6 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				5277F4550B414B868C11853D /* DeckListParser.swift */,
+				D5F7C858595E47B2AD02FECE /* DeckImportLookup.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
 		FC95B0AF4193E34571862F82 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				044A8BE29E67ADA41D086C4A /* BundledCardSeeder.swift */,
+				B393C3326C1D40B5B72702B6 /* Import */,
 				95A6528EE9C50983BDA54DE8 /* LimitlessTCGClient */,
 				F1711DA2CED39502ADEFB164 /* Models */,
 				9C250CF99B919B1EDFD12403 /* Repositories */,
@@ -525,6 +548,9 @@
 				A6358F7C7A9B60070951893D /* DeckValidationError.swift in Sources */,
 				BCD9E9A7F361B4F3661ACBD1 /* DeckValidator.swift in Sources */,
 				33D3424275DB860D24F0B1B3 /* DecksView.swift in Sources */,
+				759FE409FAF54EF9AA5A8781 /* DeckListParser.swift in Sources */,
+				C7E7C923598B409BA423756A /* DeckImportLookup.swift in Sources */,
+				4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */,
 				D9407C2AB518110FD5AD7D77 /* JustTCGApp.swift in Sources */,
 				A48C3BDC4794CC52321EC163 /* LimitlessClientError.swift in Sources */,
 				BB7D33B52324692CB727B726 /* LimitlessHTMLParser.swift in Sources */,
@@ -559,6 +585,8 @@
 			files = (
 				FF596F467A68810278206B9F /* MatchupStatsEngineTests.swift in Sources */,
 				28C8549B224555E3661DE829 /* MetaShareEngineTests.swift in Sources */,
+				70B778299C8F497F9E0E86FB /* DeckListParserTests.swift in Sources */,
+				92238196D628448A863D3D92 /* DeckImportLookupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
