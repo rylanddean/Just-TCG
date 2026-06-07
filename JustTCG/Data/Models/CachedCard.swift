@@ -13,6 +13,8 @@ final class CachedCard {
     var hp: Int?
     var isStandardLegal: Bool
     var imageURL: String
+    var largeImageURL: String?
+    var rulesText: [String]
     var cachedAt: Date
 
     init(
@@ -26,6 +28,8 @@ final class CachedCard {
         hp: Int? = nil,
         isStandardLegal: Bool = true,
         imageURL: String,
+        largeImageURL: String? = nil,
+        rulesText: [String] = [],
         cachedAt: Date = .now
     ) {
         self.id = id
@@ -38,6 +42,8 @@ final class CachedCard {
         self.hp = hp
         self.isStandardLegal = isStandardLegal
         self.imageURL = imageURL
+        self.largeImageURL = largeImageURL
+        self.rulesText = rulesText
         self.cachedAt = cachedAt
     }
 
@@ -53,6 +59,8 @@ final class CachedCard {
             hp: card.hp,
             isStandardLegal: card.isStandardLegal,
             imageURL: card.imageURL,
+            largeImageURL: card.largeImageURL,
+            rulesText: card.rulesText,
             cachedAt: cachedAt
         )
     }
@@ -67,6 +75,8 @@ final class CachedCard {
         hp = card.hp
         isStandardLegal = card.isStandardLegal
         imageURL = card.imageURL
+        largeImageURL = card.largeImageURL
+        rulesText = card.rulesText
         cachedAt = now
     }
 }

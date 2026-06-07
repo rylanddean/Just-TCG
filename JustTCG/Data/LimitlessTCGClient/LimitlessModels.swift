@@ -13,6 +13,7 @@ struct LimitlessCard {
     let hp: Int?
     let isStandardLegal: Bool
     let imageURL: String
+    let largeImageURL: String?
     let rulesText: [String]
 }
 

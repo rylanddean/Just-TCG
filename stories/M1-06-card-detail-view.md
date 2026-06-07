@@ -1,6 +1,6 @@
 # M1-06 — Card Detail View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M1 — Card Browser  
 **Dependencies:** M1-04
 

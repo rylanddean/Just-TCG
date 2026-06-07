@@ -87,9 +87,24 @@ struct PTCGCard: Decodable {
     let legalities: PTCGLegalities?
     let images: PTCGImages
     let rules: [String]?
+    let attacks: [PTCGAttack]?
+    let abilities: [PTCGAbility]?
 
     func toLimitlessCard() -> LimitlessCard {
-        LimitlessCard(
+        let abilityLines: [String] = (abilities ?? []).map { ability in
+            let header = "[\(ability.type ?? "Ability")] \(ability.name)"
+            guard let text = ability.text, !text.isEmpty else { return header }
+            return "\(header)\n\(text)"
+        }
+        let attackLines: [String] = (attacks ?? []).map { attack in
+            var header = attack.name
+            if let dmg = attack.damage, !dmg.isEmpty { header += " · \(dmg)" }
+            guard let text = attack.text, !text.isEmpty else { return header }
+            return "\(header)\n\(text)"
+        }
+        let allText = abilityLines + attackLines + (rules ?? [])
+
+        return LimitlessCard(
             id: id,
             name: name,
             setCode: set.ptcgoCode ?? set.id.uppercased(),
@@ -103,9 +118,23 @@ struct PTCGCard: Decodable {
             isStandardLegal: legalities.flatMap { $0.standard }
                 .map { $0.caseInsensitiveCompare("Legal") == .orderedSame } ?? true,
             imageURL: images.small,
-            rulesText: rules ?? []
+            largeImageURL: images.large,
+            rulesText: allText
         )
     }
+}
+
+struct PTCGAttack: Decodable {
+    let name: String
+    let cost: [String]?
+    let damage: String?
+    let text: String?
+}
+
+struct PTCGAbility: Decodable {
+    let name: String
+    let text: String?
+    let type: String?
 }
 
 struct PTCGSet: Decodable {
