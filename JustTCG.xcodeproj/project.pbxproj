@@ -88,6 +88,13 @@
 		4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */; };
 		70B778299C8F497F9E0E86FB /* DeckListParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75822006599645869CF21693 /* DeckListParserTests.swift */; };
 		92238196D628448A863D3D92 /* DeckImportLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */; };
+		D1E2F3A4B5C6D7E8F9A0B1C2 /* StreakEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* StreakEngine.swift */; };
+		E1F2A3B4C5D6E7F8A9B0C1D2 /* StreakWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A6B7C8D9E0F1A2 /* StreakWidget.swift */; };
+		F1A2B3C4D5E6F7A8B9C0D1E2 /* StreakEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B2 /* StreakEngineTests.swift */; };
+		F3A4B5C6D7E8F9A0B1C2D3E4 /* LimitlessHTMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3A4B5C6D7E8F9A0B1C2D3 /* LimitlessHTMLParserTests.swift */; };
+		G1H2I3J4K5L6M7N8O9P0Q1R2 /* ActivityHeatmapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = H1I2J3K4L5M6N7O8P9Q0R1S2 /* ActivityHeatmapEngine.swift */; };
+		I1J2K3L4M5N6O7P8Q9R0S1T2 /* ActivityHeatmapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = J1K2L3M4N5O6P7Q8R9S0T1U2 /* ActivityHeatmapWidget.swift */; };
+		K1L2M3N4O5P6Q7R8S9T0U1V2 /* ActivityHeatmapEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +191,13 @@
 		16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDeckSheet.swift; sourceTree = "<group>"; };
 		75822006599645869CF21693 /* DeckListParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListParserTests.swift; sourceTree = "<group>"; };
 		16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckImportLookupTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* StreakEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakEngine.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5A6B7C8D9E0F1A2 /* StreakWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakWidget.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B6C7D8E9F0A1B2 /* StreakEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakEngineTests.swift; sourceTree = "<group>"; };
+		E2F3A4B5C6D7E8F9A0B1C2D3 /* LimitlessHTMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessHTMLParserTests.swift; sourceTree = "<group>"; };
+		H1I2J3K4L5M6N7O8P9Q0R1S2 /* ActivityHeatmapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapEngine.swift; sourceTree = "<group>"; };
+		J1K2L3M4N5O6P7Q8R9S0T1U2 /* ActivityHeatmapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapWidget.swift; sourceTree = "<group>"; };
+		L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmapEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -232,6 +246,9 @@
 				4944AC762F953B6B276E7586 /* MetaShareEngineTests.swift */,
 				75822006599645869CF21693 /* DeckListParserTests.swift */,
 				16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */,
+				C1D2E3F4A5B6C7D8E9F0A1B2 /* StreakEngineTests.swift */,
+				E2F3A4B5C6D7E8F9A0B1C2D3 /* LimitlessHTMLParserTests.swift */,
+				L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */,
 			);
 			path = JustTCGTests;
 			sourceTree = "<group>";
@@ -374,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				4E64F710CD374197AED95AB6 /* HomeView.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* StreakEngine.swift */,
+				H1I2J3K4L5M6N7O8P9Q0R1S2 /* ActivityHeatmapEngine.swift */,
 				A9B8C7D6E5F4A3B2C1D0E9F8 /* Widgets */,
 			);
 			path = Home;
@@ -383,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				F1E2D3C4B5A6978867564534 /* MatchLogWidget.swift */,
+				B1C2D3E4F5A6B7C8D9E0F1A2 /* StreakWidget.swift */,
+				J1K2L3M4N5O6P7Q8R9S0T1U2 /* ActivityHeatmapWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -599,6 +620,10 @@
 				5BCF93CA79B3433198C010BF /* SettingsView.swift in Sources */,
 				BEBD2A0F49B64C88B35AFE49 /* HomeView.swift in Sources */,
 				C1A2B3C4D5E6F7A8B9C0D1E2 /* MatchLogWidget.swift in Sources */,
+				D1E2F3A4B5C6D7E8F9A0B1C2 /* StreakEngine.swift in Sources */,
+				E1F2A3B4C5D6E7F8A9B0C1D2 /* StreakWidget.swift in Sources */,
+				G1H2I3J4K5L6M7N8O9P0Q1R2 /* ActivityHeatmapEngine.swift in Sources */,
+				I1J2K3L4M5N6O7P8Q9R0S1T2 /* ActivityHeatmapWidget.swift in Sources */,
 				A747778A55F5FEF40ACE1463 /* PokemonTCGAPIClient.swift in Sources */,
 				A068F430A3A48253E0C2EA11 /* PracticeGapEngine.swift in Sources */,
 				C7EA0302B1C1BDD27658F5AF /* TournamentDetailView.swift in Sources */,
@@ -617,6 +642,9 @@
 				28C8549B224555E3661DE829 /* MetaShareEngineTests.swift in Sources */,
 				70B778299C8F497F9E0E86FB /* DeckListParserTests.swift in Sources */,
 				92238196D628448A863D3D92 /* DeckImportLookupTests.swift in Sources */,
+				F1A2B3C4D5E6F7A8B9C0D1E2 /* StreakEngineTests.swift in Sources */,
+				F3A4B5C6D7E8F9A0B1C2D3E4 /* LimitlessHTMLParserTests.swift in Sources */,
+				K1L2M3N4O5P6Q7R8S9T0U1V2 /* ActivityHeatmapEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 16) {
+                    StreakWidget()
+                    ActivityHeatmapWidget()
                     MatchLogWidget()
                     Text("More coming soon")
                         .foregroundStyle(.secondary)

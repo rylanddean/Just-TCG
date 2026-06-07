@@ -2,14 +2,25 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
+    @AppStorage("streak_daily_goal") private var dailyGoal: Int = 1
+
     var body: some View {
         NavigationStack {
             Form {
+                streakSection
                 #if DEBUG
                 developerSection
                 #endif
             }
             .navigationTitle("Settings")
+        }
+    }
+
+    // MARK: - Streak
+
+    private var streakSection: some View {
+        Section("Streak") {
+            Stepper("Goal: \(dailyGoal) game\(dailyGoal == 1 ? "" : "s") / day", value: $dailyGoal, in: 1...10)
         }
     }
 
