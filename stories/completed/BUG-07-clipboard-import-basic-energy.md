@@ -1,6 +1,6 @@
 # BUG-07 — Clipboard Import Can't Import Basic Energy Cards
 
-**Status:** open  
+**Status:** completed  
 **Area:** M-Import — Deck Clipboard Import  
 **Related stories:** Deck Import (`ImportDeckSheet`), BUG-06
 
@@ -32,12 +32,12 @@ Additionally, `DeckListParser` keeps the raw name including the energy symbol (`
 
 ## Acceptance Criteria
 
-- [ ] A Basic Energy line in a pasted list resolves to a Basic Energy of the correct type in our records, regardless of its set code / number
-- [ ] The `{D}`-style energy symbol is mapped to the right type (see table below)
-- [ ] Lines that spell it out (e.g. "Darkness Energy", "Basic Darkness Energy") also resolve
-- [ ] Non-energy cards continue to match by `setCode + number` exactly as before (no regression)
-- [ ] Special Energy is **not** swallowed by the basic-energy path (it should still match by set/number)
-- [ ] Quantity from the import line is preserved (Basic Energy can exceed 4 — see BUG-06)
+- [x] A Basic Energy line in a pasted list resolves to a Basic Energy of the correct type in our records, regardless of its set code / number
+- [x] The `{D}`-style energy symbol is mapped to the right type (see table below)
+- [x] Lines that spell it out (e.g. "Darkness Energy", "Basic Darkness Energy") also resolve
+- [x] Non-energy cards continue to match by `setCode + number` exactly as before (no regression)
+- [x] Special Energy is **not** swallowed by the basic-energy path (it should still match by set/number)
+- [x] Quantity from the import line is preserved (Basic Energy can exceed 4 — see BUG-06)
 
 ## Technical Notes
 
