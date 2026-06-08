@@ -48,8 +48,13 @@ struct DeckBuilderView: View {
             List {
                 validationSection(vm: vm, proxy: proxy)
                 pokemonSection(vm: vm)
-                trainerSection(vm: vm)
+                supporterSection(vm: vm)
+                itemSection(vm: vm)
+                toolSection(vm: vm)
+                stadiumSection(vm: vm)
+                aceSpecSection(vm: vm)
                 energySection(vm: vm)
+                basicEnergyQuickAddSection(vm: vm)
 
                 Section {
                     Button {
@@ -64,9 +69,6 @@ struct DeckBuilderView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbarContent(vm: vm) }
-            .onTapGesture {
-                if isRenaming { commitRename(vm: vm) }
-            }
         }
     }
 
@@ -177,17 +179,79 @@ struct DeckBuilderView: View {
     }
 
     @ViewBuilder
-    private func trainerSection(vm: DeckBuilderViewModel) -> some View {
-        if !vm.trainerCards.isEmpty {
-            Section(sectionTitle("Trainer", cards: vm.trainerCards)) {
-                ForEach(vm.trainerCards) { dc in
+    private func supporterSection(vm: DeckBuilderViewModel) -> some View {
+        if !vm.supporterCards.isEmpty {
+            Section(sectionTitle("Supporter", cards: vm.supporterCards)) {
+                ForEach(vm.supporterCards) { dc in
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
                         isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) {
-                        vm.setQuantity($0, for: dc)
-                    }
+                    ) { vm.setQuantity($0, for: dc) }
+                    .id(dc.cardId)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func itemSection(vm: DeckBuilderViewModel) -> some View {
+        if !vm.itemCards.isEmpty {
+            Section(sectionTitle("Item", cards: vm.itemCards)) {
+                ForEach(vm.itemCards) { dc in
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) { vm.setQuantity($0, for: dc) }
+                    .id(dc.cardId)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func toolSection(vm: DeckBuilderViewModel) -> some View {
+        if !vm.toolCards.isEmpty {
+            Section(sectionTitle("Tool", cards: vm.toolCards)) {
+                ForEach(vm.toolCards) { dc in
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) { vm.setQuantity($0, for: dc) }
+                    .id(dc.cardId)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func stadiumSection(vm: DeckBuilderViewModel) -> some View {
+        if !vm.stadiumCards.isEmpty {
+            Section(sectionTitle("Stadium", cards: vm.stadiumCards)) {
+                ForEach(vm.stadiumCards) { dc in
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) { vm.setQuantity($0, for: dc) }
+                    .id(dc.cardId)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func aceSpecSection(vm: DeckBuilderViewModel) -> some View {
+        if !vm.aceSpecCards.isEmpty {
+            Section(sectionTitle("Ace Spec", cards: vm.aceSpecCards)) {
+                ForEach(vm.aceSpecCards) { dc in
+                    DeckCardRow(
+                        deckCard: dc,
+                        cachedCard: vm.cachedCards[dc.cardId],
+                        isHighlighted: highlightedCardIds.contains(dc.cardId)
+                    ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
             }
@@ -208,6 +272,36 @@ struct DeckBuilderView: View {
                     }
                     .id(dc.cardId)
                 }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func basicEnergyQuickAddSection(vm: DeckBuilderViewModel) -> some View {
+        let available = vm.basicEnergyTypes
+        if !available.isEmpty {
+            Section {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(available, id: \.typeName) { entry in
+                            Button {
+                                vm.quickAddBasicEnergy(card: entry.card)
+                            } label: {
+                                Text(entry.typeName)
+                                    .font(.subheadline)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color.secondary.opacity(0.15), in: Capsule())
+                            }
+                            .buttonStyle(.plain)
+                            .disabled(vm.totalCount >= 60)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                }
+                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            } header: {
+                Text("Add Basic Energy")
             }
         }
     }

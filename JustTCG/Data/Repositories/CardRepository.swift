@@ -197,6 +197,14 @@ final class CardRepository {
         return CardPickerSeed(cards: cards, availableSets: sets, availableRarities: rarities)
     }
 
+    func fetchBasicEnergies() throws -> [CachedCard] {
+        try context.fetch(
+            FetchDescriptor<CachedCard>(
+                predicate: #Predicate { $0.supertype == "Energy" && $0.subtypes.contains("Basic") }
+            )
+        )
+    }
+
     // MARK: - Private
 
     private func fetchFromDB(

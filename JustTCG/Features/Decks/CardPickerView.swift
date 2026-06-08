@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct CardPickerView: View {
-    let deck: Deck
+    @Bindable var deck: Deck
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -91,6 +91,8 @@ struct CardPickerView: View {
                     isAtMax: isAtMax(card)
                 ) {
                     addCard(card)
+                } onDecrement: {
+                    decrementCard(card)
                 } onLongPress: {
                     cardForDetail = card
                 }
@@ -209,6 +211,16 @@ struct CardPickerView: View {
         DeckRepository(modelContext: context)
             .addCard(cardId: card.id, to: deck, isBasicEnergy: card.isBasicEnergy)
     }
+
+    private func decrementCard(_ card: CachedCard) {
+        let qty = deckQuantity(for: card)
+        let repo = DeckRepository(modelContext: context)
+        if qty <= 1 {
+            repo.removeCard(cardId: card.id, from: deck)
+        } else {
+            repo.setQuantity(qty - 1, cardId: card.id, in: deck)
+        }
+    }
 }
 
 // MARK: - Picker row
@@ -217,7 +229,8 @@ private struct CardPickerRow: View {
     let card: CachedCard
     let deckQuantity: Int
     let isAtMax: Bool
-    let onTap: () -> Void
+    let onAdd: () -> Void
+    let onDecrement: () -> Void
     let onLongPress: () -> Void
 
     var body: some View {
@@ -247,18 +260,38 @@ private struct CardPickerRow: View {
             Spacer()
 
             if deckQuantity > 0 {
-                Text("\(deckQuantity) in deck")
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(Color.accentColor)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Color.accentColor.opacity(0.12))
-                    .clipShape(Capsule())
+                HStack(spacing: 6) {
+                    Button {
+                        onDecrement()
+                    } label: {
+                        Image(systemName: "minus.circle")
+                            .font(.title3)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.secondary)
+
+                    Text("\(deckQuantity)")
+                        .font(.caption.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(Color.accentColor)
+                        .frame(minWidth: 14, alignment: .center)
+
+                    Button {
+                        onAdd()
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .font(.title3)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(isAtMax ? Color.secondary : Color.accentColor)
+                    .disabled(isAtMax)
+                }
             }
         }
-        .opacity(isAtMax ? 0.4 : 1.0)
+        .opacity(deckQuantity == 0 && isAtMax ? 0.4 : 1.0)
         .contentShape(Rectangle())
-        .onTapGesture { if !isAtMax { onTap() } }
+        .onTapGesture {
+            if deckQuantity == 0 && !isAtMax { onAdd() }
+        }
         .onLongPressGesture { onLongPress() }
         .padding(.vertical, 4)
     }

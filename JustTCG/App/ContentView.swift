@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var context
     @State private var nav = AppNavigationState()
 
     var body: some View {
@@ -22,5 +23,6 @@ struct ContentView: View {
                 .tag(4)
         }
         .environment(nav)
+        .task { await BundledCardSeeder.seedIfNeeded(context: context) }
     }
 }

@@ -7,8 +7,11 @@ struct DeckExporter {
 
         var output = ""
 
+        let tg = groups.trainerGroups
+        let allTrainers = tg.supporter + tg.item + tg.tool + tg.stadium + tg.aceSpec
+
         let pokemonCount = groups.pokemon.reduce(0) { $0 + $1.quantity }
-        let trainerCount = groups.trainer.reduce(0) { $0 + $1.quantity }
+        let trainerCount = allTrainers.reduce(0)    { $0 + $1.quantity }
         let energyCount  = groups.energy.reduce(0)  { $0 + $1.quantity }
         let totalCount   = pokemonCount + trainerCount + energyCount
 
@@ -24,7 +27,7 @@ struct DeckExporter {
         }
 
         appendSection("Pokémon", count: pokemonCount, deckCards: groups.pokemon)
-        appendSection("Trainer", count: trainerCount, deckCards: groups.trainer)
+        appendSection("Trainer", count: trainerCount, deckCards: allTrainers)
         appendSection("Energy",  count: energyCount,  deckCards: groups.energy)
 
         output += "Total Cards: \(totalCount)"

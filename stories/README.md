@@ -105,6 +105,12 @@ Stories are ordered by dependency. Work top to bottom.
 |---|---|---|
 | [M13-01](completed/M13-01-log-match-meta-deck-picker.md) | Meta Deck Picker in Log Match Sheet | done |
 
+## M15 — Deck Builder UX
+| Story | Title | Status |
+|---|---|---|
+| [M15-01](M15-01-deck-builder-trainer-sub-sections.md) | Deck Builder: Split Trainer Section into Sub-Sections | todo |
+| [M15-02](M15-02-deck-builder-quick-add-basic-energy.md) | Deck Builder: Quick-Add Basic Energy | todo |
+
 ## Bugs
 | Bug | Title | Status |
 |---|---|---|
@@ -112,3 +118,12 @@ Stories are ordered by dependency. Work top to bottom.
 | [BUG-02](completed/BUG-02-basic-energy-card-data.md) | Basic Energy Cards Missing from Bundled Card JSON | done |
 | [BUG-03](completed/BUG-03-deck-builder-add-cards.md) | "Add Cards" Button Doesn't Work in Deck Builder | done |
 | [BUG-04](completed/BUG-04-analytics-deck-name-encoding.md) | Analytics View Renders Deck Names with Garbled Characters | done |
+| [BUG-05](completed/BUG-05-card-picker-slow-open.md) | "Add Cards" Card Picker Is Slow to Open With No Loading Indicator | done |
+| [BUG-06](completed/BUG-06-basic-energy-four-copy-warning.md) | Basic Energy Triggers False "Max 4 Copies" Warning | done |
+| [BUG-07](completed/BUG-07-clipboard-import-basic-energy.md) | Clipboard Import Can't Import Basic Energy Cards | done |
+| [BUG-08](completed/BUG-08-activity-chart-match-just-reps.md) | Activity Chart Should Match Just Reps & Use Full Width | done |
+| [BUG-09](completed/BUG-09-add-cards-button-unresponsive.md) | "Add Cards" Button Still Unresponsive in Deck Builder | done |
+| [BUG-10](completed/BUG-10-stepper-no-upper-cap.md) | Deck Builder Stepper Allows More Than 4 Copies | done |
+| [BUG-11](completed/BUG-11-card-picker-empty-cards-tab-not-visited.md) | Card Picker Blank When Cards Tab Has Never Been Opened | done |
+| [BUG-12](completed/BUG-12-card-picker-in-deck-count-stale.md) | "In Deck" Badge in Card Picker Is Slow / Doesn't Update After Tapping | done |
+| [BUG-13](completed/BUG-13-card-picker-no-stepper-for-added-cards.md) | Card Picker Has No Way to Decrease Count After Adding a Card | done |
