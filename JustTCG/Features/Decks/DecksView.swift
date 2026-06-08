@@ -6,6 +6,8 @@ struct DecksView: View {
     @Query(sort: \Deck.updatedAt, order: .reverse) private var decks: [Deck]
 
     @State private var deckToDelete: Deck? = nil
+    @State private var deckToRename: Deck? = nil
+    @State private var renameText = ""
     @State private var showNewDeckSheet = false
     @State private var showImportSheet = false
 
@@ -45,6 +47,26 @@ struct DecksView: View {
             } message: { deck in
                 Text("Delete \"\(deck.name)\"? This cannot be undone.")
             }
+            .alert(
+                "Rename Deck",
+                isPresented: Binding(
+                    get: { deckToRename != nil },
+                    set: { if !$0 { deckToRename = nil } }
+                ),
+                presenting: deckToRename
+            ) { deck in
+                TextField("Deck name", text: $renameText)
+                Button("Save") {
+                    let trimmed = renameText.trimmingCharacters(in: .whitespaces)
+                    if !trimmed.isEmpty {
+                        DeckRepository(modelContext: context).renameDeck(deck, to: trimmed)
+                    }
+                    deckToRename = nil
+                }
+                Button("Cancel", role: .cancel) { deckToRename = nil }
+            } message: { deck in
+                Text("Enter a new name for \"\(deck.name)\".")
+            }
             .sheet(isPresented: $showNewDeckSheet) {
                 DeckDetailView(mode: .create)
             }
@@ -61,6 +83,15 @@ struct DecksView: View {
             ForEach(decks) { deck in
                 NavigationLink(destination: DeckDetailView(mode: .edit(deck))) {
                     DeckRowView(deck: deck)
+                }
+                .swipeActions(edge: .leading) {
+                    Button {
+                        renameText = deck.name
+                        deckToRename = deck
+                    } label: {
+                        Label("Rename", systemImage: "pencil")
+                    }
+                    .tint(.orange)
                 }
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                     Button(role: .destructive) {
