@@ -198,11 +198,14 @@ final class CardRepository {
     }
 
     func fetchBasicEnergies() throws -> [CachedCard] {
-        try context.fetch(
+        // Filter subtypes in memory — #Predicate on a [String] transformable crashes
+        // when any row has a null subtypes value (CoreData passes nil to CFStringGetLength).
+        let energies = try context.fetch(
             FetchDescriptor<CachedCard>(
-                predicate: #Predicate { $0.supertype == "Energy" && $0.subtypes.contains("Basic") }
+                predicate: #Predicate { $0.supertype == "Energy" }
             )
         )
+        return energies.filter { $0.subtypes.contains("Basic") }
     }
 
     // MARK: - Private
