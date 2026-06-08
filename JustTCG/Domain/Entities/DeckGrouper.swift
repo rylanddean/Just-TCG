@@ -31,7 +31,9 @@ struct DeckGrouper {
 
         for dc in deckCards {
             guard let c = cardMap[dc.cardId] else { continue }
-            if !c.types.isEmpty {
+            if c.supertype == "Energy" {
+                energy.append(dc)
+            } else if !c.types.isEmpty {
                 pokemon.append(dc)
             } else {
                 let subs = Set(c.subtypes)

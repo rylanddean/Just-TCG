@@ -7,18 +7,36 @@ struct CardPickerView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
 
-    @State private var cards: [CachedCard] = []
     @State private var availableSets: [(code: String, name: String)] = []
     @State private var availableRarities: [String] = []
 
     @State private var searchText = ""
-    @State private var filterState = CardFilterState()
+    @State private var filterState: CardFilterState
     @State private var showFilterSheet = false
     @State private var sortOrder: CardSortOrder = .expansion
 
+    init(deck: Deck, initialFilter: CardFilterState = CardFilterState()) {
+        _deck = Bindable(wrappedValue: deck)
+        _filterState = State(initialValue: initialFilter)
+    }
+
+    // MARK: - Pagination state
+
+    @State private var cards: [CachedCard] = []
+    @State private var hasMore = false
+    @State private var dbOffset = 0
+    @State private var filteredPool: [CachedCard] = []
+
     @State private var isLoading = false
+    @State private var loadTask: Task<Void, Never>? = nil
     @State private var cardForDetail: CachedCard? = nil
-    @State private var searchTask: Task<Void, Never>? = nil
+
+    private let pageSize = 75
+
+    // DB pagination is safe when all active filters can be pushed to the predicate.
+    private var canUseDBPagination: Bool {
+        !filterState.hasComplexFilters && !filterState.groupNeedsInMemoryCheck
+    }
 
     var body: some View {
         NavigationStack {
@@ -70,20 +88,15 @@ struct CardPickerView: View {
             }
         }
         .task { await loadInitial() }
-        .onChange(of: searchText) { _, _ in scheduleSearch() }
-        .onChange(of: filterState) { _, _ in Task { await loadCards() } }
-        .onChange(of: sortOrder) { _, _ in Task { await loadCards() } }
+        .onChange(of: searchText)    { _, _ in scheduleReload() }
+        .onChange(of: filterState)   { _, _ in reload() }
+        .onChange(of: sortOrder)     { _, _ in reload() }
     }
 
     // MARK: - Sub-views
 
     private var pickerList: some View {
         List {
-            if !filterState.isEmpty {
-                filterChipsRow
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    .listRowSeparator(.hidden)
-            }
             ForEach(cards) { card in
                 CardPickerRow(
                     card: card,
@@ -97,8 +110,21 @@ struct CardPickerView: View {
                     cardForDetail = card
                 }
             }
+
+            if hasMore {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .listRowSeparator(.hidden)
+                    .onAppear { appendNextPage() }
+            }
         }
         .listStyle(.plain)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            if !filterState.isEmpty {
+                filterChipsRow
+                    .background(.bar)
+            }
+        }
     }
 
     private var noResultsState: some View {
@@ -166,32 +192,82 @@ struct CardPickerView: View {
         }
     }
 
-    // MARK: - Data
+    // MARK: - Data loading
 
     private func loadInitial() async {
         isLoading = true
-        await Task.yield()  // let SwiftUI render the ProgressView before the sync DB fetch
+        await Task.yield()
         let repo = CardRepository(modelContext: context)
-        if let seed = try? repo.fetchPickerSeed(sortOrder: sortOrder) {
-            cards = seed.cards
-            availableSets = seed.availableSets
-            availableRarities = seed.availableRarities
+        if let meta = try? repo.fetchPickerMeta() {
+            availableSets    = meta.sets
+            availableRarities = meta.rarities
         }
+        await performLoad(reset: true)
         isLoading = false
     }
 
-    private func loadCards() async {
-        let repo = CardRepository(modelContext: context)
-        cards = (try? repo.fetch(matching: searchText, filterState: filterState, sortOrder: sortOrder)) ?? cards
+    private func reload() {
+        loadTask?.cancel()
+        loadTask = Task { await performLoad(reset: true) }
     }
 
-    private func scheduleSearch() {
-        searchTask?.cancel()
-        searchTask = Task {
+    private func scheduleReload() {
+        loadTask?.cancel()
+        loadTask = Task {
             try? await Task.sleep(for: .milliseconds(300))
             guard !Task.isCancelled else { return }
-            await loadCards()
+            await performLoad(reset: true)
         }
+    }
+
+    private func appendNextPage() {
+        guard hasMore, loadTask == nil || loadTask!.isCancelled else { return }
+        loadTask = Task { await performLoad(reset: false) }
+    }
+
+    private func performLoad(reset: Bool) async {
+        guard !Task.isCancelled else { return }
+
+        let repo = CardRepository(modelContext: context)
+
+        if reset {
+            cards        = []
+            dbOffset     = 0
+            filteredPool = []
+        }
+
+        if canUseDBPagination {
+            // DB-level pagination — no in-memory filtering required.
+            let page = (try? repo.fetchPickerPage(
+                offset: dbOffset,
+                limit: pageSize,
+                query: searchText,
+                filterState: filterState,
+                sortOrder: sortOrder
+            )) ?? []
+            guard !Task.isCancelled else { return }
+            cards.append(contentsOf: page)
+            dbOffset = cards.count
+            hasMore  = page.count == pageSize
+        } else {
+            // Some filters need in-memory evaluation. Fetch the DB-pushable subset
+            // (supertype + name + sets) once, filter in memory, then serve in pages.
+            if reset {
+                let fromDB = (try? repo.fetchAllPushed(
+                    query: searchText,
+                    filterState: filterState,
+                    sortOrder: sortOrder
+                )) ?? []
+                guard !Task.isCancelled else { return }
+                filteredPool = fromDB.filter { filterState.passes($0) }
+            }
+            let batch = Array(filteredPool.dropFirst(cards.count).prefix(pageSize))
+            guard !Task.isCancelled else { return }
+            cards.append(contentsOf: batch)
+            hasMore = cards.count < filteredPool.count
+        }
+
+        loadTask = nil
     }
 
     // MARK: - Deck helpers
@@ -209,16 +285,16 @@ struct CardPickerView: View {
 
     private func addCard(_ card: CachedCard) {
         DeckRepository(modelContext: context)
-            .addCard(cardId: card.id, to: deck, isBasicEnergy: card.isBasicEnergy)
+            .addCard(cardId: card.id, to: deck, isBasicEnergy: card.isBasicEnergy, cardName: card.name)
     }
 
     private func decrementCard(_ card: CachedCard) {
         let qty = deckQuantity(for: card)
         let repo = DeckRepository(modelContext: context)
         if qty <= 1 {
-            repo.removeCard(cardId: card.id, from: deck)
+            repo.removeCard(cardId: card.id, from: deck, cardName: card.name)
         } else {
-            repo.setQuantity(qty - 1, cardId: card.id, in: deck)
+            repo.setQuantity(qty - 1, cardId: card.id, in: deck, cardName: card.name)
         }
     }
 }
@@ -267,7 +343,7 @@ private struct CardPickerRow: View {
                         Image(systemName: "minus.circle")
                             .font(.title3)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.borderless)
                     .foregroundStyle(.secondary)
 
                     Text("\(deckQuantity)")
@@ -281,7 +357,7 @@ private struct CardPickerRow: View {
                         Image(systemName: "plus.circle")
                             .font(.title3)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.borderless)
                     .foregroundStyle(isAtMax ? Color.secondary : Color.accentColor)
                     .disabled(isAtMax)
                 }

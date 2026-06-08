@@ -1,9 +1,7 @@
-import Testing
-import Foundation
+import XCTest
 @testable import JustTCG
 
-@Suite("StreakEngine")
-struct StreakEngineTests {
+final class StreakEngineTests: XCTestCase {
 
     // MARK: - Helpers
 
@@ -24,52 +22,49 @@ struct StreakEngineTests {
 
     // MARK: - Tests
 
-    @Test func zeroMatches() {
+    func testZeroMatches() {
         let result = StreakEngine.compute(matches: [], dailyGoal: 1, calendar: makeCalendar())
-        #expect(result.currentStreak == 0)
-        #expect(result.todayCount == 0)
-        #expect(result.goalMet == false)
+        XCTAssertEqual(result.currentStreak, 0)
+        XCTAssertEqual(result.todayCount, 0)
+        XCTAssertFalse(result.goalMet)
     }
 
-    @Test func metGoalTodayOnly() {
+    func testMetGoalTodayOnly() {
         let cal = makeCalendar()
         let result = StreakEngine.compute(matches: matches(daysAgo: [0], calendar: cal), dailyGoal: 1, calendar: cal)
-        #expect(result.currentStreak == 1)
-        #expect(result.goalMet == true)
+        XCTAssertEqual(result.currentStreak, 1)
+        XCTAssertTrue(result.goalMet)
     }
 
-    @Test func metGoalYesterdayAndToday() {
+    func testMetGoalYesterdayAndToday() {
         let cal = makeCalendar()
         let result = StreakEngine.compute(matches: matches(daysAgo: [0, 1], calendar: cal), dailyGoal: 1, calendar: cal)
-        #expect(result.currentStreak == 2)
-        #expect(result.goalMet == true)
+        XCTAssertEqual(result.currentStreak, 2)
+        XCTAssertTrue(result.goalMet)
     }
 
-    @Test func metGoalYesterdayNotToday() {
+    func testMetGoalYesterdayNotToday() {
         let cal = makeCalendar()
         let result = StreakEngine.compute(matches: matches(daysAgo: [1], calendar: cal), dailyGoal: 1, calendar: cal)
-        #expect(result.currentStreak == 1)
-        #expect(result.goalMet == false)
+        XCTAssertEqual(result.currentStreak, 1)
+        XCTAssertFalse(result.goalMet)
     }
 
-    @Test func gapBreaksStreak() {
-        // Today and yesterday met but two days ago is empty — streak should only be 2 (today + yesterday)
-        // Gap three days ago with matches before it should not add to streak
+    func testGapBreaksStreak() {
         let cal = makeCalendar()
         let ms = matches(daysAgo: [0, 1, 3, 4], calendar: cal)
         let result = StreakEngine.compute(matches: ms, dailyGoal: 1, calendar: cal)
-        #expect(result.currentStreak == 2)
+        XCTAssertEqual(result.currentStreak, 2)
     }
 
-    @Test func dailyGoalThree() {
+    func testDailyGoalThree() {
         let cal = makeCalendar()
-        // 3 today, 2 yesterday (doesn't count), 3 two days ago — only today should count
         var ms = matches(daysAgo: [0, 0, 0], calendar: cal)
         ms += matches(daysAgo: [1, 1], calendar: cal)
         ms += matches(daysAgo: [2, 2, 2], calendar: cal)
         let result = StreakEngine.compute(matches: ms, dailyGoal: 3, calendar: cal)
-        #expect(result.currentStreak == 1)
-        #expect(result.goalMet == true)
-        #expect(result.todayCount == 3)
+        XCTAssertEqual(result.currentStreak, 1)
+        XCTAssertTrue(result.goalMet)
+        XCTAssertEqual(result.todayCount, 3)
     }
 }

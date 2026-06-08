@@ -167,6 +167,59 @@ final class CardRepository {
         return freq.keys.sorted { freq[$0, default: 0] > freq[$1, default: 0] }
     }
 
+    // Lightweight meta-only fetch for the filter sheet — derives sets and rarities
+    // in one pass without holding onto a full card array.
+    func fetchPickerMeta() throws -> (sets: [(code: String, name: String)], rarities: [String]) {
+        let cards = try context.fetch(
+            FetchDescriptor<CachedCard>(
+                predicate: #Predicate { $0.isStandardLegal },
+                sortBy: [SortDescriptor(\.setReleaseDate, order: .reverse)]
+            )
+        )
+        var setDate:  [String: Date]   = [:]
+        var setNames: [String: String] = [:]
+        var rarityFreq: [String: Int]  = [:]
+        for card in cards {
+            if setDate[card.setCode] == nil {
+                setDate[card.setCode]  = card.setReleaseDate
+                setNames[card.setCode] = card.setName
+            }
+            if let r = card.rarity { rarityFreq[r, default: 0] += 1 }
+        }
+        let sets = setDate.keys
+            .sorted { (setDate[$0] ?? .distantPast) > (setDate[$1] ?? .distantPast) }
+            .map { (code: $0, name: setNames[$0] ?? "") }
+        let rarities = rarityFreq.keys.sorted { rarityFreq[$0, default: 0] > rarityFreq[$1, default: 0] }
+        return (sets, rarities)
+    }
+
+    // Paginated fetch pushing supertype (from cardGroup), name search, and set filter
+    // to the database. No in-memory filtering applied — caller does that if needed.
+    func fetchPickerPage(
+        offset: Int,
+        limit: Int,
+        query: String,
+        filterState: CardFilterState,
+        sortOrder: CardSortOrder
+    ) throws -> [CachedCard] {
+        var descriptor = buildPickerDescriptor(query: query, filterState: filterState, sortOrder: sortOrder)
+        descriptor.fetchOffset = offset
+        descriptor.fetchLimit  = limit
+        return try context.fetch(descriptor)
+    }
+
+    // Fetches all cards matching the DB-pushable portion of filterState.
+    // Used for the in-memory-filter path (complex filters or Trainer subtypes).
+    func fetchAllPushed(
+        query: String,
+        filterState: CardFilterState,
+        sortOrder: CardSortOrder
+    ) throws -> [CachedCard] {
+        return try context.fetch(
+            buildPickerDescriptor(query: query, filterState: filterState, sortOrder: sortOrder)
+        )
+    }
+
     // Single-fetch seed for CardPickerView: returns the card list plus derived
     // sets and rarities so the picker open costs one DB round-trip instead of three.
     func fetchPickerSeed(sortOrder: CardSortOrder = .expansion) throws -> CardPickerSeed {
@@ -209,6 +262,62 @@ final class CardRepository {
     }
 
     // MARK: - Private
+
+    // Builds a FetchDescriptor pushing name search, set filter, and supertype
+    // (derived from cardGroup) to SQLite. Complex in-memory filters are NOT applied.
+    private func buildPickerDescriptor(
+        query: String,
+        filterState: CardFilterState,
+        sortOrder: CardSortOrder
+    ) -> FetchDescriptor<CachedCard> {
+        let sort = sortOrder.sortDescriptors
+        let sets = Array(filterState.sets)
+
+        // Supertype to push: nil = no restriction, non-nil = exact match
+        let supertype: String? = filterState.cardGroup.map { group in
+            switch group {
+            case .pokemon:                              return "Pokémon"
+            case .energy:                              return "Energy"
+            case .supporter, .item, .tool, .stadium, .aceSpec: return "Trainer"
+            }
+        }
+
+        switch (query.isEmpty, sets.isEmpty, supertype) {
+        case (true,  true,  nil):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal
+            }, sortBy: sort)
+        case (false, true,  nil):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && $0.name.localizedStandardContains(query)
+            }, sortBy: sort)
+        case (true,  false, nil):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && sets.contains($0.setCode)
+            }, sortBy: sort)
+        case (false, false, nil):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && $0.name.localizedStandardContains(query) && sets.contains($0.setCode)
+            }, sortBy: sort)
+        case (true,  true,  let st?):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && $0.supertype == st
+            }, sortBy: sort)
+        case (false, true,  let st?):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && $0.name.localizedStandardContains(query) && $0.supertype == st
+            }, sortBy: sort)
+        case (true,  false, let st?):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && sets.contains($0.setCode) && $0.supertype == st
+            }, sortBy: sort)
+        case (false, false, let st?):
+            return FetchDescriptor(predicate: #Predicate {
+                $0.isStandardLegal && $0.name.localizedStandardContains(query)
+                    && sets.contains($0.setCode) && $0.supertype == st
+            }, sortBy: sort)
+        }
+    }
 
     private func fetchFromDB(
         query: String,

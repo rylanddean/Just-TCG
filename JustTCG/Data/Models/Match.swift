@@ -27,6 +27,7 @@ final class Match {
     var eventType: EventType
     var notes: String
     var deck: Deck?
+    var liveGame: LiveGame?
 
     init(
         date: Date = .now,

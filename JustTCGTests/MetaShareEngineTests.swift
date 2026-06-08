@@ -17,7 +17,8 @@ struct MetaShareEngineTests {
                 country: "US",
                 archetype: arch,
                 wins: 0, losses: 0, ties: 0,
-                deckListId: nil
+                deckListId: nil,
+                playerId: nil
             )
         }
         return LimitlessTournamentDetail(id: id, placements: placements)

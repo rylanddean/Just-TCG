@@ -127,7 +127,7 @@ final class MetaComparisonViewModel {
     // MARK: - Disk cache for tournament details
 
     private func detailCacheURL(id: String) -> URL {
-        Self.detailCacheDir.appendingPathComponent("tournament_detail_\(id).json")
+        Self.detailCacheDir.appendingPathComponent("tournament_detail_v2_\(id).json")
     }
 
     private func loadDetailFromDisk(id: String) -> LimitlessTournamentDetail? {

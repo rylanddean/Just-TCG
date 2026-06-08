@@ -4,6 +4,7 @@ import SwiftData
 struct DeckBuilderView: View {
     let deck: Deck
     var showsDoneButton: Bool = false
+    var onDone: (() -> Void)? = nil
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -13,7 +14,13 @@ struct DeckBuilderView: View {
     @State private var renameText = ""
     @FocusState private var renameFocused: Bool
     @State private var showCardPicker = false
+    @State private var pickerFilter = CardFilterState()
     @State private var showLogMatch = false
+    @State private var showEditLog = false
+    @State private var showTimeline = false
+    @State private var showLiveGameSetup = false
+    @State private var liveGame: LiveGame? = nil
+    @State private var showGameSavedBanner = false
     @State private var highlightedCardIds: Set<String> = []
 
     var body: some View {
@@ -26,10 +33,43 @@ struct DeckBuilderView: View {
             }
         }
         .sheet(isPresented: $showCardPicker, onDismiss: { viewModel?.loadCards() }) {
-            CardPickerView(deck: deck)
+            CardPickerView(deck: deck, initialFilter: pickerFilter)
         }
         .sheet(isPresented: $showLogMatch) {
             LogMatchSheet(deck: deck)
+        }
+        .sheet(isPresented: $showEditLog) {
+            DeckEditLogView(deck: deck)
+        }
+        .sheet(isPresented: $showTimeline) {
+            DeckVersionTimelineView(deck: deck)
+        }
+        .sheet(isPresented: $showLiveGameSetup) {
+            LiveGameSetupSheet(deck: deck) { game in
+                liveGame = game
+            }
+        }
+        .fullScreenCover(item: $liveGame) { game in
+            LiveGameHUDView(game: game) { saved in
+                liveGame = nil
+                if saved { withAnimation { showGameSavedBanner = true } }
+            }
+        }
+        .overlay(alignment: .bottom) {
+            if showGameSavedBanner {
+                Text("Game saved")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(Color.green, in: Capsule())
+                    .padding(.bottom, 32)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .task {
+                        try? await Task.sleep(for: .seconds(2))
+                        withAnimation { showGameSavedBanner = false }
+                    }
+            }
         }
         .task {
             if viewModel == nil {
@@ -54,21 +94,33 @@ struct DeckBuilderView: View {
                 stadiumSection(vm: vm)
                 aceSpecSection(vm: vm)
                 energySection(vm: vm)
-                basicEnergyQuickAddSection(vm: vm)
 
                 Section {
                     Button {
-                        showCardPicker = true
+                        openPicker(filter: CardFilterState())
                     } label: {
                         Label("Add Cards", systemImage: "plus")
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
 
+                gameLogsSection
                 matchesSection
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbarContent(vm: vm) }
+        }
+    }
+
+    // MARK: - Game logs section
+
+    private var gameLogsSection: some View {
+        Section {
+            NavigationLink {
+                GameLogListView(deck: deck)
+            } label: {
+                Label("Game Logs", systemImage: "gamecontroller")
+            }
         }
     }
 
@@ -174,6 +226,7 @@ struct DeckBuilderView: View {
                     }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .pokemon)) }
             }
         }
     }
@@ -190,6 +243,7 @@ struct DeckBuilderView: View {
                     ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .supporter)) }
             }
         }
     }
@@ -206,6 +260,7 @@ struct DeckBuilderView: View {
                     ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .item)) }
             }
         }
     }
@@ -222,6 +277,7 @@ struct DeckBuilderView: View {
                     ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .tool)) }
             }
         }
     }
@@ -238,6 +294,7 @@ struct DeckBuilderView: View {
                     ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .stadium)) }
             }
         }
     }
@@ -254,6 +311,7 @@ struct DeckBuilderView: View {
                     ) { vm.setQuantity($0, for: dc) }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .aceSpec)) }
             }
         }
     }
@@ -272,37 +330,16 @@ struct DeckBuilderView: View {
                     }
                     .id(dc.cardId)
                 }
+                addMoreButton { openPicker(filter: CardFilterState(cardGroup: .energy)) }
             }
         }
     }
 
-    @ViewBuilder
-    private func basicEnergyQuickAddSection(vm: DeckBuilderViewModel) -> some View {
-        let available = vm.basicEnergyTypes
-        if !available.isEmpty {
-            Section {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(available, id: \.typeName) { entry in
-                            Button {
-                                vm.quickAddBasicEnergy(card: entry.card)
-                            } label: {
-                                Text(entry.typeName)
-                                    .font(.subheadline)
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 6)
-                                    .background(Color.secondary.opacity(0.15), in: Capsule())
-                            }
-                            .buttonStyle(.plain)
-                            .disabled(vm.totalCount >= 60)
-                        }
-                    }
-                    .padding(.vertical, 4)
-                }
-                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-            } header: {
-                Text("Add Basic Energy")
-            }
+    private func addMoreButton(action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label("Add more", systemImage: "plus")
+                .font(.subheadline)
+                .foregroundStyle(Color.accentColor)
         }
     }
 
@@ -342,13 +379,28 @@ struct DeckBuilderView: View {
             }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
+            Button { showLiveGameSetup = true } label: {
+                Image(systemName: "play.circle")
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button { showTimeline = true } label: {
+                Image(systemName: "chart.bar.doc.horizontal")
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button { showEditLog = true } label: {
+                Image(systemName: "clock.arrow.circlepath")
+            }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
             Button { showLogMatch = true } label: {
                 Image(systemName: "plus")
             }
         }
         ToolbarItem(placement: .navigationBarTrailing) {
             if showsDoneButton {
-                Button("Done") { dismiss() }
+                Button("Done") { if let onDone { onDone() } else { dismiss() } }
                     .fontWeight(.semibold)
             } else {
                 ShareLink(item: vm.exportString) {
@@ -356,6 +408,11 @@ struct DeckBuilderView: View {
                 }
             }
         }
+    }
+
+    private func openPicker(filter: CardFilterState) {
+        pickerFilter = filter
+        showCardPicker = true
     }
 
     private func commitRename(vm: DeckBuilderViewModel) {
@@ -407,7 +464,7 @@ private struct DeckCardRow: View {
                     Image(systemName: "minus.circle")
                         .font(.title3)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.borderless)
                 .foregroundStyle(.secondary)
 
                 Text("\(deckCard.quantity)")
@@ -420,7 +477,7 @@ private struct DeckCardRow: View {
                     Image(systemName: "plus.circle")
                         .font(.title3)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.borderless)
                 .foregroundStyle(Color.accentColor)
             }
         }

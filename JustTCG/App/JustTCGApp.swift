@@ -20,7 +20,7 @@ struct JustTCGApp: App {
     private static func makeContainer(afterCacheReset: Bool = false) -> ModelContainer {
         let userDataConfig = ModelConfiguration(
             "UserData",
-            schema: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self]),
+            schema: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self]),
             cloudKitDatabase: .automatic
         )
         let cardCacheConfig = ModelConfiguration(
@@ -30,7 +30,7 @@ struct JustTCGApp: App {
         )
         do {
             return try ModelContainer(
-                for: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, CachedCard.self]),
+                for: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self, CachedCard.self]),
                 configurations: [userDataConfig, cardCacheConfig]
             )
         } catch {

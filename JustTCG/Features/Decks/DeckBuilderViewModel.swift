@@ -10,7 +10,6 @@ final class DeckBuilderViewModel {
 
     private(set) var cachedCards: [String: CachedCard] = [:]
     private(set) var validationErrors: [DeckValidationError] = []
-    private(set) var basicEnergyIndex: [String: CachedCard] = [:]
 
     var totalCount: Int { deck.cards.reduce(0) { $0 + $1.quantity } }
 
@@ -26,17 +25,6 @@ final class DeckBuilderViewModel {
 
     var exportString: String { DeckExporter.export(deck, cards: Array(cachedCards.values)) }
 
-    static let basicEnergyTypeNames = [
-        "Fire", "Water", "Grass", "Lightning", "Fighting",
-        "Psychic", "Darkness", "Metal", "Colorless"
-    ]
-
-    var basicEnergyTypes: [(typeName: String, card: CachedCard)] {
-        Self.basicEnergyTypeNames.compactMap { t in
-            basicEnergyIndex[t].map { (typeName: t, card: $0) }
-        }
-    }
-
     init(deck: Deck, modelContext: ModelContext) {
         self.deck = deck
         self.deckRepo = DeckRepository(modelContext: modelContext)
@@ -47,7 +35,6 @@ final class DeckBuilderViewModel {
         let ids = deck.cards.map { $0.cardId }
         let cards = (try? cardRepo.fetch(ids: ids)) ?? []
         cachedCards = Dictionary(uniqueKeysWithValues: cards.map { ($0.id, $0) })
-        loadBasicEnergyIndex()
         revalidate()
     }
 
@@ -58,23 +45,14 @@ final class DeckBuilderViewModel {
     }
 
     func setQuantity(_ quantity: Int, for deckCard: DeckCard) {
+        let name = cachedCards[deckCard.cardId]?.name
         if quantity <= 0 {
             cachedCards.removeValue(forKey: deckCard.cardId)
-            deckRepo.removeCard(cardId: deckCard.cardId, from: deck)
+            deckRepo.removeCard(cardId: deckCard.cardId, from: deck, cardName: name)
         } else {
             let isBasicEnergy = cachedCards[deckCard.cardId]?.isBasicEnergy ?? false
             let cap = isBasicEnergy ? 60 : 4
-            deckRepo.setQuantity(min(quantity, cap), cardId: deckCard.cardId, in: deck)
-        }
-        revalidate()
-    }
-
-    func quickAddBasicEnergy(card: CachedCard) {
-        if let existing = deck.cards.first(where: { $0.cardId == card.id }) {
-            deckRepo.setQuantity(existing.quantity + 1, cardId: card.id, in: deck)
-        } else {
-            deckRepo.addCard(cardId: card.id, to: deck, isBasicEnergy: true)
-            cachedCards[card.id] = card
+            deckRepo.setQuantity(min(quantity, cap), cardId: deckCard.cardId, in: deck, cardName: name)
         }
         revalidate()
     }
@@ -83,19 +61,6 @@ final class DeckBuilderViewModel {
         deck.cards
             .filter { cachedCards[$0.cardId]?.name == name }
             .map { $0.cardId }
-    }
-
-    private func loadBasicEnergyIndex() {
-        let allEnergies = (try? cardRepo.fetchBasicEnergies()) ?? []
-        var index: [String: CachedCard] = [:]
-        for typeName in Self.basicEnergyTypeNames {
-            let cardName = "\(typeName) Energy"
-            let best = allEnergies
-                .filter { $0.name == cardName }
-                .max { ($0.setReleaseDate ?? .distantPast) < ($1.setReleaseDate ?? .distantPast) }
-            if let best { index[typeName] = best }
-        }
-        basicEnergyIndex = index
     }
 
     private func revalidate() {

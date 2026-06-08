@@ -5,7 +5,21 @@ struct FilterChipItem: Identifiable {
     let label: String
 }
 
+enum CardGroup: String, CaseIterable, Identifiable {
+    case pokemon   = "Pokémon"
+    case supporter = "Supporter"
+    case item      = "Item"
+    case tool      = "Tool"
+    case stadium   = "Stadium"
+    case aceSpec   = "ACE SPEC"
+    case energy    = "Energy"
+
+    var id: String { rawValue }
+}
+
 struct CardFilterState: Equatable {
+    var cardGroup: CardGroup? = nil
+
     // Basic
     var types: Set<String> = []
     var subtypes: Set<String> = []
@@ -37,7 +51,28 @@ struct CardFilterState: Equatable {
         "Spread Damage", "Survivability", "Mobility", "Prize Control", "Lock",
     ]
 
+    // True when any active filter cannot be pushed to the DB predicate and must
+    // be evaluated in memory. When false, pure DB pagination is safe.
+    var hasComplexFilters: Bool {
+        !types.isEmpty || !subtypes.isEmpty || !rarities.isEmpty ||
+        !regulationMarks.isEmpty || hpMin != nil || hpMax != nil ||
+        damageMin != nil || damageMax != nil || !retreatCosts.isEmpty ||
+        hasAbility != nil ||
+        !weaknessTypes.isEmpty || !resistanceTypes.isEmpty ||
+        !attackingEnergyTypes.isEmpty || !roleTags.isEmpty
+    }
+
+    // True when cardGroup is a Trainer sub-category whose distinction requires
+    // an in-memory subtype check after the DB-level supertype filter.
+    var groupNeedsInMemoryCheck: Bool {
+        switch cardGroup {
+        case .supporter, .item, .tool, .stadium, .aceSpec: return true
+        default: return false
+        }
+    }
+
     var isEmpty: Bool {
+        cardGroup == nil &&
         types.isEmpty &&
         subtypes.isEmpty &&
         sets.isEmpty &&
@@ -57,6 +92,24 @@ struct CardFilterState: Equatable {
 
     // Post-fetch in-memory filter. Applies all active criteria to a single card.
     func passes(_ card: CachedCard) -> Bool {
+        if let group = cardGroup {
+            switch group {
+            case .pokemon:
+                if card.types.isEmpty || card.supertype == "Energy" { return false }
+            case .supporter:
+                if !card.subtypes.contains("Supporter") { return false }
+            case .item:
+                if !card.subtypes.contains("Item") { return false }
+            case .tool:
+                if !card.subtypes.contains("Pokémon Tool") { return false }
+            case .stadium:
+                if !card.subtypes.contains("Stadium") { return false }
+            case .aceSpec:
+                if !card.subtypes.contains("ACE SPEC") { return false }
+            case .energy:
+                if card.supertype != "Energy" { return false }
+            }
+        }
         if !types.isEmpty, Set(card.types).isDisjoint(with: types) { return false }
         if !subtypes.isEmpty, Set(card.subtypes).isDisjoint(with: subtypes) { return false }
         if !sets.isEmpty, !sets.contains(card.setCode) { return false }
@@ -97,6 +150,9 @@ struct CardFilterState: Equatable {
     var activeChips: [FilterChipItem] {
         var chips: [FilterChipItem] = []
 
+        if let group = cardGroup {
+            chips.append(FilterChipItem(id: "cardGroup", label: group.rawValue))
+        }
         if !types.isEmpty {
             chips.append(FilterChipItem(id: "types", label: types.sorted().joined(separator: ", ")))
         }
@@ -151,6 +207,7 @@ struct CardFilterState: Equatable {
 
     mutating func clearChip(id: String) {
         switch id {
+        case "cardGroup":  cardGroup = nil
         case "types":      types = []
         case "subtypes":   subtypes = []
         case "sets":       sets = []

@@ -172,10 +172,26 @@ private struct DeckPickerSheet: View {
 
 struct AllMatchHistoryView: View {
     @Query(sort: \Match.date, order: .reverse) private var matches: [Match]
+    @Environment(\.modelContext) private var context
+
+    @State private var matchPendingDelete: Match? = nil
 
     var body: some View {
-        List(matches) { match in
-            MatchRow(match: match)
+        List {
+            ForEach(matches) { match in
+                NavigationLink {
+                    MatchDetailView(match: match)
+                } label: {
+                    MatchRow(match: match)
+                }
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button(role: .destructive) {
+                        matchPendingDelete = match
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                }
+            }
         }
         .navigationTitle("Match History")
         .navigationBarTitleDisplayMode(.large)
@@ -187,6 +203,23 @@ struct AllMatchHistoryView: View {
                     description: Text("Log a match to start tracking your results.")
                 )
             }
+        }
+        .confirmationDialog(
+            "Delete this match result?",
+            isPresented: Binding(
+                get: { matchPendingDelete != nil },
+                set: { if !$0 { matchPendingDelete = nil } }
+            ),
+            titleVisibility: .visible
+        ) {
+            Button("Delete", role: .destructive) {
+                if let match = matchPendingDelete {
+                    context.delete(match)
+                    try? context.save()
+                    matchPendingDelete = nil
+                }
+            }
+            Button("Cancel", role: .cancel) { matchPendingDelete = nil }
         }
     }
 }

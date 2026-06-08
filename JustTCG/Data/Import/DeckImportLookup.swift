@@ -1,10 +1,11 @@
 import Foundation
 import SwiftData
 
-struct DeckImportMatch {
+struct DeckImportMatch: Identifiable {
     let entry: DeckImportEntry
-    let cardId: String?
+    var cardId: String?
 
+    var id: String { entry.name + entry.setCode + entry.number }
     var isMatched: Bool { cardId != nil }
 }
 

@@ -72,6 +72,8 @@ struct CardsView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
             VStack(spacing: 0) {
+                groupChipStrip
+                Divider()
                 if !filterState.isEmpty {
                     filterChipsRow
                     Divider()
@@ -184,6 +186,33 @@ struct CardsView: View {
                   ? "line.3.horizontal.decrease.circle"
                   : "line.3.horizontal.decrease.circle.fill")
         }
+    }
+
+    private var groupChipStrip: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                groupChip(nil, label: "All")
+                ForEach(CardGroup.allCases) { group in
+                    groupChip(group, label: group.rawValue)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+        }
+    }
+
+    private func groupChip(_ group: CardGroup?, label: String) -> some View {
+        let isSelected = filterState.cardGroup == group
+        return Text(label)
+            .font(.subheadline.weight(.medium))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(isSelected ? Color.accentColor : Color(.secondarySystemFill))
+            .foregroundStyle(isSelected ? .white : .primary)
+            .clipShape(Capsule())
+            .onTapGesture {
+                filterState.cardGroup = isSelected ? nil : group
+            }
     }
 
     private var filterChipsRow: some View {

@@ -9,6 +9,7 @@ struct ImportDeckSheet: View {
     @State private var deckName = "Imported Deck"
     @State private var matches: [DeckImportMatch] = []
     @State private var isLoading = true
+    @State private var swapEntry: DeckImportMatch? = nil
 
     private var matchedCount:   Int { matches.filter(\.isMatched).count }
     private var unmatchedCount: Int { matches.filter { !$0.isMatched }.count }
@@ -33,6 +34,13 @@ struct ImportDeckSheet: View {
                 }
             }
             .task { await loadFromClipboard() }
+            .sheet(item: $swapEntry) { match in
+                CardSwapSheet(entry: match.entry) { selectedCard in
+                    if let idx = matches.firstIndex(where: { $0.id == match.id }) {
+                        matches[idx].cardId = selectedCard.id
+                    }
+                }
+            }
         }
     }
 
@@ -65,7 +73,7 @@ struct ImportDeckSheet: View {
                 }
 
                 Section {
-                    ForEach(Array(matches.enumerated()), id: \.offset) { _, match in
+                    ForEach(matches) { match in
                         matchRow(match)
                     }
                 }
@@ -85,7 +93,19 @@ struct ImportDeckSheet: View {
         }
     }
 
+    @ViewBuilder
     private func matchRow(_ match: DeckImportMatch) -> some View {
+        if match.isMatched {
+            matchRowContent(match)
+        } else {
+            Button { swapEntry = match } label: {
+                matchRowContent(match)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+
+    private func matchRowContent(_ match: DeckImportMatch) -> some View {
         HStack(spacing: 12) {
             Text("\(match.entry.quantity)×")
                 .font(.callout.monospacedDigit())
@@ -102,9 +122,17 @@ struct ImportDeckSheet: View {
 
             Spacer()
 
-            Image(systemName: match.isMatched ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
-                .foregroundStyle(match.isMatched ? .green : .yellow)
+            VStack(spacing: 2) {
+                Image(systemName: match.isMatched ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
+                    .foregroundStyle(match.isMatched ? .green : .yellow)
+                if !match.isMatched {
+                    Text("Tap to fix")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                }
+            }
         }
+        .contentShape(Rectangle())
     }
 
     // MARK: - Actions

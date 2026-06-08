@@ -108,8 +108,90 @@ Stories are ordered by dependency. Work top to bottom.
 ## M15 — Deck Builder UX
 | Story | Title | Status |
 |---|---|---|
-| [M15-01](M15-01-deck-builder-trainer-sub-sections.md) | Deck Builder: Split Trainer Section into Sub-Sections | todo |
-| [M15-02](M15-02-deck-builder-quick-add-basic-energy.md) | Deck Builder: Quick-Add Basic Energy | todo |
+| [M15-01](completed/M15-01-deck-builder-trainer-sub-sections.md) | Deck Builder: Split Trainer Section into Sub-Sections | done |
+| [M15-02](completed/M15-02-deck-builder-quick-add-basic-energy.md) | Deck Builder: Quick-Add Basic Energy | done |
+
+## M16 — Deck Edit Log
+| Story | Title | Status |
+|---|---|---|
+| [M16-01](completed/M16-01-deck-edit-model.md) | DeckEdit SwiftData Model | done |
+| [M16-02](completed/M16-02-record-edits-in-repository.md) | Record Edits in Repository | done |
+| [M16-03](completed/M16-03-edit-log-view.md) | Edit Log View | done |
+| [M16-04](completed/M16-04-edit-segmented-match-timeline.md) | Edit-Segmented Match Timeline | done |
+
+## M17 — Deck List UX
+| Story | Title | Status |
+|---|---|---|
+| [M17-01](completed/M17-01-deck-row-cover-cards.md) | Deck Row Cover Card Thumbnails | done |
+| [M17-02](completed/M17-02-deck-row-win-rate.md) | Deck Row Win Rate | done |
+
+## M18 — Card Browser UX
+| Story | Title | Status |
+|---|---|---|
+| [M18-01](completed/M18-01-card-group-filter.md) | Card Group Filter in Cards Tab | done |
+
+## M19 — Live Game Mode
+| Story | Title | Status |
+|---|---|---|
+| [M19-01](completed/M19-01-live-game-models.md) | LiveGame & GameTurn SwiftData Models | done |
+| [M19-02](completed/M19-02-live-game-setup.md) | Live Game Setup Sheet | done |
+| [M19-03](completed/M19-03-live-game-hud.md) | Live Game HUD | done |
+| [M19-04](M19-04-live-game-analytics.md) | Live Game Analytics | todo |
+
+## M20 — OCR Card Scanner
+| Story | Title | Status |
+|---|---|---|
+| [M20-01](M20-01-ocr-pipeline.md) | Vision OCR Pipeline & Card Identifier Parser | todo |
+| [M20-02](M20-02-scan-to-deck-ui.md) | Scan-to-Deck Camera UI | todo |
+
+## M21 — Cards Tab Quick-Add
+| Story | Title | Status |
+|---|---|---|
+| [M21-01](M21-01-cards-quick-add-to-deck.md) | Long-Press Quick-Add to Deck | todo |
+
+## M28 — Deck Import Card Swap
+| Story | Title | Status |
+|---|---|---|
+| [M28-01](M28-01-import-unmatched-card-swap.md) | Unmatched Card Swap in Import Sheet | todo |
+
+## M27 — Backlog Export & Import
+| Story | Title | Status |
+|---|---|---|
+| [M27-01](M27-01-backup-serializer.md) | Backup Serializer | todo |
+| [M27-02](M27-02-export-import-ui.md) | Export & Import UI in Settings | todo |
+
+## M26 — Competition Tab
+| Story | Title | Status |
+|---|---|---|
+| [M26-01](M26-01-competition-tab-shell.md) | Competition Tab Shell | todo |
+| [M26-02](M26-02-competitors-view.md) | Competitors View | todo |
+
+## M22 — Visual Meta Share
+| Story | Title | Status |
+|---|---|---|
+| [M22-01](M22-01-archetype-primary-card-resolver.md) | Archetype Primary Card Resolver | todo |
+| [M22-02](M22-02-visual-meta-share-row.md) | Visual Meta Share Row & Archetype Detail Header | todo |
+
+## M23 — Rules Assistant
+| Story | Title | Status |
+|---|---|---|
+| [M23-01](M23-01-rulebook-bundle.md) | Pokémon TCG Rulebook Content Bundle | todo |
+| [M23-02](M23-02-rules-qa-engine.md) | Rules Q&A Engine (Foundation Models) | todo |
+| [M23-03](M23-03-rules-assistant-ui.md) | Rules Assistant Chat UI | todo |
+
+## M24 — Natural Language Deck Generator
+| Story | Title | Status |
+|---|---|---|
+| [M24-01](M24-01-deck-generation-engine.md) | Natural Language Deck Generation Engine | todo |
+| [M24-02](M24-02-deck-generator-chat-ui.md) | Deck Generator Chat UI | todo |
+| [M24-03](M24-03-generated-deck-import.md) | Generated Deck Import | todo |
+
+## M25 — Player Profile
+| Story | Title | Status |
+|---|---|---|
+| [M25-01](M25-01-profile-stats-engine.md) | Profile Stats Engine | todo |
+| [M25-02](M25-02-profile-view.md) | Player Profile View | todo |
+| [M25-03](M25-03-ptcg-live-account-link.md) | PTCG Live Account Link | todo |
 
 ## Bugs
 | Bug | Title | Status |
@@ -127,3 +209,5 @@ Stories are ordered by dependency. Work top to bottom.
 | [BUG-11](completed/BUG-11-card-picker-empty-cards-tab-not-visited.md) | Card Picker Blank When Cards Tab Has Never Been Opened | done |
 | [BUG-12](completed/BUG-12-card-picker-in-deck-count-stale.md) | "In Deck" Badge in Card Picker Is Slow / Doesn't Update After Tapping | done |
 | [BUG-13](completed/BUG-13-card-picker-no-stepper-for-added-cards.md) | Card Picker Has No Way to Decrease Count After Adding a Card | done |
+| [BUG-14](bugs/completed/BUG-14-deck-editor-open-crash.md) | Deck Editor Crash on Open | done |
+| [BUG-15](bugs/completed/BUG-15-basic-energy-deck-builder.md) | Add Basic Energy Does Not Work; Energy Cards in Pokémon Section | done |
