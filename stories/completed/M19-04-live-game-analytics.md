@@ -1,6 +1,6 @@
 # M19-04 — Live Game Analytics
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M19 — Live Game Mode  
 **Dependencies:** M19-01, M19-03
 
@@ -11,8 +11,8 @@ As a player, I want to see deeper per-game stats on matches that were tracked li
 ## Acceptance Criteria
 
 ### Match Detail Enrichment
-- [ ] `MatchDetailView` gains a "Live Data" section that appears only when `match.liveGame != nil`
-- [ ] The section shows:
+- [x] `MatchDetailView` gains a "Live Data" section that appears only when `match.liveGame != nil`
+- [x] The section shows:
   - **Game duration** — total time from `startedAt` to `endedAt` (formatted as "32m 14s")
   - **Total turns** — `game.turns.count`
   - **Avg. turn length (me)** — mean duration of completed player turns, formatted as `MM:SS`
@@ -20,19 +20,19 @@ As a player, I want to see deeper per-game stats on matches that were tracked li
   - **Longest turn** — max turn duration with the turn number, formatted "Turn 4 · 8m 12s"
 
 ### Prize Progression Chart
-- [ ] A line or step chart displays the prize race over the course of the game
-- [ ] X-axis: turn number; Y-axis: prizes remaining (0–6)
-- [ ] Two series: "My Prizes" (blue/accent) and "Opponent Prizes" (red/secondary)
-- [ ] The chart uses Swift Charts (`import Charts`)
-- [ ] The chart is shown in the "Live Data" section of `MatchDetailView`
+- [x] A line or step chart displays the prize race over the course of the game
+- [x] X-axis: turn number; Y-axis: prizes remaining (0–6)
+- [x] Two series: "My Prizes" (blue/accent) and "Opponent Prizes" (red/secondary)
+- [x] The chart uses Swift Charts (`import Charts`)
+- [x] The chart is shown in the "Live Data" section of `MatchDetailView`
 
 ### Deck-level Aggregate Stats
-- [ ] `DeckDetailView` (or the Analytics tab for that deck) gains an "Average Game Length" stat derived from all completed `LiveGame` records for that deck where `endedAt != nil`
-- [ ] "Avg. turns per game" is computed the same way
-- [ ] These stats only appear if the deck has at least 3 live-tracked games (to avoid misleading single-game averages)
+- [x] `DeckDetailView` (or the Analytics tab for that deck) gains an "Average Game Length" stat derived from all completed `LiveGame` records for that deck where `endedAt != nil`
+- [x] "Avg. turns per game" is computed the same way
+- [x] These stats only appear if the deck has at least 3 live-tracked games (to avoid misleading single-game averages)
 
 ### Analytics Engines
-- [ ] A new `LiveGameStatsEngine` struct at `JustTCG/Domain/Entities/LiveGameStatsEngine.swift` provides pure functions over `[LiveGame]`:
+- [x] A new `LiveGameStatsEngine` struct at `JustTCG/Domain/Entities/LiveGameStatsEngine.swift` provides pure functions over `[LiveGame]`:
   - `averageDuration(games:) -> TimeInterval?`
   - `averageTurnsPerGame(games:) -> Double?`
   - `averagePlayerTurnDuration(game:) -> TimeInterval?`

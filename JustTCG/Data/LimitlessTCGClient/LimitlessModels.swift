@@ -117,6 +117,65 @@ struct PlayerTournamentResult: Identifiable {
     var id: String { "\(tournamentId)-\(placement)" }
 }
 
+// MARK: - Player search result
+
+struct LimitlessPlayerSearchResult: Identifiable {
+    let id: String
+    let name: String
+    let country: String
+    let rank: Int?
+    let points: Int?
+}
+
+// MARK: - Player ranking sort
+
+enum PlayerRankSort: String, CaseIterable, Equatable {
+    case points       = "points"
+    case earnings     = "money"
+    case day2Finishes = "day2s"
+    case top8Finishes = "cuts"
+
+    var displayName: String {
+        switch self {
+        case .points:       return "Points"
+        case .earnings:     return "Earnings"
+        case .day2Finishes: return "Day 2 Finishes"
+        case .top8Finishes: return "Top 8 Finishes"
+        }
+    }
+
+    var columnLabel: String {
+        switch self {
+        case .points:       return "pts"
+        case .earnings:     return "earned"
+        case .day2Finishes: return "day 2s"
+        case .top8Finishes: return "top 8s"
+        }
+    }
+}
+
+// MARK: - Player zone
+
+enum PlayerZone: String, CaseIterable, Equatable {
+    case global       = "all"
+    case europe       = "eu"
+    case northAmerica = "na"
+    case latinAmerica = "la"
+    case oceania      = "oc"
+    case asia         = "asia"
+
+    var displayName: String {
+        switch self {
+        case .global:       return "Global"
+        case .europe:       return "Europe"
+        case .northAmerica: return "North America"
+        case .latinAmerica: return "Latin America"
+        case .oceania:      return "Oceania"
+        case .asia:         return "Asia"
+        }
+    }
+}
+
 // MARK: - Deck list
 
 struct LimitlessDeckList: Codable {

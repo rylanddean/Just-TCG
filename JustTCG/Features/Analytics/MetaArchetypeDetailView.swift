@@ -3,6 +3,7 @@ import SwiftUI
 struct MetaArchetypeDetailView: View {
     let row: MetaComparisonRow
     let allMatches: [Match]
+    var primaryCard: CachedCard? = nil
 
     private var archetypeMatches: [Match] {
         allMatches
@@ -12,12 +13,57 @@ struct MetaArchetypeDetailView: View {
     }
 
     var body: some View {
-        List {
-            metaContextSection
-            matchHistorySection
+        VStack(spacing: 0) {
+            if primaryCard != nil {
+                heroHeader
+            }
+            List {
+                metaContextSection
+                matchHistorySection
+            }
         }
-        .navigationTitle(row.archetype)
+        .navigationTitle(primaryCard != nil ? "" : row.archetype)
         .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(edges: primaryCard != nil ? .top : [])
+    }
+
+    // MARK: - Hero header
+
+    private var heroHeader: some View {
+        GeometryReader { geo in
+            let imageURL = primaryCard?.largeImageURL ?? primaryCard?.imageURL ?? ""
+            AsyncImage(url: URL(string: imageURL)) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geo.size.width, height: geo.size.width * 9 / 16)
+                        .clipped()
+                        .overlay(alignment: .bottom) {
+                            LinearGradient(
+                                colors: [.clear, Color(.systemBackground)],
+                                startPoint: .center,
+                                endPoint: .bottom
+                            )
+                            .frame(height: geo.size.width * 9 / 16 * 0.4)
+                        }
+                        .overlay(alignment: .bottomLeading) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(row.archetype)
+                                    .font(.title2.weight(.bold))
+                                Text(String(format: "%.1f%% meta share", row.metaShare))
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .padding([.horizontal, .bottom], 16)
+                        }
+                default:
+                    EmptyView()
+                }
+            }
+        }
+        .aspectRatio(16 / 9, contentMode: .fit)
     }
 
     // MARK: - Meta context

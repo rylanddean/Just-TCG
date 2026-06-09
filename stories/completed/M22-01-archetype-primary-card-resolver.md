@@ -1,6 +1,6 @@
 # M22-01 — Archetype Primary Card Resolver
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M22 — Visual Meta Share  
 **Dependencies:** M1-02, M6-01
 
@@ -10,16 +10,16 @@ As a developer, I need a way to resolve an archetype name string (e.g. "Dragapul
 
 ## Acceptance Criteria
 
-- [ ] A new struct `ArchetypePrimaryCardResolver` is created at `JustTCG/Domain/Entities/ArchetypePrimaryCardResolver.swift`
-- [ ] `resolve(archetype: String, from cards: [CachedCard]) -> CachedCard?` parses the archetype name and returns the best match
-- [ ] Parsing strategy:
+- [x] A new struct `ArchetypePrimaryCardResolver` is created at `JustTCG/Domain/Entities/ArchetypePrimaryCardResolver.swift`
+- [x] `resolve(archetype: String, from cards: [CachedCard]) -> CachedCard?` parses the archetype name and returns the best match
+- [x] Parsing strategy:
   1. Split the archetype string on `" / "` and take the first segment (e.g. "Dragapult ex / Pidgeot ex" → "Dragapult ex")
   2. Attempt an exact case-insensitive name match against `CachedCard.name`
   3. If no exact match, attempt a prefix match (archetype starts with card name or card name starts with archetype)
   4. Return `nil` if no match is found
-- [ ] Only Pokémon cards (`supertype == "Pokémon"`) are candidates — Trainer / Energy cards are excluded
-- [ ] The resolver is a pure function with no SwiftData dependency (accepts `[CachedCard]` directly)
-- [ ] Unit tests in `JustTCGTests/ArchetypePrimaryCardResolverTests.swift` cover: exact match, slash-split archetype, prefix match, no-match returns nil, non-Pokémon excluded
+- [x] Only Pokémon cards (`supertype == "Pokémon"`) are candidates — Trainer / Energy cards are excluded
+- [x] The resolver is a pure function with no SwiftData dependency (accepts `[CachedCard]` directly)
+- [x] Unit tests in `JustTCGTests/ArchetypePrimaryCardResolverTests.swift` cover: exact match, slash-split archetype, prefix match, no-match returns nil, non-Pokémon excluded
 
 ## Technical Notes
 

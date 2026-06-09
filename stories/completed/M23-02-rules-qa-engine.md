@@ -1,6 +1,6 @@
 # M23-02 — Rules Q&A Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M23 — Rules Assistant  
 **Dependencies:** M23-01
 
@@ -10,17 +10,17 @@ As a developer, I need a rules query engine backed by the on-device Foundation M
 
 ## Acceptance Criteria
 
-- [ ] A new `@Observable` class `RulesQueryEngine` is created at `JustTCG/Domain/Entities/RulesQueryEngine.swift`
-- [ ] The engine uses `FoundationModels.LanguageModelSession` (iOS 26+, `import FoundationModels`)
-- [ ] The session is initialised with a system prompt that:
+- [x] A new `@Observable` class `RulesQueryEngine` is created at `JustTCG/Domain/Entities/RulesQueryEngine.swift`
+- [x] The engine uses `FoundationModels.LanguageModelSession` (iOS 26+, `import FoundationModels`)
+- [x] The session is initialised with a system prompt that:
   - Establishes the model as a Pokémon TCG rules expert
   - Injects the full rulebook text via `RulebookLoader.fullText()`
   - Instructs the model to answer only from the provided rules text, say "I don't know" if a topic isn't covered, and keep answers concise (2–4 sentences)
-- [ ] `func ask(_ question: String) async throws -> String` sends the question to the session and returns the response string
-- [ ] The engine maintains conversation history so follow-up questions work in context (e.g., "Does that apply to GX Pokémon too?")
-- [ ] `func reset()` clears the conversation and starts a fresh session
-- [ ] If `LanguageModelSession` is unavailable (simulator, unsupported device), the engine returns a fallback string: `"Rules Assistant requires Apple Intelligence (iPhone 16 or later with iOS 26+)."`
-- [ ] The engine is availability-gated with `@available(iOS 26, *)`; call sites check availability before presenting the UI
+- [x] `func ask(_ question: String) async throws -> String` sends the question to the session and returns the response string
+- [x] The engine maintains conversation history so follow-up questions work in context (e.g., "Does that apply to GX Pokémon too?")
+- [x] `func reset()` clears the conversation and starts a fresh session
+- [x] If `LanguageModelSession` is unavailable (simulator, unsupported device), the engine returns a fallback string: `"Rules Assistant requires Apple Intelligence (iPhone 16 or later with iOS 26+)."`
+- [x] The engine is availability-gated with `@available(iOS 26, *)`; call sites check availability before presenting the UI
 
 ## Technical Notes
 

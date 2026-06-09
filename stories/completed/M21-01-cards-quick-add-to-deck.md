@@ -1,6 +1,6 @@
 # M21-01 — Cards View: Long-Press Quick-Add to Deck
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M21 — Cards Tab Quick-Add  
 **Dependencies:** M2-01, M18-01
 
@@ -10,14 +10,14 @@ As a player, I want to long-press a card in the Cards tab to instantly add it to
 
 ## Acceptance Criteria
 
-- [ ] Long-pressing any card thumbnail in the card grid reveals a context menu
-- [ ] The context menu contains an **Add to Deck** submenu listing all of the user's decks sorted alphabetically by name
-- [ ] Tapping a deck name adds one copy of the card to that deck (respecting the 4-copy cap, or 60 for Basic Energy)
-- [ ] A toast banner reading **"Added to [Deck Name]"** appears at the bottom of the screen for 2 seconds after a successful add
-- [ ] If the user has no decks, the context menu shows a single disabled label **"No Decks Yet"** instead of the submenu
-- [ ] The context menu preview shows the card thumbnail at a comfortable size
-- [ ] Long-pressing still works while a group chip or text filter is active
-- [ ] The `NavigationLink` to the card detail view continues to work on a normal tap
+- [x] Long-pressing any card thumbnail in the card grid reveals a context menu
+- [x] The context menu contains an **Add to Deck** submenu listing all of the user's decks sorted alphabetically by name
+- [x] Tapping a deck name adds one copy of the card to that deck (respecting the 4-copy cap, or 60 for Basic Energy)
+- [x] A toast banner reading **"Added to [Deck Name]"** appears at the bottom of the screen for 2 seconds after a successful add
+- [x] If the user has no decks, the context menu shows a single disabled label **"No Decks Yet"** instead of the submenu
+- [x] The context menu preview shows the card thumbnail at a comfortable size
+- [x] Long-pressing still works while a group chip or text filter is active
+- [x] The `NavigationLink` to the card detail view continues to work on a normal tap
 
 ## Technical Notes
 

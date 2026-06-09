@@ -1,6 +1,6 @@
 # M20-02 — Scan-to-Deck Camera UI
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M20 — OCR Card Scanner  
 **Dependencies:** M20-01
 
@@ -11,32 +11,32 @@ As a player, I want to point my camera at a physical card, see it recognised on 
 ## Acceptance Criteria
 
 ### Entry Point
-- [ ] A "Scan Cards" option appears alongside the existing "Add Cards" button in `DeckDetailView`
-- [ ] Tapping it requests camera permission (`NSCameraUsageDescription` must be added to `Info.plist`) and presents `CardScannerView` as a `.fullScreenCover`
-- [ ] If camera permission is denied, a descriptive alert is shown with a link to Settings
+- [x] A "Scan Cards" option appears alongside the existing "Add Cards" button in `DeckDetailView`
+- [x] Tapping it requests camera permission (`NSCameraUsageDescription` must be added to `Info.plist`) and presents `CardScannerView` as a `.fullScreenCover`
+- [x] If camera permission is denied, a descriptive alert is shown with a link to Settings
 
 ### Camera View
-- [ ] The live camera feed fills the screen using `AVCaptureVideoPreviewLayer` wrapped in a `UIViewRepresentable`
-- [ ] A card-shaped rounded rectangle overlay (aspect ratio ~5:7, roughly 70% of screen width) guides the user to frame the card
-- [ ] The overlay border pulses green when a `.high` confidence match is detected, yellow for `.medium`, and white/grey for `.low` or no match
-- [ ] Still frames are captured at ~2fps when the scanner is active; captured via `AVCaptureVideoDataOutput` on a background queue and passed to `CardScannerService`
-- [ ] The scan pipeline runs continuously — the user does not need to tap a shutter button
+- [x] The live camera feed fills the screen using `AVCaptureVideoPreviewLayer` wrapped in a `UIViewRepresentable`
+- [x] A card-shaped rounded rectangle overlay (aspect ratio ~5:7, roughly 70% of screen width) guides the user to frame the card
+- [x] The overlay border pulses green when a `.high` confidence match is detected, yellow for `.medium`, and white/grey for `.low` or no match
+- [x] Still frames are captured at ~2fps when the scanner is active; captured via `AVCaptureVideoDataOutput` on a background queue and passed to `CardScannerService`
+- [x] The scan pipeline runs continuously — the user does not need to tap a shutter button
 
 ### Match Preview
-- [ ] When a card is identified (confidence `.medium` or `.high`), a bottom sheet slides up showing:
+- [x] When a card is identified (confidence `.medium` or `.high`), a bottom sheet slides up showing:
   - Card art (`AsyncImage` from `imageURL`)
   - Card name + set name + number
   - Current quantity in deck
   - **"+ Add"** button (increments quantity, shows haptic feedback)
   - **"Not right?"** button that freezes the match and opens the existing card picker pre-filled with the parsed card name as the search query
-- [ ] Adding a card via **"+ Add"** calls `DeckRepository.addCard(...)` and immediately updates the in-deck badge without dismissing the scanner
-- [ ] The "quantity in deck" badge and cap enforcement (max 4, unlimited for Basic Energy) match the behaviour in the existing card picker
+- [x] Adding a card via **"+ Add"** calls `DeckRepository.addCard(...)` and immediately updates the in-deck badge without dismissing the scanner
+- [x] The "quantity in deck" badge and cap enforcement (max 4, unlimited for Basic Energy) match the behaviour in the existing card picker
 
 ### Scan Session
-- [ ] After tapping **"+ Add"**, the scanner resets and resumes scanning for the next card after a 1-second pause (to let the user move to the next physical card)
-- [ ] A running tally at the top of the screen shows "N cards added" during the session
-- [ ] A **"Done"** button in the top-right corner dismisses the scanner and returns to `DeckDetailView`
-- [ ] If the user has added cards and taps "Done", no confirmation prompt is needed — cards are already persisted
+- [x] After tapping **"+ Add"**, the scanner resets and resumes scanning for the next card after a 1-second pause (to let the user move to the next physical card)
+- [x] A running tally at the top of the screen shows "N cards added" during the session
+- [x] A **"Done"** button in the top-right corner dismisses the scanner and returns to `DeckDetailView`
+- [x] If the user has added cards and taps "Done", no confirmation prompt is needed — cards are already persisted
 
 ## Technical Notes
 

@@ -15,8 +15,8 @@ struct ContentView: View {
             CardsView()
                 .tabItem { Label("Cards", systemImage: "square.grid.2x2") }
                 .tag(2)
-            TournamentsView()
-                .tabItem { Label("Tournaments", systemImage: "trophy") }
+            CompetitionView()
+                .tabItem { Label("Competition", systemImage: "trophy") }
                 .tag(3)
             AnalyticsView()
                 .tabItem { Label("Analytics", systemImage: "chart.bar") }

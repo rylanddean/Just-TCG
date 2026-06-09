@@ -1,6 +1,6 @@
 # M23-01 — Pokémon TCG Rulebook Content Bundle
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M23 — Rules Assistant  
 **Dependencies:** none
 
@@ -10,9 +10,9 @@ As a developer, I need the official Pokémon TCG rulebook content available as s
 
 ## Acceptance Criteria
 
-- [ ] A JSON file `JustTCG/Resources/PokemonTCGRules.json` is added to the app bundle
-- [ ] The file contains an array of rule sections, each with a `title` (string) and `body` (string) field
-- [ ] Sections map directly to the official Pokémon TCG rulebook structure — at minimum:
+- [x] A JSON file `JustTCG/Resources/PokemonTCGRules.json` is added to the app bundle
+- [x] The file contains an array of rule sections, each with a `title` (string) and `body` (string) field
+- [x] Sections map directly to the official Pokémon TCG rulebook structure — at minimum:
   - Setup
   - Your Turn (Draw, Bench, Evolve, Attach Energy, Play Trainer, Attack, End Turn)
   - Attacking (Weakness, Resistance, damage application)
@@ -24,7 +24,7 @@ As a developer, I need the official Pokémon TCG rulebook content available as s
   - Mulligan
   - Abilities vs Attacks
   - Frequently misplayed rules (e.g., evolving restrictions, when effects are applied)
-- [ ] A `RulebookSection` struct is defined in Swift at `JustTCG/Data/Rules/RulebookSection.swift`:
+- [x] A `RulebookSection` struct is defined in Swift at `JustTCG/Data/Rules/RulebookSection.swift`:
   ```swift
   struct RulebookSection: Codable, Identifiable {
       var id: String { title }
@@ -32,10 +32,10 @@ As a developer, I need the official Pokémon TCG rulebook content available as s
       let body: String
   }
   ```
-- [ ] A `RulebookLoader` struct at `JustTCG/Data/Rules/RulebookLoader.swift` exposes:
+- [x] A `RulebookLoader` struct at `JustTCG/Data/Rules/RulebookLoader.swift` exposes:
   - `static func load() -> [RulebookSection]` — decodes the bundle JSON
   - `static func fullText() -> String` — concatenates all sections as "## {title}\n{body}" for use as LLM context
-- [ ] The bundled content is sourced from the official Pokémon TCG Rulebook (publicly available at pokemon.com/us/pokemon-tcg/rules-and-formats/) — no copyrighted art or images, rules text only
+- [x] The bundled content is sourced from the official Pokémon TCG Rulebook (publicly available at pokemon.com/us/pokemon-tcg/rules-and-formats/) — no copyrighted art or images, rules text only
 
 ## Technical Notes
 

@@ -1,6 +1,6 @@
 # M22-02 — Visual Meta Share Row & Archetype Detail Header
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M22 — Visual Meta Share  
 **Dependencies:** M22-01
 
@@ -11,18 +11,18 @@ As a player, I want the meta share list to show the primary Pokémon card's art 
 ## Acceptance Criteria
 
 ### Meta Comparison Row (Analytics Tab)
-- [ ] `MetaComparisonRowView` (private struct in `AnalyticsView.swift`) gains a card thumbnail on the leading edge
-- [ ] The thumbnail is ~44 pt wide, uses the existing `AsyncImage` pattern with `card.imageURL`, and maintains the card's 7:10 aspect ratio
-- [ ] The thumbnail is resolved via `ArchetypePrimaryCardResolver` against the in-memory `CachedCard` store — pass cards via a `@Query` in `AnalyticsView`
-- [ ] If no card is resolved (nil), a rounded rectangle placeholder fills the same dimensions
-- [ ] The archetype name, meta share %, win rate, and status chip remain on the trailing side — layout is unchanged except for the leading thumbnail
+- [x] `MetaComparisonRowView` (private struct in `AnalyticsView.swift`) gains a card thumbnail on the leading edge
+- [x] The thumbnail is ~44 pt wide, uses the existing `AsyncImage` pattern with `card.imageURL`, and maintains the card's 7:10 aspect ratio
+- [x] The thumbnail is resolved via `ArchetypePrimaryCardResolver` against the in-memory `CachedCard` store — pass cards via a `@Query` in `AnalyticsView`
+- [x] If no card is resolved (nil), a rounded rectangle placeholder fills the same dimensions
+- [x] The archetype name, meta share %, win rate, and status chip remain on the trailing side — layout is unchanged except for the leading thumbnail
 
 ### Archetype Detail Header (`MetaArchetypeDetailView`)
-- [ ] `MetaArchetypeDetailView` gains a full-width hero header above the `List`
-- [ ] The header shows the primary card's large image (`largeImageURL ?? imageURL`) filling the width at a 16:9 crop, with a linear gradient overlay (clear → `.systemBackground`) across the bottom third
-- [ ] The archetype name and meta share percentage are overlaid on the gradient in white/primary text
-- [ ] If no card is resolved, the header is omitted and the existing `navigationTitle` remains as the sole title
-- [ ] The header does not scroll away — it sits above the `List` using a `VStack` wrapper, not inside the list itself
+- [x] `MetaArchetypeDetailView` gains a full-width hero header above the `List`
+- [x] The header shows the primary card's large image (`largeImageURL ?? imageURL`) filling the width at a 16:9 crop, with a linear gradient overlay (clear → `.systemBackground`) across the bottom third
+- [x] The archetype name and meta share percentage are overlaid on the gradient in white/primary text
+- [x] If no card is resolved, the header is omitted and the existing `navigationTitle` remains as the sole title
+- [x] The header does not scroll away — it sits above the `List` using a `VStack` wrapper, not inside the list itself
 
 ## Technical Notes
 

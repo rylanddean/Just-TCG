@@ -1,6 +1,6 @@
 # M26-02 — Competitors View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M26 — Competition Tab  
 **Dependencies:** M26-01, M12-01, M12-02
 

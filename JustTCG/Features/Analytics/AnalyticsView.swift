@@ -3,12 +3,15 @@ import SwiftData
 
 struct AnalyticsView: View {
     @Query(sort: \Deck.updatedAt, order: .reverse) private var decks: [Deck]
+    @Query private var allCards: [CachedCard]
     @State private var vm = AnalyticsViewModel()
     @State private var metaVM = MetaComparisonViewModel()
     @State private var prepareCardDismissed = false
     @Environment(AppNavigationState.self) private var nav
 
     private let gapEngine = PracticeGapEngine()
+    private let liveEngine = LiveGameStatsEngine()
+    private let resolver = ArchetypePrimaryCardResolver()
 
     var body: some View {
         NavigationStack {
@@ -78,6 +81,10 @@ struct AnalyticsView: View {
                 }
             }
 
+            if let deck = vm.selectedDeck {
+                liveStatsSection(for: deck)
+            }
+
             metaSection(matches: matches)
         }
         .task(id: vm.selectedDeck?.id) {
@@ -139,7 +146,7 @@ struct AnalyticsView: View {
                 Button {
                     @Bindable var navBinding = nav
                     nav.tournamentsArchetypeFilter = rec.archetype
-                    nav.selectedTab = AppNavigationState.tabTournaments
+                    nav.selectedTab = AppNavigationState.tabCompetition
                 } label: {
                     Label("Find deck lists", systemImage: "arrow.right")
                         .font(.caption.weight(.medium))
@@ -170,11 +177,29 @@ struct AnalyticsView: View {
                     .foregroundStyle(.secondary)
             } else {
                 ForEach(metaVM.rows) { row in
+                    let primaryCard = resolver.resolve(archetype: row.archetype, from: allCards)
                     NavigationLink {
-                        MetaArchetypeDetailView(row: row, allMatches: matches)
+                        MetaArchetypeDetailView(row: row, allMatches: matches, primaryCard: primaryCard)
                     } label: {
-                        MetaComparisonRowView(row: row)
+                        MetaComparisonRowView(row: row, primaryCard: primaryCard)
                     }
+                }
+            }
+        }
+    }
+
+    // MARK: - Live game deck stats
+
+    @ViewBuilder
+    private func liveStatsSection(for deck: Deck) -> some View {
+        let liveGames = deck.matches.compactMap(\.liveGame).filter { $0.endedAt != nil }
+        if liveGames.count >= 3 {
+            Section("Live Game Averages") {
+                if let avg = liveEngine.averageDuration(games: liveGames) {
+                    LabeledContent("Avg game length", value: avg.durationDisplay)
+                }
+                if let avgTurns = liveEngine.averageTurnsPerGame(games: liveGames) {
+                    LabeledContent("Avg turns/game", value: String(format: "%.1f", avgTurns))
                 }
             }
         }
@@ -245,9 +270,24 @@ struct AnalyticsView: View {
 
 private struct MetaComparisonRowView: View {
     let row: MetaComparisonRow
+    var primaryCard: CachedCard?
 
     var body: some View {
         HStack(spacing: 10) {
+            if let card = primaryCard {
+                AsyncImage(url: URL(string: card.imageURL)) { image in
+                    image.resizable().aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 4).fill(.quaternary)
+                }
+                .frame(width: 44, height: 62)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+            } else {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(Color(.quaternarySystemFill))
+                    .frame(width: 44, height: 62)
+            }
+
             VStack(alignment: .leading, spacing: 3) {
                 Text(row.archetype)
                     .font(.body)

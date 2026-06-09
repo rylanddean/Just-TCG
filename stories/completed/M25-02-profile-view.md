@@ -1,6 +1,6 @@
 # M25-02 — Player Profile View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M25 — Player Profile  
 **Dependencies:** M25-01, M11-01
 
@@ -11,34 +11,34 @@ As a player, I want to tap my profile icon on the Home screen and see a summary 
 ## Acceptance Criteria
 
 ### Entry Point
-- [ ] A circular person icon (`person.crop.circle`) is added to `HomeView`'s leading navigation bar position
-- [ ] Tapping it presents `ProfileView` as a `.sheet`
+- [x] A circular person icon (`person.crop.circle`) is added to `HomeView`'s leading navigation bar position
+- [x] Tapping it presents `ProfileView` as a `.sheet`
 
 ### `ProfileView`
-- [ ] New view at `JustTCG/Features/Profile/ProfileView.swift`
-- [ ] Navigation bar title "Profile" with a "Done" dismiss button
-- [ ] Queries all `Match` and `Deck` objects from SwiftData and computes `ProfileStats` via `ProfileStatsEngine`
-- [ ] **Header section:**
+- [x] New view at `JustTCG/Features/Profile/ProfileView.swift`
+- [x] Navigation bar title "Profile" with a "Done" dismiss button
+- [x] Queries all `Match` and `Deck` objects from SwiftData and computes `ProfileStats` via `ProfileStatsEngine`
+- [x] **Header section:**
   - Large SF Symbol avatar (`person.crop.circle.fill`) in accent colour
   - Player name displayed below (editable via `@AppStorage("playerName")`, tapping it opens an inline rename field)
   - "Member since" date derived from the oldest match or deck creation date
-- [ ] **Stats grid (2×2 LazyVGrid):**
+- [x] **Stats grid (2×2 LazyVGrid):**
   - Total Games played
   - Win Rate (formatted as "XX.X%", "—" if no games)
   - Current Streak ("3W" or "2L" or "—")
   - Longest Win Streak
-- [ ] **Most-Played Deck section:**
+- [x] **Most-Played Deck section:**
   - Shown only if `mostPlayedDeck != nil`
   - Displays the deck's cover card thumbnails (same row as `DecksView`), deck name, and its win rate
   - Tapping navigates to that deck's detail (requires dismiss + tab switch — out of scope; tappable but no navigation for now)
-- [ ] **Matchups section:**
+- [x] **Matchups section:**
   - "Best matchup" row: archetype name + win rate (hidden if `bestMatchup == nil`)
   - "Toughest matchup" row: archetype name + win rate (hidden if `worstMatchup == nil`)
   - Subtitle "Minimum 5 games" shown if both are nil
-- [ ] **Most Common Opponent:**
+- [x] **Most Common Opponent:**
   - Single row: "Most faced: [Archetype name]"
   - Hidden if `topArchetypeFaced == nil`
-- [ ] Empty state (no matches at all): a centred prompt "Log your first match to start building your profile."
+- [x] Empty state (no matches at all): a centred prompt "Log your first match to start building your profile."
 
 ## Technical Notes
 

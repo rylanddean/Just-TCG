@@ -1,6 +1,6 @@
 # M25-01 — Profile Stats Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M25 — Player Profile  
 **Dependencies:** M3-01, M4-01
 
@@ -10,9 +10,9 @@ As a developer, I need a pure stats engine that aggregates a player's overall pe
 
 ## Acceptance Criteria
 
-- [ ] A new struct `ProfileStatsEngine` is created at `JustTCG/Domain/Entities/ProfileStatsEngine.swift`
-- [ ] All functions are pure (no SwiftData dependency — accept arrays as input)
-- [ ] The engine exposes:
+- [x] A new struct `ProfileStatsEngine` is created at `JustTCG/Domain/Entities/ProfileStatsEngine.swift`
+- [x] All functions are pure (no SwiftData dependency — accept arrays as input)
+- [x] The engine exposes:
 
   ```swift
   struct ProfileStats {
@@ -36,13 +36,13 @@ As a developer, I need a pure stats engine that aggregates a player's overall pe
   }
   ```
 
-- [ ] `winRate` is `Double(wins) / Double(totalGames)` — ties count as games played but not wins or losses
-- [ ] `currentStreak` is computed by walking matches sorted by date descending and counting consecutive wins (positive) or losses (negative) from the most recent match; a tie breaks the streak (result is 0)
-- [ ] `longestWinStreak` is the longest run of consecutive win results across all matches sorted by date ascending
-- [ ] `bestMatchup` and `worstMatchup` use `MatchupStatsEngine` results filtered to `sampleSize >= 5`
-- [ ] `mostPlayedDeck` is the `Deck` with the highest `matches.count`
-- [ ] `topArchetypeFaced` is the most frequent `opponentArchetype` across all matches
-- [ ] Unit tests in `JustTCGTests/ProfileStatsEngineTests.swift` cover: empty input, all wins, all losses, mixed record, streak calculation, best/worst matchup with insufficient data
+- [x] `winRate` is `Double(wins) / Double(totalGames)` — ties count as games played but not wins or losses
+- [x] `currentStreak` is computed by walking matches sorted by date descending and counting consecutive wins (positive) or losses (negative) from the most recent match; a tie breaks the streak (result is 0)
+- [x] `longestWinStreak` is the longest run of consecutive win results across all matches sorted by date ascending
+- [x] `bestMatchup` and `worstMatchup` use `MatchupStatsEngine` results filtered to `sampleSize >= 5`
+- [x] `mostPlayedDeck` is the `Deck` with the highest `matches.count`
+- [x] `topArchetypeFaced` is the most frequent `opponentArchetype` across all matches
+- [x] Unit tests in `JustTCGTests/ProfileStatsEngineTests.swift` cover: empty input, all wins, all losses, mixed record, streak calculation, best/worst matchup with insufficient data
 
 ## Technical Notes
 

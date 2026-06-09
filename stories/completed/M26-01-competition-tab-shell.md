@@ -1,6 +1,6 @@
 # M26-01 — Competition Tab Shell
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M26 — Competition Tab  
 **Dependencies:** M5-01, M12-01
 

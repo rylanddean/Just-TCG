@@ -97,13 +97,17 @@ struct SettingsView: View {
     // MARK: - Decks
 
     private var decksSection: some View {
-        Section("Decks") {
-            Picker("Cover cards", selection: $coverCardCount) {
+        Section {
+            Picker("Preview cards", selection: $coverCardCount) {
                 Text("1").tag(1)
                 Text("2").tag(2)
                 Text("3").tag(3)
             }
             .pickerStyle(.segmented)
+        } header: {
+            Text("Decks")
+        } footer: {
+            Text("Number of card images shown on each deck in the decks list.")
         }
     }
 

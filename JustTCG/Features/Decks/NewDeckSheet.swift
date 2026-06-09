@@ -33,7 +33,7 @@ struct NewDeckSheet: View {
                 }
             }
             .navigationDestination(for: Deck.self) { deck in
-                DeckBuilderView(deck: deck, showsDoneButton: true)
+                DeckBuilderView(deck: deck, showsDoneButton: true, onDone: { dismiss() })
             }
         }
     }

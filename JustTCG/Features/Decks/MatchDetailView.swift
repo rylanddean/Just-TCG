@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 struct MatchDetailView: View {
     let match: Match
@@ -56,6 +57,68 @@ struct MatchDetailView: View {
                     Text(match.notes)
                         .foregroundStyle(.secondary)
                 }
+            }
+            if let game = match.liveGame {
+                liveDataSection(game: game)
+            }
+        }
+    }
+
+    // MARK: - Live data section
+
+    @ViewBuilder
+    private func liveDataSection(game: LiveGame) -> some View {
+        let engine = LiveGameStatsEngine()
+        Section("Live Data") {
+            if let end = game.endedAt {
+                LabeledContent("Game duration",
+                               value: end.timeIntervalSince(game.startedAt).durationDisplay)
+            }
+            LabeledContent("Total turns", value: "\(game.turns.count)")
+            if let avg = engine.averagePlayerTurnDuration(game: game) {
+                LabeledContent("Avg. turn (me)", value: avg.mmssDisplay)
+            }
+            if let avg = engine.averageOpponentTurnDuration(game: game) {
+                LabeledContent("Avg. turn (opp.)", value: avg.mmssDisplay)
+            }
+            if let longest = engine.longestTurn(game: game) {
+                LabeledContent("Longest turn",
+                               value: "Turn \(longest.turnNumber) · \(longest.duration.durationDisplay)")
+            }
+        }
+
+        let series = engine.prizeProgressionSeries(game: game)
+        if !series.isEmpty {
+            Section("Prize Race") {
+                Chart {
+                    ForEach(series, id: \.turn) { point in
+                        LineMark(
+                            x: .value("Turn", point.turn),
+                            y: .value("Prizes", point.playerPrizes)
+                        )
+                        .foregroundStyle(Color.accentColor)
+                        .symbol(.circle)
+                        LineMark(
+                            x: .value("Turn", point.turn),
+                            y: .value("Prizes", point.opponentPrizes)
+                        )
+                        .foregroundStyle(Color.red)
+                        .symbol(.square)
+                    }
+                }
+                .chartYScale(domain: 0...6)
+                .chartXAxisLabel("Turn")
+                .chartYAxisLabel("Prizes remaining")
+                .frame(height: 180)
+                .padding(.vertical, 8)
+
+                HStack(spacing: 16) {
+                    Label("My Prizes", systemImage: "circle.fill")
+                        .foregroundStyle(Color.accentColor)
+                    Label("Opp. Prizes", systemImage: "square.fill")
+                        .foregroundStyle(.red)
+                }
+                .font(.caption)
             }
         }
     }

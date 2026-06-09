@@ -1,6 +1,6 @@
 # M24-01 — Natural Language Deck Generation Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M24 — Natural Language Deck Generator  
 **Dependencies:** M23-02
 
@@ -11,21 +11,21 @@ As a developer, I need a deck generation engine that takes a natural language pr
 ## Acceptance Criteria
 
 ### `DeckGeneratorEngine`
-- [ ] New `@Observable` class at `JustTCG/Domain/Entities/DeckGeneratorEngine.swift`
-- [ ] Uses `FoundationModels.LanguageModelSession` (iOS 26+) gated with `@available(iOS 26, *)`
-- [ ] System prompt instructs the model to:
+- [x] New `@Observable` class at `JustTCG/Domain/Entities/DeckGeneratorEngine.swift`
+- [x] Uses `FoundationModels.LanguageModelSession` (iOS 26+) gated with `@available(iOS 26, *)`
+- [x] System prompt instructs the model to:
   - Generate exactly 60-card Standard-legal Pokémon TCG deck lists
   - Always respond with a brief explanation followed by the deck list in PTCGL export format
   - Ask one clarifying follow-up question when the request is ambiguous (e.g. "Would you prefer a more aggressive or control-oriented build?")
   - Stick to regulation marks H, I, J (current Standard)
   - Respect the 4-copy limit (unlimited for Basic Energy)
-- [ ] `func generate(prompt: String) async throws -> DeckGeneratorResponse` submits the user prompt and parses the response
-- [ ] `func refine(prompt: String) async throws -> DeckGeneratorResponse` continues the existing conversation for follow-up messages
-- [ ] `func reset()` clears conversation history
-- [ ] Conversation history is maintained across `generate` / `refine` calls within the same session
+- [x] `func generate(prompt: String) async throws -> DeckGeneratorResponse` submits the user prompt and parses the response
+- [x] `func refine(prompt: String) async throws -> DeckGeneratorResponse` continues the existing conversation for follow-up messages
+- [x] `func reset()` clears conversation history
+- [x] Conversation history is maintained across `generate` / `refine` calls within the same session
 
 ### `DeckGeneratorResponse`
-- [ ] New struct at `JustTCG/Domain/Entities/DeckGeneratorResponse.swift`:
+- [x] New struct at `JustTCG/Domain/Entities/DeckGeneratorResponse.swift`:
   ```swift
   struct DeckGeneratorResponse {
       let message: String           // The model's full text response (explanation + list)
@@ -33,15 +33,15 @@ As a developer, I need a deck generation engine that takes a natural language pr
       let isFollowUpQuestion: Bool  // true when the model responded with a clarifying question
   }
   ```
-- [ ] `deckList` is extracted by detecting the presence of lines matching the PTCGL format pattern (`^\d+ .+$`) in the model's response
-- [ ] `isFollowUpQuestion` is `true` when `deckList == nil` and the response ends with a `?`
+- [x] `deckList` is extracted by detecting the presence of lines matching the PTCGL format pattern (`^\d+ .+$`) in the model's response
+- [x] `isFollowUpQuestion` is `true` when `deckList == nil` and the response ends with a `?`
 
 ### Deck List Extraction
-- [ ] A `DeckListExtractor.extract(from: String) -> String?` helper (can be a private method or a small struct) scans the model response for a contiguous block of PTCGL-format lines and returns them as a single string
-- [ ] The extracted string is compatible with the existing `DeckListParser` (M10-01) so it can be imported directly
+- [x] A `DeckListExtractor.extract(from: String) -> String?` helper (can be a private method or a small struct) scans the model response for a contiguous block of PTCGL-format lines and returns them as a single string
+- [x] The extracted string is compatible with the existing `DeckListParser` (M10-01) so it can be imported directly
 
 ### Fallback (pre-iOS 26)
-- [ ] A non-`@available`-gated `DeckGeneratorEngineFallback` struct exposes the same `generate` / `refine` signatures and returns a fixed `DeckGeneratorResponse` explaining that Apple Intelligence is required
+- [x] A non-`@available`-gated `DeckGeneratorEngineFallback` struct exposes the same `generate` / `refine` signatures and returns a fixed `DeckGeneratorResponse` explaining that Apple Intelligence is required
 
 ## Technical Notes
 

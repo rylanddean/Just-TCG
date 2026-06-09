@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1B2C3BA26010000000001AA /* CompetitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA26010000000001AA /* CompetitionView.swift */; };
+		A1B2C3BA26020000000002BB /* CompetitorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA26020000000002BB /* CompetitorsView.swift */; };
+		A1B2C3BA26030000000003CC /* CompetitorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA26030000000003CC /* CompetitorsViewModel.swift */; };
 		052E05AE02E2FC4FBE60C472 /* TournamentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D703009C418C7BB30FA974 /* TournamentsView.swift */; };
 		054D4151E3B4540536E02D89 /* CachedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C60E6A4314B7A8934D461 /* CachedCard.swift */; };
 		0994634F16BD49529D1EC783 /* LiveGameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16702F508C394508AA6BDBAC /* LiveGameRepository.swift */; };
@@ -118,6 +121,28 @@
 		A1B2C3BA27040000000004DD /* ShareableBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA27040000000004DD /* ShareableBackup.swift */; };
 		A1B2C3BA27050000000005EE /* BackupSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA27050000000005EE /* BackupSerializerTests.swift */; };
 		A1B2C3BA27060000000006FF /* BackupImporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3BA27060000000006FF /* BackupImporterTests.swift */; };
+		396A76EB96FA4E7C89DE4F96 /* ArchetypePrimaryCardResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B483B0571364A519E3DF028 /* ArchetypePrimaryCardResolver.swift */; };
+		5010FBC4A4424D8A9D132BE6 /* ProfileStatsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94993A1EE87B479DA82068EC /* ProfileStatsEngine.swift */; };
+		5FBFFE02A68F4AD2A42E485F /* LiveGameStatsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657888E5D361411F883591B3 /* LiveGameStatsEngine.swift */; };
+		3803540850A0481E8677C326 /* RulesQueryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */; };
+		223A8C1578FD4145B186BDE2 /* DeckGeneratorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */; };
+		9EE78F3CA6F544E58CCDFDDB /* DeckGeneratorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */; };
+		0A8C4E915224400FB59EE9D9 /* RulebookSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC064BC0C344AD3B6A3101D /* RulebookSection.swift */; };
+		D9FEC99F01204334861ED503 /* RulebookLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB081F029C3472099E19524 /* RulebookLoader.swift */; };
+		313C911EBC69431D86BE4B0F /* PokemonTCGRules.json in Resources */ = {isa = PBXBuildFile; fileRef = ADFC4720051B470E95E07FC3 /* PokemonTCGRules.json */; };
+		45F8676DA3D24B669421488E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B814EBEE2FE41B099F4B41C /* ProfileView.swift */; };
+		FD0833113EF248B48EFDB661 /* RulesAssistantSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37259303F8654DD49F5538BB /* RulesAssistantSheet.swift */; };
+		0543FF2C385D46BF99C82933 /* DeckGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21BCF36FA4C43B3B552E939 /* DeckGeneratorView.swift */; };
+		A6626E409D644B4A9A281B9A /* DeckListPreviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C4199777448DEA661A613 /* DeckListPreviewCard.swift */; };
+		B8B93E45D7D640D49483FE37 /* CardIdentifierParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A2E68026E44B2BA082B1B4 /* CardIdentifierParser.swift */; };
+		78477D50522047F885F5320C /* CardScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D081A78811E4C40A6EA9DDD /* CardScannerService.swift */; };
+		8036402F2F9040AE9D2C3603 /* CardScanMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B1C4C7EF44938AFBFE220 /* CardScanMatcher.swift */; };
+		43F2F9D207A3466C9D94B965 /* CardScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DA1EF66659468990F3661B /* CardScannerView.swift */; };
+		E7C002AF5A5F473397AC8781 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F497BAD70204D36BD915736 /* CameraPreviewView.swift */; };
+		0A4A576AA47E47938FA53668 /* CardScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599C68D8070485E9AE95ED8 /* CardScannerViewModel.swift */; };
+		4AFBF3B1A66245D3960A1C5B /* ArchetypePrimaryCardResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */; };
+		079BB42EB69142CFB4756C1D /* ProfileStatsEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */; };
+		A296910269814E4283662E0A /* CardIdentifierParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +269,31 @@
 		B1C2D3BA27040000000004DD /* ShareableBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareableBackup.swift; sourceTree = "<group>"; };
 		B1C2D3BA27050000000005EE /* BackupSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSerializerTests.swift; sourceTree = "<group>"; };
 		B1C2D3BA27060000000006FF /* BackupImporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupImporterTests.swift; sourceTree = "<group>"; };
+		B1C2D3BA26010000000001AA /* CompetitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionView.swift; sourceTree = "<group>"; };
+		B1C2D3BA26020000000002BB /* CompetitorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitorsView.swift; sourceTree = "<group>"; };
+		B1C2D3BA26030000000003CC /* CompetitorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitorsViewModel.swift; sourceTree = "<group>"; };
+		2B483B0571364A519E3DF028 /* ArchetypePrimaryCardResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchetypePrimaryCardResolver.swift; sourceTree = "<group>"; };
+		94993A1EE87B479DA82068EC /* ProfileStatsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsEngine.swift; sourceTree = "<group>"; };
+		657888E5D361411F883591B3 /* LiveGameStatsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameStatsEngine.swift; sourceTree = "<group>"; };
+		B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesQueryEngine.swift; sourceTree = "<group>"; };
+		9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorEngine.swift; sourceTree = "<group>"; };
+		CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorResponse.swift; sourceTree = "<group>"; };
+		EEC064BC0C344AD3B6A3101D /* RulebookSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookSection.swift; sourceTree = "<group>"; };
+		0AB081F029C3472099E19524 /* RulebookLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookLoader.swift; sourceTree = "<group>"; };
+		ADFC4720051B470E95E07FC3 /* PokemonTCGRules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokemonTCGRules.json; sourceTree = "<group>"; };
+		5B814EBEE2FE41B099F4B41C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		37259303F8654DD49F5538BB /* RulesAssistantSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesAssistantSheet.swift; sourceTree = "<group>"; };
+		A21BCF36FA4C43B3B552E939 /* DeckGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorView.swift; sourceTree = "<group>"; };
+		2D9C4199777448DEA661A613 /* DeckListPreviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListPreviewCard.swift; sourceTree = "<group>"; };
+		77A2E68026E44B2BA082B1B4 /* CardIdentifierParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIdentifierParser.swift; sourceTree = "<group>"; };
+		9D081A78811E4C40A6EA9DDD /* CardScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerService.swift; sourceTree = "<group>"; };
+		AA7B1C4C7EF44938AFBFE220 /* CardScanMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScanMatcher.swift; sourceTree = "<group>"; };
+		53DA1EF66659468990F3661B /* CardScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerView.swift; sourceTree = "<group>"; };
+		2F497BAD70204D36BD915736 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		6599C68D8070485E9AE95ED8 /* CardScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerViewModel.swift; sourceTree = "<group>"; };
+		C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchetypePrimaryCardResolverTests.swift; sourceTree = "<group>"; };
+		BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsEngineTests.swift; sourceTree = "<group>"; };
+		21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIdentifierParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -275,6 +325,7 @@
 			children = (
 				BFD001D562436733C407108B /* archetypes.json */,
 				1F32F4731902830EADA605FE /* Assets.xcassets */,
+				M28RESOURCES0000000005EE /* Resources */,
 				788BED1EE440389CEC401878 /* App */,
 				0E0A82675B4AD4F7A64B0B78 /* CardData */,
 				FC95B0AF4193E34571862F82 /* Data */,
@@ -308,6 +359,9 @@
 				L1M2N3O4P5Q6R7S8T9U0V1W2 /* ActivityHeatmapEngineTests.swift */,
 				B1C2D3BA27050000000005EE /* BackupSerializerTests.swift */,
 				B1C2D3BA27060000000006FF /* BackupImporterTests.swift */,
+				C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */,
+				BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */,
+				21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */,
 			);
 			path = JustTCGTests;
 			sourceTree = "<group>";
@@ -330,6 +384,8 @@
 				9DA91B66714D8734DA85A0C1 /* MatchDetailView.swift */,
 				459783A5E756DE81AE3CDE20 /* MatchHistoryView.swift */,
 				4578C366B776417D9038E2D2 /* NewDeckSheet.swift */,
+				A21BCF36FA4C43B3B552E939 /* DeckGeneratorView.swift */,
+				2D9C4199777448DEA661A613 /* DeckListPreviewCard.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -478,8 +534,24 @@
 				A96DDA8E3FA2C87569BDBEAF /* MatchupStatsEngine.swift */,
 				8A23BEB0C7D19B741C113C5B /* MetaShareEngine.swift */,
 				50C1110B1955725F5F6B8F20 /* PracticeGapEngine.swift */,
+				2B483B0571364A519E3DF028 /* ArchetypePrimaryCardResolver.swift */,
+				94993A1EE87B479DA82068EC /* ProfileStatsEngine.swift */,
+				657888E5D361411F883591B3 /* LiveGameStatsEngine.swift */,
+				B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */,
+				9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */,
+				CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		F4E5D6C7B8A9F0E1D2C3B4A5 /* Competition */ = {
+			isa = PBXGroup;
+			children = (
+				B1C2D3BA26010000000001AA /* CompetitionView.swift */,
+				B1C2D3BA26020000000002BB /* CompetitorsView.swift */,
+				B1C2D3BA26030000000003CC /* CompetitorsViewModel.swift */,
+			);
+			path = Competition;
 			sourceTree = "<group>";
 		};
 		CDBCBADEFC96C75C61CF6B32 /* Features */ = {
@@ -487,12 +559,16 @@
 			children = (
 				E24509116A64457EA32E6387 /* Analytics */,
 				963A7D7855F5559A4A0BDBA4 /* Cards */,
+				F4E5D6C7B8A9F0E1D2C3B4A5 /* Competition */,
 				41A07D979DF2128C6E93492E /* Decks */,
 				A038B5A618DD44788174BF52 /* Settings */,
 				9BFB0DA8532842FAAF44D61B /* LiveGame */,
 				38775128112E49559B6140F7 /* Home */,
 				M1N2O3P4Q5R6S7T8U9V0W1X2 /* Players */,
 				59952C84DDBF5B8750DE20B5 /* Tournaments */,
+				M28PROFILE0000000001AA00 /* Profile */,
+				M28RULES000000000002BB00 /* Rules */,
+				M28SCANNER00000000003CC00 /* CardScanner */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -538,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				044A8BE29E67ADA41D086C4A /* BundledCardSeeder.swift */,
+				M28RULESDATA0000000004DD /* Rules */,
 				B1C2D3BA27070000000007AA /* Backup */,
 				B393C3326C1D40B5B72702B6 /* Import */,
 				95A6528EE9C50983BDA54DE8 /* LimitlessTCGClient */,
@@ -564,6 +641,53 @@
 				O1P2Q3R4S5T6U7V8W9X0Y1Z2 /* FavouritePlayer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+
+		M28PROFILE0000000001AA00 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5B814EBEE2FE41B099F4B41C /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		M28RULES000000000002BB00 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				37259303F8654DD49F5538BB /* RulesAssistantSheet.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		M28SCANNER00000000003CC00 /* CardScanner */ = {
+			isa = PBXGroup;
+			children = (
+				77A2E68026E44B2BA082B1B4 /* CardIdentifierParser.swift */,
+				9D081A78811E4C40A6EA9DDD /* CardScannerService.swift */,
+				AA7B1C4C7EF44938AFBFE220 /* CardScanMatcher.swift */,
+				53DA1EF66659468990F3661B /* CardScannerView.swift */,
+				2F497BAD70204D36BD915736 /* CameraPreviewView.swift */,
+				6599C68D8070485E9AE95ED8 /* CardScannerViewModel.swift */,
+			);
+			path = CardScanner;
+			sourceTree = "<group>";
+		};
+		M28RULESDATA0000000004DD /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				EEC064BC0C344AD3B6A3101D /* RulebookSection.swift */,
+				0AB081F029C3472099E19524 /* RulebookLoader.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		M28RESOURCES0000000005EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADFC4720051B470E95E07FC3 /* PokemonTCGRules.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -657,6 +781,7 @@
 				22EDC60DD0FC21687D965DC5 /* TWM.json in Resources */,
 				120D3E29129B83A9A3A6AA16 /* WHT.json in Resources */,
 				E837CCEBAD9DA2E14FFD363B /* archetypes.json in Resources */,
+				313C911EBC69431D86BE4B0F /* PokemonTCGRules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +876,27 @@
 				A1B2C3BA27020000000002BB /* BackupSerializer.swift in Sources */,
 				A1B2C3BA27030000000003CC /* BackupImporter.swift in Sources */,
 				A1B2C3BA27040000000004DD /* ShareableBackup.swift in Sources */,
+				A1B2C3BA26010000000001AA /* CompetitionView.swift in Sources */,
+				A1B2C3BA26020000000002BB /* CompetitorsView.swift in Sources */,
+				A1B2C3BA26030000000003CC /* CompetitorsViewModel.swift in Sources */,
+				396A76EB96FA4E7C89DE4F96 /* ArchetypePrimaryCardResolver.swift in Sources */,
+				5010FBC4A4424D8A9D132BE6 /* ProfileStatsEngine.swift in Sources */,
+				5FBFFE02A68F4AD2A42E485F /* LiveGameStatsEngine.swift in Sources */,
+				3803540850A0481E8677C326 /* RulesQueryEngine.swift in Sources */,
+				223A8C1578FD4145B186BDE2 /* DeckGeneratorEngine.swift in Sources */,
+				9EE78F3CA6F544E58CCDFDDB /* DeckGeneratorResponse.swift in Sources */,
+				0A8C4E915224400FB59EE9D9 /* RulebookSection.swift in Sources */,
+				D9FEC99F01204334861ED503 /* RulebookLoader.swift in Sources */,
+				45F8676DA3D24B669421488E /* ProfileView.swift in Sources */,
+				FD0833113EF248B48EFDB661 /* RulesAssistantSheet.swift in Sources */,
+				0543FF2C385D46BF99C82933 /* DeckGeneratorView.swift in Sources */,
+				A6626E409D644B4A9A281B9A /* DeckListPreviewCard.swift in Sources */,
+				B8B93E45D7D640D49483FE37 /* CardIdentifierParser.swift in Sources */,
+				78477D50522047F885F5320C /* CardScannerService.swift in Sources */,
+				8036402F2F9040AE9D2C3603 /* CardScanMatcher.swift in Sources */,
+				43F2F9D207A3466C9D94B965 /* CardScannerView.swift in Sources */,
+				E7C002AF5A5F473397AC8781 /* CameraPreviewView.swift in Sources */,
+				0A4A576AA47E47938FA53668 /* CardScannerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +913,9 @@
 				K1L2M3N4O5P6Q7R8S9T0U1V2 /* ActivityHeatmapEngineTests.swift in Sources */,
 				A1B2C3BA27050000000005EE /* BackupSerializerTests.swift in Sources */,
 				A1B2C3BA27060000000006FF /* BackupImporterTests.swift in Sources */,
+				4AFBF3B1A66245D3960A1C5B /* ArchetypePrimaryCardResolverTests.swift in Sources */,
+				079BB42EB69142CFB4756C1D /* ProfileStatsEngineTests.swift in Sources */,
+				A296910269814E4283662E0A /* CardIdentifierParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,6 +1062,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan physical Pokémon cards into your deck.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan physical Pokémon cards into your deck.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

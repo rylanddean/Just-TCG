@@ -2,24 +2,21 @@ import SwiftUI
 import SwiftData
 
 struct LogMatchSheet: View {
-    let deck: Deck
+    var isEmbedded: Bool = false
 
-    @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @State private var vm: LogMatchViewModel
 
-    @State private var vm: LogMatchViewModel? = nil
+    var onDone: (() -> Void)? = nil
+
+    init(deck: Deck, modelContext: ModelContext, isEmbedded: Bool = false, onDone: (() -> Void)? = nil) {
+        self.isEmbedded = isEmbedded
+        self.onDone = onDone
+        self._vm = State(initialValue: LogMatchViewModel(deck: deck, modelContext: modelContext))
+    }
 
     var body: some View {
-        Group {
-            if let vm {
-                sheetContent(vm: vm)
-            }
-        }
-        .task {
-            if vm == nil {
-                vm = LogMatchViewModel(deck: deck, modelContext: context)
-            }
-        }
+        sheetContent(vm: vm)
     }
 
     // MARK: - Sheet content
@@ -27,26 +24,25 @@ struct LogMatchSheet: View {
     @ViewBuilder
     private func sheetContent(vm: LogMatchViewModel) -> some View {
         @Bindable var vm = vm
-        NavigationStack {
-            Form {
-                archetypeSection(vm: vm)
-                resultSection(vm: vm)
-                moreDetailsSection(vm: vm)
-            }
-            .navigationTitle("Log Match")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
+        let form = Form {
+            archetypeSection(vm: vm)
+            resultSection(vm: vm)
+            moreDetailsSection(vm: vm)
+        }
+        .navigationTitle("Log Match")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if !isEmbedded {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Log") { vm.confirm() }
-                        .fontWeight(.semibold)
-                        .disabled(!vm.isValid)
-                }
+            }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Log") { vm.confirm() }
+                    .fontWeight(.semibold)
+                    .disabled(!vm.isValid)
             }
         }
-        .presentationDetents([.medium, .large])
         .overlay(alignment: .bottom) {
             if vm.showToast {
                 Text("Match logged")
@@ -63,8 +59,15 @@ struct LogMatchSheet: View {
             guard isShowing else { return }
             Task {
                 try? await Task.sleep(nanoseconds: 1_200_000_000)
-                dismiss()
+                if let onDone { onDone() } else { dismiss() }
             }
+        }
+
+        if isEmbedded {
+            form
+        } else {
+            NavigationStack { form }
+                .presentationDetents([.medium, .large])
         }
     }
 

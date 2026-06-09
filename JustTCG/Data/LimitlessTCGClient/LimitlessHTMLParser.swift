@@ -78,6 +78,40 @@ enum LimitlessHTMLParser {
         return (0, 0, 0)
     }
 
+    // MARK: - Player list  (/players  or  /players?q=<query>)
+    //
+    // Leaderboard row (5 cols):
+    //   <tr><td>{rank}</td><td><a href="/players/{id}">{name}</a></td>
+    //       <td>[social]</td><td><img class="flag" alt="{country}"></td><td>{points}</td></tr>
+    //
+    // Search-result row (3 cols):
+    //   <tr><td><a href="/players/{id}">{name}</a></td>
+    //       <td>[social]</td><td><img class="flag" alt="{country}"></td></tr>
+    //
+    // No data-* attributes — all data is in td/img content.
+    static func parsePlayerRows(from html: String) -> [LimitlessPlayerSearchResult] {
+        html.components(separatedBy: "<tr>").dropFirst().compactMap { chunk in
+            guard let end = chunk.range(of: "</tr>") else { return nil }
+            let row = String(chunk[..<end.lowerBound])
+
+            guard
+                let id   = firstCapture(#/href="\/players\/(\d+)"/#, in: row),
+                let name = firstCapture(#/<a[^>]*href="\/players\/\d+"[^>]*>([^<]+)<\/a>/#, in: row)
+            else { return nil }
+
+            let country = firstCapture(#/class="flag"[^>]*alt="([^"]+)"/#, in: row) ?? ""
+            let digits  = row.matches(of: #/<td>(\d+)<\/td>/#).map { String($0.1) }
+
+            return LimitlessPlayerSearchResult(
+                id:      id,
+                name:    name.htmlDecoded,
+                country: country,
+                rank:    digits.count >= 2 ? digits.first.flatMap(Int.init) : nil,
+                points:  digits.count >= 2 ? digits.last.flatMap(Int.init) : nil
+            )
+        }
+    }
+
     // MARK: - Deck list  (/decks/list/{id})
 
     // Cards: <div class="decklist-card" data-set="MEG" data-number="54" ...>
@@ -116,62 +150,108 @@ enum LimitlessHTMLParser {
     }
 
     // MARK: - Player profile  (/players/{id})
-
-    // Profile header expected attributes:
-    //   data-name, data-country, data-points, data-prize, data-travel on a profile div
-    // Career top cuts in data-* attributes:
-    //   data-ic1, data-ic2, data-ic4, data-ic8 (internationals)
-    //   data-reg1, data-reg2, data-reg4, data-reg8 (regionals)
-    // Tournament results rows anchored by data-placement:
-    //   <tr data-placement="1" data-name="Regional Indianapolis, IN" data-date="2026-05-30"
-    //       data-deck="Charizard ex" data-record="9-2-0" data-points="200"
-    //       data-id="559" data-list="27608" data-prize="1000">
+    //
+    // Actual page structure (no data-* attributes on containers):
+    //   Name/country: <div class="infobox-heading"> Henry Chao <img class="flag" alt="US">
+    //   Finishes:     plain <tr> rows — date | tournament link | "25th" | deck span | list link | cash | pts
+    //   Career cuts:  <tr><td>International</td><td>0</td><td>0</td><td>0</td><td>1</td>...</tr>
+    //   Summary:      <tr><td>84,000$</td><td>379</td><td><a...>2</a></td></tr>
     static func parsePlayerProfile(id: String, from html: String) -> LimitlessPlayerProfile? {
-        // Pull all data-* attributes from the full page (profile header values live here)
-        let pageAttrs = dataAttributes(in: html)
+        // -- Name --
+        var name = ""
+        if let range = html.range(of: "infobox-heading") {
+            let after = html[range.upperBound...]
+            if let gt = after.firstIndex(of: ">"),
+               let lt = after[after.index(after: gt)...].firstIndex(of: "<") {
+                name = String(after[after.index(after: gt)..<lt])
+                    .trimmingCharacters(in: .whitespaces)
+                    .htmlDecoded
+            }
+        }
+        guard !name.isEmpty else { return nil }
 
-        let name = pageAttrs["name"]?.htmlDecoded
-            ?? firstCapture(#/<h1[^>]*>([^<]+)<\/h1>/#, in: html)?.htmlDecoded
-            ?? ""
-        let country      = pageAttrs["country"] ?? ""
-        let totalPoints  = pageAttrs["points"].flatMap(Int.init) ?? 0
-        let totalPrize   = pageAttrs["prize"].flatMap(Int.init) ?? 0
-        let travelAwards = pageAttrs["travel"].flatMap(Int.init) ?? 0
+        // -- Country (first flag image on the page) --
+        let country = firstCapture(#/<img[^>]*class="flag"[^>]*alt="([^"]+)"/#, in: html) ?? ""
 
-        let topCuts = PlayerTopCuts(
-            internationalWins: pageAttrs["ic1"].flatMap(Int.init) ?? 0,
-            internationalTop2: pageAttrs["ic2"].flatMap(Int.init) ?? 0,
-            internationalTop4: pageAttrs["ic4"].flatMap(Int.init) ?? 0,
-            internationalTop8: pageAttrs["ic8"].flatMap(Int.init) ?? 0,
-            regionalWins:      pageAttrs["reg1"].flatMap(Int.init) ?? 0,
-            regionalTop2:      pageAttrs["reg2"].flatMap(Int.init) ?? 0,
-            regionalTop4:      pageAttrs["reg4"].flatMap(Int.init) ?? 0,
-            regionalTop8:      pageAttrs["reg8"].flatMap(Int.init) ?? 0
-        )
+        // -- Split into sections --
+        let careerStart = html.range(of: "Career stats")
+        let finishesEnd = careerStart?.lowerBound ?? html.endIndex
+        let finishesHTML: String = {
+            guard let start = html.range(of: "Latest tournament finishes") else { return "" }
+            return String(html[start.lowerBound..<finishesEnd])
+        }()
+        let careerHTML: String = careerStart.map { String(html[$0.lowerBound...]) } ?? ""
 
-        // Tournament results: rows anchored by data-placement
-        let results: [PlayerTournamentResult] = splitRows(html, anchorAttr: "data-placement").compactMap { rowHTML in
-            let attrs = dataAttributes(in: rowHTML)
-            guard
-                let placementStr = attrs["placement"],
-                let placement    = Int(placementStr),
-                let tName        = attrs["name"],
-                let dateStr      = attrs["date"],
-                let deck         = attrs["deck"],
-                let tid          = attrs["id"]
+        // -- Tournament results --
+        let results: [PlayerTournamentResult] = splitBareRows(finishesHTML).compactMap { row in
+            guard row.contains("/tournaments/") else { return nil }  // skip header row
+            let cols = tdsContent(in: row)
+            guard cols.count >= 3 else { return nil }
+
+            let date      = parseProfileDate(cols[0]) ?? Date.distantPast
+            let placement = Int(cols[2].filter(\.isNumber)) ?? 0
+
+            guard let tid   = firstCapture(#/href="\/tournaments\/(\d+)"/#, in: row),
+                  let tName = firstCapture(#/<a[^>]*href="\/tournaments\/\d+"[^>]*>([^<]+)<\/a>/#, in: row)
             else { return nil }
+
+            let archetype  = firstCapture(#/<span[^>]*data-tooltip="([^"]+)"[^>]*>/#, in: row)?.htmlDecoded ?? ""
+            let deckListId = firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: row)
+            let prize      = cols.first(where: { $0.contains("$") }).flatMap { parseMoneyAmount($0) }
+            // Points: last column that is a plain integer
+            let points     = cols.last(where: { Int($0) != nil }).flatMap { Int($0) } ?? 0
 
             return PlayerTournamentResult(
                 tournamentId:   tid,
                 tournamentName: tName.htmlDecoded,
-                date:           parseDate(dateStr) ?? Date.distantPast,
+                date:           date,
                 placement:      placement,
-                record:         attrs["record"] ?? "",
-                archetype:      deck.htmlDecoded,
-                points:         attrs["points"].flatMap(Int.init) ?? 0,
-                prizeMoney:     attrs["prize"].flatMap(Int.init),
-                deckListId:     attrs["list"] ?? firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: rowHTML)
+                record:         "",
+                archetype:      archetype,
+                points:         points,
+                prizeMoney:     prize,
+                deckListId:     deckListId
             )
+        }
+
+        // -- Career top cuts --
+        var topCuts = PlayerTopCuts(
+            internationalWins: 0, internationalTop2: 0, internationalTop4: 0, internationalTop8: 0,
+            regionalWins: 0, regionalTop2: 0, regionalTop4: 0, regionalTop8: 0
+        )
+        for row in splitBareRows(careerHTML) {
+            let cols = tdsContent(in: row)
+            guard cols.count >= 5 else { continue }
+            let nums = cols[1...4].compactMap { Int($0) }
+            guard nums.count == 4 else { continue }
+            if cols[0].contains("International") || cols[0].contains("IC") {
+                topCuts = PlayerTopCuts(
+                    internationalWins: nums[0], internationalTop2: nums[1],
+                    internationalTop4: nums[2], internationalTop8: nums[3],
+                    regionalWins: topCuts.regionalWins, regionalTop2: topCuts.regionalTop2,
+                    regionalTop4: topCuts.regionalTop4, regionalTop8: topCuts.regionalTop8
+                )
+            } else if cols[0].contains("Regional") {
+                topCuts = PlayerTopCuts(
+                    internationalWins: topCuts.internationalWins, internationalTop2: topCuts.internationalTop2,
+                    internationalTop4: topCuts.internationalTop4, internationalTop8: topCuts.internationalTop8,
+                    regionalWins: nums[0], regionalTop2: nums[1],
+                    regionalTop4: nums[2], regionalTop8: nums[3]
+                )
+            }
+        }
+
+        // -- Summary stats (money / points / travel awards) --
+        var totalMoney = 0
+        var totalPoints = 0
+        var travelAwards = 0
+        for row in splitBareRows(careerHTML) {
+            let cols = tdsContent(in: row)
+            guard cols.count >= 3, cols[0].contains("$") else { continue }
+            totalMoney   = parseMoneyAmount(cols[0]) ?? 0
+            totalPoints  = Int(cols[1]) ?? 0
+            travelAwards = Int(cols[2]) ?? 0
+            break
         }
 
         return LimitlessPlayerProfile(
@@ -179,7 +259,7 @@ enum LimitlessHTMLParser {
             name: name,
             country: country,
             totalPoints: totalPoints,
-            totalPrizeMoney: totalPrize,
+            totalPrizeMoney: totalMoney,
             travelAwards: travelAwards,
             topCuts: topCuts,
             results: results
@@ -235,6 +315,44 @@ enum LimitlessHTMLParser {
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = TimeZone(identifier: "UTC")
         return formatter.date(from: string)
+    }
+
+    // Splits HTML on bare <tr> tags (no attributes).
+    private static func splitBareRows(_ html: String) -> [String] {
+        html.components(separatedBy: "<tr>").dropFirst().compactMap { chunk in
+            guard let end = chunk.range(of: "</tr>") else { return nil }
+            return String(chunk[..<end.lowerBound])
+        }
+    }
+
+    // Returns stripped plain-text content of each <td> in a row.
+    private static func tdsContent(in rowHTML: String) -> [String] {
+        rowHTML.components(separatedBy: "<td").dropFirst().compactMap { chunk in
+            guard let gt = chunk.firstIndex(of: ">"),
+                  let end = chunk.range(of: "</td>") else { return nil }
+            let inner = String(chunk[chunk.index(after: gt)..<end.lowerBound])
+            return inner.replacing(#/<[^>]+>/#, with: "")
+                        .trimmingCharacters(in: .whitespaces)
+        }
+    }
+
+    // Parses profile-page dates like "30 May 26" → 2026-05-30.
+    private static func parseProfileDate(_ string: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM yy"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        return formatter.date(from: string.trimmingCharacters(in: .whitespaces))
+    }
+
+    // Parses money strings like "84,000$", "1K$", "5K$" → Int.
+    private static func parseMoneyAmount(_ s: String) -> Int? {
+        let t = s.replacingOccurrences(of: ",", with: "")
+                 .replacingOccurrences(of: "$", with: "")
+                 .trimmingCharacters(in: .whitespaces)
+        guard !t.isEmpty else { return nil }
+        if t.uppercased().hasSuffix("K"), let n = Int(t.dropLast()) { return n * 1_000 }
+        return Int(t)
     }
 }
 

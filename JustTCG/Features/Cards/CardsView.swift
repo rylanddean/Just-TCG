@@ -18,6 +18,8 @@ struct CardsView: View {
     @State private var isSyncing = false
     @State private var syncError: String? = nil
 
+    @Query(sort: \Deck.name) private var decks: [Deck]
+    @State private var toastMessage: String? = nil
     @State private var searchTask: Task<Void, Never>? = nil
 
     private let columns = [
@@ -95,12 +97,51 @@ struct CardsView: View {
                         CardThumbnailView(card: card)
                     }
                     .buttonStyle(.plain)
+                    .contextMenu {
+                        if decks.isEmpty {
+                            Text("No Decks Yet")
+                        } else {
+                            Menu("Add to Deck") {
+                                ForEach(decks) { deck in
+                                    Button(deck.name) { quickAdd(card, to: deck) }
+                                }
+                            }
+                        }
+                    } preview: {
+                        CardThumbnailView(card: card)
+                            .frame(width: 160)
+                            .padding(8)
+                    }
                 }
             }
             .padding(.horizontal, 12)
             .padding(.top, 8)
         }
         .refreshable { await forceRefresh() }
+        .overlay(alignment: .bottom) {
+            if let name = toastMessage {
+                Text("Added to \(name)")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(Color.accentColor, in: Capsule())
+                    .padding(.bottom, 32)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: toastMessage)
+    }
+
+    private func quickAdd(_ card: CachedCard, to deck: Deck) {
+        let isEnergy = card.supertype == "Energy"
+        DeckRepository(modelContext: context)
+            .addCard(cardId: card.id, to: deck, isBasicEnergy: isEnergy, cardName: card.name)
+        withAnimation { toastMessage = deck.name }
+        Task {
+            try? await Task.sleep(for: .seconds(2))
+            withAnimation { toastMessage = nil }
+        }
     }
 
     private var skeletonGrid: some View {

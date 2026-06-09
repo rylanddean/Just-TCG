@@ -22,7 +22,7 @@ final class DeckRepository {
 
     func deleteDeck(_ deck: Deck) {
         context.delete(deck)
-        save()
+        saveNow()
     }
 
     func setStatus(_ status: DeckStatus, for deck: Deck) {

@@ -51,6 +51,28 @@ struct LimitlessTCGClient {
         return profile
     }
 
+    func fetchPlayerLeaderboard(
+        rank: PlayerRankSort = .points,
+        zone: PlayerZone = .global
+    ) async throws -> [LimitlessPlayerSearchResult] {
+        var components = URLComponents(url: Self.limitlessBase.appendingPathComponent("players"), resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            URLQueryItem(name: "rank", value: rank.rawValue),
+            URLQueryItem(name: "zone", value: zone.rawValue)
+        ]
+        guard let url = components.url else { throw LimitlessClientError.invalidResponse(0) }
+        let html = try await fetchHTML(from: url)
+        return LimitlessHTMLParser.parsePlayerRows(from: html)
+    }
+
+    func searchPlayers(query: String) async throws -> [LimitlessPlayerSearchResult] {
+        var components = URLComponents(url: Self.limitlessBase.appendingPathComponent("players"), resolvingAgainstBaseURL: false)!
+        components.queryItems = [URLQueryItem(name: "q", value: query)]
+        guard let url = components.url else { throw LimitlessClientError.invalidResponse(0) }
+        let html = try await fetchHTML(from: url)
+        return LimitlessHTMLParser.parsePlayerRows(from: html)
+    }
+
     func fetchDeckList(listId: String) async throws -> LimitlessDeckList {
         let url = Self.limitlessBase
             .appendingPathComponent("decks")

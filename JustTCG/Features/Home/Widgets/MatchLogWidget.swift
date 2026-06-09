@@ -4,10 +4,12 @@ import SwiftData
 struct MatchLogWidget: View {
     @Query(sort: \Match.date, order: .reverse) private var allMatches: [Match]
     @Query private var allDecks: [Deck]
+    @Environment(\.modelContext) private var context
 
     @State private var showLogMatch = false
-    @State private var showDeckPicker = false
     @State private var selectedDeck: Deck? = nil
+
+    private var activeDecks: [Deck] { allDecks.filter { $0.status != .retired } }
 
     private var recentMatches: [Match] { Array(allMatches.prefix(5)) }
 
@@ -35,17 +37,11 @@ struct MatchLogWidget: View {
         .background(.secondary.opacity(0.07), in: RoundedRectangle(cornerRadius: 12))
         .padding(.horizontal)
         .onAppear(perform: resolveLastDeck)
-        .sheet(isPresented: $showDeckPicker, onDismiss: {
-            if selectedDeck != nil { showLogMatch = true }
-        }) {
-            DeckPickerSheet(decks: allDecks) { deck in
-                selectedDeck = deck
-                showDeckPicker = false
-            }
-        }
         .sheet(isPresented: $showLogMatch, onDismiss: resolveLastDeck) {
             if let deck = selectedDeck {
-                LogMatchSheet(deck: deck)
+                LogMatchSheet(deck: deck, modelContext: context)
+            } else {
+                DeckPickerSheet(decks: activeDecks, modelContext: context)
             }
         }
     }
@@ -58,12 +54,7 @@ struct MatchLogWidget: View {
                 .font(.headline)
             Spacer()
             Button("Log Match") {
-                if let deck = selectedDeck {
-                    _ = deck
-                    showLogMatch = true
-                } else {
-                    showDeckPicker = true
-                }
+                showLogMatch = true
             }
             .buttonStyle(.bordered)
             .controlSize(.small)
@@ -138,15 +129,16 @@ struct MatchLogWidget: View {
 
 private struct DeckPickerSheet: View {
     let decks: [Deck]
-    let onSelect: (Deck) -> Void
+    let modelContext: ModelContext
 
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationStack {
             List(decks) { deck in
-                Button(deck.name) { onSelect(deck) }
-                    .foregroundStyle(.primary)
+                NavigationLink(deck.name) {
+                    LogMatchSheet(deck: deck, modelContext: modelContext, isEmbedded: true, onDone: { dismiss() })
+                }
             }
             .navigationTitle("Select Deck")
             .navigationBarTitleDisplayMode(.inline)

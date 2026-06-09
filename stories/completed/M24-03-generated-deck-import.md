@@ -1,6 +1,6 @@
 # M24-03 — Generated Deck Import
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M24 — Natural Language Deck Generator  
 **Dependencies:** M24-02, M10-01, M10-02
 
@@ -10,18 +10,18 @@ As a player, I want to import a generated deck directly into my Decks list with 
 
 ## Acceptance Criteria
 
-- [ ] Tapping "Import Deck" in `DeckListPreviewCard` triggers an import sheet that appears as a `.sheet` over `DeckGeneratorView`
-- [ ] The import sheet shows:
+- [x] Tapping "Import Deck" in `DeckListPreviewCard` triggers an import sheet that appears as a `.sheet` over `DeckGeneratorView`
+- [x] The import sheet shows:
   - A `TextField` pre-filled with a suggested deck name (derived from the first Pokémon name found in the deck list — e.g. "Charizard ex Deck")
   - A "Cancel" button and a "Create Deck" button
-- [ ] Tapping "Create Deck":
+- [x] Tapping "Create Deck":
   1. Parses the PTCGL-format deck list using the existing `DeckListParser` (M10-01)
   2. Resolves card IDs using the existing card lookup logic (M10-02)
   3. Creates a new `Deck` via `DeckRepository` and saves it to SwiftData
   4. Dismisses the full-screen cover and navigates to the new deck in `DecksView`
-- [ ] If card lookup fails for one or more cards, a warning banner lists the unresolved card names and the deck is still created with the cards that were found
-- [ ] The "Create Deck" button shows a `ProgressView` while import is in progress and is disabled to prevent double-tap
-- [ ] After successful import a toast banner "Deck created" appears on `DecksView` (same pattern as other toast banners in the app)
+- [x] If card lookup fails for one or more cards, a warning banner lists the unresolved card names and the deck is still created with the cards that were found
+- [x] The "Create Deck" button shows a `ProgressView` while import is in progress and is disabled to prevent double-tap
+- [x] After successful import a toast banner "Deck created" appears on `DecksView` (same pattern as other toast banners in the app)
 
 ## Technical Notes
 

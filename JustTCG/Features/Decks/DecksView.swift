@@ -15,6 +15,7 @@ struct DecksView: View {
     @State private var showNewDeckSheet = false
     @State private var showImportSheet = false
     @State private var showRetired = false
+    @State private var showDeckGenerator = false
 
     private var cardMap: [String: CachedCard] {
         Dictionary(uniqueKeysWithValues: allCards.map { ($0.id, $0) })
@@ -42,6 +43,9 @@ struct DecksView: View {
                         Image(systemName: showRetired ? "archivebox.fill" : "archivebox")
                     }
                     .tint(showRetired ? .primary : .secondary)
+                    Button { showDeckGenerator = true } label: {
+                        Image(systemName: "wand.and.stars")
+                    }
                     Button { showImportSheet = true } label: {
                         Image(systemName: "arrow.down.doc")
                     }
@@ -49,6 +53,9 @@ struct DecksView: View {
                         Image(systemName: "plus")
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $showDeckGenerator) {
+                DeckGeneratorView()
             }
             .confirmationDialog(
                 "Change Status",

@@ -22,6 +22,7 @@ struct DeckBuilderView: View {
     @State private var liveGame: LiveGame? = nil
     @State private var showGameSavedBanner = false
     @State private var highlightedCardIds: Set<String> = []
+    @State private var showCardScanner = false
 
     var body: some View {
         Group {
@@ -36,7 +37,7 @@ struct DeckBuilderView: View {
             CardPickerView(deck: deck, initialFilter: pickerFilter)
         }
         .sheet(isPresented: $showLogMatch) {
-            LogMatchSheet(deck: deck)
+            LogMatchSheet(deck: deck, modelContext: context)
         }
         .sheet(isPresented: $showEditLog) {
             DeckEditLogView(deck: deck)
@@ -54,6 +55,9 @@ struct DeckBuilderView: View {
                 liveGame = nil
                 if saved { withAnimation { showGameSavedBanner = true } }
             }
+        }
+        .fullScreenCover(isPresented: $showCardScanner, onDismiss: { viewModel?.loadCards() }) {
+            CardScannerView(deck: deck)
         }
         .overlay(alignment: .bottom) {
             if showGameSavedBanner {
@@ -100,6 +104,12 @@ struct DeckBuilderView: View {
                         openPicker(filter: CardFilterState())
                     } label: {
                         Label("Add Cards", systemImage: "plus")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    Button {
+                        showCardScanner = true
+                    } label: {
+                        Label("Scan Cards", systemImage: "camera.viewfinder")
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }

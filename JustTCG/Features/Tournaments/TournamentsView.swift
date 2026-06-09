@@ -3,34 +3,26 @@ import SwiftUI
 struct TournamentsView: View {
     @State private var vm = TournamentListViewModel()
     @Environment(AppNavigationState.self) private var nav
-    @Environment(FavouritePlayerRepository.self) private var favourites
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if vm.tournaments.isEmpty && vm.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if vm.tournaments.isEmpty && vm.error != nil {
-                    errorState
-                } else {
-                    tournamentList
-                }
+        Group {
+            if vm.tournaments.isEmpty && vm.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if vm.tournaments.isEmpty && vm.error != nil {
+                errorState
+            } else {
+                tournamentList
             }
-            .navigationTitle("Tournaments")
-            .task { await vm.loadIfNeeded() }
-            .refreshable { await vm.refresh() }
         }
+        .task { await vm.loadIfNeeded() }
+        .refreshable { await vm.refresh() }
     }
 
     // MARK: - Tournament list
 
     private var tournamentList: some View {
         List {
-            if !favourites.all.isEmpty {
-                favouritePlayersSection
-            }
-
             if let archetype = nav.tournamentsArchetypeFilter {
                 archetypeFilterBanner(archetype)
                     .listRowBackground(Color.orange.opacity(0.08))
@@ -69,55 +61,6 @@ struct TournamentsView: View {
                 )
             }
         }
-    }
-
-    // MARK: - Favourite Players
-
-    private var favouritePlayersSection: some View {
-        Section("Favourite Players") {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(favourites.all) { player in
-                        NavigationLink {
-                            PlayerDetailView(playerID: player.id)
-                        } label: {
-                            playerChip(player)
-                        }
-                        .buttonStyle(.plain)
-                        .contextMenu {
-                            Button(role: .destructive) {
-                                favourites.remove(id: player.id)
-                            } label: {
-                                Label("Remove from Favourites", systemImage: "star.slash")
-                            }
-                        }
-                    }
-                }
-                .padding(.vertical, 4)
-            }
-            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-        }
-    }
-
-    private func playerChip(_ player: FavouritePlayer) -> some View {
-        HStack(spacing: 6) {
-            if !player.country.isEmpty {
-                Text(countryFlag(player.country))
-            }
-            Text(player.name)
-                .font(.subheadline.weight(.medium))
-                .lineLimit(1)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(Color(.systemGray6), in: RoundedRectangle(cornerRadius: 10))
-    }
-
-    private func countryFlag(_ code: String) -> String {
-        let base: UInt32 = 127397
-        return code.uppercased().unicodeScalars.compactMap {
-            Unicode.Scalar(base + $0.value).map { String($0) }
-        }.joined()
     }
 
     // MARK: - Filter bar

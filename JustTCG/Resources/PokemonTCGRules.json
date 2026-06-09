@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Setup",
+    "body": "Each player uses a 60-card deck. Shuffle your deck and draw 7 cards as your opening hand. Place 6 Prize cards face-down from the top of your deck. Each player chooses a Basic Pokémon from their hand and places it face-down as their Active Pokémon; you may also place up to 5 Basic Pokémon face-down on your Bench. Once both players have set up, flip your Pokémon face-up. If a player has no Basic Pokémon to place, they reveal their hand, shuffle it back into their deck, draw 7 new cards, and their opponent may draw 1 extra card (Mulligan). Repeat until both players have at least one Basic Pokémon. The player who goes first is determined by a coin flip. The player who goes first cannot attack on their first turn."
+  },
+  {
+    "title": "Your Turn",
+    "body": "On your turn you must draw a card, then you may take any of the following actions in any order (unless a card says otherwise): play any number of Basic Pokémon from your hand onto your Bench, evolve Pokémon (you cannot evolve a Pokémon on the turn it was put into play or the turn it evolved, unless a card specifically allows it), attach one Energy card from your hand to one of your Pokémon, play any number of Trainer cards (Item and Stadium cards), use any number of Abilities, and then attack. Your turn ends after you attack, or you may choose to end your turn without attacking. You may retreat your Active Pokémon once per turn by discarding Energy cards equal to its Retreat Cost."
+  },
+  {
+    "title": "Drawing a Card",
+    "body": "At the start of your turn, draw the top card of your deck. If you cannot draw because your deck is empty, you lose the game."
+  },
+  {
+    "title": "Evolving Pokémon",
+    "body": "You can evolve a Pokémon by playing the next stage of Evolution on top of it (Basic → Stage 1 → Stage 2). You cannot evolve a Pokémon on the same turn you play it from your hand, and you cannot evolve a Pokémon that already evolved this turn. Special restrictions may appear on individual card text. Mega Evolution and similar special evolution rules are printed on the card."
+  },
+  {
+    "title": "Attaching Energy",
+    "body": "Once per turn you may attach one Energy card from your hand to any of your Pokémon (Active or Benched). Some Pokémon Abilities or effects may allow additional attachments."
+  },
+  {
+    "title": "Playing Trainer Cards",
+    "body": "Supporter cards: you may play only one Supporter card per turn. Item cards: you may play any number of Item cards per turn. Stadium cards: you may play one Stadium to the field per turn, replacing any Stadium already in play; a Stadium cannot be played if the same Stadium is already in play. Tool cards: attach a Tool to a Pokémon as an Item; a Pokémon may only have one Tool at a time."
+  },
+  {
+    "title": "Retreating",
+    "body": "Once per turn, you may switch your Active Pokémon with one of your Benched Pokémon. To retreat, discard Energy cards attached to your Active Pokémon equal to its Retreat Cost shown at the bottom of the card. A Retreat Cost of 0 means free retreat. Status conditions and damage counters move with the Pokémon. Confusion prevents retreat and attack unless you flip heads."
+  },
+  {
+    "title": "Attacking",
+    "body": "Declare one of your Active Pokémon's attacks, pay its Energy cost, and apply its effect. After attacking, apply any damage to the Defending Pokémon: check for Weakness and Resistance, then place damage counters. If the Defending Pokémon reaches 0 HP, it is Knocked Out. Your turn ends after your attack. You may only use an attack if your Active Pokémon has the required Energy attached."
+  },
+  {
+    "title": "Weakness",
+    "body": "If the Defending Pokémon has a Weakness to the attacking Pokémon's type, apply the Weakness modifier printed on the Defending Pokémon's card. In the current era, Weakness is typically ×2 (double the damage). Weakness is applied after all other modifiers except Resistance."
+  },
+  {
+    "title": "Resistance",
+    "body": "If the Defending Pokémon has Resistance to the attacking Pokémon's type, subtract the Resistance value (typically -30) from the damage dealt. Resistance is applied after Weakness. Damage cannot be reduced below 10 by Resistance alone."
+  },
+  {
+    "title": "Damage and Knock Out",
+    "body": "When a Pokémon has damage counters on it equal to or greater than its HP, it is Knocked Out. The Knocked Out Pokémon, all cards attached to it (Energy, Tools, etc.), go to its owner's discard pile. The Knocked Out Pokémon's owner promotes a Benched Pokémon to the Active position. The player who Knocked Out the Pokémon takes Prize cards."
+  },
+  {
+    "title": "Prize Cards",
+    "body": "When you Knock Out one of your opponent's Pokémon, you take 1 Prize card. Pokémon with the Rule Box (ex, V, VSTAR, VMAX, GX, etc.) give 2 Prize cards when Knocked Out. VSTAR and VMAX give 3 Prize cards when Knocked Out. The first player to take their last Prize card wins the game."
+  },
+  {
+    "title": "Rule Box Pokémon",
+    "body": "Pokémon with the Rule Box (indicated by a special icon on the card) give opponents additional Prize cards when Knocked Out: ex Pokémon and V Pokémon — 2 Prize cards; VSTAR Pokémon — 3 Prize cards; VMAX Pokémon — 3 Prize cards; GX Pokémon — 2 Prize cards. These Pokémon also cannot be played from the discard pile unless a card specifically allows it."
+  },
+  {
+    "title": "Abilities",
+    "body": "Abilities are special powers printed on Pokémon cards. Unlike attacks, you may use any number of Abilities on your turn (unless restricted). Some Abilities are always active; others say 'Once during your turn.' An Ability that says 'Once during your turn' can only be used once per turn even if you have multiple copies of that Pokémon. Abilities do not cost Energy. Abilities on Benched Pokémon can be used unless silenced by an effect."
+  },
+  {
+    "title": "Special Conditions",
+    "body": "Special Conditions are placed on the Active Pokémon only (except Poisoned and Burned which follow the Pokémon to Bench). Asleep: flip a coin between turns; tails — Pokémon stays Asleep, heads — it wakes up; an Asleep Pokémon cannot attack or retreat. Confused: before attacking or retreating, flip a coin; tails — the attack does 30 damage to itself and the turn ends without attacking; heads — proceed normally. Burned: place a Burn marker; between turns, flip a coin; tails — place 2 damage counters; heads — remove the Burn marker. Paralyzed: the Pokémon cannot attack or retreat; removed at the end of your next turn. Poisoned: place a Poison marker; between turns, place 1 damage counter; remove by retreating or evolving. Retreating or evolving removes all Special Conditions."
+  },
+  {
+    "title": "Mulligan",
+    "body": "If a player has no Basic Pokémon in their opening hand, they reveal their hand to their opponent, shuffle the hand back into their deck, and draw 7 new cards. Their opponent may draw 1 extra card per Mulligan. This repeats until the player draws at least one Basic Pokémon. Both players may Mulligan independently."
+  },
+  {
+    "title": "Ace Spec Cards",
+    "body": "Ace Spec cards are exceptionally powerful Item or Supporter cards marked with an Ace Spec icon. You may only include one Ace Spec card in your deck, regardless of name. If you include an Ace Spec card, it counts toward your deck's 60 cards."
+  },
+  {
+    "title": "Stadium Cards",
+    "body": "Stadium cards are placed in the Stadium Zone in the center of the field. Both players benefit from (or are affected by) the Stadium's effect while it is in play. A Stadium stays in play until replaced by a new Stadium or discarded by a card effect. You cannot play a Stadium if the same Stadium is already in play. When a new Stadium is played, the old one goes to its owner's discard pile."
+  },
+  {
+    "title": "Winning and Losing",
+    "body": "You win by: taking your last Prize card; your opponent is unable to draw at the start of their turn (deck out); your opponent has no Pokémon in play after a Knock Out. You lose if any of the above conditions apply to you. In a tie (both conditions met simultaneously), the game is a draw."
+  },
+  {
+    "title": "Frequently Misplayed Rules",
+    "body": "1. You cannot evolve a Pokémon on the same turn it enters play (first turn played or brought up from Bench). 2. You can only use one Supporter card per turn. 3. Playing a Pokémon from your hand to your Bench does not count as a retreat. 4. Damage from Confusion is placed on the Confused Pokémon before attacking — no Weakness or Resistance applies to self-damage. 5. A Pokémon with 0 remaining HP is Knocked Out immediately, even mid-turn. 6. Energy attached to a Pokémon that retreats is discarded from that Pokémon — they are not lost from the game. 7. A Pokémon that Knocks Out an opponent with a status attack still takes Prize cards normally. 8. Tool cards discarded with the Pokémon they are attached to go to the owner's discard pile."
+  }
+]
