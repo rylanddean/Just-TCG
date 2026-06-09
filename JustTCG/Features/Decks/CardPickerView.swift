@@ -272,15 +272,17 @@ struct CardPickerView: View {
 
     // MARK: - Deck helpers
 
+    private var deckTotalCount: Int {
+        deck.cards.reduce(0) { $0 + $1.quantity }
+    }
+
     private func deckQuantity(for card: CachedCard) -> Int {
         deck.cards.first(where: { $0.cardId == card.id })?.quantity ?? 0
     }
 
     private func isAtMax(_ card: CachedCard) -> Bool {
-        let qty = deckQuantity(for: card)
-        let totalCount = deck.cards.reduce(0) { $0 + $1.quantity }
-        guard totalCount < 60 else { return true }
-        return !card.isBasicEnergy && qty >= 4
+        guard deckTotalCount < 60 else { return true }
+        return !card.isBasicEnergy && deckQuantity(for: card) >= 4
     }
 
     private func addCard(_ card: CachedCard) {

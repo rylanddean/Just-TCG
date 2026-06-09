@@ -244,9 +244,15 @@ struct DeckGeneratorView: View {
         let lines = message.components(separatedBy: "\n")
         let nonDeckLines = lines.filter { line in
             let trimmed = line.trimmingCharacters(in: .whitespaces)
+            // Drop card lines (start with a number)
             let parts = trimmed.components(separatedBy: " ")
-            let isDeckLine = parts.count >= 2 && Int(parts[0]) != nil
-            return !isDeckLine
+            if parts.count >= 2, Int(parts[0]) != nil { return false }
+            // Drop section headers and total line
+            let lower = trimmed.lowercased()
+            if lower.hasPrefix("pokémon:") || lower.hasPrefix("pokemon:")
+                || lower.hasPrefix("trainer:") || lower.hasPrefix("energy:")
+                || lower.hasPrefix("total cards:") { return false }
+            return true
         }
         return nonDeckLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
     }

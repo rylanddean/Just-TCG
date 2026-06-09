@@ -1,6 +1,6 @@
 # M29-02 — Consistency Sheet UI
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M29 — Deck Consistency Calculator  
 **Dependencies:** M29-01
 

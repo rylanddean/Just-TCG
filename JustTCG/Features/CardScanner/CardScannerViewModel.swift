@@ -15,6 +15,7 @@ final class CardScannerViewModel {
     var state: ScanState = .scanning
     var addedCount: Int = 0
     var permissionDenied: Bool = false
+    var isTorchOn: Bool = false
     let session: AVCaptureSession = AVCaptureSession()
 
     private let scanner = CardScannerService()
@@ -22,6 +23,7 @@ final class CardScannerViewModel {
     private var deck: Deck
     private var context: ModelContext
     private var isProcessing = false
+    private var captureDevice: AVCaptureDevice? = nil
 
     init(deck: Deck, context: ModelContext) {
         self.deck = deck
@@ -60,6 +62,7 @@ final class CardScannerViewModel {
         }
         session.addInput(input)
         session.commitConfiguration()
+        captureDevice = device
         Task.detached { [session] in session.startCapture() }
     }
 
@@ -95,7 +98,25 @@ final class CardScannerViewModel {
         deck.cards.first(where: { $0.cardId == card.id })?.quantity ?? 0
     }
 
+    func toggleTorch() {
+        guard let device = captureDevice, device.hasTorch else { return }
+        do {
+            try device.lockForConfiguration()
+            isTorchOn.toggle()
+            device.torchMode = isTorchOn ? .on : .off
+            device.unlockForConfiguration()
+        } catch {
+            // Torch unavailable on this device
+        }
+    }
+
     func stopSession() {
+        // Ensure torch is off when leaving the scanner
+        if isTorchOn, let device = captureDevice, device.hasTorch,
+           (try? device.lockForConfiguration()) != nil {
+            device.torchMode = .off
+            device.unlockForConfiguration()
+        }
         Task.detached { [session] in session.stopCapture() }
     }
 }

@@ -7,4 +7,5 @@ final class AppNavigationState {
     var tournamentsArchetypeFilter: String? = nil
 
     static let tabCompetition = 3
+    static let tabPrep = 4
 }

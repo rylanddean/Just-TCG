@@ -159,7 +159,8 @@ struct TournamentDetailView: View {
                     favourites.add(FavouritePlayer(
                         id: p.playerId ?? p.playerName,
                         name: p.playerName,
-                        country: p.country
+                        country: p.country,
+                        lastKnownRank: p.rank
                     ))
                 }
             } label: {

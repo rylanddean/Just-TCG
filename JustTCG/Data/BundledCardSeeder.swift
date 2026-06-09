@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v8"
+    static let seededKey = "bundled_cards_seeded_v10"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -66,7 +66,8 @@ enum BundledCardSeeder {
 
                 let roleTags = CardTagClassifier.tags(
                     abilities: entry.abilities,
-                    attacks: entry.attacks
+                    attacks: entry.attacks,
+                    rulesText: entry.rulesText
                 )
                 context.insert(CachedCard(
                     id: entry.id,
@@ -100,16 +101,18 @@ enum BundledCardSeeder {
         let total = pairs.reduce(0) { $0 + $1.cards.count }
         print("[BundledCardSeeder] inserting \(total) cards from \(pairs.count) sets")
 
+#if DEBUG
         // QA: log top-5 role tag combinations for spot-checking classifier output.
         var tagComboCounts: [String: Int] = [:]
         for (_, cards) in pairs {
             for entry in cards {
-                let combo = CardTagClassifier.tags(abilities: entry.abilities, attacks: entry.attacks).joined(separator: "+")
+                let combo = CardTagClassifier.tags(abilities: entry.abilities, attacks: entry.attacks, rulesText: entry.rulesText).joined(separator: "+")
                 tagComboCounts[combo, default: 0] += 1
             }
         }
         let top5 = tagComboCounts.sorted { $0.value > $1.value }.prefix(5)
         print("[BundledCardSeeder] top-5 tag combos: \(top5.map { "\($0.key.isEmpty ? "(none)" : $0.key): \($0.value)" }.joined(separator: ", "))")
+#endif
 
         try? context.save()
         print("[BundledCardSeeder] save complete")
@@ -123,8 +126,8 @@ enum BundledCardSeeder {
 
 private enum CardTagClassifier {
     // Returns a sorted, deduplicated array of canonical role tag strings for a card.
-    static func tags(abilities: [AbilitySeedEntry], attacks: [AttackSeedEntry]) -> [String] {
-        let allTexts = abilities.map(\.text) + attacks.map(\.text)
+    static func tags(abilities: [AbilitySeedEntry], attacks: [AttackSeedEntry], rulesText: [String] = []) -> [String] {
+        let allTexts = abilities.map(\.text) + attacks.map(\.text) + rulesText
         var result: Set<String> = []
 
         for text in allTexts where !text.isEmpty {
@@ -133,6 +136,9 @@ private enum CardTagClassifier {
             }
             if text.localizedCaseInsensitiveContains("search your deck") || text.localizedCaseInsensitiveContains("look at the top") {
                 result.insert("Search")
+            }
+            if text.localizedCaseInsensitiveContains("from your discard pile") {
+                result.insert("Recovery")
             }
             if (text.localizedCaseInsensitiveContains("attach") && text.localizedCaseInsensitiveContains("energy"))
                 || (text.localizedCaseInsensitiveContains("move") && text.localizedCaseInsensitiveContains("energy")) {

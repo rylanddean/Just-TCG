@@ -1,6 +1,6 @@
 # M29-01 — Deck Consistency Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M29 — Deck Consistency Calculator  
 **Dependencies:** M2-01 (Deck & DeckCard models)
 

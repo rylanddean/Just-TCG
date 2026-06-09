@@ -10,10 +10,10 @@ struct CardFilterView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var basicExpanded = true
-    @State private var setLegalityExpanded = true
-    @State private var statsExpanded = true
-    @State private var matchupExpanded = true
-    @State private var roleExpanded = true
+    @State private var setLegalityExpanded = false
+    @State private var statsExpanded = false
+    @State private var matchupExpanded = false
+    @State private var roleExpanded = false
 
     init(
         filterState: Binding<CardFilterState>,
@@ -38,6 +38,9 @@ struct CardFilterView: View {
         "Pokémon ex", "Pokémon V", "VMAX", "VSTAR",
         "Item", "Supporter", "Stadium", "Tool", "Energy",
     ]
+
+    private let twoColumns = [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)]
+    private let threeColumns = [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)]
 
     var body: some View {
         NavigationStack {
@@ -68,20 +71,27 @@ struct CardFilterView: View {
     private var basicSection: some View {
         Section {
             DisclosureGroup(isExpanded: $basicExpanded) {
-                groupLabel("Type")
-                ForEach(allTypes, id: \.self) { type in
-                    selectionRow(label: type, isSelected: filterState.types.contains(type)) {
-                        filterState.types.formSymmetricDifference([type])
+                VStack(alignment: .leading, spacing: 10) {
+                    groupLabel("Type")
+                    LazyVGrid(columns: threeColumns, alignment: .leading, spacing: 8) {
+                        ForEach(allTypes, id: \.self) { type in
+                            filterChip(label: type, isSelected: filterState.types.contains(type)) {
+                                filterState.types.formSymmetricDifference([type])
+                            }
+                        }
+                    }
+                    groupLabel("Subtype")
+                    LazyVGrid(columns: twoColumns, alignment: .leading, spacing: 8) {
+                        ForEach(allSubtypes, id: \.self) { sub in
+                            filterChip(label: sub, isSelected: filterState.subtypes.contains(sub)) {
+                                filterState.subtypes.formSymmetricDifference([sub])
+                            }
+                        }
                     }
                 }
-                groupLabel("Subtype")
-                ForEach(allSubtypes, id: \.self) { sub in
-                    selectionRow(label: sub, isSelected: filterState.subtypes.contains(sub)) {
-                        filterState.subtypes.formSymmetricDifference([sub])
-                    }
-                }
+                .padding(.vertical, 6)
             } label: {
-                Text("Basic").font(.headline)
+                sectionLabel("Basic", count: filterState.types.count + filterState.subtypes.count)
             }
         }
     }
@@ -89,32 +99,42 @@ struct CardFilterView: View {
     private var setLegalitySection: some View {
         Section {
             DisclosureGroup(isExpanded: $setLegalityExpanded) {
-                if !availableSets.isEmpty {
-                    groupLabel("Set")
-                    ForEach(availableSets, id: \.code) { set in
-                        selectionRow(label: set.name, isSelected: filterState.sets.contains(set.code)) {
-                            filterState.sets.formSymmetricDifference([set.code])
+                VStack(alignment: .leading, spacing: 10) {
+                    if !availableSets.isEmpty {
+                        groupLabel("Set")
+                        LazyVGrid(columns: twoColumns, alignment: .leading, spacing: 8) {
+                            ForEach(availableSets, id: \.code) { set in
+                                filterChip(label: set.name, isSelected: filterState.sets.contains(set.code)) {
+                                    filterState.sets.formSymmetricDifference([set.code])
+                                }
+                            }
+                        }
+                    }
+                    if !hideRegulationMark && !availableRegulationMarks.isEmpty {
+                        groupLabel("Regulation Mark")
+                        HStack(spacing: 8) {
+                            ForEach(availableRegulationMarks, id: \.self) { mark in
+                                filterChip(label: mark, isSelected: filterState.regulationMarks.contains(mark)) {
+                                    filterState.regulationMarks.formSymmetricDifference([mark])
+                                }
+                            }
+                            Spacer()
+                        }
+                    }
+                    if !availableRarities.isEmpty {
+                        groupLabel("Rarity")
+                        LazyVGrid(columns: twoColumns, alignment: .leading, spacing: 8) {
+                            ForEach(availableRarities, id: \.self) { rarity in
+                                filterChip(label: rarity, isSelected: filterState.rarities.contains(rarity)) {
+                                    filterState.rarities.formSymmetricDifference([rarity])
+                                }
+                            }
                         }
                     }
                 }
-                if !hideRegulationMark && !availableRegulationMarks.isEmpty {
-                    groupLabel("Regulation Mark")
-                    ForEach(availableRegulationMarks, id: \.self) { mark in
-                        selectionRow(label: mark, isSelected: filterState.regulationMarks.contains(mark)) {
-                            filterState.regulationMarks.formSymmetricDifference([mark])
-                        }
-                    }
-                }
-                if !availableRarities.isEmpty {
-                    groupLabel("Rarity")
-                    ForEach(availableRarities, id: \.self) { rarity in
-                        selectionRow(label: rarity, isSelected: filterState.rarities.contains(rarity)) {
-                            filterState.rarities.formSymmetricDifference([rarity])
-                        }
-                    }
-                }
+                .padding(.vertical, 6)
             } label: {
-                Text("Set & Legality").font(.headline)
+                sectionLabel("Set & Legality", count: filterState.sets.count + filterState.regulationMarks.count + filterState.rarities.count)
             }
         }
     }
@@ -127,7 +147,11 @@ struct CardFilterView: View {
                 retreatCostRow
                 abilityRow
             } label: {
-                Text("Stats").font(.headline)
+                let activeCount = (filterState.hpMin != nil || filterState.hpMax != nil ? 1 : 0)
+                    + (filterState.damageMin != nil || filterState.damageMax != nil ? 1 : 0)
+                    + (filterState.retreatCosts.isEmpty ? 0 : 1)
+                    + (filterState.hasAbility != nil ? 1 : 0)
+                sectionLabel("Stats", count: activeCount)
             }
         }
     }
@@ -135,14 +159,17 @@ struct CardFilterView: View {
     private var matchupSection: some View {
         Section {
             DisclosureGroup(isExpanded: $matchupExpanded) {
-                groupLabel("Weakness")
-                typeMultiSelect(selection: $filterState.weaknessTypes)
-                groupLabel("Resistance")
-                typeMultiSelect(selection: $filterState.resistanceTypes)
-                groupLabel("Attacking Energy")
-                typeMultiSelect(selection: $filterState.attackingEnergyTypes)
+                VStack(alignment: .leading, spacing: 10) {
+                    groupLabel("Weakness")
+                    typeChipGrid(selection: $filterState.weaknessTypes)
+                    groupLabel("Resistance")
+                    typeChipGrid(selection: $filterState.resistanceTypes)
+                    groupLabel("Attacking Energy")
+                    typeChipGrid(selection: $filterState.attackingEnergyTypes)
+                }
+                .padding(.vertical, 6)
             } label: {
-                Text("Matchup").font(.headline)
+                sectionLabel("Matchup", count: filterState.weaknessTypes.count + filterState.resistanceTypes.count + filterState.attackingEnergyTypes.count)
             }
         }
     }
@@ -150,33 +177,18 @@ struct CardFilterView: View {
     private var roleSection: some View {
         Section {
             DisclosureGroup(isExpanded: $roleExpanded) {
-                let columns = [GridItem(.flexible(), spacing: 8), GridItem(.flexible(), spacing: 8)]
-                LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
+                LazyVGrid(columns: twoColumns, alignment: .leading, spacing: 8) {
                     ForEach(CardFilterState.allRoleTags, id: \.self) { tag in
-                        roleTagChip(tag)
+                        filterChip(label: tag, isSelected: filterState.roleTags.contains(tag)) {
+                            filterState.roleTags.formSymmetricDifference([tag])
+                        }
                     }
                 }
-                .padding(.vertical, 4)
+                .padding(.vertical, 6)
             } label: {
-                Text("Card Role").font(.headline)
+                sectionLabel("Card Role", count: filterState.roleTags.count)
             }
         }
-    }
-
-    private func roleTagChip(_ tag: String) -> some View {
-        let selected = filterState.roleTags.contains(tag)
-        return Button(action: { filterState.roleTags.formSymmetricDifference([tag]) }) {
-            Text(tag)
-                .font(.callout.weight(.medium))
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 6)
-                .background(selected ? Color.accentColor : Color.clear)
-                .foregroundStyle(selected ? Color.white : Color.accentColor)
-                .clipShape(Capsule())
-                .overlay(Capsule().stroke(Color.accentColor, lineWidth: 1))
-        }
-        .buttonStyle(.plain)
     }
 
     // MARK: - Stats controls
@@ -300,34 +312,51 @@ struct CardFilterView: View {
         .padding(.vertical, 4)
     }
 
-    // MARK: - Helpers
+    // MARK: - Reusable components
+
+    private func sectionLabel(_ title: String, count: Int) -> some View {
+        HStack(spacing: 6) {
+            Text(title).font(.headline)
+            if count > 0 {
+                Text("\(count)")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color.accentColor, in: Capsule())
+            }
+        }
+    }
 
     private func groupLabel(_ title: String) -> some View {
         Text(title)
             .font(.caption.weight(.semibold))
             .foregroundStyle(.secondary)
-            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 2, trailing: 16))
     }
 
-    private func typeMultiSelect(selection: Binding<Set<String>>) -> some View {
-        ForEach(allTypes, id: \.self) { type in
-            selectionRow(label: type, isSelected: selection.wrappedValue.contains(type)) {
-                selection.wrappedValue.formSymmetricDifference([type])
+    private func typeChipGrid(selection: Binding<Set<String>>) -> some View {
+        LazyVGrid(columns: threeColumns, alignment: .leading, spacing: 8) {
+            ForEach(allTypes, id: \.self) { type in
+                filterChip(label: type, isSelected: selection.wrappedValue.contains(type)) {
+                    selection.wrappedValue.formSymmetricDifference([type])
+                }
             }
         }
     }
 
-    private func selectionRow(label: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
+    private func filterChip(label: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            HStack {
-                Text(label).foregroundStyle(.primary)
-                Spacer()
-                if isSelected {
-                    Image(systemName: "checkmark")
-                        .foregroundStyle(.tint)
-                        .fontWeight(.semibold)
-                }
-            }
+            Text(label)
+                .font(.subheadline.weight(.medium))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 7)
+                .background(isSelected ? Color.accentColor : Color.clear)
+                .foregroundStyle(isSelected ? Color.white : Color.accentColor)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.accentColor, lineWidth: 1))
         }
         .buttonStyle(.plain)
     }

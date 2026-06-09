@@ -1,6 +1,6 @@
 # BUG-19 — Competitors View: Favourite Players Section Is Broken
 
-**Status:** todo  
+**Status:** done  
 **Area:** M26 — Competition Tab
 
 ## Description
@@ -30,17 +30,17 @@ The Favourites section in `CompetitorsView` is functionally incomplete and visua
 ## Acceptance Criteria
 
 ### Data
-- [ ] `FavouritePlayer` stores a `lastKnownPoints: Int?` and `lastKnownRank: Int?` — populated when the player is added from a leaderboard or search row
-- [ ] When adding a favourite from `LeaderboardRow`, populate `lastKnownPoints` and `lastKnownRank` from `LimitlessPlayerSearchResult`
+- [x] `FavouritePlayer` stores a `lastKnownPoints: Int?` and `lastKnownRank: Int?` — populated when the player is added from a leaderboard or search row
+- [x] When adding a favourite from `LeaderboardRow`, populate `lastKnownPoints` and `lastKnownRank` from `LimitlessPlayerSearchResult`
 
 ### Favourites Row
-- [ ] `FavouritePlayerRow` shows: star icon (yellow) | country flag | player name | last-known rank or points as a secondary caption
-- [ ] If `lastKnownPoints` and `lastKnownRank` are both nil, the subtitle is omitted
-- [ ] Swipe-to-delete on a favourite row has label "Unfavourite", yellow tint, and a `star.slash` icon (not the default red trash)
+- [x] `FavouritePlayerRow` shows: star icon (yellow) | country flag | player name | last-known rank or points as a secondary caption
+- [x] If `lastKnownPoints` and `lastKnownRank` are both nil, the subtitle is omitted
+- [x] Swipe-to-delete on a favourite row has label "Unfavourite", yellow tint, and a `star.slash` icon (not the default red trash)
 
 ### Search Results
-- [ ] `LeaderboardRow` used in the search results section gains the same leading swipe-to-favourite action it has in the standings section
-- [ ] Tapping the swipe action on a search result row adds the player as a favourite, capturing their current points/rank if present
+- [x] `LeaderboardRow` used in the search results section gains the same leading swipe-to-favourite action it has in the standings section
+- [x] Tapping the swipe action on a search result row adds the player as a favourite, capturing their current points/rank if present
 
 ## Technical Notes
 

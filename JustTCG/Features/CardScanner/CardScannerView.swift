@@ -116,6 +116,16 @@ struct CardScannerView: View {
                 .padding(.vertical, 6)
                 .background(.ultraThinMaterial, in: Capsule())
             Spacer()
+            Button {
+                vm.toggleTorch()
+            } label: {
+                Image(systemName: vm.isTorchOn ? "flashlight.on.fill" : "flashlight.off.fill")
+                    .font(.body)
+                    .foregroundStyle(vm.isTorchOn ? .yellow : .white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(.ultraThinMaterial, in: Capsule())
+            }
             Button("Done") { dismiss() }
                 .font(.body.weight(.semibold))
                 .foregroundStyle(.white)

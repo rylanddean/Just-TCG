@@ -9,10 +9,7 @@ struct ActivityHeatmapWidget: View {
     private let labelColumnWidth: CGFloat = 12
 
     @State private var cellSize: CGFloat = 0
-
-    private var days: [HeatmapDay] {
-        ActivityHeatmapEngine.compute(matches: matches, weeks: weeks)
-    }
+    @State private var days: [HeatmapDay] = []
 
     private var columns: [[HeatmapDay]] {
         stride(from: 0, to: days.count, by: 7).map { Array(days[$0..<$0 + 7]) }
@@ -51,6 +48,9 @@ struct ActivityHeatmapWidget: View {
         .padding(16)
         .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12))
         .padding(.horizontal)
+        .task(id: matches.count) {
+            days = ActivityHeatmapEngine.compute(matches: matches, weeks: weeks)
+        }
     }
 
     // MARK: - Layout

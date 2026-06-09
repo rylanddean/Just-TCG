@@ -1,6 +1,6 @@
 # M30-01 — Meta Trend Engine
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M30 — Meta Trend Tracker  
 **Dependencies:** M5-01 (tournament list), M6-01 (meta share engine)
 

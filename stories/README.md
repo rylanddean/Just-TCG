@@ -136,62 +136,98 @@ Stories are ordered by dependency. Work top to bottom.
 | [M19-01](completed/M19-01-live-game-models.md) | LiveGame & GameTurn SwiftData Models | done |
 | [M19-02](completed/M19-02-live-game-setup.md) | Live Game Setup Sheet | done |
 | [M19-03](completed/M19-03-live-game-hud.md) | Live Game HUD | done |
-| [M19-04](M19-04-live-game-analytics.md) | Live Game Analytics | todo |
+| [M19-04](completed/M19-04-live-game-analytics.md) | Live Game Analytics | done |
 
 ## M20 — OCR Card Scanner
 | Story | Title | Status |
 |---|---|---|
-| [M20-01](M20-01-ocr-pipeline.md) | Vision OCR Pipeline & Card Identifier Parser | todo |
-| [M20-02](M20-02-scan-to-deck-ui.md) | Scan-to-Deck Camera UI | todo |
+| [M20-01](completed/M20-01-ocr-pipeline.md) | Vision OCR Pipeline & Card Identifier Parser | done |
+| [M20-02](completed/M20-02-scan-to-deck-ui.md) | Scan-to-Deck Camera UI | done |
 
 ## M21 — Cards Tab Quick-Add
 | Story | Title | Status |
 |---|---|---|
-| [M21-01](M21-01-cards-quick-add-to-deck.md) | Long-Press Quick-Add to Deck | todo |
+| [M21-01](completed/M21-01-cards-quick-add-to-deck.md) | Long-Press Quick-Add to Deck | done |
 
 ## M28 — Deck Import Card Swap
 | Story | Title | Status |
 |---|---|---|
-| [M28-01](M28-01-import-unmatched-card-swap.md) | Unmatched Card Swap in Import Sheet | todo |
+| [M28-01](completed/M28-01-import-unmatched-card-swap.md) | Unmatched Card Swap in Import Sheet | done |
 
 ## M27 — Backlog Export & Import
 | Story | Title | Status |
 |---|---|---|
-| [M27-01](M27-01-backup-serializer.md) | Backup Serializer | todo |
-| [M27-02](M27-02-export-import-ui.md) | Export & Import UI in Settings | todo |
+| [M27-01](completed/M27-01-backup-serializer.md) | Backup Serializer | done |
+| [M27-02](completed/M27-02-export-import-ui.md) | Export & Import UI in Settings | done |
 
 ## M26 — Competition Tab
 | Story | Title | Status |
 |---|---|---|
-| [M26-01](M26-01-competition-tab-shell.md) | Competition Tab Shell | todo |
-| [M26-02](M26-02-competitors-view.md) | Competitors View | todo |
+| [M26-01](completed/M26-01-competition-tab-shell.md) | Competition Tab Shell | done |
+| [M26-02](completed/M26-02-competitors-view.md) | Competitors View | done |
 
 ## M22 — Visual Meta Share
 | Story | Title | Status |
 |---|---|---|
-| [M22-01](M22-01-archetype-primary-card-resolver.md) | Archetype Primary Card Resolver | todo |
-| [M22-02](M22-02-visual-meta-share-row.md) | Visual Meta Share Row & Archetype Detail Header | todo |
+| [M22-01](completed/M22-01-archetype-primary-card-resolver.md) | Archetype Primary Card Resolver | done |
+| [M22-02](completed/M22-02-visual-meta-share-row.md) | Visual Meta Share Row & Archetype Detail Header | done |
 
 ## M23 — Rules Assistant
 | Story | Title | Status |
 |---|---|---|
-| [M23-01](M23-01-rulebook-bundle.md) | Pokémon TCG Rulebook Content Bundle | todo |
-| [M23-02](M23-02-rules-qa-engine.md) | Rules Q&A Engine (Foundation Models) | todo |
-| [M23-03](M23-03-rules-assistant-ui.md) | Rules Assistant Chat UI | todo |
+| [M23-01](completed/M23-01-rulebook-bundle.md) | Pokémon TCG Rulebook Content Bundle | done |
+| [M23-02](completed/M23-02-rules-qa-engine.md) | Rules Q&A Engine (Foundation Models) | done |
+| [M23-03](completed/M23-03-rules-assistant-ui.md) | Rules Assistant Chat UI | done |
 
 ## M24 — Natural Language Deck Generator
 | Story | Title | Status |
 |---|---|---|
-| [M24-01](M24-01-deck-generation-engine.md) | Natural Language Deck Generation Engine | todo |
-| [M24-02](M24-02-deck-generator-chat-ui.md) | Deck Generator Chat UI | todo |
-| [M24-03](M24-03-generated-deck-import.md) | Generated Deck Import | todo |
+| [M24-01](completed/M24-01-deck-generation-engine.md) | Natural Language Deck Generation Engine | done |
+| [M24-02](completed/M24-02-deck-generator-chat-ui.md) | Deck Generator Chat UI | done |
+| [M24-03](completed/M24-03-generated-deck-import.md) | Generated Deck Import | done |
 
 ## M25 — Player Profile
 | Story | Title | Status |
 |---|---|---|
-| [M25-01](M25-01-profile-stats-engine.md) | Profile Stats Engine | todo |
-| [M25-02](M25-02-profile-view.md) | Player Profile View | todo |
-| [M25-03](M25-03-ptcg-live-account-link.md) | PTCG Live Account Link | todo |
+| [M25-01](completed/M25-01-profile-stats-engine.md) | Profile Stats Engine | done |
+| [M25-02](completed/M25-02-profile-view.md) | Player Profile View | done |
+| [M25-03](archieved/M25-03-ptcg-live-account-link.md) | PTCG Live Account Link | archived |
+
+## M29 — Deck Consistency Calculator
+| Story | Title | Status |
+|---|---|---|
+| [M29-01](completed/M29-01-consistency-engine.md) | Consistency Engine | done |
+| [M29-02](completed/M29-02-consistency-sheet-ui.md) | Consistency Sheet UI | done |
+
+## M30 — Meta Trend Tracker
+| Story | Title | Status |
+|---|---|---|
+| [M30-01](completed/M30-01-meta-trend-engine.md) | Meta Trend Engine | done |
+| [M30-02](completed/M30-02-meta-trend-chart-view.md) | Meta Trend Chart View | done |
+
+## M31 — Tournament Prep Planner
+| Story | Title | Status |
+|---|---|---|
+| [M31-01](completed/M31-01-prep-plan-models.md) | Prep Plan & Session Models | done |
+| [M31-02](completed/M31-02-tournament-prep-view.md) | Tournament Prep View | done |
+
+## M32 — Format Rotation Guard
+| Story | Title | Status |
+|---|---|---|
+| [M32-01](archieved/M32-01-format-legality-resolver.md) | Format Legality Resolver | archived |
+| [M32-02](archieved/M32-02-deck-legality-ui.md) | Deck Legality Badge & Violation Sheet | archived |
+
+## M33 — Tech Card Advisor
+| Story | Title | Status |
+|---|---|---|
+| [M33-01](completed/M33-01-tech-advisor-engine.md) | Tech Advisor Engine (Foundation Models) | done |
+| [M33-02](completed/M33-02-tech-advisor-ui.md) | Tech Advisor Sheet UI | done |
+
+## M34 — Meta Matchup Score
+| Story | Title | Status |
+|---|---|---|
+| [M34-01](completed/M34-01-meta-matchup-engine.md) | Meta Matchup Engine | done |
+| [M34-02](completed/M34-02-meta-matchup-score-ui.md) | Meta Matchup Score UI | done |
 
 ## Bugs
 | Bug | Title | Status |
@@ -211,3 +247,12 @@ Stories are ordered by dependency. Work top to bottom.
 | [BUG-13](completed/BUG-13-card-picker-no-stepper-for-added-cards.md) | Card Picker Has No Way to Decrease Count After Adding a Card | done |
 | [BUG-14](bugs/completed/BUG-14-deck-editor-open-crash.md) | Deck Editor Crash on Open | done |
 | [BUG-15](bugs/completed/BUG-15-basic-energy-deck-builder.md) | Add Basic Energy Does Not Work; Energy Cards in Pokémon Section | done |
+| [BUG-16](bugs/completed/BUG-16-deck-list-preview-alignment.md) | Deck List Preview Cards Misaligned When Fewer Than Three Cards Shown | done |
+| [BUG-17](bugs/completed/BUG-17-deck-builder-tap-delay.md) | Deck Builder Card Taps Are Delayed, Causing Missed or Double Taps | done |
+| [BUG-18](bugs/completed/BUG-18-deck-status-concept.md) | Decks Have No Status; No Way to Mark a Deck as Building, Playing, or Retired | done |
+| [BUG-19](bugs/completed/BUG-19-competitors-favourites-broken.md) | Competitors View: Favourite Players Section Is Broken | done |
+| [BUG-20](bugs/BUG-20-tournament-meta-share-chart-polish.md) | Tournament Detail: Meta Share Chart Needs Card Images and Visual Polish | todo |
+| [BUG-21](bugs/BUG-21-deck-generator-timeout.md) | Deck Generator Always Times Out | todo |
+| [BUG-22](bugs/BUG-22-tournaments-view-redesign.md) | Tournaments View Needs Visual Polish | todo |
+| [BUG-23](bugs/BUG-23-tournament-detail-view-redesign.md) | Tournament Detail View Needs Visual Polish | todo |
+| [BUG-24](bugs/BUG-24-rulebook-ui-not-discoverable.md) | Rulebook / Rules Assistant Is Not Discoverable | todo |

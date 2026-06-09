@@ -143,6 +143,26 @@
 		4AFBF3B1A66245D3960A1C5B /* ArchetypePrimaryCardResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */; };
 		079BB42EB69142CFB4756C1D /* ProfileStatsEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */; };
 		A296910269814E4283662E0A /* CardIdentifierParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */; };
+		FB6D2625A3C74E90AC339066 /* ConsistencyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EAE38277974A92A84366D5 /* ConsistencyEngine.swift */; };
+		BE636775E0BB4734B013AE11 /* ConsistencySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7DBADAC974447BC870019 /* ConsistencySheet.swift */; };
+		29497F45A5C1448CB8C65057 /* ConsistencyEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8C250BE3BF4B878BBB3FF8 /* ConsistencyEngineTests.swift */; };
+		84F5152E180F43868581B0C6 /* MetaTrendEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABBF64B2494C07A66A3559 /* MetaTrendEngine.swift */; };
+		A1E8DEF317F94588AB521F6A /* MetaTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21CDF4C0BE4EE38AA6366B /* MetaTrendView.swift */; };
+		0791F2235123480AA5E83898 /* PrepPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDB29BC3CC46CAA8774DCC /* PrepPlan.swift */; };
+		BCAD7FFA6B254ED6886CD3A6 /* PrepPlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2399790E5C41478A0C7231 /* PrepPlanRepository.swift */; };
+		053C1C4FE5A140E3B10A05A5 /* TournamentPrepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C62D4D1F5F4A1CAD3C3AF2 /* TournamentPrepView.swift */; };
+		46AF8F30945E4AC3812D6C34 /* NewPrepPlanSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFADB0F6478E458CADEAAF29 /* NewPrepPlanSheet.swift */; };
+		C27BC8EC2AE741699C355DA2 /* PrepPlanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37447559EE1A4E35A4EB3C2B /* PrepPlanDetailView.swift */; };
+		7823FBDB83E04C9691B1F750 /* AddMatchupGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3CCC32709E45F1AE929410 /* AddMatchupGoalSheet.swift */; };
+		2EA9845C87CA4A5996246DD5 /* MatchupGoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE06DCBD324938A8EBB9F1 /* MatchupGoalDetailView.swift */; };
+		FDAA510EE97A410AA4E4767A /* LogPrepSessionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA9F974C6E463480EE13C5 /* LogPrepSessionSheet.swift */; };
+		81E974139298444799883CF8 /* TechAdvisorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1CC8E341024F3DA08C5836 /* TechAdvisorEngine.swift */; };
+		A3F2C1D0B4E5968700000001 /* ConsistencyNarrativeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2C1D0B4E5968700000002 /* ConsistencyNarrativeEngine.swift */; };
+		A3F2C1D0B4E5968700000004 /* DeckRecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2C1D0B4E5968700000003 /* DeckRecommendationEngine.swift */; };
+		DBFDF4A8167D4DA8B216DFFC /* TechAdvisorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCA3643A384C67BD901A61 /* TechAdvisorSheet.swift */; };
+		F1A2B3C4D5E6789ABCDEF001 /* MetaMatchupEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789ABCDEF002 /* MetaMatchupEngine.swift */; };
+		F1A2B3C4D5E6789ABCDEF003 /* MetaMatchupSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789ABCDEF004 /* MetaMatchupSheet.swift */; };
+		F1A2B3C4D5E6789ABCDEF005 /* MetaMatchupEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789ABCDEF006 /* MetaMatchupEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +314,26 @@
 		C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchetypePrimaryCardResolverTests.swift; sourceTree = "<group>"; };
 		BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsEngineTests.swift; sourceTree = "<group>"; };
 		21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIdentifierParserTests.swift; sourceTree = "<group>"; };
+		C1EAE38277974A92A84366D5 /* ConsistencyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsistencyEngine.swift; sourceTree = "<group>"; };
+		7BC7DBADAC974447BC870019 /* ConsistencySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsistencySheet.swift; sourceTree = "<group>"; };
+		6B8C250BE3BF4B878BBB3FF8 /* ConsistencyEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsistencyEngineTests.swift; sourceTree = "<group>"; };
+		CBABBF64B2494C07A66A3559 /* MetaTrendEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTrendEngine.swift; sourceTree = "<group>"; };
+		5E21CDF4C0BE4EE38AA6366B /* MetaTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTrendView.swift; sourceTree = "<group>"; };
+		5BCDB29BC3CC46CAA8774DCC /* PrepPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepPlan.swift; sourceTree = "<group>"; };
+		BD2399790E5C41478A0C7231 /* PrepPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepPlanRepository.swift; sourceTree = "<group>"; };
+		C4C62D4D1F5F4A1CAD3C3AF2 /* TournamentPrepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentPrepView.swift; sourceTree = "<group>"; };
+		DFADB0F6478E458CADEAAF29 /* NewPrepPlanSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPrepPlanSheet.swift; sourceTree = "<group>"; };
+		37447559EE1A4E35A4EB3C2B /* PrepPlanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepPlanDetailView.swift; sourceTree = "<group>"; };
+		9F3CCC32709E45F1AE929410 /* AddMatchupGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchupGoalSheet.swift; sourceTree = "<group>"; };
+		11DE06DCBD324938A8EBB9F1 /* MatchupGoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupGoalDetailView.swift; sourceTree = "<group>"; };
+		C8CA9F974C6E463480EE13C5 /* LogPrepSessionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrepSessionSheet.swift; sourceTree = "<group>"; };
+		AA1CC8E341024F3DA08C5836 /* TechAdvisorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechAdvisorEngine.swift; sourceTree = "<group>"; };
+		A3F2C1D0B4E5968700000002 /* ConsistencyNarrativeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsistencyNarrativeEngine.swift; sourceTree = "<group>"; };
+		A3F2C1D0B4E5968700000003 /* DeckRecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRecommendationEngine.swift; sourceTree = "<group>"; };
+		3FDCA3643A384C67BD901A61 /* TechAdvisorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechAdvisorSheet.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789ABCDEF002 /* MetaMatchupEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatchupEngine.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789ABCDEF004 /* MetaMatchupSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatchupSheet.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789ABCDEF006 /* MetaMatchupEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatchupEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -362,6 +402,8 @@
 				C6B488BC77F04D458E05F9E5 /* ArchetypePrimaryCardResolverTests.swift */,
 				BF3A561204C445F88A010B5B /* ProfileStatsEngineTests.swift */,
 				21490B4FCEA54E41A8A90D04 /* CardIdentifierParserTests.swift */,
+				6B8C250BE3BF4B878BBB3FF8 /* ConsistencyEngineTests.swift */,
+				F1A2B3C4D5E6789ABCDEF006 /* MetaMatchupEngineTests.swift */,
 			);
 			path = JustTCGTests;
 			sourceTree = "<group>";
@@ -386,6 +428,9 @@
 				4578C366B776417D9038E2D2 /* NewDeckSheet.swift */,
 				A21BCF36FA4C43B3B552E939 /* DeckGeneratorView.swift */,
 				2D9C4199777448DEA661A613 /* DeckListPreviewCard.swift */,
+				7BC7DBADAC974447BC870019 /* ConsistencySheet.swift */,
+				3FDCA3643A384C67BD901A61 /* TechAdvisorSheet.swift */,
+				F1A2B3C4D5E6789ABCDEF004 /* MetaMatchupSheet.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -490,6 +535,7 @@
 				8A3D65C5B2B40D3F117AE5A9 /* DeckRepository.swift */,
 				BB608DEF985492EF9ED10FBE /* MatchRepository.swift */,
 				16702F508C394508AA6BDBAC /* LiveGameRepository.swift */,
+				BD2399790E5C41478A0C7231 /* PrepPlanRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -540,6 +586,12 @@
 				B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */,
 				9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */,
 				CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */,
+				C1EAE38277974A92A84366D5 /* ConsistencyEngine.swift */,
+				CBABBF64B2494C07A66A3559 /* MetaTrendEngine.swift */,
+				AA1CC8E341024F3DA08C5836 /* TechAdvisorEngine.swift */,
+				A3F2C1D0B4E5968700000002 /* ConsistencyNarrativeEngine.swift */,
+				A3F2C1D0B4E5968700000003 /* DeckRecommendationEngine.swift */,
+				F1A2B3C4D5E6789ABCDEF002 /* MetaMatchupEngine.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -569,6 +621,7 @@
 				M28PROFILE0000000001AA00 /* Profile */,
 				M28RULES000000000002BB00 /* Rules */,
 				M28SCANNER00000000003CC00 /* CardScanner */,
+				764B259320234617B5750A42 /* Prep */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -581,6 +634,7 @@
 				DF36AFE99FBF29ED72111166 /* MetaArchetypeDetailView.swift */,
 				F0849AF53AF5D6D54EEC0AB9 /* MetaComparisonViewModel.swift */,
 				7A92BC258919210EFD5215FC /* WinRateChartView.swift */,
+				5E21CDF4C0BE4EE38AA6366B /* MetaTrendView.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -595,6 +649,7 @@
 				382781E56B17CEC0AB19AC36 /* Match.swift */,
 				2B386FF8F26241A095D10275 /* LiveGame.swift */,
 				12A2ADD0151A495D803B6FCC /* GameTurn.swift */,
+				5BCDB29BC3CC46CAA8774DCC /* PrepPlan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -671,6 +726,19 @@
 				6599C68D8070485E9AE95ED8 /* CardScannerViewModel.swift */,
 			);
 			path = CardScanner;
+			sourceTree = "<group>";
+		};
+		764B259320234617B5750A42 /* Prep */ = {
+			isa = PBXGroup;
+			children = (
+				C4C62D4D1F5F4A1CAD3C3AF2 /* TournamentPrepView.swift */,
+				DFADB0F6478E458CADEAAF29 /* NewPrepPlanSheet.swift */,
+				37447559EE1A4E35A4EB3C2B /* PrepPlanDetailView.swift */,
+				9F3CCC32709E45F1AE929410 /* AddMatchupGoalSheet.swift */,
+				11DE06DCBD324938A8EBB9F1 /* MatchupGoalDetailView.swift */,
+				C8CA9F974C6E463480EE13C5 /* LogPrepSessionSheet.swift */,
+			);
+			path = Prep;
 			sourceTree = "<group>";
 		};
 		M28RULESDATA0000000004DD /* Rules */ = {
@@ -817,6 +885,24 @@
 				BA4B71543603317D630F24A6 /* DeckCard.swift in Sources */,
 				0CD2909D1E7CC479331B1D5C /* DeckDetailView.swift in Sources */,
 				AFA9535E0B7184F6A0DC94B9 /* DeckExporter.swift in Sources */,
+				FB6D2625A3C74E90AC339066 /* ConsistencyEngine.swift in Sources */,
+				BE636775E0BB4734B013AE11 /* ConsistencySheet.swift in Sources */,
+				84F5152E180F43868581B0C6 /* MetaTrendEngine.swift in Sources */,
+				A1E8DEF317F94588AB521F6A /* MetaTrendView.swift in Sources */,
+				0791F2235123480AA5E83898 /* PrepPlan.swift in Sources */,
+				BCAD7FFA6B254ED6886CD3A6 /* PrepPlanRepository.swift in Sources */,
+				053C1C4FE5A140E3B10A05A5 /* TournamentPrepView.swift in Sources */,
+				46AF8F30945E4AC3812D6C34 /* NewPrepPlanSheet.swift in Sources */,
+				C27BC8EC2AE741699C355DA2 /* PrepPlanDetailView.swift in Sources */,
+				7823FBDB83E04C9691B1F750 /* AddMatchupGoalSheet.swift in Sources */,
+				2EA9845C87CA4A5996246DD5 /* MatchupGoalDetailView.swift in Sources */,
+				FDAA510EE97A410AA4E4767A /* LogPrepSessionSheet.swift in Sources */,
+				81E974139298444799883CF8 /* TechAdvisorEngine.swift in Sources */,
+				A3F2C1D0B4E5968700000001 /* ConsistencyNarrativeEngine.swift in Sources */,
+				A3F2C1D0B4E5968700000004 /* DeckRecommendationEngine.swift in Sources */,
+				DBFDF4A8167D4DA8B216DFFC /* TechAdvisorSheet.swift in Sources */,
+				F1A2B3C4D5E6789ABCDEF001 /* MetaMatchupEngine.swift in Sources */,
+				F1A2B3C4D5E6789ABCDEF003 /* MetaMatchupSheet.swift in Sources */,
 				1B1D4F868EB0653C26AC8700 /* DeckGrouper.swift in Sources */,
 				B8D13372C42A9640BA7F511F /* DeckListViewerView.swift in Sources */,
 				50DB890FA546CE4C5E9CFD08 /* DeckListViewerViewModel.swift in Sources */,
@@ -916,6 +1002,8 @@
 				4AFBF3B1A66245D3960A1C5B /* ArchetypePrimaryCardResolverTests.swift in Sources */,
 				079BB42EB69142CFB4756C1D /* ProfileStatsEngineTests.swift in Sources */,
 				A296910269814E4283662E0A /* CardIdentifierParserTests.swift in Sources */,
+				29497F45A5C1448CB8C65057 /* ConsistencyEngineTests.swift in Sources */,
+				F1A2B3C4D5E6789ABCDEF005 /* MetaMatchupEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

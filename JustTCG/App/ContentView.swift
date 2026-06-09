@@ -16,10 +16,10 @@ struct ContentView: View {
                 .tabItem { Label("Cards", systemImage: "square.grid.2x2") }
                 .tag(2)
             CompetitionView()
-                .tabItem { Label("Competition", systemImage: "trophy") }
+                .tabItem { Label("Competition", systemImage: "person.2.fill") }
                 .tag(3)
             AnalyticsView()
-                .tabItem { Label("Analytics", systemImage: "chart.bar") }
+                .tabItem { Label("Prep", systemImage: "chart.bar") }
                 .tag(4)
         }
         .environment(nav)

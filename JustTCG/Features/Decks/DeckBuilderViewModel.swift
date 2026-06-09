@@ -10,10 +10,9 @@ final class DeckBuilderViewModel {
 
     private(set) var cachedCards: [String: CachedCard] = [:]
     private(set) var validationErrors: [DeckValidationError] = []
+    private(set) var groups: DeckGrouper.Groups = DeckGrouper.group([], cardMap: [:])
 
     var totalCount: Int { deck.cards.reduce(0) { $0 + $1.quantity } }
-
-    private var groups: DeckGrouper.Groups { DeckGrouper.group(deck.cards, cardMap: cachedCards) }
 
     var pokemonCards:   [DeckCard] { groups.pokemon }
     var supporterCards: [DeckCard] { groups.trainerGroups.supporter }
@@ -35,6 +34,7 @@ final class DeckBuilderViewModel {
         let ids = deck.cards.map { $0.cardId }
         let cards = (try? cardRepo.fetch(ids: ids)) ?? []
         cachedCards = Dictionary(uniqueKeysWithValues: cards.map { ($0.id, $0) })
+        groups = DeckGrouper.group(deck.cards, cardMap: cachedCards)
         revalidate()
     }
 
@@ -54,6 +54,7 @@ final class DeckBuilderViewModel {
             let cap = isBasicEnergy ? 60 : 4
             deckRepo.setQuantity(min(quantity, cap), cardId: deckCard.cardId, in: deck, cardName: name)
         }
+        groups = DeckGrouper.group(deck.cards, cardMap: cachedCards)
         revalidate()
     }
 

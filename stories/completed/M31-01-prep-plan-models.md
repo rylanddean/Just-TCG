@@ -1,6 +1,6 @@
 # M31-01 — Tournament Prep Plan Models
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M31 — Tournament Prep Planner  
 **Dependencies:** M2-01 (Deck model), M3-01 (Match model)
 

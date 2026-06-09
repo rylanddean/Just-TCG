@@ -34,6 +34,6 @@ final class FavouritePlayerRepository {
         let descriptor = FetchDescriptor<FavouritePlayer>(
             sortBy: [SortDescriptor(\.addedAt, order: .reverse)]
         )
-        all = (try? context.fetch(descriptor)) ?? []
+        all = (try? context.fetch(descriptor))?.filter { !$0.id.isEmpty } ?? []
     }
 }

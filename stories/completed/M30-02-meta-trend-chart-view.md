@@ -1,6 +1,6 @@
 # M30-02 — Meta Trend Chart View
 
-**Status:** todo  
+**Status:** done  
 **Milestone:** M30 — Meta Trend Tracker  
 **Dependencies:** M30-01
 

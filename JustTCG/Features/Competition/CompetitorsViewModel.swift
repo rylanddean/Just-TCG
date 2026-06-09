@@ -3,7 +3,7 @@ import Observation
 
 @Observable
 final class CompetitorsViewModel {
-    var sortBy: PlayerRankSort = .points
+    private let sortBy: PlayerRankSort = .points
     var zone: PlayerZone = .global
 
     private(set) var leaderboard: [LimitlessPlayerSearchResult] = []

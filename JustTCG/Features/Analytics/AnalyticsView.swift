@@ -1,12 +1,19 @@
 import SwiftUI
 import SwiftData
 
+private enum AnalyticsTab: String, CaseIterable {
+    case myStats  = "My Stats"
+    case trends   = "Trends"
+    case training = "Training"
+}
+
 struct AnalyticsView: View {
     @Query(sort: \Deck.updatedAt, order: .reverse) private var decks: [Deck]
     @Query private var allCards: [CachedCard]
     @State private var vm = AnalyticsViewModel()
     @State private var metaVM = MetaComparisonViewModel()
     @State private var prepareCardDismissed = false
+    @State private var selectedTab: AnalyticsTab = .myStats
     @Environment(AppNavigationState.self) private var nav
 
     private let gapEngine = PracticeGapEngine()
@@ -15,14 +22,32 @@ struct AnalyticsView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if decks.isEmpty {
-                    emptyDecksState
-                } else {
-                    analyticsContent
+            VStack(spacing: 0) {
+                Picker("Tab", selection: $selectedTab) {
+                    ForEach(AnalyticsTab.allCases, id: \.self) { tab in
+                        Text(tab.rawValue).tag(tab)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+
+                Divider()
+
+                switch selectedTab {
+                case .myStats:
+                    if decks.isEmpty {
+                        emptyDecksState
+                    } else {
+                        analyticsContent
+                    }
+                case .trends:
+                    MetaTrendView()
+                case .training:
+                    TournamentPrepView(isEmbedded: true)
                 }
             }
-            .navigationTitle("Analytics")
+            .navigationTitle("Prep")
             .onAppear {
                 if vm.selectedDeck == nil {
                     vm.selectedDeck = decks.first

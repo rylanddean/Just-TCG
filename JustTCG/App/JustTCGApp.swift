@@ -6,6 +6,8 @@ struct JustTCGApp: App {
 
     let container: ModelContainer
     let playerRepo: FavouritePlayerRepository
+    let metaTrendEngine: MetaTrendEngine
+    let prepPlanRepo: PrepPlanRepository
 
     init() {
         URLCache.shared = URLCache(
@@ -15,12 +17,14 @@ struct JustTCGApp: App {
         )
         container = Self.makeContainer()
         playerRepo = FavouritePlayerRepository(context: container.mainContext)
+        metaTrendEngine = MetaTrendEngine()
+        prepPlanRepo = PrepPlanRepository(context: container.mainContext)
     }
 
     private static func makeContainer(afterCacheReset: Bool = false) -> ModelContainer {
         let userDataConfig = ModelConfiguration(
             "UserData",
-            schema: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self]),
+            schema: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self, PrepPlan.self, MatchupGoal.self, PrepSession.self]),
             cloudKitDatabase: .automatic
         )
         let cardCacheConfig = ModelConfiguration(
@@ -30,7 +34,7 @@ struct JustTCGApp: App {
         )
         do {
             return try ModelContainer(
-                for: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self, CachedCard.self]),
+                for: Schema([Deck.self, DeckCard.self, Match.self, FavouritePlayer.self, DeckEdit.self, LiveGame.self, GameTurn.self, PrepPlan.self, MatchupGoal.self, PrepSession.self, CachedCard.self]),
                 configurations: [userDataConfig, cardCacheConfig]
             )
         } catch {
@@ -57,6 +61,8 @@ struct JustTCGApp: App {
         WindowGroup {
             ContentView()
                 .environment(playerRepo)
+                .environment(metaTrendEngine)
+                .environment(prepPlanRepo)
         }
         .modelContainer(container)
     }

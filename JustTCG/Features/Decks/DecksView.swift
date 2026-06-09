@@ -4,9 +4,10 @@ import SwiftData
 struct DecksView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Deck.updatedAt, order: .reverse) private var decks: [Deck]
-    @Query private var allCards: [CachedCard]
+    @Query(filter: #Predicate<CachedCard> { $0.isStandardLegal }) private var allCards: [CachedCard]
     @AppStorage("deckRowCoverCardCount") private var coverCardCount: Int = 2
 
+    @State private var cardMap: [String: CachedCard] = [:]
     @State private var deckToDelete: Deck? = nil
     @State private var deckToRename: Deck? = nil
     @State private var deckForCoverPicker: Deck? = nil
@@ -16,10 +17,6 @@ struct DecksView: View {
     @State private var showImportSheet = false
     @State private var showRetired = false
     @State private var showDeckGenerator = false
-
-    private var cardMap: [String: CachedCard] {
-        Dictionary(uniqueKeysWithValues: allCards.map { ($0.id, $0) })
-    }
 
     private var visibleDecks: [Deck] {
         showRetired ? decks : decks.filter { $0.status != .retired }
@@ -35,6 +32,12 @@ struct DecksView: View {
                 }
             }
             .navigationTitle("Decks")
+            .task(id: allCards.count) {
+                cardMap = Dictionary(uniqueKeysWithValues: allCards.map { ($0.id, $0) })
+            }
+            .navigationDestination(for: Deck.self) { deck in
+                DeckDetailView(mode: .edit(deck))
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
@@ -134,7 +137,7 @@ struct DecksView: View {
     private var deckList: some View {
         List {
             ForEach(visibleDecks) { deck in
-                NavigationLink(destination: DeckDetailView(mode: .edit(deck))) {
+                NavigationLink(value: deck) {
                     DeckRowView(deck: deck, cardMap: cardMap, coverCardCount: coverCardCount)
                 }
                 .listRowInsets(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 16))
@@ -195,6 +198,8 @@ private struct DeckRowView: View {
     let cardMap: [String: CachedCard]
     let coverCardCount: Int
 
+    @State private var cachedBreakdown: ConsistencyBreakdown? = nil
+
     private var cardCount: Int {
         deck.cards.reduce(0) { $0 + $1.quantity }
     }
@@ -208,6 +213,36 @@ private struct DeckRowView: View {
 
     private var covers: [CachedCard] {
         coverCards(for: deck, in: cardMap, count: coverCardCount)
+    }
+
+    private func computeBreakdown() -> ConsistencyBreakdown? {
+        let entries = deck.cards.compactMap { dc -> DeckCardEntry? in
+            guard let card = cardMap[dc.cardId] else { return nil }
+            return DeckCardEntry(name: card.name, copies: dc.quantity, supertype: card.supertype,
+                                 subtypes: card.subtypes, retreatCost: card.retreatCost,
+                                 hasAbility: card.hasAbility, types: card.types,
+                                 weaknessType: card.weaknessType)
+        }
+        guard !entries.isEmpty else { return nil }
+        let merged = Dictionary(grouping: entries, by: \.name).map { name, group in
+            DeckCardEntry(name: name, copies: group.reduce(0) { $0 + $1.copies },
+                          supertype: group[0].supertype, subtypes: group[0].subtypes,
+                          retreatCost: group[0].retreatCost, hasAbility: group[0].hasAbility,
+                          types: group[0].types, weaknessType: group[0].weaknessType)
+        }
+        let roleTags: (String) -> [String] = { name in
+            cardMap.values.first { $0.name == name }?.roleTags ?? []
+        }
+        return ConsistencyEngine().breakdown(entries: merged, deckSize: 60, roleTags: roleTags)
+    }
+
+    private func scoreColor(_ score: Int) -> Color {
+        switch score {
+        case ..<40: return .red
+        case 40..<60: return .orange
+        case 60..<80: return .yellow
+        default: return .green
+        }
     }
 
     var body: some View {
@@ -235,8 +270,24 @@ private struct DeckRowView: View {
                     }
                 }
                 .font(.subheadline)
+                if let bd = cachedBreakdown {
+                    HStack(spacing: 0) {
+                        Text("Overall  ")
+                            .foregroundStyle(.secondary)
+                        Text("\(bd.overallScore)")
+                            .foregroundStyle(scoreColor(bd.overallScore))
+                        Text("  ·  Consistency  ")
+                            .foregroundStyle(.secondary)
+                        Text("\(bd.consistencyScore)")
+                            .foregroundStyle(scoreColor(bd.consistencyScore))
+                    }
+                    .font(.subheadline)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .task(id: "\(deck.id)-\(Int(deck.updatedAt.timeIntervalSince1970))-\(cardMap.count)") {
+            cachedBreakdown = computeBreakdown()
         }
     }
 

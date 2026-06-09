@@ -17,8 +17,7 @@ struct CompetitorsView: View {
         .listStyle(.plain)
         .searchable(text: $searchQuery, prompt: "Search competitors")
         .task { await vm.loadLeaderboard() }
-        .onChange(of: vm.sortBy) { _, _ in Task { await vm.loadLeaderboard() } }
-        .onChange(of: vm.zone)   { _, _ in Task { await vm.loadLeaderboard() } }
+        .onChange(of: vm.zone) { _, _ in Task { await vm.loadLeaderboard() } }
         .onChange(of: searchQuery) { _, query in
             searchTask?.cancel()
             guard !query.isEmpty else {
@@ -39,16 +38,29 @@ struct CompetitorsView: View {
     private var defaultContent: some View {
         if !favourites.all.isEmpty {
             Section("Favourites") {
-                ForEach(favourites.all) { player in
-                    NavigationLink {
-                        PlayerDetailView(playerID: player.id)
-                    } label: {
-                        FavouritePlayerRow(player: player)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(favourites.all) { player in
+                            NavigationLink {
+                                PlayerDetailView(playerID: player.id)
+                            } label: {
+                                FavouriteChip(player: player)
+                            }
+                            .buttonStyle(.plain)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    favourites.remove(id: player.id)
+                                } label: {
+                                    Label("Remove from Favourites", systemImage: "star.slash")
+                                }
+                            }
+                        }
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
                 }
-                .onDelete { indices in
-                    indices.forEach { favourites.remove(id: favourites.all[$0].id) }
-                }
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(.hidden)
             }
         }
 
@@ -64,9 +76,29 @@ struct CompetitorsView: View {
                     } label: {
                         LeaderboardRow(
                             player: player,
-                            isFavourite: favourites.isFavourite(id: player.id),
-                            sort: vm.sortBy
+                            isFavourite: favourites.isFavourite(id: player.id)
                         )
+                    }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 16))
+                    .swipeActions(edge: .leading) {
+                        let isFav = favourites.isFavourite(id: player.id)
+                        Button {
+                            if isFav {
+                                favourites.remove(id: player.id)
+                            } else {
+                                favourites.add(FavouritePlayer(
+                                    id: player.id,
+                                    name: player.name,
+                                    country: player.country,
+                                    lastKnownPoints: player.points,
+                                    lastKnownRank: player.rank
+                                ))
+                            }
+                        } label: {
+                            Label(isFav ? "Unfavourite" : "Favourite",
+                                  systemImage: isFav ? "star.slash" : "star")
+                        }
+                        .tint(isFav ? .gray : .yellow)
                     }
                 }
             }
@@ -79,36 +111,24 @@ struct CompetitorsView: View {
     // MARK: - Filter header (sticky, sits above rankings)
 
     private var filterHeader: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            // Sort chips
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(PlayerRankSort.allCases, id: \.rawValue) { sort in
-                        FilterChip(
-                            title: sort.displayName,
-                            isSelected: vm.sortBy == sort
-                        ) { vm.sortBy = sort }
-                    }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
+                    FilterChip(
+                        title: zone.displayName,
+                        isSelected: vm.zone == zone
+                    ) { vm.zone = zone }
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 2)
             }
-            // Zone chips
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
-                        FilterChip(
-                            title: zone.displayName,
-                            isSelected: vm.zone == zone
-                        ) { vm.zone = zone }
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 4)
-            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 4)
         }
         .padding(.top, 8)
-        .background(Color(.systemBackground))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background {
+            Color(.systemBackground)
+                .padding(.horizontal, -1000)
+        }
     }
 
     // MARK: - Search results
@@ -155,9 +175,29 @@ struct CompetitorsView: View {
                     } label: {
                         LeaderboardRow(
                             player: result,
-                            isFavourite: favourites.isFavourite(id: result.id),
-                            sort: vm.sortBy
+                            isFavourite: favourites.isFavourite(id: result.id)
                         )
+                    }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 16))
+                    .swipeActions(edge: .leading) {
+                        let isFav = favourites.isFavourite(id: result.id)
+                        Button {
+                            if isFav {
+                                favourites.remove(id: result.id)
+                            } else {
+                                favourites.add(FavouritePlayer(
+                                    id: result.id,
+                                    name: result.name,
+                                    country: result.country,
+                                    lastKnownPoints: result.points,
+                                    lastKnownRank: result.rank
+                                ))
+                            }
+                        } label: {
+                            Label(isFav ? "Unfavourite" : "Favourite",
+                                  systemImage: isFav ? "star.slash" : "star")
+                        }
+                        .tint(isFav ? .gray : .yellow)
                     }
                 }
             }
@@ -167,24 +207,24 @@ struct CompetitorsView: View {
 
 // MARK: - Row subviews
 
-private struct FavouritePlayerRow: View {
+private struct FavouriteChip: View {
     let player: FavouritePlayer
 
     var body: some View {
-        HStack(spacing: 10) {
-            if !player.country.isEmpty {
-                Text(countryFlag(player.country))
-            }
-            Text(player.name)
-                .font(.body)
-        }
+        Text(player.name.isEmpty ? player.id : player.name)
+            .font(.caption.weight(.medium))
+            .lineLimit(1)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color.yellow.opacity(0.12), in: Capsule())
+            .overlay(Capsule().strokeBorder(Color.yellow.opacity(0.35), lineWidth: 1))
+            .foregroundStyle(.primary)
     }
 }
 
 private struct LeaderboardRow: View {
     let player: LimitlessPlayerSearchResult
     let isFavourite: Bool
-    let sort: PlayerRankSort
 
     var body: some View {
         HStack(spacing: 12) {
@@ -201,7 +241,7 @@ private struct LeaderboardRow: View {
                 .font(.body)
             Spacer()
             if let pts = player.points {
-                Text("\(pts) \(sort.columnLabel)")
+                Text("\(pts) pts")
                     .font(.caption.monospacedDigit())
                     .foregroundStyle(.secondary)
             }

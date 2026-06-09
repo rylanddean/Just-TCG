@@ -8,6 +8,8 @@ struct MetaShare {
 
 struct MetaShareEngine {
 
+    private static let blockedArchetypes: Set<String> = ["regidrago"]
+
     func compute(tournaments: [LimitlessTournamentDetail]) -> [MetaShare] {
         guard !tournaments.isEmpty else { return [] }
 
@@ -27,6 +29,7 @@ struct MetaShareEngine {
         guard totalPlayers > 0 else { return [] }
 
         return counts
+            .filter { !Self.blockedArchetypes.contains($0.key) }
             .map { key, count in
                 let canonical = canonicalName(key, in: tournaments)
                 return MetaShare(
