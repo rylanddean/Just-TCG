@@ -1,72 +1,268 @@
 import Foundation
 import FoundationModels
 
+// MARK: - User-facing errors
+
+enum DeckGeneratorError: LocalizedError {
+    case rateLimited
+    case assetsUnavailable
+    case contentRefused
+    case contextTooLong
+    case generic
+
+    var errorDescription: String? {
+        switch self {
+        case .rateLimited:
+            return "Apple Intelligence is busy. Please wait a moment and try again."
+        case .assetsUnavailable:
+            return "Apple Intelligence isn't ready yet. Open Settings › Apple Intelligence & Siri and wait for setup to finish."
+        case .contentRefused:
+            return "The request was blocked by a content filter. Try rephrasing your deck idea."
+        case .contextTooLong:
+            return "The generation produced too much content. Please try again."
+        case .generic:
+            return "Something went wrong. Please try again."
+        }
+    }
+}
+
+@available(iOS 26, *)
+private extension DeckGeneratorError {
+    static func from(_ error: LanguageModelSession.GenerationError) -> DeckGeneratorError {
+        switch error {
+        case .rateLimited, .concurrentRequests:
+            return .rateLimited
+        case .assetsUnavailable:
+            return .assetsUnavailable
+        case .guardrailViolation, .refusal:
+            return .contentRefused
+        case .exceededContextWindowSize:
+            return .contextTooLong
+        case .unsupportedLanguageOrLocale, .unsupportedGuide, .decodingFailure:
+            return .generic
+        @unknown default:
+            return .generic
+        }
+    }
+}
+
+// MARK: - System prompts
+//
+// Each phase gets its own fresh session with a purpose-scoped system prompt.
+// Phase 1 gets the full rule set. Phases 2 and 3 get only what they need,
+// which keeps each session's total token budget well within the model's window.
+
+// Full rules — used for Phase 1 (cold start) and refinements.
 private let generatorSystemPrompt = """
 You are a competitive Pokémon TCG deck builder. Build legal, tournament-ready 60-card Standard decks.
 
-HARD RULES — never break these:
-- Total must be EXACTLY 60 cards. Count every line before outputting.
-- Max 4 copies of any card except Basic Energy (unlimited Basic Energy allowed).
-- Current Standard regulation marks: H, I, J. No older cards.
-- Always include full evolution lines. If you play a Stage 1, include its Basic. If you play a Stage 2, include its Basic AND Stage 1 (or use Rare Candy to skip Stage 1, but still include the Basic). Never have an evolution without its pre-evolution in the deck.
+HARD RULES:
+- Exactly 60 cards total.
+- Max 4 copies per card name across all sets. Basic Energy is unlimited.
+- Standard only: regulation marks H, I, or J. Never use older marks.
+- Full evolution lines always: Stage 1 requires its Basic; Stage 2 requires Basic + Stage 1 (Rare Candy skips Stage 1 but the Basic is still required).
 
-RATIO GUIDELINES (adjust per archetype but stay in these ranges):
-- Pokémon: 12–20 cards total. A focused attacker line is 3–4 copies of the main attacker. Stage 2 lines typically run 4-3-3 or 4-2-3 with Rare Candy.
-- Trainers: 32–40 cards. Should include draw Supporters (Professor's Research, Iono, Colress's Experiment), search (Ultra Ball, Nest Ball, or Buddy-Buddy Poffin), and Boss's Orders for gusting.
-- Energy: 6–14 cards. Decks with acceleration engines (Gardevoir ex, Magma Basin, Arc Phone) run fewer energy; manual-attachment decks run more. Special energy counts against the 4-copy limit.
+RATIOS:
+- Pokémon 12–20: main attacker 3–4 copies; Stage 2 lines 4-3-3 or 4-2-3 + Rare Candy.
+- Trainers 32–40: Professor's Research 3-4, Iono 2-3, Boss's Orders 2-4, search (Ultra Ball/Nest Ball/Buddy-Buddy Poffin) 3-4, recovery (Night Stretcher/Super Rod) 1-2.
+- Energy 6–14: fewer with acceleration engines, more for manual attachment.
 
-STANDARD STAPLES to consider including:
-- Draw: 3–4 Professor's Research, 2–3 Iono, optional Colress's Experiment
-- Gust: 2–4 Boss's Orders
-- Search: 3–4 Ultra Ball or Nest Ball or Buddy-Buddy Poffin
-- Healing/recovery: Super Rod or Night Stretcher (1–2 copies)
-- Stage 2 decks: 3–4 Rare Candy
-- Terastal or ex decks: consider Counter Catcher, Switch, or Escape Rope for mobility
+OUTPUT FORMAT:
+[One sentence: strategy and win condition.]
 
-WHEN YOU OUTPUT A DECK:
-1. Write 2–3 sentences explaining the strategy and win condition.
-2. Output the complete card list using EXACTLY this format (no deviations):
-
-Pokémon: <count>
-<qty> <name> <set> <number>
+Pokémon: N
+qty name setCode number
 ...
 
-Trainer: <count>
-<qty> <name> <set> <number>
+Trainer: N
+qty name setCode number
 ...
 
-Energy: <count>
-<qty> <name> <set> <number>
+Energy: N
+qty name setCode number
 ...
 
 Total Cards: 60
 
-3. The section counts (e.g. "Pokémon: 20") must match the cards listed. The grand total must be exactly 60.
-
-If the request is unclear or very open-ended, ask ONE focused clarifying question before building.
+Section counts must match listed cards. Grand total must be exactly 60.
+If the request is unclear, ask ONE focused clarifying question.
 """
+
+// Minimal — Phase 2 only needs to pick Trainers; no need for full rules in every token.
+private let phase2SystemPrompt = """
+You are helping build a competitive Pokémon TCG Standard deck (regulation marks H, I, or J only). \
+Choose a Trainer package to support the given Pokémon line.
+"""
+
+// Minimal — Phase 3 only needs the output format; card selection is already done.
+private let phase3SystemPrompt = """
+Complete and format a 60-card Pokémon TCG Standard deck list (regulation marks H, I, or J only).
+
+Output format — use exactly this:
+[One sentence: strategy and win condition.]
+
+Pokémon: N
+qty name setCode number
+...
+
+Trainer: N
+qty name setCode number
+...
+
+Energy: N
+qty name setCode number
+...
+
+Total Cards: 60
+"""
+
+private let phase1Suffix = """
+
+
+Step 1 of 3 — Pokémon only. \
+Output ONLY a plain list of Pokémon cards, one per line: qty name setCode number \
+(example: 4 Gardevoir ex PRE 51). No Trainers. No Energy. No headers. No commentary.
+"""
+
+private func buildPhase2Prompt(pokemonList: String) -> String {
+    """
+    Pokémon line already selected:
+    \(pokemonList)
+
+    Step 2 of 3 — Trainers only. \
+    Output ONLY a plain list of 32–40 Trainer cards, one per line: qty name setCode number \
+    (example: 4 Iono PAL 185). No Energy. No headers. No commentary.
+    """
+}
+
+private func buildPhase3Prompt(pokemonList: String, trainerList: String) -> String {
+    """
+    Cards already selected for this deck:
+
+    Pokémon:
+    \(pokemonList)
+
+    Trainers:
+    \(trainerList)
+
+    Step 3 of 3 — Add Energy cards and output the complete deck in the required format. \
+    Count Pokémon + Trainers above, then add enough Energy to reach exactly 60 total cards.
+    """
+}
+
+// Strips commentary from an intermediate phase response, keeping only valid card lines
+// (4+ tokens, first token is a number). Keeps the injected context small and clean.
+private func extractCardLines(_ text: String) -> String {
+    text.components(separatedBy: "\n").filter { line in
+        let tokens = line.trimmingCharacters(in: .whitespaces)
+            .components(separatedBy: .whitespaces).filter { !$0.isEmpty }
+        return tokens.count >= 4 && Int(tokens[0]) != nil
+    }.joined(separator: "\n")
+}
+
+// MARK: - Engine
 
 @available(iOS 26, *)
 @Observable
 final class DeckGeneratorEngine {
-    private var session: LanguageModelSession
+    private var refineSession: LanguageModelSession
+    private var lastDeck: String?
 
     init() {
-        session = LanguageModelSession(instructions: generatorSystemPrompt)
+        refineSession = LanguageModelSession(instructions: generatorSystemPrompt)
     }
 
-    func generate(prompt: String) async throws -> DeckGeneratorResponse {
-        let response = try await session.respond(to: prompt)
-        return makeResponse(from: response.content)
+    func generate(prompt: String) -> AsyncThrowingStream<DeckGeneratorResponse, Error> {
+        // Each phase gets its own fresh session so no history accumulates across phases.
+        // Phases 2 and 3 also use leaner system prompts — only the full rules are needed
+        // for Phase 1. Results from earlier phases are injected explicitly into the next
+        // prompt rather than carried in session history.
+        return AsyncThrowingStream { continuation in
+            Task {
+                do {
+                    // Phase 1 — Pokémon line (full rules, cold start)
+                    let session1 = LanguageModelSession(instructions: generatorSystemPrompt)
+                    let p1 = try await self.respondWithRetry(session1, prompt + phase1Suffix)
+                    continuation.yield(DeckGeneratorResponse(message: p1, deckList: nil, isFollowUpQuestion: false, isIntermediate: true))
+
+                    // Phase 2 — Trainer package (minimal system prompt + Phase 1 card lines injected)
+                    let session2 = LanguageModelSession(instructions: phase2SystemPrompt)
+                    let p2 = try await self.respondWithRetry(session2, buildPhase2Prompt(pokemonList: extractCardLines(p1)))
+                    continuation.yield(DeckGeneratorResponse(message: p2, deckList: nil, isFollowUpQuestion: false, isIntermediate: true))
+
+                    // Phase 3 — Finalize (format-only system prompt + Phases 1 & 2 injected)
+                    let session3 = LanguageModelSession(instructions: phase3SystemPrompt)
+                    let p3 = try await self.respondWithRetry(session3, buildPhase3Prompt(
+                        pokemonList: extractCardLines(p1),
+                        trainerList: extractCardLines(p2)
+                    ))
+                    let final = self.makeResponse(from: p3)
+
+                    if let deck = final.deckList {
+                        self.lastDeck = deck
+                        self.refineSession = Self.makeRefineSession(from: deck)
+                    }
+
+                    continuation.yield(final)
+                    continuation.finish()
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+        }
     }
 
     func refine(prompt: String) async throws -> DeckGeneratorResponse {
-        let response = try await session.respond(to: prompt)
-        return makeResponse(from: response.content)
+        do {
+            let text = try await respondWithRetry(refineSession, prompt)
+            let response = makeResponse(from: text)
+            if let deck = response.deckList {
+                lastDeck = deck
+                refineSession = Self.makeRefineSession(from: deck)
+            }
+            return response
+        } catch let error as DeckGeneratorError {
+            if case .contextTooLong = error, let deck = lastDeck {
+                refineSession = Self.makeRefineSession(from: deck)
+                let text = try await respondWithRetry(refineSession, prompt)
+                let response = makeResponse(from: text)
+                if let newDeck = response.deckList {
+                    lastDeck = newDeck
+                    refineSession = Self.makeRefineSession(from: newDeck)
+                }
+                return response
+            }
+            throw error
+        }
     }
 
     func reset() {
-        session = LanguageModelSession(instructions: generatorSystemPrompt)
+        lastDeck = nil
+        refineSession = LanguageModelSession(instructions: generatorSystemPrompt)
+    }
+
+    private static func makeRefineSession(from deck: String) -> LanguageModelSession {
+        LanguageModelSession(
+            instructions: generatorSystemPrompt + "\n\nThe deck you are currently working with:\n\n" + deck
+        )
+    }
+
+    private func respondWithRetry(_ session: LanguageModelSession, _ prompt: String, maxAttempts: Int = 3) async throws -> String {
+        var attempt = 0
+        while true {
+            attempt += 1
+            do {
+                return try await session.respond(to: prompt).content
+            } catch let error as LanguageModelSession.GenerationError {
+                switch error {
+                case .rateLimited, .concurrentRequests:
+                    if attempt >= maxAttempts { throw DeckGeneratorError.rateLimited }
+                    try await Task.sleep(for: .seconds(Double(attempt) * 3))
+                default:
+                    throw DeckGeneratorError.from(error)
+                }
+            }
+        }
     }
 
     private func makeResponse(from text: String) -> DeckGeneratorResponse {
@@ -76,9 +272,14 @@ final class DeckGeneratorEngine {
     }
 }
 
+// MARK: - Fallback
+
 struct DeckGeneratorEngineFallback {
-    func generate(prompt: String) async -> DeckGeneratorResponse {
-        fallbackResponse
+    func generate(prompt: String) -> AsyncThrowingStream<DeckGeneratorResponse, Error> {
+        AsyncThrowingStream { continuation in
+            continuation.yield(fallbackResponse)
+            continuation.finish()
+        }
     }
 
     func refine(prompt: String) async -> DeckGeneratorResponse {

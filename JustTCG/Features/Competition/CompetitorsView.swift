@@ -211,7 +211,8 @@ private struct FavouriteChip: View {
     let player: FavouritePlayer
 
     var body: some View {
-        Text(player.name.isEmpty ? player.id : player.name)
+        let displayName = player.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        Text(displayName.isEmpty ? player.id : displayName)
             .font(.caption.weight(.medium))
             .lineLimit(1)
             .padding(.horizontal, 10)

@@ -65,7 +65,9 @@ struct LimitlessTournamentDetail: Codable {
 }
 
 struct LimitlessPlacement: Identifiable, Codable {
-    var id: Int { rank }
+    /// Uses deckListId when available (unique per deck); falls back to "playerName-rank"
+    /// so ForEach never gets duplicate IDs when placements span multiple tournaments.
+    var id: String { deckListId ?? "\(playerName)-\(rank)" }
     let rank: Int
     let playerName: String
     let country: String
@@ -75,8 +77,28 @@ struct LimitlessPlacement: Identifiable, Codable {
     let ties: Int
     let deckListId: String?
     let playerId: String?
+    /// Tournament name — available when parsed from a card's decklists page.
+    let tournamentName: String?
 
     var hasDeckList: Bool { deckListId != nil }
+
+    init(
+        rank: Int, playerName: String, country: String, archetype: String,
+        wins: Int, losses: Int, ties: Int,
+        deckListId: String?, playerId: String?,
+        tournamentName: String? = nil
+    ) {
+        self.rank = rank
+        self.playerName = playerName
+        self.country = country
+        self.archetype = archetype
+        self.wins = wins
+        self.losses = losses
+        self.ties = ties
+        self.deckListId = deckListId
+        self.playerId = playerId
+        self.tournamentName = tournamentName
+    }
 }
 
 // MARK: - Player profile
@@ -189,4 +211,14 @@ struct LimitlessDeckEntry: Codable, Identifiable {
     let number: String
     let name: String
     let quantity: Int
+    /// "Pokémon", "Trainer", or "Energy" — inferred from the deck list page section structure.
+    let supertype: String
+
+    init(setCode: String, number: String, name: String, quantity: Int, supertype: String = "Pokémon") {
+        self.setCode = setCode
+        self.number = number
+        self.name = name
+        self.quantity = quantity
+        self.supertype = supertype
+    }
 }

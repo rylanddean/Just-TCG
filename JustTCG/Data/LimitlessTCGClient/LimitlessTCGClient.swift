@@ -73,6 +73,18 @@ struct LimitlessTCGClient {
         return LimitlessHTMLParser.parsePlayerRows(from: html)
     }
 
+    /// Fetches competitive deck lists that used the specified card.
+    /// URL: https://limitlesstcg.com/cards/{setCode}/{number}/decklists
+    func fetchCardDecklists(setCode: String, number: String) async throws -> [LimitlessPlacement] {
+        let url = Self.limitlessBase
+            .appendingPathComponent("cards")
+            .appendingPathComponent(setCode)
+            .appendingPathComponent(number)
+            .appendingPathComponent("decklists")
+        let html = try await fetchHTML(from: url)
+        return LimitlessHTMLParser.parseCardDecklists(from: html)
+    }
+
     func fetchDeckList(listId: String) async throws -> LimitlessDeckList {
         let url = Self.limitlessBase
             .appendingPathComponent("decks")

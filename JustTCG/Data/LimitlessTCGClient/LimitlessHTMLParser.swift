@@ -95,16 +95,19 @@ enum LimitlessHTMLParser {
             let row = String(chunk[..<end.lowerBound])
 
             guard
-                let id   = firstCapture(#/href="\/players\/(\d+)"/#, in: row),
-                let name = firstCapture(#/<a[^>]*href="\/players\/\d+"[^>]*>([^<]+)<\/a>/#, in: row)
+                let id      = firstCapture(#/href="\/players\/(\d+)"/#, in: row),
+                let rawName = firstCapture(#/<a[^>]*href="\/players\/\d+"[^>]*>([^<]+)<\/a>/#, in: row)
             else { return nil }
+
+            let name = rawName.trimmingCharacters(in: .whitespacesAndNewlines).htmlDecoded
+            guard !name.isEmpty else { return nil }
 
             let country = firstCapture(#/class="flag"[^>]*alt="([^"]+)"/#, in: row) ?? ""
             let digits  = row.matches(of: #/<td>(\d+)<\/td>/#).map { String($0.1) }
 
             return LimitlessPlayerSearchResult(
                 id:      id,
-                name:    name.htmlDecoded,
+                name:    name,
                 country: country,
                 rank:    digits.count >= 2 ? digits.first.flatMap(Int.init) : nil,
                 points:  digits.count >= 2 ? digits.last.flatMap(Int.init) : nil
@@ -119,14 +122,26 @@ enum LimitlessHTMLParser {
     //            <span class="card-count">4</span>
     //            <span class="card-name">Abra</span>
     //          </a>
+    //
+    // Sections are announced between card groups as heading text, e.g.:
+    //   "Pokémon (18)", "Trainer (32)", "Energy (10)"
+    // We track the current section by scanning the gap that precedes each card div.
     static func parseDeckList(listId: String, from html: String) -> LimitlessDeckList {
-        // Split on the start of each decklist-card div
         let marker = #"class="decklist-card""#
-        let chunks = html.components(separatedBy: marker).dropFirst()
+        let parts  = html.components(separatedBy: marker)   // parts[0] = pre-card header HTML
 
-        let entries: [LimitlessDeckEntry] = chunks.compactMap { chunk in
-            // The opening tag attributes come before the first >
-            guard let closeAngle = chunk.firstIndex(of: ">") else { return nil }
+        var currentSupertype = "Pokémon"
+        var entries: [LimitlessDeckEntry] = []
+
+        for i in 1..<parts.count {
+            // The previous part's trailing fragment may contain a section header.
+            let prevTail = String(parts[i - 1].suffix(800))
+            if let detected = detectDeckSection(in: prevTail) {
+                currentSupertype = detected
+            }
+
+            let chunk = parts[i]
+            guard let closeAngle = chunk.firstIndex(of: ">") else { continue }
             let tagPart = String(chunk[chunk.startIndex..<closeAngle])
             let attrs   = dataAttributes(in: tagPart)
 
@@ -135,18 +150,95 @@ enum LimitlessHTMLParser {
                 let number   = attrs["number"],
                 let countStr = firstCapture(#/<span[^>]*class="[^"]*card-count[^"]*"[^>]*>(\d+)<\/span>/#, in: chunk),
                 let quantity = Int(countStr),
-                let name     = firstCapture(#/<span[^>]*class="[^"]*card-name[^"]*"[^>]*>([^<]+)<\/span>/#, in: chunk)
-            else { return nil }
+                let rawName  = firstCapture(#/<span[^>]*class="[^"]*card-name[^"]*"[^>]*>([^<]+)<\/span>/#, in: chunk)
+            else { continue }
 
-            return LimitlessDeckEntry(
+            let name = rawName.htmlDecoded
+            // Name-based override: anything ending in "Energy" belongs to the Energy section.
+            let supertype = name.hasSuffix("Energy") ? "Energy" : currentSupertype
+
+            entries.append(LimitlessDeckEntry(
                 setCode: setCode,
                 number: number,
-                name: name.htmlDecoded,
-                quantity: quantity
-            )
+                name: name,
+                quantity: quantity,
+                supertype: supertype
+            ))
         }
 
         return LimitlessDeckList(listId: listId, entries: entries)
+    }
+
+    // MARK: - Card decklists  (/cards/{set}/{number}/decklists)
+    //
+    // Unlike /tournaments/{id}, this page uses plain <tr> rows with NO data-* attributes.
+    // Table columns: [Pokémon images | Deck link | Tournament link | Placement]
+    //
+    // Example row:
+    //   <tr>
+    //     <td><img class="pokemon" …></td>
+    //     <td><a href="https://limitlesstcg.com/decks/list/25631">Charizard Pidgeot by Nathan Hollar</a></td>
+    //     <td><a href="/tournaments/552">Regional Orlando, FL</a></td>
+    //     <td>33rd</td>
+    //   </tr>
+    static func parseCardDecklists(from html: String) -> [LimitlessPlacement] {
+        splitBareRows(html).compactMap { row in
+            // Skip the header row which contains <th> elements
+            guard !row.contains("<th") else { return nil }
+
+            // Deck list ID — try absolute URL first, then relative
+            guard let listId = firstCapture(#/href="https?:\/\/limitlesstcg\.com\/decks\/list\/(\d+)"/#, in: row)
+                            ?? firstCapture(#/href="\/decks\/list\/(\d+)"/#, in: row)
+            else { return nil }
+
+            // Deck link text is "Archetype by PlayerName"
+            guard let rawLinkText = firstCapture(#/<a[^>]*\/decks\/list\/\d+[^>]*>([^<]+)<\/a>/#, in: row)
+            else { return nil }
+
+            let linkText = rawLinkText.htmlDecoded
+            let archetype: String
+            let playerName: String
+            if let sep = linkText.range(of: " by ") {
+                archetype  = String(linkText[..<sep.lowerBound])
+                playerName = String(linkText[sep.upperBound...])
+            } else {
+                archetype  = linkText
+                playerName = ""
+            }
+
+            // Tournament name from the link in column 3
+            let tournamentName = firstCapture(#/<a[^>]*\/tournaments\/\d+[^>]*>([^<]+)<\/a>/#, in: row)?
+                .htmlDecoded
+
+            // Placement text, e.g. "33rd" → 33
+            let cols = tdsContent(in: row)
+            let rankNum = cols.last.flatMap { Int($0.filter(\.isNumber)) } ?? 0
+
+            return LimitlessPlacement(
+                rank: rankNum,
+                playerName: playerName,
+                country: "",
+                archetype: archetype,
+                wins: 0, losses: 0, ties: 0,
+                deckListId: listId,
+                playerId: nil,
+                tournamentName: tournamentName
+            )
+        }
+    }
+
+    // MARK: - Section detection helper
+
+    /// Returns the deck section type if the HTML fragment contains a heading like
+    /// "Pokémon (18)", "Trainer (32)", or "Energy (10)".
+    /// The parenthetical count narrows the match to actual section headers, avoiding
+    /// false positives from card names or navigation text.
+    private static func detectDeckSection(in html: String) -> String? {
+        let lower = html.lowercased()
+        if lower.firstMatch(of: #/(pok[eé]mon)\s*\(\d+\)/#) != nil { return "Pokémon" }
+        if lower.firstMatch(of: #/trainer\s*\(\d+\)/#)       != nil { return "Trainer" }
+        if lower.firstMatch(of: #/energy\s*\(\d+\)/#)        != nil { return "Energy"  }
+        return nil
     }
 
     // MARK: - Player profile  (/players/{id})

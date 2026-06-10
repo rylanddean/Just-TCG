@@ -106,6 +106,8 @@ struct CardDetailView: View {
                         }
                     }
 
+                    CardCompetitiveDecksSection(card: card)
+
                     if let addAction = onAddToDeck {
                         Button(action: addAction) {
                             Label("Add to Deck", systemImage: "plus")
@@ -185,6 +187,127 @@ private struct CombatStatColumn<Content: View>: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 8)
+    }
+}
+
+// MARK: - Competitive decks section (inline in card detail)
+
+/// Holds the deck list text and name needed to open ImportDeckSheet.
+private struct DeckImportPayload: Identifiable {
+    let id: String          // listId — unique per deck
+    let deckListText: String
+    let deckName: String
+}
+
+/// Fetches and displays competitive tournament decks that include this card.
+/// Silently disappears when no results are available so the detail view stays clean.
+private struct CardCompetitiveDecksSection: View {
+    let card: CachedCard
+
+    @State private var placements: [LimitlessPlacement] = []
+    @State private var isLoading = true
+    @State private var loadingDeckId: String? = nil
+    @State private var importPayload: DeckImportPayload? = nil
+
+    private let client = LimitlessTCGClient()
+
+    var body: some View {
+        Group {
+            if isLoading {
+                Divider().padding(.vertical, 4)
+                HStack(spacing: 8) {
+                    Text("Competitive Decks")
+                        .font(.headline)
+                    ProgressView()
+                        .scaleEffect(0.75)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            } else if !placements.isEmpty {
+                Divider().padding(.vertical, 4)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Competitive Decks")
+                        .font(.headline)
+                    ForEach(placements.prefix(8)) { placement in
+                        placementRow(placement)
+                    }
+                }
+                .sheet(item: $importPayload) { payload in
+                    ImportDeckSheet(
+                        deckListText: payload.deckListText,
+                        initialDeckName: payload.deckName,
+                        onImportCompleted: { importPayload = nil }
+                    )
+                }
+            }
+            // If empty and not loading, renders nothing — no divider, no header.
+        }
+        .task { await fetchDecklists() }
+    }
+
+    private func placementRow(_ placement: LimitlessPlacement) -> some View {
+        HStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(placement.archetype)
+                    .font(.subheadline.weight(.medium))
+                HStack(spacing: 4) {
+                    if !placement.playerName.isEmpty {
+                        Text(placement.playerName)
+                    }
+                    if let tournament = placement.tournamentName {
+                        Text("·")
+                        Text(tournament)
+                    }
+                    if placement.rank > 0 {
+                        Text("·")
+                        Text("#\(placement.rank)")
+                    }
+                }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+            }
+            Spacer()
+            if loadingDeckId == placement.deckListId {
+                ProgressView().scaleEffect(0.8)
+            } else {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            guard loadingDeckId == nil else { return }
+            Task { await selectPlacement(placement) }
+        }
+    }
+
+    // MARK: - Async
+
+    @MainActor
+    private func fetchDecklists() async {
+        isLoading = true
+        let all = (try? await client.fetchCardDecklists(
+            setCode: card.setCode,
+            number: card.number
+        )) ?? []
+        placements = all.filter { $0.deckListId != nil }
+        isLoading = false
+    }
+
+    @MainActor
+    private func selectPlacement(_ placement: LimitlessPlacement) async {
+        guard let listId = placement.deckListId else { return }
+        loadingDeckId = listId
+        if let deckList = try? await client.fetchDeckList(listId: listId) {
+            let text = LimitlessDeckFormatter.toPTCGL(deckList)
+            importPayload = DeckImportPayload(
+                id: listId,
+                deckListText: text,
+                deckName: placement.archetype + " Deck"
+            )
+        }
+        loadingDeckId = nil
     }
 }
 

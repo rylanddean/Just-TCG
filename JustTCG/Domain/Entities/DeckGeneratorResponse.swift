@@ -4,6 +4,7 @@ struct DeckGeneratorResponse {
     let message: String
     let deckList: String?
     let isFollowUpQuestion: Bool
+    var isIntermediate: Bool = false
 }
 
 enum DeckListExtractor {

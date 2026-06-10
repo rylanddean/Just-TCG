@@ -4,6 +4,10 @@ import SwiftData
 struct DeckImportMatch: Identifiable {
     let entry: DeckImportEntry
     var cardId: String?
+    /// Small thumbnail URL — present whenever the card was resolved.
+    var imageURL: String?
+    /// High-res image URL for the full-screen preview.
+    var largeImageURL: String?
 
     var id: String { entry.name + entry.setCode + entry.number }
     var isMatched: Bool { cardId != nil }
@@ -33,13 +37,16 @@ struct DeckImportLookup {
             descriptor.fetchLimit = 2
             let exact = (try? context.fetch(descriptor)) ?? []
             if exact.count == 1 {
-                return DeckImportMatch(entry: entry, cardId: exact[0].id)
+                let card = exact[0]
+                return DeckImportMatch(entry: entry, cardId: card.id,
+                                       imageURL: card.imageURL, largeImageURL: card.largeImageURL)
             }
 
             // Fallback: Basic Energy resolved by energy type
             if let energyType = Self.basicEnergyType(from: entry.name),
                let card = basicEnergyCards.first(where: { $0.name.contains(energyType) }) {
-                return DeckImportMatch(entry: entry, cardId: card.id)
+                return DeckImportMatch(entry: entry, cardId: card.id,
+                                       imageURL: card.imageURL, largeImageURL: card.largeImageURL)
             }
 
             return DeckImportMatch(entry: entry, cardId: nil)

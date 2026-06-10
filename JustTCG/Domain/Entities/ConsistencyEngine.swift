@@ -12,6 +12,11 @@ struct DeckCardEntry {
     var types: [String] = []
     /// The type this Pokémon is weak to (e.g. "Fire"). Nil for Trainers, Energy, or unknown.
     var weaknessType: String? = nil
+    /// User-assigned role: `.attacker` (needs energy to attack) or `.tech` (ability-only, no energy needed).
+    /// Nil means unassigned — the engine applies a heuristic.
+    var pokemonRole: PokemonRole? = nil
+    /// Minimum number of energy attachments required to use any attack. Nil for non-Pokémon or unknown.
+    var minAttackCost: Int? = nil
 }
 
 struct KeyCardOdds {
@@ -33,6 +38,12 @@ struct ConsistencyBreakdown {
     let energyScore: Int
     let energyAccelCount: Int
     let energyCardCount: Int
+    /// Number of Pokémon copies identified as attackers (labeled or by heuristic).
+    let identifiedAttackerCopies: Int
+    /// Average minimum attack cost across identified attackers. Nil when no attackers identified.
+    let attackerAvgMinCost: Double?
+    /// Number of Pokémon that are Pokémon-type but have no role label assigned.
+    let unlabeledPokemonCount: Int
     let prizeResilienceScore: Int
     let disruptionScore: Int
     let evolutionScore: Int
@@ -172,7 +183,59 @@ struct ConsistencyEngine {
         // abilityImpactRaw: 3 copies × 5 pts = 15 per card; ×4 → 60 for one dominant card,
         // 100 requires two or more high-impact ability lines.
         let abilityImpactScore = min(100, abilityImpactRaw * 4)
-        let energyScore        = min(100, min(energyAccelCount, 6) * 10 + min(energyCardCount, 15) * 4)
+
+        // --- Attacker-aware energy score ---
+        // Heuristic: only the highest-stage unlabeled Pokémon (with attacks) count toward energy demand.
+        // Explicit role labels override the heuristic: `.attacker` always included, `.tech` always excluded.
+        let hasStage2 = entries.contains { $0.supertype == "Pokémon" && $0.subtypes.contains("Stage 2") }
+        let hasStage1 = entries.contains { $0.supertype == "Pokémon" && $0.subtypes.contains("Stage 1") }
+
+        var attackerCopies = 0
+        var weightedCostSum = 0.0
+        var unlabeledPokemonCount = 0
+        for entry in entries where entry.supertype == "Pokémon" {
+            if entry.pokemonRole == nil { unlabeledPokemonCount += entry.copies }
+            let isAttacker: Bool
+            switch entry.pokemonRole {
+            case .attacker:
+                isAttacker = true
+            case .tech:
+                isAttacker = false
+            case nil:
+                // Include only the highest evolution stage that has real attacks.
+                let isTopStage: Bool
+                if hasStage2 {
+                    isTopStage = entry.subtypes.contains("Stage 2")
+                } else if hasStage1 {
+                    isTopStage = entry.subtypes.contains("Stage 1")
+                } else {
+                    isTopStage = true
+                }
+                isAttacker = isTopStage && (entry.minAttackCost ?? 0) > 0
+            }
+            if isAttacker {
+                attackerCopies += entry.copies
+                weightedCostSum += Double(entry.copies) * Double(entry.minAttackCost ?? 2)
+            }
+        }
+
+        let energyScore: Int
+        let attackerAvgMinCost: Double?
+        if attackerCopies > 0 {
+            let avgCost = weightedCostSum / Double(attackerCopies)
+            attackerAvgMinCost = avgCost
+            let demand = Double(attackerCopies) * avgCost
+            let supply = Double(energyCardCount) + Double(energyAccelCount) * 2.0
+            // Full base score (80 pts) when supply is 1.5× demand; accel gives up to 20 bonus pts.
+            let ratio = supply / max(1.0, demand)
+            let baseScore = Int(min(1.0, ratio / 1.5) * 80)
+            let accelBonus = min(20, energyAccelCount * 5)
+            energyScore = min(100, baseScore + accelBonus)
+        } else {
+            // No attackers identified — fall back to raw card-count heuristic.
+            attackerAvgMinCost = nil
+            energyScore = min(100, min(energyAccelCount, 6) * 10 + min(energyCardCount, 15) * 4)
+        }
 
         let totalPokemon = singlePrizeCopies + rulePokemonCopies
         let prizeResilienceScore = totalPokemon == 0 ? 50 : singlePrizeCopies * 100 / totalPokemon
@@ -246,6 +309,9 @@ struct ConsistencyEngine {
             energyScore: energyScore,
             energyAccelCount: energyAccelCount,
             energyCardCount: energyCardCount,
+            identifiedAttackerCopies: attackerCopies,
+            attackerAvgMinCost: attackerAvgMinCost,
+            unlabeledPokemonCount: unlabeledPokemonCount,
             prizeResilienceScore: prizeResilienceScore,
             disruptionScore: disruptionScore,
             evolutionScore: evolutionScore,

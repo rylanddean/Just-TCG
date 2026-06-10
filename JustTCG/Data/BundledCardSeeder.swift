@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v10"
+    static let seededKey = "bundled_cards_seeded_v11"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -61,6 +61,7 @@ enum BundledCardSeeder {
                     .compactMap { Int($0.damage.prefix(while: { $0.isNumber })) }
                     .max()
                 let attackEnergyCosts = Set(entry.attacks.flatMap(\.cost)).sorted()
+                let minAttackCost = entry.attacks.map { $0.cost.count }.min()
                 let numericPrefix = Int(entry.number.prefix(while: { $0.isNumber })) ?? 0
                 let numberSortKey = String(format: "%03d", numericPrefix) + entry.number
 
@@ -93,7 +94,8 @@ enum BundledCardSeeder {
                     resistanceType: entry.resistanceType,
                     setReleaseDate: releaseDate,
                     numberSortKey: numberSortKey,
-                    roleTags: roleTags
+                    roleTags: roleTags,
+                    minAttackCost: minAttackCost
                 ))
             }
         }

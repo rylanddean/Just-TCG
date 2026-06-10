@@ -96,8 +96,8 @@ struct DeckRecommendationEngine {
         breakdown: ConsistencyBreakdown,
         deckEntries: [DeckCardEntry],
         allCards: [CachedCard],
-        dismissedIds: Set<String>,
-        count: Int = 10,
+        dismissedNames: Set<String>,
+        count: Int = 20,
         /// When non-nil, only the matching deficiency is returned (no score gate,
         /// all available candidates up to `count`). Pass nil for auto mode.
         focusedScoreLabel: String? = nil
@@ -196,7 +196,7 @@ struct DeckRecommendationEngine {
             let candidates = allCards
                 .filter { card in
                     guard card.isStandardLegal else { return false }
-                    guard !dismissedIds.contains(card.id) else { return false }
+                    guard !dismissedNames.contains(card.name) else { return false }
                     guard !usedNames.contains(card.name) else { return false }
                     guard (deckCopiesByName[card.name] ?? 0) < 4 else { return false }
                     if let st = deficiency.supertypeFilter, card.supertype != st { return false }
@@ -212,8 +212,10 @@ struct DeckRecommendationEngine {
                     return lhs.name < rhs.name   // stable alphabetical tie-break
                 }
 
-            for card in candidates.prefix(maxPerDeficiency) {
-                guard results.count < count else { break }
+            var addedForDeficiency = 0
+            for card in candidates {
+                guard results.count < count, addedForDeficiency < maxPerDeficiency else { break }
+                guard !usedNames.contains(card.name) else { continue }
                 usedNames.insert(card.name)
                 results.append(CardRecommendation(
                     id: card.id,
@@ -222,6 +224,7 @@ struct DeckRecommendationEngine {
                     scoreLabel: deficiency.scoreLabel,
                     scoreSystemImage: deficiency.scoreSystemImage
                 ))
+                addedForDeficiency += 1
             }
         }
 

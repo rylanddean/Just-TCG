@@ -37,6 +37,7 @@
 		4B56AB3482D64309DC044B06 /* Archetype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90610006133044A324F55C93 /* Archetype.swift */; };
 		4B6407E5FE8F6A3D79A4B313 /* LimitlessTCGClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89739E9641ED0CFDBA8C92C9 /* LimitlessTCGClient.swift */; };
 		4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */; };
+		51658C78D355439D87E6A573 /* CardCompetitiveDeckSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36564E430F4D47048A64CD06 /* CardCompetitiveDeckSheet.swift */; };
 		AA11BB22CC33DD44EE55FF66 /* CardSwapSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */; };
 		5014E9C9DB5C20462B2AF3FF /* DRI.json in Resources */ = {isa = PBXBuildFile; fileRef = 88BD6DB6505515DACEA59CDF /* DRI.json */; };
 		50DB890FA546CE4C5E9CFD08 /* DeckListViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B477CDA98E5774645BD2C /* DeckListViewerViewModel.swift */; };
@@ -96,6 +97,7 @@
 		D5296FB829ED45C193DD2618 /* LiveGameSetupSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11756ACBB049404F8F6E870D /* LiveGameSetupSheet.swift */; };
 		D9407C2AB518110FD5AD7D77 /* JustTCGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF408A4D8F2347380004EE6 /* JustTCGApp.swift */; };
 		DDA85F94ACDB0081769D2621 /* LimitlessModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC03CE1136F4AC07968D114 /* LimitlessModels.swift */; };
+		56A433A3222E4829864186F4 /* LimitlessDeckFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2858AB8614161B77453C3 /* LimitlessDeckFormatter.swift */; };
 		E1F2A3B4C5D6E7F8A9B0C1D2 /* StreakWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A6B7C8D9E0F1A2 /* StreakWidget.swift */; };
 		E341B4DA8499A11F0849A4F8 /* MatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459783A5E756DE81AE3CDE20 /* MatchHistoryView.swift */; };
 		E35DF9D0C96F0DA43859A630 /* LogMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55695AE905DCDFE6937983B4 /* LogMatchViewModel.swift */; };
@@ -127,6 +129,7 @@
 		3803540850A0481E8677C326 /* RulesQueryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */; };
 		223A8C1578FD4145B186BDE2 /* DeckGeneratorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */; };
 		9EE78F3CA6F544E58CCDFDDB /* DeckGeneratorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* DeckGeneratorValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6D7E8F9A0B1C2D3E4F5A6 /* DeckGeneratorValidator.swift */; };
 		0A8C4E915224400FB59EE9D9 /* RulebookSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC064BC0C344AD3B6A3101D /* RulebookSection.swift */; };
 		D9FEC99F01204334861ED503 /* RulebookLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB081F029C3472099E19524 /* RulebookLoader.swift */; };
 		313C911EBC69431D86BE4B0F /* PokemonTCGRules.json in Resources */ = {isa = PBXBuildFile; fileRef = ADFC4720051B470E95E07FC3 /* PokemonTCGRules.json */; };
@@ -187,6 +190,7 @@
 		16201D8AC3E74BEFAB08D8C6 /* DeckImportLookupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckImportLookupTests.swift; sourceTree = "<group>"; };
 		16702F508C394508AA6BDBAC /* LiveGameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameRepository.swift; sourceTree = "<group>"; };
 		16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDeckSheet.swift; sourceTree = "<group>"; };
+		36564E430F4D47048A64CD06 /* CardCompetitiveDeckSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCompetitiveDeckSheet.swift; sourceTree = "<group>"; };
 		BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwapSheet.swift; sourceTree = "<group>"; };
 		1CB8C3B289EB7D0AD0CEF47E /* TEF.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TEF.json; sourceTree = "<group>"; };
 		1D5ED6169876E3EAA984725D /* DeckCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCard.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		26E74F1631B796FE923365C4 /* DeckValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckValidationError.swift; sourceTree = "<group>"; };
 		2B386FF8F26241A095D10275 /* LiveGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGame.swift; sourceTree = "<group>"; };
 		2DC03CE1136F4AC07968D114 /* LimitlessModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessModels.swift; sourceTree = "<group>"; };
+		3FA2858AB8614161B77453C3 /* LimitlessDeckFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessDeckFormatter.swift; sourceTree = "<group>"; };
 		317126C33B49BC2A0F29791C /* AppNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationState.swift; sourceTree = "<group>"; };
 		33AF483EF46027ED9888EC36 /* LimitlessHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessHTMLParser.swift; sourceTree = "<group>"; };
 		360B967F20A346CB85D5C0DB /* LiveGameHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameHUDView.swift; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 		B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesQueryEngine.swift; sourceTree = "<group>"; };
 		9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorEngine.swift; sourceTree = "<group>"; };
 		CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorResponse.swift; sourceTree = "<group>"; };
+		B5C6D7E8F9A0B1C2D3E4F5A6 /* DeckGeneratorValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGeneratorValidator.swift; sourceTree = "<group>"; };
 		EEC064BC0C344AD3B6A3101D /* RulebookSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookSection.swift; sourceTree = "<group>"; };
 		0AB081F029C3472099E19524 /* RulebookLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookLoader.swift; sourceTree = "<group>"; };
 		ADFC4720051B470E95E07FC3 /* PokemonTCGRules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokemonTCGRules.json; sourceTree = "<group>"; };
@@ -420,6 +426,7 @@
 				6DFC1BF7B9DC52AD69F3ADD4 /* DecksView.swift */,
 				A5D4C3B2E1F0987654321098 /* CoverCardPickerSheet.swift */,
 				BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */,
+				36564E430F4D47048A64CD06 /* CardCompetitiveDeckSheet.swift */,
 				16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */,
 				96C8C10D565D7C6CD8E8E399 /* LogMatchSheet.swift */,
 				55695AE905DCDFE6937983B4 /* LogMatchViewModel.swift */,
@@ -495,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				8D5888581E152914FC0289D3 /* LimitlessClientError.swift */,
+				3FA2858AB8614161B77453C3 /* LimitlessDeckFormatter.swift */,
 				33AF483EF46027ED9888EC36 /* LimitlessHTMLParser.swift */,
 				2DC03CE1136F4AC07968D114 /* LimitlessModels.swift */,
 				89739E9641ED0CFDBA8C92C9 /* LimitlessTCGClient.swift */,
@@ -586,6 +594,7 @@
 				B3EB3F4D0B0A41AF8FCA2DC0 /* RulesQueryEngine.swift */,
 				9E2188A3769245A7B4CC8238 /* DeckGeneratorEngine.swift */,
 				CDCB2731D7F5425ABD4C7CF0 /* DeckGeneratorResponse.swift */,
+				B5C6D7E8F9A0B1C2D3E4F5A6 /* DeckGeneratorValidator.swift */,
 				C1EAE38277974A92A84366D5 /* ConsistencyEngine.swift */,
 				CBABBF64B2494C07A66A3559 /* MetaTrendEngine.swift */,
 				AA1CC8E341024F3DA08C5836 /* TechAdvisorEngine.swift */,
@@ -914,6 +923,7 @@
 				759FE409FAF54EF9AA5A8781 /* DeckListParser.swift in Sources */,
 				C7E7C923598B409BA423756A /* DeckImportLookup.swift in Sources */,
 				AA11BB22CC33DD44EE55FF66 /* CardSwapSheet.swift in Sources */,
+				51658C78D355439D87E6A573 /* CardCompetitiveDeckSheet.swift in Sources */,
 				4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */,
 				D9407C2AB518110FD5AD7D77 /* JustTCGApp.swift in Sources */,
 				Q1R2S3T4U5V6W7X8Y9Z0A1B2 /* FavouritePlayer.swift in Sources */,
@@ -921,6 +931,7 @@
 				S1T2U3V4W5X6Y7Z8A9B0C1D2 /* PlayerDetailView.swift in Sources */,
 				T1U2V3W4X5Y6Z7A8B9C0D1E2 /* PlayerDetailViewModel.swift in Sources */,
 				A48C3BDC4794CC52321EC163 /* LimitlessClientError.swift in Sources */,
+				56A433A3222E4829864186F4 /* LimitlessDeckFormatter.swift in Sources */,
 				BB7D33B52324692CB727B726 /* LimitlessHTMLParser.swift in Sources */,
 				DDA85F94ACDB0081769D2621 /* LimitlessModels.swift in Sources */,
 				4B6407E5FE8F6A3D79A4B313 /* LimitlessTCGClient.swift in Sources */,
@@ -971,6 +982,7 @@
 				3803540850A0481E8677C326 /* RulesQueryEngine.swift in Sources */,
 				223A8C1578FD4145B186BDE2 /* DeckGeneratorEngine.swift in Sources */,
 				9EE78F3CA6F544E58CCDFDDB /* DeckGeneratorResponse.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5C /* DeckGeneratorValidator.swift in Sources */,
 				0A8C4E915224400FB59EE9D9 /* RulebookSection.swift in Sources */,
 				D9FEC99F01204334861ED503 /* RulebookLoader.swift in Sources */,
 				45F8676DA3D24B669421488E /* ProfileView.swift in Sources */,

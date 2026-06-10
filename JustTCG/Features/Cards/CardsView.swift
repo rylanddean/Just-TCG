@@ -22,6 +22,8 @@ struct CardsView: View {
     @State private var toastMessage: String? = nil
     @State private var searchTask: Task<Void, Never>? = nil
 
+    @State private var findDeckCard: CachedCard? = nil
+
     private let columns = [
         GridItem(.flexible(minimum: 100)),
         GridItem(.flexible(minimum: 100)),
@@ -53,6 +55,9 @@ struct CardsView: View {
                         availableRegulationMarks: availableRegulationMarks,
                         availableRarities: availableRarities
                     )
+                }
+                .sheet(item: $findDeckCard) { card in
+                    CardCompetitiveDeckSheet(card: card)
                 }
         }
         .task { await initialLoad() }
@@ -98,6 +103,14 @@ struct CardsView: View {
                     }
                     .buttonStyle(.plain)
                     .contextMenu {
+                        Button {
+                            findDeckCard = card
+                        } label: {
+                            Label("Find Competitive Deck", systemImage: "trophy")
+                        }
+
+                        Divider()
+
                         if decks.isEmpty {
                             Text("No Decks Yet")
                         } else {

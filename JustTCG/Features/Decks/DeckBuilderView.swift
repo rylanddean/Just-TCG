@@ -34,17 +34,16 @@ struct DeckBuilderView: View {
     @State private var matchupBreakdown: MetaMatchupBreakdown? = nil
     @State private var mergedDeckEntries: [DeckCardEntry] = []
     @State private var allRecommendations: [CardRecommendation] = []
-    @State private var dismissedRecommendationIds: Set<String> = []
+    @State private var visibleRecommendations: [CardRecommendation] = []
+    @State private var pendingRecommendationQueue: [CardRecommendation] = []
+    @State private var recLoadedThrough: Int = 0
+    @State private var dismissedRecommendationNames: Set<String> = []
     @State private var recommendationFocus: String = "Auto"
     @State private var narrative: String? = nil
     @State private var isGeneratingNarrative = false
     @State private var narrativeError: String? = nil
     @State private var expandedSubScores: Set<String> = []
     @State private var recommendationToPreview: CardRecommendation? = nil
-
-    private var visibleRecommendations: [CardRecommendation] {
-        Array(allRecommendations.prefix(recommendationFocus == "Auto" ? 10 : 3))
-    }
 
     var body: some View {
         Group {
@@ -277,10 +276,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) {
-                        vm.setQuantity($0, for: dc)
-                    }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onRoleChange: { newRole in
+                            dc.pokemonRole = newRole
+                            computeBreakdown(vm: vm)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .pokemon)) }
@@ -414,21 +416,35 @@ struct DeckBuilderView: View {
             breakdown: bd,
             deckEntries: mergedDeckEntries,
             allCards: standardLegalCards,
-            dismissedIds: dismissedRecommendationIds,
+            dismissedNames: dismissedRecommendationNames,
             focusedScoreLabel: focus
         )
+        recLoadedThrough = 0
+        visibleRecommendations = []
+        pendingRecommendationQueue = []
+        loadRecBatch()
+    }
+
+    private func loadRecBatch() {
+        let batch = Array(allRecommendations[recLoadedThrough...].prefix(13))
+        recLoadedThrough += batch.count
+        visibleRecommendations = Array(batch.prefix(3))
+        pendingRecommendationQueue = Array(batch.dropFirst(3))
     }
 
     private func dismissRecommendation(_ rec: CardRecommendation) {
         withAnimation {
-            dismissedRecommendationIds.insert(rec.id)
-            allRecommendations.removeAll { $0.id == rec.id }
+            dismissedRecommendationNames.insert(rec.card.name)
+            visibleRecommendations.removeAll { $0.id == rec.id }
+            while visibleRecommendations.count < 3, !pendingRecommendationQueue.isEmpty {
+                visibleRecommendations.append(pendingRecommendationQueue.removeFirst())
+            }
         }
     }
 
     private func resetRecommendations() {
         withAnimation {
-            dismissedRecommendationIds.removeAll()
+            dismissedRecommendationNames.removeAll()
             computeRecommendations()
         }
     }
@@ -436,19 +452,31 @@ struct DeckBuilderView: View {
     @ViewBuilder
     private var recommendationsSection: some View {
         let hasSomething = !visibleRecommendations.isEmpty
-            || !dismissedRecommendationIds.isEmpty
+            || !pendingRecommendationQueue.isEmpty
+            || recLoadedThrough < allRecommendations.count
+            || !dismissedRecommendationNames.isEmpty
             || recommendationFocus != "Auto"
         if deckBreakdown != nil, hasSomething {
             Section {
                 if visibleRecommendations.isEmpty {
-                    Label(
-                        recommendationFocus == "Auto"
-                            ? "No suggestions right now"
-                            : "No more \(recommendationFocus) suggestions",
-                        systemImage: "checkmark.circle"
-                    )
-                    .foregroundStyle(.secondary)
-                    .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
+                    if recLoadedThrough < allRecommendations.count {
+                        Button {
+                            withAnimation { loadRecBatch() }
+                        } label: {
+                            Label("Load more suggestions", systemImage: "arrow.down.circle")
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
+                    } else {
+                        Label(
+                            recommendationFocus == "Auto"
+                                ? "No suggestions right now"
+                                : "No more \(recommendationFocus) suggestions",
+                            systemImage: "checkmark.circle"
+                        )
+                        .foregroundStyle(.secondary)
+                        .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
+                    }
                 } else {
                     ForEach(visibleRecommendations) { rec in
                         recommendationRow(rec)
@@ -484,22 +512,36 @@ struct DeckBuilderView: View {
                             )
                     }
                     .textCase(nil)
-                    if !dismissedRecommendationIds.isEmpty {
+                    if !dismissedRecommendationNames.isEmpty {
                         Button("Reset") { resetRecommendations() }
                             .font(.caption)
                             .textCase(nil)
                     }
                 }
             } footer: {
-                let remaining = allRecommendations.count - visibleRecommendations.count
-                if remaining > 0 {
-                    Text("\(remaining) more suggestion\(remaining == 1 ? "" : "s") available — dismiss any card to see them")
+                let queued = pendingRecommendationQueue.count
+                if queued > 0 {
+                    Text("\(queued) more suggestion\(queued == 1 ? "" : "s") queued — dismiss any to see them")
                         .font(.caption)
                 }
             }
         }
     }
 
+
+    private func addRecommendedCard(_ rec: CardRecommendation) {
+        DeckRepository(modelContext: context)
+            .addCard(cardId: rec.card.id, to: deck, isBasicEnergy: rec.card.isBasicEnergy, cardName: rec.card.name)
+        viewModel?.loadCards()
+    }
+
+    private func canAddRecommendedCard(_ card: CachedCard) -> Bool {
+        let total = deck.cards.reduce(0) { $0 + $1.quantity }
+        guard total < 60 else { return false }
+        guard !card.isBasicEnergy else { return true }
+        let copies = deck.cards.first(where: { $0.cardId == card.id })?.quantity ?? 0
+        return copies < 4
+    }
 
     private func recommendationRow(_ rec: CardRecommendation) -> some View {
         HStack(spacing: 0) {
@@ -545,6 +587,19 @@ struct DeckBuilderView: View {
             }
             .buttonStyle(.plain)
 
+            // Add button — isolated tap zone
+            Button {
+                addRecommendedCard(rec)
+            } label: {
+                Image(systemName: "plus.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(canAddRecommendedCard(rec.card) ? Color.accentColor : Color.secondary)
+                    .frame(width: 36, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.borderless)
+            .disabled(!canAddRecommendedCard(rec.card))
+
             // Dismiss button — isolated tap zone
             Button {
                 dismissRecommendation(rec)
@@ -569,19 +624,25 @@ struct DeckBuilderView: View {
             return DeckCardEntry(name: card.name, copies: dc.quantity, supertype: card.supertype,
                                  subtypes: card.subtypes, retreatCost: card.retreatCost,
                                  imageURL: card.imageURL, hasAbility: card.hasAbility,
-                                 types: card.types, weaknessType: card.weaknessType)
+                                 types: card.types, weaknessType: card.weaknessType,
+                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost)
         }
         guard !entries.isEmpty else { return }
-        let merged = Dictionary(grouping: entries, by: \.name).map { name, group in
-            DeckCardEntry(name: name,
-                          copies: group.reduce(0) { $0 + $1.copies },
-                          supertype: group[0].supertype,
-                          subtypes: group[0].subtypes,
-                          retreatCost: group[0].retreatCost,
-                          imageURL: group[0].imageURL,
-                          hasAbility: group[0].hasAbility,
-                          types: group[0].types,
-                          weaknessType: group[0].weaknessType)
+        // Merge copies of the same card from different sets, preserving role from first entry
+        // (same-named card copies in a deck always share the same user-assigned role).
+        let merged: [DeckCardEntry] = Dictionary(grouping: entries, by: \.name).map { _, group -> DeckCardEntry in
+            let first = group[0]
+            return DeckCardEntry(name: first.name,
+                                 copies: group.reduce(0) { $0 + $1.copies },
+                                 supertype: first.supertype,
+                                 subtypes: first.subtypes,
+                                 retreatCost: first.retreatCost,
+                                 imageURL: first.imageURL,
+                                 hasAbility: first.hasAbility,
+                                 types: first.types,
+                                 weaknessType: first.weaknessType,
+                                 pokemonRole: first.pokemonRole,
+                                 minAttackCost: first.minAttackCost)
         }
         let roleTags: (String) -> [String] = { name in
             vm.cachedCards.values.first { $0.name == name }?.roleTags ?? []
@@ -643,7 +704,7 @@ struct DeckBuilderView: View {
                 )
                 statsSubScoreRow(
                     "Energy Setup", score: bd.energyScore,
-                    explainer: "How reliably you can power up attackers, based on energy acceleration cards (attaching multiple energy per turn) and your total energy count. A low score means you depend on naturally drawing into energy each game."
+                    explainer: energySetupExplainer(bd)
                 )
                 statsSubScoreRow(
                     "Mobility", score: bd.mobilityScore,
@@ -768,6 +829,19 @@ struct DeckBuilderView: View {
         case 60..<80: return .yellow
         default: return .green
         }
+    }
+
+    private func energySetupExplainer(_ bd: ConsistencyBreakdown) -> String {
+        var parts: [String] = []
+        if bd.identifiedAttackerCopies > 0, let avg = bd.attackerAvgMinCost {
+            let costStr = avg == avg.rounded() ? String(Int(avg)) : String(format: "%.1f", avg)
+            parts.append("\(bd.identifiedAttackerCopies) attacker \(bd.identifiedAttackerCopies == 1 ? "copy" : "copies") averaging \(costStr) energy each.")
+        } else {
+            parts.append("No attackers identified — long-press a Pokémon to label it.")
+        }
+        parts.append("\(bd.energyCardCount) energy cards, \(bd.energyAccelCount) acceleration \(bd.energyAccelCount == 1 ? "card" : "cards").")
+        parts.append("Score measures supply vs. demand: acceleration counts double. Long-press any Pokémon to mark it as Attacker or Tech and sharpen this score.")
+        return parts.joined(separator: " ")
     }
 
     @available(iOS 26, *)
@@ -904,6 +978,7 @@ private struct DeckCardRow: View {
     let cachedCard: CachedCard?
     var isHighlighted: Bool = false
     let onQuantityChange: (Int) -> Void
+    var onRoleChange: ((PokemonRole?) -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -924,10 +999,15 @@ private struct DeckCardRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(cachedCard?.name ?? deckCard.cardId)
                     .font(.body)
-                if let card = cachedCard {
-                    Text("\(card.setName) · #\(card.number)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    if let card = cachedCard {
+                        Text("\(card.setName) · #\(card.number)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    if let role = deckCard.pokemonRole {
+                        RoleBadge(role: role)
+                    }
                 }
             }
 
@@ -960,6 +1040,50 @@ private struct DeckCardRow: View {
         .padding(.vertical, 4)
         .listRowBackground(isHighlighted ? Color.yellow.opacity(0.25) : nil)
         .animation(.easeInOut(duration: 0.3), value: isHighlighted)
+        .contextMenu {
+            if let onChange = onRoleChange {
+                if deckCard.pokemonRole != .attacker {
+                    Button {
+                        onChange(.attacker)
+                    } label: {
+                        Label("Mark as Attacker", systemImage: "bolt.fill")
+                    }
+                }
+                if deckCard.pokemonRole != .tech {
+                    Button {
+                        onChange(.tech)
+                    } label: {
+                        Label("Mark as Tech (Ability)", systemImage: "wand.and.sparkles")
+                    }
+                }
+                if deckCard.pokemonRole != nil {
+                    Divider()
+                    Button(role: .destructive) {
+                        onChange(nil)
+                    } label: {
+                        Label("Clear Role", systemImage: "xmark.circle")
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Role badge
+
+private struct RoleBadge: View {
+    let role: PokemonRole
+
+    var body: some View {
+        Text(role == .attacker ? "Attacker" : "Tech")
+            .font(.system(size: 9, weight: .semibold))
+            .foregroundStyle(role == .attacker ? Color.blue : Color.secondary)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 2)
+            .background(
+                (role == .attacker ? Color.blue : Color.secondary).opacity(0.12),
+                in: Capsule()
+            )
     }
 }
 

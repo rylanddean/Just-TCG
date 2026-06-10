@@ -40,7 +40,7 @@ struct MetaMatchupEngineTests {
         // User has Colorless attackers + Lillie's Clefairy ex (has ability) → Favoured.
         let deck = [
             DeckCardEntry(name: "Lillie's Clefairy ex", copies: 2, supertype: "Pokémon",
-                          types: ["Colorless"], hasAbility: true),
+                          hasAbility: true, types: ["Colorless"]),
             DeckCardEntry(name: "Clefairy", copies: 4, supertype: "Pokémon",
                           types: ["Colorless"])
         ]
@@ -55,7 +55,7 @@ struct MetaMatchupEngineTests {
         // Same deck but without Lillie's Clefairy ex having an ability → not favoured via Fairy Zone
         let deck = [
             DeckCardEntry(name: "Clefairy", copies: 4, supertype: "Pokémon",
-                          types: ["Colorless"], hasAbility: false)
+                          hasAbility: false, types: ["Colorless"])
         ]
         let meta = shares([("Dragapult ex", 20.0)])
         let result = engine.breakdown(deck: deck, metaShares: meta)

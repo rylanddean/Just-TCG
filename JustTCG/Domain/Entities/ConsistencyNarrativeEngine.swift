@@ -21,7 +21,7 @@ struct ConsistencyNarrativeEngine {
         - Draw engine copies: \(bd.drawCount)
         - Search engine copies: \(bd.searchCount)
         - Pokémon ability impact score: \(bd.abilityImpactScore)/100 (weighted score across all ability roles: draw, search, energy accel, disruption, etc.)
-        - Energy setup score: \(bd.energyScore)/100 (\(bd.energyAccelCount) acceleration cards, \(bd.energyCardCount) energy cards total)
+        - Energy setup score: \(bd.energyScore)/100 (\(bd.energyAccelCount) acceleration cards, \(bd.energyCardCount) energy cards total\(bd.identifiedAttackerCopies > 0 ? ", \(bd.identifiedAttackerCopies) identified attacker copies" : ""))
 
         Describe what this deck does well for consistency, where it is fragile or inconsistent, and give one concrete recommendation. Write in second person. No bullet points. No markdown.
         """

@@ -28,7 +28,7 @@ final class DeckRepository {
     func setStatus(_ status: DeckStatus, for deck: Deck) {
         deck.status = status
         touch(deck)
-        save()
+        saveNow()
     }
 
     func renameDeck(_ deck: Deck, to name: String) {

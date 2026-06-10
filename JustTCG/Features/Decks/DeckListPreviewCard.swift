@@ -4,6 +4,10 @@ struct DeckListPreviewCard: View {
     let deckList: String
     var onImport: (String) -> Void
 
+    private var violations: [DeckGeneratorViolation] {
+        DeckGeneratorValidator.validate(deckList)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top) {
@@ -22,6 +26,17 @@ struct DeckListPreviewCard: View {
                         }
                     }
                 Spacer(minLength: 60)
+            }
+
+            if !violations.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(violations) { violation in
+                        Label(violation.description, systemImage: "exclamationmark.triangle.fill")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
+                }
+                .padding(.horizontal, 4)
             }
 
             Button {

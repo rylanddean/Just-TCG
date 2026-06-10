@@ -232,7 +232,8 @@ struct ConsistencySheet: View {
             return DeckCardEntry(name: card.name, copies: dc.quantity, supertype: card.supertype,
                                  subtypes: card.subtypes, retreatCost: card.retreatCost,
                                  imageURL: card.imageURL, hasAbility: card.hasAbility,
-                                 types: card.types, weaknessType: card.weaknessType)
+                                 types: card.types, weaknessType: card.weaknessType,
+                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost)
         }
 
         let merged: [DeckCardEntry] = Dictionary(grouping: entries, by: \.name).map { name, group in
@@ -245,7 +246,9 @@ struct ConsistencySheet: View {
                 imageURL: group[0].imageURL,
                 hasAbility: group[0].hasAbility,
                 types: group[0].types,
-                weaknessType: group[0].weaknessType
+                weaknessType: group[0].weaknessType,
+                pokemonRole: group[0].pokemonRole,
+                minAttackCost: group[0].minAttackCost
             )
         }
 

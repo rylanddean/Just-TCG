@@ -181,18 +181,23 @@ struct DeckGeneratorView: View {
 
         Task {
             do {
-                let response: DeckGeneratorResponse
                 if #available(iOS 26, *), let engine = engineBox as? DeckGeneratorEngine {
                     if !hasGeneratedFirst {
-                        response = try await engine.generate(prompt: prompt)
+                        for try await phase in engine.generate(prompt: prompt) {
+                            if !phase.isIntermediate {
+                                messages.append(GeneratorMessage(role: .assistant, text: phase.message, deckList: phase.deckList))
+                            }
+                        }
                         hasGeneratedFirst = true
                     } else {
-                        response = try await engine.refine(prompt: prompt)
+                        let response = try await engine.refine(prompt: prompt)
+                        messages.append(GeneratorMessage(role: .assistant, text: response.message, deckList: response.deckList))
                     }
                 } else {
-                    response = await fallback.generate(prompt: prompt)
+                    for try await phase in fallback.generate(prompt: prompt) {
+                        messages.append(GeneratorMessage(role: .assistant, text: phase.message, deckList: phase.deckList))
+                    }
                 }
-                messages.append(GeneratorMessage(role: .assistant, text: response.message, deckList: response.deckList))
             } catch {
                 messages.append(GeneratorMessage(role: .assistant, text: "Something went wrong. Please try again.", deckList: nil))
             }
