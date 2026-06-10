@@ -4,6 +4,7 @@ struct HomeView: View {
     @State private var showSettings = false
     @State private var showProfile = false
     @State private var showRulesAssistant = false
+    @AppStorage(DevicePerformance.liteModeDefaultsKey) private var liteMode = false
 
     var body: some View {
         NavigationStack {
@@ -11,6 +12,9 @@ struct HomeView: View {
                 LazyVStack(spacing: 16) {
                     StreakWidget()
                     ActivityHeatmapWidget()
+                    if !liteMode {
+                        FeaturedDeckWidget()
+                    }
                     MatchLogWidget()
                 }
                 .padding(.vertical)

@@ -16,7 +16,7 @@ struct DeckGeneratorView: View {
     @State private var importWarning: String? = nil
     @State private var engineBox: AnyObject? = nil
 
-    private let fallback = DeckGeneratorEngineFallback()
+    private let sourceStrategy = DeckSourceStrategy.live
 
     var body: some View {
         NavigationStack {
@@ -179,23 +179,84 @@ struct DeckGeneratorView: View {
         draft = ""
         isGenerating = true
 
+        let catalog = DeckGeneratorCatalog.candidatePokemon(for: prompt, in: context)
+        let archetypeCandidates = DeckGeneratorCatalog.archetypeCandidates(for: prompt, in: context)
+        let aiAvailable: Bool = {
+            if #available(iOS 26, *) { return engineBox is DeckGeneratorEngine }
+            return false
+        }()
+
         Task {
             do {
-                if #available(iOS 26, *), let engine = engineBox as? DeckGeneratorEngine {
-                    if !hasGeneratedFirst {
-                        for try await phase in engine.generate(prompt: prompt) {
+                if !hasGeneratedFirst {
+                    // First send: try a real tournament deck before anything else.
+                    let checkLegality: (LimitlessDeckList) -> DeckLegalityResult = { deck in
+                        DeckLegalityChecker.check(deck, in: context)
+                    }
+                    if let hit = await sourceStrategy.lookup(candidates: archetypeCandidates, checkLegality: checkLegality) {
+                        let text: String
+                        if hit.hasUnknownCards {
+                            text = "Found a tournament deck: \(hit.label), but it may not be built for Standard play. Please validate yourself."
+                        } else {
+                            text = "Found a tournament deck: \(hit.label)."
+                        }
+                        messages.append(GeneratorMessage(
+                            role: .assistant,
+                            text: text,
+                            deckList: hit.deckList
+                        ))
+                        hasGeneratedFirst = true
+                        isGenerating = false
+                        return
+                    }
+                    // Strategy miss. If Apple Intelligence is unavailable on this
+                    // device, surface a clear "no tournament results" message
+                    // rather than the generic AI-unavailable copy.
+                    guard aiAvailable else {
+                        messages.append(GeneratorMessage(
+                            role: .assistant,
+                            text: "No tournament deck found for that. Try a specific archetype like \"Charizard ex\", \"Miraidon ex\", or \"Gardevoir ex\".",
+                            deckList: nil
+                        ))
+                        isGenerating = false
+                        return
+                    }
+                    if #available(iOS 26, *), let engine = engineBox as? DeckGeneratorEngine {
+                        var lastPhase: DeckGeneratorResponse? = nil
+                        for try await phase in engine.generate(prompt: prompt, pokemonCatalog: catalog) {
                             if !phase.isIntermediate {
-                                messages.append(GeneratorMessage(role: .assistant, text: phase.message, deckList: phase.deckList))
+                                lastPhase = phase
                             }
                         }
+                        // If Phase 3 produced no parseable deck (e.g. the model
+                        // returned only section headers), surface a clean
+                        // "couldn't build a deck" message instead of rendering
+                        // the raw output as if it were content.
+                        if let phase = lastPhase, phase.deckList != nil {
+                            messages.append(GeneratorMessage(role: .assistant, text: phase.message, deckList: phase.deckList))
+                        } else {
+                            messages.append(GeneratorMessage(
+                                role: .assistant,
+                                text: "I couldn't build a complete deck for that prompt. Try a more specific archetype like \"Charizard ex\", \"Miraidon ex\", or \"Gardevoir ex\".",
+                                deckList: nil
+                            ))
+                        }
                         hasGeneratedFirst = true
-                    } else {
-                        let response = try await engine.refine(prompt: prompt)
-                        messages.append(GeneratorMessage(role: .assistant, text: response.message, deckList: response.deckList))
                     }
                 } else {
-                    for try await phase in fallback.generate(prompt: prompt) {
-                        messages.append(GeneratorMessage(role: .assistant, text: phase.message, deckList: phase.deckList))
+                    // Refine path — requires the AI engine.
+                    guard aiAvailable else {
+                        messages.append(GeneratorMessage(
+                            role: .assistant,
+                            text: "Refining decks requires Apple Intelligence (iPhone 16 or later running iOS 26 or later). Tap Start over to look up a different tournament deck.",
+                            deckList: nil
+                        ))
+                        isGenerating = false
+                        return
+                    }
+                    if #available(iOS 26, *), let engine = engineBox as? DeckGeneratorEngine {
+                        let response = try await engine.refine(prompt: prompt)
+                        messages.append(GeneratorMessage(role: .assistant, text: response.message, deckList: response.deckList))
                     }
                 }
             } catch {

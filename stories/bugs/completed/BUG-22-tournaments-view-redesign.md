@@ -1,6 +1,6 @@
 # BUG-22 — Tournaments View Needs Visual Polish
 
-**Status:** todo  
+**Status:** done  
 **Area:** M28 — Tournaments
 
 ## Description

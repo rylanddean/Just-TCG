@@ -5,9 +5,7 @@ struct StreakWidget: View {
     @Query(sort: \Match.date, order: .reverse) private var matches: [Match]
     @AppStorage("streak_daily_goal") private var dailyGoal: Int = 1
 
-    private var result: StreakResult {
-        StreakEngine.compute(matches: matches, dailyGoal: dailyGoal)
-    }
+    @State private var result = StreakResult(currentStreak: 0, todayCount: 0, goalMet: false)
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -40,5 +38,11 @@ struct StreakWidget: View {
         }
         .background(.secondary.opacity(0.07), in: RoundedRectangle(cornerRadius: 12))
         .padding(.horizontal)
+        .task(id: matches.count) {
+            result = StreakEngine.compute(matches: matches, dailyGoal: dailyGoal)
+        }
+        .onChange(of: dailyGoal) { _, newGoal in
+            result = StreakEngine.compute(matches: matches, dailyGoal: newGoal)
+        }
     }
 }

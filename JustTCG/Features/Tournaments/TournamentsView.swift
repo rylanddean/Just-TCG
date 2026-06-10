@@ -37,8 +37,11 @@ struct TournamentsView: View {
                 NavigationLink {
                     TournamentDetailView(tournament: tournament)
                 } label: {
-                    TournamentRow(tournament: tournament)
+                    TournamentCard(tournament: tournament)
                 }
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
             }
 
             if let date = vm.lastFetchDate {
@@ -144,14 +147,15 @@ struct TournamentsView: View {
 
 // MARK: - Tournament row
 
-private struct TournamentRow: View {
+private struct TournamentCard: View {
     let tournament: LimitlessTournament
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 Text(tournament.name)
-                    .font(.body.weight(.medium))
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(.primary)
                 Spacer()
                 tierBadge(tournament.tier)
             }
@@ -165,7 +169,14 @@ private struct TournamentRow: View {
             .font(.caption)
             .foregroundStyle(.secondary)
         }
-        .padding(.vertical, 4)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(.secondarySystemGroupedBackground))
+                .shadow(color: .black.opacity(0.06), radius: 2, x: 0, y: 1)
+        )
     }
 
     @ViewBuilder
@@ -174,13 +185,13 @@ private struct TournamentRow: View {
         case .worlds:   ("Worlds",    .yellow)
         case .ic:       ("IC",        .purple)
         case .regional: ("Regional",  .blue)
-        case .lc:       ("LC",        .secondary)
+        case .lc:       ("LC",        .gray)
         }
         Text(label)
-            .font(.caption2.weight(.bold))
-            .padding(.horizontal, 6)
+            .font(.caption.weight(.bold))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 8)
             .padding(.vertical, 3)
-            .background(color.opacity(0.15), in: Capsule())
-            .foregroundStyle(color)
+            .background(color, in: Capsule())
     }
 }

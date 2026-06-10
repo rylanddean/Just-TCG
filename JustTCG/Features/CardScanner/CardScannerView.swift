@@ -8,6 +8,7 @@ struct CardScannerView: View {
     @Environment(\.modelContext) private var context
 
     @State private var vm: CardScannerViewModel? = nil
+    @State private var reticlePulse = false
 
     var body: some View {
         Group {
@@ -88,20 +89,41 @@ struct CardScannerView: View {
     private func cardOutline(vm: CardScannerViewModel, geo: GeometryProxy) -> some View {
         let width = geo.size.width * 0.7
         let height = width * 10 / 7
+        let isScanning: Bool
+        if case .scanning = vm.state { isScanning = true } else { isScanning = false }
         let color = outlineColor(vm: vm)
-        return RoundedRectangle(cornerRadius: 12)
-            .strokeBorder(color, lineWidth: 3)
-            .frame(width: width, height: height)
-            .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: color)
+
+        return VStack(spacing: 12) {
+            RoundedRectangle(cornerRadius: 12)
+                .strokeBorder(color, lineWidth: 3)
+                .opacity(isScanning ? (reticlePulse ? 1.0 : 0.4) : 1.0)
+                .frame(width: width, height: height)
+                .animation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true), value: reticlePulse)
+                .onAppear {
+                    if isScanning { reticlePulse = true }
+                }
+                .onChange(of: isScanning) { _, scanning in
+                    reticlePulse = scanning
+                }
+
+            if vm.showFramingHint {
+                Text("Move card into frame")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(.ultraThinMaterial, in: Capsule())
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.3), value: vm.showFramingHint)
     }
 
     private func outlineColor(vm: CardScannerViewModel) -> Color {
         switch vm.state {
-        case .matched(let primary, _):
-            _ = primary
-            return .green
-        case .paused:  return .yellow
-        case .scanning: return .white.opacity(0.6)
+        case .matched:  return .green
+        case .paused:   return .yellow
+        case .scanning: return .white
         }
     }
 
@@ -159,8 +181,18 @@ struct CardScannerView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 6))
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(card.name)
-                        .font(.headline)
+                    HStack(spacing: 6) {
+                        Text(card.name)
+                            .font(.headline)
+                        if vm.isLowConfidenceMatch {
+                            Text("Low confidence")
+                                .font(.caption2.weight(.semibold))
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 3)
+                                .background(Color.orange.opacity(0.15), in: Capsule())
+                                .foregroundStyle(.orange)
+                        }
+                    }
                     Text("\(card.setName) · \(card.number)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -173,12 +205,7 @@ struct CardScannerView: View {
             }
 
             HStack(spacing: 12) {
-                Button {
-                    if case .matched(let p, _) = vm.state {
-                        vm.state = .scanning
-                        _ = p
-                    }
-                } label: {
+                Button { vm.resumeScanning() } label: {
                     Text("Not right?")
                         .font(.subheadline)
                         .frame(maxWidth: .infinity)

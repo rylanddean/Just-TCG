@@ -42,6 +42,11 @@ struct CardIdentifierParser {
         return nil
     }
 
+    private static let excludedSetTokens: Set<String> = [
+        "HP", "GX", "EX", "VS", "TAG", "ACE", "ATK", "DEF", "SP", "LV",
+        "V", "VMAX", "VSTAR"
+    ]
+
     private func extractSetCode(from lines: [String], nearLine: Int?) -> String? {
         let setPattern = #/\b([A-Z]{2,4})\b/#
         let searchRange: Range<Int>
@@ -57,8 +62,7 @@ struct CardIdentifierParser {
             let line = lines[idx]
             for match in line.matches(of: setPattern) {
                 let candidate = String(match.1)
-                let excluded = ["HP", "GX", "EX", "VS", "TAG", "ACE"]
-                if !excluded.contains(candidate) {
+                if !Self.excludedSetTokens.contains(candidate) {
                     return candidate
                 }
             }
@@ -74,6 +78,8 @@ struct CardIdentifierParser {
                 let trimmed = line.trimmingCharacters(in: .whitespaces)
                 guard trimmed.count >= 3 else { return false }
                 guard !trimmed.allSatisfy({ $0.isNumber || $0 == "/" || $0 == " " }) else { return false }
+                // Reject purely-uppercase lines (set codes, HP labels, etc.)
+                guard trimmed.contains(where: { $0.isLowercase }) else { return false }
                 return true
             }
             .max(by: { $0.count < $1.count })

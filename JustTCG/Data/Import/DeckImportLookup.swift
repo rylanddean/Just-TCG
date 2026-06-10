@@ -49,8 +49,35 @@ struct DeckImportLookup {
                                        imageURL: card.imageURL, largeImageURL: card.largeImageURL)
             }
 
+            // Fallback: exact name match in any set (model often invents set codes
+            // but gets the name right). Pick the most-recent Standard-legal print.
+            if let card = Self.findByName(entry.name, in: context) {
+                return DeckImportMatch(entry: entry, cardId: card.id,
+                                       imageURL: card.imageURL, largeImageURL: card.largeImageURL)
+            }
+
             return DeckImportMatch(entry: entry, cardId: nil)
         }
+    }
+
+    // Looks up a card by exact (case-insensitive) name, preferring Standard-legal
+    // prints and the most recent release.
+    private static func findByName(_ name: String, in context: ModelContext) -> CachedCard? {
+        let trimmed = name.trimmingCharacters(in: .whitespaces)
+        guard !trimmed.isEmpty else { return nil }
+        let descriptor = FetchDescriptor<CachedCard>(
+            predicate: #Predicate<CachedCard> { $0.name == trimmed }
+        )
+        let matches = (try? context.fetch(descriptor)) ?? []
+        if matches.isEmpty { return nil }
+        return matches.sorted { lhs, rhs in
+            if lhs.isStandardLegal != rhs.isStandardLegal {
+                return lhs.isStandardLegal && !rhs.isStandardLegal
+            }
+            let lhsDate = lhs.setReleaseDate ?? .distantPast
+            let rhsDate = rhs.setReleaseDate ?? .distantPast
+            return lhsDate > rhsDate
+        }.first
     }
 
     // Loads all Basic Energy cards once for the whole batch.

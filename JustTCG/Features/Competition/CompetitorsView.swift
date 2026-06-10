@@ -15,6 +15,7 @@ struct CompetitorsView: View {
             }
         }
         .listStyle(.plain)
+        .listSectionSpacing(.compact)
         .searchable(text: $searchQuery, prompt: "Search competitors")
         .task { await vm.loadLeaderboard() }
         .onChange(of: vm.zone) { _, _ in Task { await vm.loadLeaderboard() } }
@@ -57,7 +58,7 @@ struct CompetitorsView: View {
                         }
                     }
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 4)
                 }
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
@@ -74,12 +75,14 @@ struct CompetitorsView: View {
                     NavigationLink {
                         PlayerDetailView(playerID: player.id)
                     } label: {
-                        LeaderboardRow(
+                        PlayerCard(
                             player: player,
                             isFavourite: favourites.isFavourite(id: player.id)
                         )
                     }
-                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                     .swipeActions(edge: .leading) {
                         let isFav = favourites.isFavourite(id: player.id)
                         Button {
@@ -123,7 +126,6 @@ struct CompetitorsView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 4)
         }
-        .padding(.top, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background {
             Color(.systemBackground)
@@ -173,12 +175,14 @@ struct CompetitorsView: View {
                     NavigationLink {
                         PlayerDetailView(playerID: result.id)
                     } label: {
-                        LeaderboardRow(
+                        PlayerCard(
                             player: result,
                             isFavourite: favourites.isFavourite(id: result.id)
                         )
                     }
-                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                     .swipeActions(edge: .leading) {
                         let isFav = favourites.isFavourite(id: result.id)
                         Button {
@@ -223,34 +227,65 @@ private struct FavouriteChip: View {
     }
 }
 
-private struct LeaderboardRow: View {
+private struct PlayerCard: View {
     let player: LimitlessPlayerSearchResult
     let isFavourite: Bool
 
     var body: some View {
-        HStack(spacing: 12) {
-            if let rank = player.rank {
-                Text("\(rank)")
-                    .font(.subheadline.monospacedDigit())
-                    .foregroundStyle(.secondary)
-                    .frame(minWidth: 24, alignment: .trailing)
+        HStack(spacing: 0) {
+            // Left accent strip for top 3
+            if let rank = player.rank, rank <= 3 {
+                rankColor(rank).frame(width: 3)
             }
-            if !player.country.isEmpty {
-                Text(countryFlag(player.country))
+
+            HStack(spacing: 12) {
+                if let rank = player.rank {
+                    Text("#\(rank)")
+                        .font(.title3.monospacedDigit().weight(.bold))
+                        .foregroundStyle(rankColor(rank))
+                        .frame(width: 52, alignment: .center)
+                }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(player.name)
+                        .font(.body)
+                    if !player.country.isEmpty {
+                        Text(countryFlag(player.country))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing, spacing: 2) {
+                    if let pts = player.points {
+                        Text("\(pts) pts")
+                            .font(.caption.monospacedDigit())
+                            .foregroundStyle(.secondary)
+                    }
+                    if isFavourite {
+                        Image(systemName: "star.fill")
+                            .foregroundStyle(.yellow)
+                            .font(.caption)
+                    }
+                }
             }
-            Text(player.name)
-                .font(.body)
-            Spacer()
-            if let pts = player.points {
-                Text("\(pts) pts")
-                    .font(.caption.monospacedDigit())
-                    .foregroundStyle(.secondary)
-            }
-            if isFavourite {
-                Image(systemName: "star.fill")
-                    .foregroundStyle(.yellow)
-                    .font(.subheadline)
-            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: .black.opacity(0.06), radius: 2, x: 0, y: 1)
+    }
+
+    private func rankColor(_ rank: Int) -> Color {
+        switch rank {
+        case 1:  return .yellow
+        case 2:  return Color(white: 0.6)
+        case 3:  return Color(red: 0.72, green: 0.45, blue: 0.2)
+        default: return .secondary
         }
     }
 }

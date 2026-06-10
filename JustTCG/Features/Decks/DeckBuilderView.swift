@@ -157,8 +157,7 @@ struct DeckBuilderView: View {
                     .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
                 }
 
-                gameLogsSection
-                matchesSection
+                historySection
             }
             .onChange(of: vm.totalCount) { _, _ in computeBreakdown(vm: vm) }
             .onChange(of: metaTrendEngine.snapshots.count) { _, _ in computeBreakdown(vm: vm) }
@@ -168,45 +167,15 @@ struct DeckBuilderView: View {
         }
     }
 
-    // MARK: - Game logs section
+    // MARK: - History section
 
-    private var gameLogsSection: some View {
+    private var historySection: some View {
         Section {
             NavigationLink {
-                GameLogListView(deck: deck)
+                DeckHistoryView(deck: deck)
             } label: {
-                Label("Game Logs", systemImage: "gamecontroller")
+                Label("History", systemImage: "clock.arrow.circlepath")
             }
-        }
-    }
-
-    // MARK: - Matches section
-
-    private var matchesSection: some View {
-        let sorted = deck.matches.sorted { $0.date > $1.date }
-        let preview = Array(sorted.prefix(5))
-        return Section {
-            if preview.isEmpty {
-                Label("No matches logged yet", systemImage: "sportscourt")
-                    .foregroundStyle(.secondary)
-            } else {
-                ForEach(preview) { match in
-                    NavigationLink {
-                        MatchDetailView(match: match)
-                    } label: {
-                        MatchRow(match: match)
-                    }
-                }
-                if sorted.count > 5 {
-                    NavigationLink("See all \(sorted.count) matches") {
-                        MatchHistoryView(deck: deck)
-                    }
-                    .font(.subheadline)
-                    .foregroundStyle(Color.accentColor)
-                }
-            }
-        } header: {
-            Text("Match History")
         }
     }
 

@@ -16,6 +16,8 @@ final class CardScannerViewModel {
     var addedCount: Int = 0
     var permissionDenied: Bool = false
     var isTorchOn: Bool = false
+    var isLowConfidenceMatch: Bool = false
+    var showFramingHint: Bool = false
     let session: AVCaptureSession = AVCaptureSession()
 
     private let scanner = CardScannerService()
@@ -24,6 +26,7 @@ final class CardScannerViewModel {
     private var context: ModelContext
     private var isProcessing = false
     private var captureDevice: AVCaptureDevice? = nil
+    private var lastHigherConfidenceTime: Date = .now
 
     init(deck: Deck, context: ModelContext) {
         self.deck = deck
@@ -73,10 +76,20 @@ final class CardScannerViewModel {
             guard !isProcessing, case .scanning = state else { return }
             isProcessing = true
             defer { isProcessing = false }
+
+            if Date().timeIntervalSince(lastHigherConfidenceTime) > 3 {
+                showFramingHint = true
+            }
+
             guard let result = try? await scanner.scan(pixelBuffer: pixelBuffer),
                   result.confidence != .low else { return }
+
+            lastHigherConfidenceTime = .now
+            showFramingHint = false
+
             let matches = await matcher.match(result: result)
             guard let primary = matches.first else { return }
+            isLowConfidenceMatch = (result.confidence == .medium)
             state = .matched(primary: primary, alternatives: Array(matches.dropFirst()))
         }
     }
@@ -87,11 +100,19 @@ final class CardScannerViewModel {
         let isEnergy = card.supertype == "Energy"
         DeckRepository(modelContext: context).addCard(cardId: card.id, to: deck, isBasicEnergy: isEnergy, cardName: card.name)
         addedCount += 1
+        isLowConfidenceMatch = false
         state = .paused
         Task {
             try? await Task.sleep(for: .seconds(1))
-            state = .scanning
+            resumeScanning()
         }
+    }
+
+    func resumeScanning() {
+        isLowConfidenceMatch = false
+        showFramingHint = false
+        lastHigherConfidenceTime = .now
+        state = .scanning
     }
 
     func quantityInDeck(for card: CachedCard) -> Int {

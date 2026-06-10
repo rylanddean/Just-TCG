@@ -229,6 +229,12 @@ Stories are ordered by dependency. Work top to bottom.
 | [M34-01](completed/M34-01-meta-matchup-engine.md) | Meta Matchup Engine | done |
 | [M34-02](completed/M34-02-meta-matchup-score-ui.md) | Meta Matchup Score UI | done |
 
+## M35 — Featured Deck of the Day
+| Story | Title | Status |
+|---|---|---|
+| [M35-01](backlog/M35-01-featured-deck-engine.md) | Featured Deck of the Day Engine | done |
+| [M35-02](backlog/M35-02-featured-deck-widget.md) | Featured Deck Widget | done |
+
 ## Bugs
 | Bug | Title | Status |
 |---|---|---|

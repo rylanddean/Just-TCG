@@ -3,6 +3,7 @@ import SwiftUI
 struct DeckListViewerView: View {
     let listId: String
     let archetype: String
+    var playerId: String? = nil
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -66,6 +67,15 @@ struct DeckListViewerView: View {
             }
         }
         .toolbar {
+            if let playerId {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        PlayerDetailView(playerID: playerId)
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                }
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button {

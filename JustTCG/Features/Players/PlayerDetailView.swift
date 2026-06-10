@@ -153,80 +153,20 @@ struct PlayerDetailView: View {
 
     @ViewBuilder
     private func resultRow(_ result: PlayerTournamentResult) -> some View {
-        let row = HStack(spacing: 12) {
-            placementBadge(result.placement)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(result.tournamentName)
-                    .font(.body.weight(.semibold))
-                    .lineLimit(1)
-                Text(result.date.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-
-            Spacer()
-
-            VStack(alignment: .trailing, spacing: 2) {
-                Text(result.archetype)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                if !result.record.isEmpty {
-                    Text(result.record)
-                        .font(.caption2.monospacedDigit())
-                        .foregroundStyle(.tertiary)
+        Group {
+            if let listId = result.deckListId {
+                NavigationLink {
+                    DeckListViewerView(listId: listId, archetype: result.archetype)
+                } label: {
+                    TournamentResultCard(result: result)
                 }
-                Text("+\(result.points) pts")
-                    .font(.caption2.monospacedDigit())
-                    .foregroundStyle(.secondary)
-            }
-
-            if result.deckListId == nil {
-                Image(systemName: "lock")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
+            } else {
+                TournamentResultCard(result: result)
             }
         }
-        .padding(.vertical, 2)
-
-        if let listId = result.deckListId {
-            NavigationLink {
-                DeckListViewerView(listId: listId, archetype: result.archetype)
-            } label: {
-                row
-            }
-        } else {
-            row
-        }
-    }
-
-    private func placementBadge(_ rank: Int) -> some View {
-        Text("\(rank)")
-            .font(.caption.weight(.semibold).monospacedDigit())
-            .foregroundStyle(badgeForeground(rank))
-            .padding(.horizontal, 6)
-            .padding(.vertical, 3)
-            .background(badgeBackground(rank), in: Capsule())
-            .frame(minWidth: 32)
-    }
-
-    private func badgeForeground(_ rank: Int) -> Color {
-        switch rank {
-        case 1:  return .black
-        case 2:  return .black
-        case 3:  return .white
-        default: return .secondary
-        }
-    }
-
-    private func badgeBackground(_ rank: Int) -> Color {
-        switch rank {
-        case 1:  return Color(red: 1.0, green: 0.84, blue: 0.0)
-        case 2:  return Color(white: 0.75)
-        case 3:  return Color(red: 0.72, green: 0.45, blue: 0.2)
-        default: return Color(.systemGray5)
-        }
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
     }
 
     // MARK: - Error
@@ -248,5 +188,76 @@ struct PlayerDetailView: View {
         return code.uppercased().unicodeScalars.compactMap {
             Unicode.Scalar(base + $0.value).map { String($0) }
         }.joined()
+    }
+}
+
+// MARK: - Tournament result card
+
+private struct TournamentResultCard: View {
+    let result: PlayerTournamentResult
+
+    var body: some View {
+        HStack(spacing: 0) {
+            // Left accent strip for top 3
+            if result.placement <= 3 {
+                rankColor(result.placement).frame(width: 3)
+            }
+
+            HStack(spacing: 12) {
+                Text("#\(result.placement)")
+                    .font(.title3.monospacedDigit().weight(.bold))
+                    .foregroundStyle(rankColor(result.placement))
+                    .frame(width: 52, alignment: .center)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(result.tournamentName)
+                        .font(.body)
+                        .lineLimit(1)
+                    Text(result.date.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text(result.archetype)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                    HStack(spacing: 4) {
+                        if !result.record.isEmpty {
+                            Text(result.record)
+                                .font(.caption2.monospacedDigit())
+                                .foregroundStyle(.tertiary)
+                        }
+                        Text("+\(result.points) pts")
+                            .font(.caption2.monospacedDigit())
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                if result.deckListId == nil {
+                    Image(systemName: "lock")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: .black.opacity(0.06), radius: 2, x: 0, y: 1)
+    }
+
+    private func rankColor(_ rank: Int) -> Color {
+        switch rank {
+        case 1:  return .yellow
+        case 2:  return Color(white: 0.6)
+        case 3:  return Color(red: 0.72, green: 0.45, blue: 0.2)
+        default: return .secondary
+        }
     }
 }

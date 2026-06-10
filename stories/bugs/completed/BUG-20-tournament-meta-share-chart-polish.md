@@ -1,6 +1,6 @@
 # BUG-20 — Tournament Detail: Meta Share Chart Needs Card Images and Visual Polish
 
-**Status:** todo  
+**Status:** done  
 **Area:** M28 — Tournament Detail / Meta Analysis
 
 ## Description
@@ -29,24 +29,24 @@ The Meta Share tab in `TournamentDetailView` uses a plain horizontal bar chart w
 ## Acceptance Criteria
 
 ### Chart
-- [ ] A compact horizontal `BarMark` chart is rendered at the top of the Meta Share section, limited to the top 8 archetypes
-- [ ] Each bar uses a colour derived from the archetype's position (top 1 = yellow, 2 = silver, 3 = bronze, rest = accent) rather than a flat gradient
-- [ ] The chart height is capped and does not grow unbounded with entry count
+- [x] A compact horizontal `BarMark` chart is rendered at the top of the Meta Share section, limited to the top 8 archetypes
+- [x] Each bar uses a colour derived from the archetype's position (top 1 = yellow, 2 = silver, 3 = bronze, rest = accent) rather than a flat gradient
+- [x] The chart height is capped and does not grow unbounded with entry count
 
 ### Archetype Rows
-- [ ] Below the chart, each archetype is shown as a `HStack` row containing:
+- [x] Below the chart, each archetype is shown as a `HStack` row containing:
   - Rank number (coloured: gold/silver/bronze for top 3, secondary for rest)
-  - `AsyncImage` or inline `CachedCard` image thumbnail (44×56 pt, rounded corners, from `ArchetypePrimaryCardResolver`)
+  - `AsyncImage` or inline `CachedCard` image thumbnail (32×44 pt, rounded corners, from `ArchetypePrimaryCardResolver`)
   - If no card is resolved, a placeholder with the archetype initial letter
   - Archetype name as `.body` weight
   - Player count as `.caption` secondary
   - Share percentage as a capsule-badge (`.caption.monospacedDigit()`, coloured by rank position)
-- [ ] `ArchetypePrimaryCardResolver` is used with the current model context card list to resolve the image URL from `CachedCard.imageSmall`
-- [ ] The separate "Breakdown" `Section` is removed — all info lives in the combined rows
+- [x] `ArchetypePrimaryCardResolver` is used with the current model context card list to resolve the image URL from `CachedCard.imageURL`
+- [x] The separate "Breakdown" `Section` is removed — all info lives in the combined rows
 
 ### No Regressions
-- [ ] The Standings tab is unaffected
-- [ ] Empty-state (`ContentUnavailableView`) still displays when `metaShare` is empty
+- [x] The Standings tab is unaffected
+- [x] Empty-state (`ContentUnavailableView`) still displays when `metaShare` is empty
 
 ## Technical Notes
 

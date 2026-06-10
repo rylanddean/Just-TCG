@@ -25,7 +25,10 @@ struct LiveGameHUDView: View {
             }
         }
         .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
-        .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }
+        .onDisappear {
+            UIApplication.shared.isIdleTimerDisabled = false
+            vm?.stopTurnReminderTimer()
+        }
         .task {
             if vm == nil {
                 vm = LiveGameHUDViewModel(game: game, modelContext: context)

@@ -10,6 +10,7 @@ struct JustTCGApp: App {
     let prepPlanRepo: PrepPlanRepository
 
     init() {
+        DevicePerformance.registerDefaults()
         URLCache.shared = URLCache(
             memoryCapacity: 50 * 1_024 * 1_024,
             diskCapacity: 500 * 1_024 * 1_024,

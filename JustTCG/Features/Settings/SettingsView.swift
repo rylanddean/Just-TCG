@@ -4,6 +4,7 @@ import SwiftData
 struct SettingsView: View {
     @AppStorage("streak_daily_goal") private var dailyGoal: Int = 1
     @AppStorage("deckRowCoverCardCount") private var coverCardCount: Int = 2
+    @AppStorage(DevicePerformance.liteModeDefaultsKey) private var liteMode = false
 
     @Query(sort: \Deck.createdAt) private var decks: [Deck]
     @Environment(\.modelContext) private var context
@@ -26,6 +27,7 @@ struct SettingsView: View {
             Form {
                 streakSection
                 decksSection
+                performanceSection
                 dataSection
                 #if DEBUG
                 developerSection
@@ -108,6 +110,18 @@ struct SettingsView: View {
             Text("Decks")
         } footer: {
             Text("Number of card images shown on each deck in the decks list.")
+        }
+    }
+
+    // MARK: - Performance
+
+    private var performanceSection: some View {
+        Section {
+            Toggle("Lite mode", isOn: $liteMode)
+        } header: {
+            Text("Performance")
+        } footer: {
+            Text("Hides the Featured Deck on Home to skip its network fetch and card lookup. Enabled by default on older devices.")
         }
     }
 
