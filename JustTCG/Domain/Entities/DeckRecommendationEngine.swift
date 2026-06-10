@@ -59,11 +59,15 @@ struct DeckRecommendationEngine {
         "Buddy-Buddy Poffin": 4,
         "Earthen Vessel": 4,
 
-        // ── Disruption ─────────────────────────────────────────────────────
+        // ── Disruption (hand / board pressure — not gust) ─────────────────
+        "Eri": 4,
+
+        // ── Gusting (forces opponent's Active to change) ───────────────────
         "Boss's Orders": 5,
         "Prime Catcher": 4,
         "Counter Catcher": 3,
-        "Eri": 3,
+        "Arven's Toedscruel": 2,
+        "Pokémon Catcher": 2,
 
         // ── Recovery ───────────────────────────────────────────────────────
         "Night Stretcher": 5,
@@ -170,6 +174,16 @@ struct DeckRecommendationEngine {
                 requiredTags: ["Disruption"],
                 tagWeights: ["Disruption": 2],
                 reason: "Disrupts your opponent's hand or board",
+                requiresAbility: false,
+                supertypeFilter: nil
+            ),
+            Deficiency(
+                scoreLabel: "Gusting",
+                scoreSystemImage: "arrow.up.to.line.circle.fill",
+                score: breakdown.gustingScore,
+                requiredTags: ["Gusting"],
+                tagWeights: ["Gusting": 3],
+                reason: "Forces your opponent's Active Pokémon to change",
                 requiresAbility: false,
                 supertypeFilter: nil
             ),

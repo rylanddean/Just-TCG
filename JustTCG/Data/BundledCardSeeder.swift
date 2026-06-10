@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v11"
+    static let seededKey = "bundled_cards_seeded_v12"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -178,7 +178,30 @@ private enum CardTagClassifier {
                 || text.range(of: #"(?:put|place) \d+ damage counter"#, options: [.regularExpression, .caseInsensitive]) != nil {
                 result.insert("Spread Damage")
             }
-            if text.localizedCaseInsensitiveContains("switch")
+            // Gusting: forces the opponent's Active Pokémon to change.
+            // Canonical pattern: "switch in" + "opponent" + "benched" — covers Boss's Orders,
+            // Prime Catcher, attack-based gusts (Mawile, Braviary, etc.), and gusting abilities.
+            // Cards that ALSO self-switch (Iron Bundle, Samurott, Giovanni) get both tags.
+            let isGust = text.localizedCaseInsensitiveContains("switch in")
+                && text.localizedCaseInsensitiveContains("opponent")
+                && text.localizedCaseInsensitiveContains("benched")
+            if isGust {
+                result.insert("Gusting")
+            }
+            // Mobility: lets YOUR Active Pokémon retreat or switch freely.
+            // The plain "switch" check is scoped to self-switch effects:
+            //   - "switch your active" / "switch this pokémon with" → Item/ability self-switch
+            //   - no "opponent" context + no "switch in" → basic Switch, Escape Rope, etc.
+            // Pure gust cards (Boss's Orders, Prime Catcher) only hit the Gusting branch above.
+            // A self-switch exists when the card explicitly moves YOUR Active Pokémon, or when
+            // "switch" appears in any context that isn't the pure-gust pattern (isGust).
+            // This correctly handles Escape Rope ("Your opponent switches first." contains
+            // "opponent" but is not a gust card) and dual-effect cards like Prime Catcher.
+            let hasSelfSwitch = text.localizedCaseInsensitiveContains("switch your active")
+                || text.localizedCaseInsensitiveContains("switch this pokémon with")
+                || text.localizedCaseInsensitiveContains("switch this pokemon with")
+                || (text.localizedCaseInsensitiveContains("switch") && !isGust)
+            if hasSelfSwitch
                 || text.contains("no Retreat Cost")
                 || (text.contains("Retreat Cost") && text.localizedCaseInsensitiveContains("less"))
                 || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("into your deck")) {

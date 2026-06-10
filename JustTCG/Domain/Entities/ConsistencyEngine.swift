@@ -46,11 +46,27 @@ struct ConsistencyBreakdown {
     let unlabeledPokemonCount: Int
     let prizeResilienceScore: Int
     let disruptionScore: Int
+    /// Cards that force the opponent's Active Pokémon to change (Boss's Orders, Counter Catcher, etc.).
+    /// Score: min(gustingCount, 5) × 20 — a full playset of 4 Boss's Orders scores 80.
+    let gustingScore: Int
     let evolutionScore: Int
     let recoveryScore: Int
     let itemDependencyScore: Int
     let mobilityScore: Int
     let keyCards: [KeyCardOdds]
+
+    // ── New axes (BUG-35) ────────────────────────────────────────────────────
+    /// Probability (0–100) of being able to attack on turn 2 going second:
+    /// P(≥1 attacker in hand) × P(≥minAttackCost energy in hand) across 9 drawn cards.
+    let turnTwoAggressionScore: Int
+    /// How few prizes the deck gives up on average per Pokémon KO (0–100).
+    /// Single-prize only → 100; mixed 2-prize → 50; VMAX/VSTAR-heavy → lower.
+    let prizeEfficiencyScore: Int
+    /// How many of the 5 bench slots remain after dedicated engine Pokémon (0–100).
+    /// Each distinct Pokémon with a bench-sitting ability role costs 20 pts.
+    let benchFlexibilityScore: Int
+    /// Probability (0–100) of not mulliganing: P(≥1 Basic Pokémon in opening 7).
+    let openingReliabilityScore: Int
 }
 
 struct ConsistencyEngine {
@@ -118,6 +134,7 @@ struct ConsistencyEngine {
         var energyAccelCount = 0
         var energyCardCount  = 0
         var disruptionCount   = 0
+        var gustingCount      = 0
         var recoveryCount     = 0
         var mobilityTagCount  = 0
         var totalRetreatCost  = 0
@@ -139,6 +156,7 @@ struct ConsistencyEngine {
             if tags.contains("Search")             { searchCount      += entry.copies }
             if tags.contains("Energy Acceleration") { energyAccelCount += entry.copies }
             if tags.contains("Disruption")         { disruptionCount  += entry.copies }
+            if tags.contains("Gusting")            { gustingCount     += entry.copies }
             if tags.contains("Recovery")           { recoveryCount    += entry.copies }
             if tags.contains("Mobility")           { mobilityTagCount += entry.copies }
             if entry.supertype == "Energy"         { energyCardCount  += entry.copies }
@@ -237,10 +255,72 @@ struct ConsistencyEngine {
             energyScore = min(100, min(energyAccelCount, 6) * 10 + min(energyCardCount, 15) * 4)
         }
 
+        // ── New axes ─────────────────────────────────────────────────────────
+
+        // Turn-2 Aggression: P(attacker in hand) × P(energy ready) by T2 going second.
+        // Going second, T2 start = 7 opening + T1 draw + T2 draw = 9 total drawn.
+        // Energy model: 2 natural attachment slots exist by T2 (one on T1, one on T2).
+        // Manual energy cards cover the first min(minCost, 2) of those slots.
+        // Acceleration cards (Supporters, Items, Abilities with "Energy Acceleration" tag)
+        // cover any cost above 2; each accel card counts as one extra attachment.
+        let t2Drawn        = 9
+        let t2AttackerPool = attackerCopies > 0 ? attackerCopies : basicPokeCopies
+        let t2MinCost      = attackerAvgMinCost.map { Int(ceil($0)) } ?? 1
+        let pT2Attacker    = Self.probabilityAtLeast(copies: t2AttackerPool, deckSize: deckSize, drawn: t2Drawn, desired: 1)
+        let manualNeeded   = min(t2MinCost, 2)   // covered by normal attachments
+        let accelNeeded    = max(0, t2MinCost - 2) // extra cost that requires accel
+        let pManual        = Self.probabilityAtLeast(copies: energyCardCount, deckSize: deckSize, drawn: t2Drawn, desired: manualNeeded)
+        let pAccel         = accelNeeded == 0 ? 1.0
+            : Self.probabilityAtLeast(copies: energyAccelCount, deckSize: deckSize, drawn: t2Drawn, desired: accelNeeded)
+        let pT2Energy      = pManual * pAccel
+        let turnTwoAggressionScore = min(100, Int(pT2Attacker * pT2Energy * 100))
+
+        // Prize Efficiency: weighted avg prizes given up per Pokémon KO, mapped to 0–100.
+        // VMAX / VSTAR → 3 prizes; ex / V / GX / VUNION → 2; everything else → 1.
+        var totalPrizeWeight = 0
+        var totalPokeCopies  = 0
+        for entry in entries where entry.supertype == "Pokémon" {
+            let subs = Set(entry.subtypes)
+            let pv: Int
+            if subs.contains("VMAX") || subs.contains("VSTAR") { pv = 3 }
+            else if subs.contains("ex") || subs.contains("V") || subs.contains("GX") || subs.contains("VUNION") { pv = 2 }
+            else { pv = 1 }
+            totalPrizeWeight += pv * entry.copies
+            totalPokeCopies  += entry.copies
+        }
+        let avgPrizes = totalPokeCopies > 0 ? Double(totalPrizeWeight) / Double(totalPokeCopies) : 1.0
+        // avg=1 → 100, avg=2 → 50, avg=3 → 0
+        let prizeEfficiencyScore = max(0, min(100, Int((3.0 - avgPrizes) / 2.0 * 100)))
+
+        // Bench Flexibility: 5 bench slots minus distinct engine Pokémon SPECIES (not copies).
+        // Running 3× Bibarel still occupies 1 bench slot, not 3.
+        // Engine sitters = ability-Pokémon whose role tags include Draw / Search / Energy Acceleration.
+        // entries is already merged by name (one entry per unique card name), so the Set
+        // deduplicates across any same-named printings that may remain after merging.
+        //
+        // Evolution lines (e.g. Bidoof → Bibarel, Pidgey → Pidgeot ex) count as 1 slot because
+        // engine abilities live on the evolved form only. The pre-evolutions lack Draw/Search/
+        // EnergyAcceleration tags and are filtered out, so the line contributes exactly 1 entry
+        // to engineBenchNames. No evolvesFrom data is required for this to be correct.
+        var engineBenchNames = Set<String>()
+        for entry in entries where entry.supertype == "Pokémon" && entry.hasAbility {
+            let tags = roleTags(entry.name)
+            if tags.contains("Draw") || tags.contains("Search") || tags.contains("Energy Acceleration") {
+                engineBenchNames.insert(entry.name)
+            }
+        }
+        let engineSlots           = min(5, engineBenchNames.count)
+        let benchFlexibilityScore = max(0, (5 - engineSlots) * 20)
+
+        // Opening Reliability: P(≥1 Basic Pokémon in opening hand of 7).
+        // basicOpeningHandProbability is calculated below; capture it as Int here.
+
         let totalPokemon = singlePrizeCopies + rulePokemonCopies
         let prizeResilienceScore = totalPokemon == 0 ? 50 : singlePrizeCopies * 100 / totalPokemon
 
         let disruptionScore = min(100, min(disruptionCount, 10) * 10)
+        // Gusting: 5 copies = 100 (a full playset of Boss's Orders scores 80)
+        let gustingScore = min(100, min(gustingCount, 5) * 20)
 
         let evolutionScore: Int
         if stage1Copies == 0 && stage2Copies == 0 {
@@ -298,6 +378,7 @@ struct ConsistencyEngine {
         ) / 100
 
         let basicOpeningHandProbability = Self.openingHandProbability(copies: basicPokeCopies, deckSize: deckSize)
+        let openingReliabilityScore = min(100, Int(basicOpeningHandProbability * 100))
 
         return ConsistencyBreakdown(
             overallScore: overallScore,
@@ -314,11 +395,16 @@ struct ConsistencyEngine {
             unlabeledPokemonCount: unlabeledPokemonCount,
             prizeResilienceScore: prizeResilienceScore,
             disruptionScore: disruptionScore,
+            gustingScore: gustingScore,
             evolutionScore: evolutionScore,
             recoveryScore: recoveryScore,
             itemDependencyScore: itemDependencyScore,
             mobilityScore: mobilityScore,
-            keyCards: keyCards
+            keyCards: keyCards,
+            turnTwoAggressionScore: turnTwoAggressionScore,
+            prizeEfficiencyScore: prizeEfficiencyScore,
+            benchFlexibilityScore: benchFlexibilityScore,
+            openingReliabilityScore: openingReliabilityScore
         )
     }
 }

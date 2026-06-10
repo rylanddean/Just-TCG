@@ -235,6 +235,13 @@ Stories are ordered by dependency. Work top to bottom.
 | [M35-01](backlog/M35-01-featured-deck-engine.md) | Featured Deck of the Day Engine | done |
 | [M35-02](backlog/M35-02-featured-deck-widget.md) | Featured Deck Widget | done |
 
+## M36 — Digest & Reading Queue
+| Story | Title | Status |
+|---|---|---|
+| [M36-01](backlog/M36-01-digest-item-model.md) | DigestItem Model & Read Queue | todo |
+| [M36-02](backlog/M36-02-digest-feed-engine.md) | Digest Feed Engine | todo |
+| [M36-03](backlog/M36-03-digest-feed-view.md) | Digest Feed View | todo |
+
 ## Bugs
 | Bug | Title | Status |
 |---|---|---|

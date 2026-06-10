@@ -24,6 +24,7 @@ struct ImportDeckSheet: View {
     // Deck stats computed from resolved matches
     @State private var deckBreakdown: ConsistencyBreakdown? = nil
     @State private var matchupBreakdown: MetaMatchupBreakdown? = nil
+    @State private var deckWeaknessTypes: [String] = []
     @State private var expandedSubScores: Set<String> = []
 
     init(
@@ -252,7 +253,12 @@ struct ImportDeckSheet: View {
             )
         }
 
-        guard !entries.isEmpty else { deckBreakdown = nil; matchupBreakdown = nil; return }
+        guard !entries.isEmpty else {
+            deckBreakdown = nil
+            matchupBreakdown = nil
+            deckWeaknessTypes = []
+            return
+        }
 
         // Merge copies of the same card printed in different sets
         let merged: [DeckCardEntry] = Dictionary(grouping: entries, by: \.name).map { _, group -> DeckCardEntry in
@@ -276,6 +282,15 @@ struct ImportDeckSheet: View {
         }
 
         deckBreakdown = ConsistencyEngine().breakdown(entries: merged, deckSize: 60, roleTags: roleTags)
+
+        let pokemonCards: [CachedCard] = matches.compactMap { match in
+            guard match.entry.quantity > 0,
+                  let cardId = match.cardId,
+                  let card = cardMap[cardId],
+                  card.supertype == "Pokémon" else { return nil }
+            return card
+        }
+        deckWeaknessTypes = DeckWeaknessSummary.weaknessTypes(in: pokemonCards)
 
         let shares = metaTrendEngine.snapshots.last?.archetypeShares ?? []
         if !shares.isEmpty {
@@ -309,15 +324,9 @@ struct ImportDeckSheet: View {
             .padding(.vertical, 4)
         }
 
-        if let mb = matchupBreakdown,
-           !mb.favouredAgainstTypes.isEmpty || !mb.unfavouredAgainstTypes.isEmpty {
+        if !deckWeaknessTypes.isEmpty {
             Section("Type Matchup") {
-                if !mb.favouredAgainstTypes.isEmpty {
-                    typeMatchupRow(label: "Strong against", types: mb.favouredAgainstTypes, isStrong: true)
-                }
-                if !mb.unfavouredAgainstTypes.isEmpty {
-                    typeMatchupRow(label: "Weak against", types: mb.unfavouredAgainstTypes, isStrong: false)
-                }
+                typeMatchupRow(label: "Weak against", types: deckWeaknessTypes, isStrong: false)
             }
         }
 
@@ -332,6 +341,8 @@ struct ImportDeckSheet: View {
                 explainer: "Share of single-prize Pokémon — higher means more KOs required to win.")
             statsSubScoreRow("Disruption Power",       score: bd.disruptionScore,
                 explainer: "Cards that pressure the opponent's hand or board.")
+            statsSubScoreRow("Gusting Power",          score: bd.gustingScore,
+                explainer: "Cards that force the opponent's Active Pokémon to change — Boss's Orders, Prime Catcher, etc.")
             statsSubScoreRow("Evolution Reliability",  score: bd.evolutionScore,
                 explainer: "How well your Basic counts support your evolution lines.")
             statsSubScoreRow("Recovery",               score: bd.recoveryScore,
@@ -343,10 +354,9 @@ struct ImportDeckSheet: View {
     }
 
     private func typeMatchupRow(label: String, types: [String], isStrong: Bool) -> some View {
-        HStack(spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(label).font(.subheadline)
-            Spacer()
-            HStack(spacing: 6) {
+            FlowLayout(spacing: 6) {
                 ForEach(types, id: \.self) { type in
                     HStack(spacing: 4) {
                         Circle()
@@ -522,5 +532,48 @@ private struct CardFullScreenPreview: View {
             }
         }
         .presentationBackground(.black)
+    }
+}
+
+// MARK: - Flow layout (wraps chips onto multiple lines)
+
+private struct FlowLayout: Layout {
+    var spacing: CGFloat = 6
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) -> CGSize {
+        let maxWidth = proposal.width ?? .infinity
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var lineHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x + size.width > maxWidth, x > 0 {
+                y += lineHeight + spacing
+                x = 0
+                lineHeight = 0
+            }
+            x += size.width + spacing
+            lineHeight = max(lineHeight, size.height)
+        }
+        return CGSize(width: maxWidth, height: y + lineHeight)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) {
+        var x = bounds.minX
+        var y = bounds.minY
+        var lineHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x + size.width > bounds.maxX, x > bounds.minX {
+                y += lineHeight + spacing
+                x = bounds.minX
+                lineHeight = 0
+            }
+            subview.place(at: CGPoint(x: x, y: y), proposal: .unspecified)
+            x += size.width + spacing
+            lineHeight = max(lineHeight, size.height)
+        }
     }
 }

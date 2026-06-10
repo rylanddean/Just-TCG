@@ -47,7 +47,7 @@ struct CardFilterState: Equatable {
 
     static let allRoleTags: [String] = [
         "Draw", "Search", "Energy Acceleration", "Healing",
-        "Damage Reduction", "Damage Boost", "Disruption", "Status",
+        "Damage Reduction", "Damage Boost", "Disruption", "Gusting", "Status",
         "Spread Damage", "Survivability", "Mobility", "Prize Control", "Lock",
     ]
 

@@ -163,13 +163,13 @@ struct CardScannerView: View {
 
     @ViewBuilder
     private func bottomSheet(vm: CardScannerViewModel) -> some View {
-        if case .matched(let primary, _) = vm.state {
-            matchSheet(vm: vm, card: primary)
+        if case .matched(let primary, let alternatives) = vm.state {
+            matchSheet(vm: vm, card: primary, alternatives: Array(alternatives.prefix(3)))
                 .transition(.move(edge: .bottom).combined(with: .opacity))
         }
     }
 
-    private func matchSheet(vm: CardScannerViewModel, card: CachedCard) -> some View {
+    private func matchSheet(vm: CardScannerViewModel, card: CachedCard, alternatives: [CachedCard]) -> some View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
                 AsyncImage(url: URL(string: card.imageURL)) { image in
@@ -204,8 +204,23 @@ struct CardScannerView: View {
                 Spacer()
             }
 
+            if !alternatives.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Other candidates")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(alternatives, id: \.id) { alt in
+                                alternativeCell(vm: vm, card: alt)
+                            }
+                        }
+                    }
+                }
+            }
+
             HStack(spacing: 12) {
-                Button { vm.resumeScanning() } label: {
+                Button { vm.dismissCurrentMatch() } label: {
                     Text("Not right?")
                         .font(.subheadline)
                         .frame(maxWidth: .infinity)
@@ -229,6 +244,32 @@ struct CardScannerView: View {
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         .padding(.horizontal, 16)
         .padding(.bottom, 32)
+    }
+
+    private func alternativeCell(vm: CardScannerViewModel, card: CachedCard) -> some View {
+        Button { vm.selectAlternative(card) } label: {
+            VStack(alignment: .leading, spacing: 4) {
+                AsyncImage(url: URL(string: card.imageURL)) { image in
+                    image.resizable().aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 4).fill(.quaternary)
+                }
+                .frame(width: 44, height: 62)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+
+                Text(card.name)
+                    .font(.caption2.weight(.medium))
+                    .lineLimit(1)
+                Text("\(card.setCode) · \(card.number)")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+            .frame(width: 72)
+            .padding(8)
+            .background(Color(.secondarySystemFill), in: RoundedRectangle(cornerRadius: 8))
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Permission denied

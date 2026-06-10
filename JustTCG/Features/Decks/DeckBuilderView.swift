@@ -32,6 +32,7 @@ struct DeckBuilderView: View {
     @State private var showMatchupSheet = false
     @State private var deckBreakdown: ConsistencyBreakdown? = nil
     @State private var matchupBreakdown: MetaMatchupBreakdown? = nil
+    @State private var deckWeaknessTypes: [String] = []
     @State private var mergedDeckEntries: [DeckCardEntry] = []
     @State private var allRecommendations: [CardRecommendation] = []
     @State private var visibleRecommendations: [CardRecommendation] = []
@@ -44,6 +45,9 @@ struct DeckBuilderView: View {
     @State private var narrativeError: String? = nil
     @State private var expandedSubScores: Set<String> = []
     @State private var recommendationToPreview: CardRecommendation? = nil
+    @State private var cleanupSuggestions: [CleanupSuggestion] = []
+    @State private var dismissedCleanupNames: Set<String> = []
+    @State private var cleanupToPreview: CleanupSuggestion? = nil
 
     var body: some View {
         Group {
@@ -94,6 +98,9 @@ struct DeckBuilderView: View {
         .sheet(item: $recommendationToPreview) { rec in
             RecommendationCardDetailSheet(rec: rec)
         }
+        .sheet(item: $cleanupToPreview) { sug in
+            CleanupCardDetailSheet(sug: sug)
+        }
         .overlay(alignment: .bottom) {
             if showGameSavedBanner {
                 Text("Game saved")
@@ -132,6 +139,7 @@ struct DeckBuilderView: View {
                 validationSection(vm: vm, proxy: proxy)
                 deckStatsSection(vm: vm)
                 recommendationsSection
+                cleanupSection
                 pokemonSection(vm: vm)
                 supporterSection(vm: vm)
                 itemSection(vm: vm)
@@ -392,6 +400,19 @@ struct DeckBuilderView: View {
         visibleRecommendations = []
         pendingRecommendationQueue = []
         loadRecBatch()
+
+        let cleanupRoleTags: (String) -> [String] = { [viewModel] name in
+            viewModel?.cachedCards.values.first { $0.name == name }?.roleTags ?? []
+        }
+        cleanupSuggestions = DeckCleanupEngine()
+            .suggestCuts(deck: mergedDeckEntries, breakdown: bd, roleTags: cleanupRoleTags)
+            .filter { !dismissedCleanupNames.contains($0.cardName) }
+            .sorted {
+                if $0.severity != $1.severity { return $0.severity > $1.severity }
+                return $0.quantity > $1.quantity
+            }
+            .prefix(5)
+            .map { $0 }
     }
 
     private func loadRecBatch() {
@@ -409,6 +430,11 @@ struct DeckBuilderView: View {
                 visibleRecommendations.append(pendingRecommendationQueue.removeFirst())
             }
         }
+    }
+
+    private func dismissCleanupSuggestion(_ sug: CleanupSuggestion) {
+        dismissedCleanupNames.insert(sug.cardName)
+        cleanupSuggestions.removeAll { $0.cardName == sug.cardName }
     }
 
     private func resetRecommendations() {
@@ -466,6 +492,7 @@ struct DeckBuilderView: View {
                             Label("Recovery", systemImage: "arrow.counterclockwise.circle.fill").tag("Recovery")
                             Label("Mobility", systemImage: "figure.run").tag("Mobility")
                             Label("Disruption", systemImage: "bolt.horizontal.fill").tag("Disruption")
+                            Label("Gusting", systemImage: "arrow.up.to.line.circle.fill").tag("Gusting")
                         }
                     } label: {
                         Text(recommendationFocus)
@@ -497,6 +524,78 @@ struct DeckBuilderView: View {
         }
     }
 
+
+    // MARK: - Cleanup section
+
+    @ViewBuilder
+    private var cleanupSection: some View {
+        if !cleanupSuggestions.isEmpty {
+            Section {
+                ForEach(cleanupSuggestions) { sug in
+                    cleanupRow(sug)
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                withAnimation { dismissCleanupSuggestion(sug) }
+                            } label: {
+                                Label("Dismiss", systemImage: "xmark")
+                            }
+                        }
+                }
+            } header: {
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("Cleanup")
+                    Text("Cards that may not be earning their slot")
+                        .font(.caption)
+                        .textCase(nil)
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.regular)
+                }
+            }
+        }
+    }
+
+    private func cleanupRow(_ sug: CleanupSuggestion) -> some View {
+        Button {
+            cleanupToPreview = sug
+        } label: {
+            HStack(spacing: 12) {
+                AsyncImage(url: URL(string: sug.imageURL)) { phase in
+                    if case .success(let img) = phase {
+                        img.resizable().aspectRatio(contentMode: .fill)
+                    } else {
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(.quaternary)
+                            .aspectRatio(7/10, contentMode: .fit)
+                    }
+                }
+                .frame(width: 34, height: 48)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("\(sug.cardName)  ×\(sug.quantity)")
+                        .font(.body)
+                        .lineLimit(1)
+                        .foregroundStyle(.primary)
+                    Text(sug.reasonShort)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Text(sug.axis.rawValue)
+                    .font(.caption2.weight(.medium))
+                    .lineLimit(1)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 4)
+                    .background(.fill.tertiary, in: Capsule())
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
+    }
 
     private func addRecommendedCard(_ rec: CardRecommendation) {
         DeckRepository(modelContext: context)
@@ -618,6 +717,11 @@ struct DeckBuilderView: View {
         }
         mergedDeckEntries = merged
         deckBreakdown = ConsistencyEngine().breakdown(entries: merged, deckSize: 60, roleTags: roleTags)
+        let pokemonCards: [CachedCard] = deck.cards.compactMap { dc in
+            guard dc.quantity > 0, let card = vm.cachedCards[dc.cardId], card.supertype == "Pokémon" else { return nil }
+            return card
+        }
+        deckWeaknessTypes = DeckWeaknessSummary.weaknessTypes(in: pokemonCards)
         let shares = metaTrendEngine.snapshots.last?.archetypeShares ?? []
         if !shares.isEmpty {
             let cardByName: (String) -> CachedCard? = { name in
@@ -654,15 +758,9 @@ struct DeckBuilderView: View {
                 Text("Deck Stats")
             }
 
-            if let mb = matchupBreakdown,
-               !mb.favouredAgainstTypes.isEmpty || !mb.unfavouredAgainstTypes.isEmpty {
+            if !deckWeaknessTypes.isEmpty {
                 Section("Type Matchup") {
-                    if !mb.favouredAgainstTypes.isEmpty {
-                        typeMatchupRow(label: "Strong against", types: mb.favouredAgainstTypes, isStrong: true)
-                    }
-                    if !mb.unfavouredAgainstTypes.isEmpty {
-                        typeMatchupRow(label: "Weak against", types: mb.unfavouredAgainstTypes, isStrong: false)
-                    }
+                    typeMatchupRow(label: "Weak against", types: deckWeaknessTypes, isStrong: false)
                 }
             }
 
@@ -685,7 +783,11 @@ struct DeckBuilderView: View {
                 )
                 statsSubScoreRow(
                     "Disruption Power", score: bd.disruptionScore,
-                    explainer: "How many cards you run to disrupt the opponent's hand, board, or strategy — Iono, Judge, Boss's Orders, Lost Zone effects, and similar. Higher means more pressure on your opponent each turn."
+                    explainer: "How many cards you run to disrupt the opponent's hand, board, or strategy — Iono, Judge, Lost Zone effects, and similar. Higher means more hand pressure and board interference each turn."
+                )
+                statsSubScoreRow(
+                    "Gusting Power", score: bd.gustingScore,
+                    explainer: "How many cards can force your opponent's Active Pokémon to change — Boss's Orders, Prime Catcher, Counter Catcher, and Pokémon with gusting abilities. Gusting lets you pick off weakened or unguarded Pokémon; a score of 0 means your opponent can freely hide threats on the bench."
                 )
                 statsSubScoreRow(
                     "Evolution Reliability", score: bd.evolutionScore,
@@ -700,6 +802,18 @@ struct DeckBuilderView: View {
                     explainer: "The percentage of your Trainer engine that is Item cards rather than Supporters. A higher score means more vulnerability to Item-lock effects from cards like Froslass ex. Most competitive decks score 60–80%. Not a flaw by itself — but worth knowing before facing lock strategies.",
                     colorInverted: true
                 )
+                statsSubScoreRow(
+                    "Turn-2 Aggression", score: bd.turnTwoAggressionScore,
+                    explainer: "Estimated probability of being able to attack on turn 2 going second. Calculated by multiplying the chance of having a copy of your primary attacker in hand by the chance of having enough energy attached — both measured across the 9 cards drawn by the start of turn 2. A score below 50 suggests the deck often sets up a turn late."
+                )
+                statsSubScoreRow(
+                    "Bench Flexibility", score: bd.benchFlexibilityScore,
+                    explainer: "How many of your 5 bench slots remain free after accounting for dedicated engine Pokémon — ability-based draw, search, and energy acceleration Pokémon that must stay on the bench to function (e.g. Bibarel, Pidgeot ex, Lumineon V). A score of 100 means no engine sitters; each distinct engine Pokémon line costs 20 points. Low scores mean your attacker bench is crowded and you may struggle to set up multiple attackers."
+                )
+                statsSubScoreRow(
+                    "Opening Reliability", score: bd.openingReliabilityScore,
+                    explainer: "Probability of not being forced to mulligan: the chance of having at least one Basic Pokémon in your opening hand of 7. Most competitive decks run 10–15 Basics and score 95%+. Scores below 80 signal that mulligan hands are a real risk — each mulligan gives your opponent a free card draw and can snowball into early-game disadvantage."
+                )
             }
 
             if #available(iOS 26, *) {
@@ -709,11 +823,10 @@ struct DeckBuilderView: View {
     }
 
     private func typeMatchupRow(label: String, types: [String], isStrong: Bool) -> some View {
-        HStack(alignment: .center, spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(label)
                 .font(.subheadline)
-            Spacer()
-            HStack(spacing: 6) {
+            FlowLayout(spacing: 6) {
                 ForEach(types, id: \.self) { type in
                     HStack(spacing: 4) {
                         Circle()
@@ -1053,6 +1166,130 @@ private struct RoleBadge: View {
                 (role == .attacker ? Color.blue : Color.secondary).opacity(0.12),
                 in: Capsule()
             )
+    }
+}
+
+// MARK: - Flow layout (wraps chips onto multiple lines)
+
+private struct FlowLayout: Layout {
+    var spacing: CGFloat = 6
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) -> CGSize {
+        let maxWidth = proposal.width ?? .infinity
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var lineHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x + size.width > maxWidth, x > 0 {
+                y += lineHeight + spacing
+                x = 0
+                lineHeight = 0
+            }
+            x += size.width + spacing
+            lineHeight = max(lineHeight, size.height)
+        }
+        return CGSize(width: maxWidth, height: y + lineHeight)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) {
+        var x = bounds.minX
+        var y = bounds.minY
+        var lineHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x + size.width > bounds.maxX, x > bounds.minX {
+                y += lineHeight + spacing
+                x = bounds.minX
+                lineHeight = 0
+            }
+            subview.place(at: CGPoint(x: x, y: y), proposal: .unspecified)
+            x += size.width + spacing
+            lineHeight = max(lineHeight, size.height)
+        }
+    }
+}
+
+// MARK: - Cleanup card detail sheet
+
+private struct CleanupCardDetailSheet: View {
+    let sug: CleanupSuggestion
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 20) {
+                    AsyncImage(url: URL(string: sug.imageURL)) { phase in
+                        if case .success(let img) = phase {
+                            img.resizable().aspectRatio(contentMode: .fit)
+                        } else {
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(.quaternary)
+                                .aspectRatio(2/3, contentMode: .fit)
+                        }
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding(.horizontal, 24)
+                    .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(sug.cardName)
+                                .font(.title3.bold())
+                            Spacer()
+                            Text("×\(sug.quantity) in deck")
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(.secondary)
+                        }
+
+                        Label(sug.axis.rawValue, systemImage: sug.axis.systemImage)
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 5)
+                            .background(.fill.tertiary, in: Capsule())
+
+                        Divider().padding(.vertical, 2)
+
+                        Text(sug.reasonLong)
+                            .font(.subheadline)
+                            .foregroundStyle(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        if let alt = sug.alternativeName {
+                            HStack(spacing: 10) {
+                                Image(systemName: "arrow.left.arrow.right.circle.fill")
+                                    .font(.title3)
+                                    .foregroundStyle(.tint)
+                                VStack(alignment: .leading, spacing: 1) {
+                                    Text("Consider adding")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                    Text(alt)
+                                        .font(.subheadline.bold())
+                                }
+                                Spacer()
+                            }
+                            .padding(12)
+                            .background(.tint.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+                        }
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 32)
+                }
+                .padding(.top, 16)
+            }
+            .navigationTitle("Why cut this?")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
     }
 }
 

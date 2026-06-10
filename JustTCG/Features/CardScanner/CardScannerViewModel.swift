@@ -18,6 +18,7 @@ final class CardScannerViewModel {
     var isTorchOn: Bool = false
     var isLowConfidenceMatch: Bool = false
     var showFramingHint: Bool = false
+    private(set) var dismissedCardIds: Set<String> = []
     let session: AVCaptureSession = AVCaptureSession()
 
     private let scanner = CardScannerService()
@@ -88,9 +89,10 @@ final class CardScannerViewModel {
             showFramingHint = false
 
             let matches = await matcher.match(result: result)
-            guard let primary = matches.first else { return }
+            let filtered = matches.filter { !dismissedCardIds.contains($0.id) }
+            guard let primary = filtered.first else { return }
             isLowConfidenceMatch = (result.confidence == .medium)
-            state = .matched(primary: primary, alternatives: Array(matches.dropFirst()))
+            state = .matched(primary: primary, alternatives: Array(filtered.dropFirst()))
         }
     }
 
@@ -115,6 +117,21 @@ final class CardScannerViewModel {
         state = .scanning
     }
 
+    func dismissCurrentMatch() {
+        if case .matched(let primary, _) = state {
+            dismissedCardIds.insert(primary.id)
+        }
+        resumeScanning()
+    }
+
+    func selectAlternative(_ card: CachedCard) {
+        guard case .matched(let primary, let alternatives) = state else { return }
+        dismissedCardIds.insert(primary.id)
+        let remaining = alternatives.filter { $0.id != card.id }
+        isLowConfidenceMatch = false
+        state = .matched(primary: card, alternatives: remaining)
+    }
+
     func quantityInDeck(for card: CachedCard) -> Int {
         deck.cards.first(where: { $0.cardId == card.id })?.quantity ?? 0
     }
@@ -132,7 +149,7 @@ final class CardScannerViewModel {
     }
 
     func stopSession() {
-        // Ensure torch is off when leaving the scanner
+        dismissedCardIds.removeAll()
         if isTorchOn, let device = captureDevice, device.hasTorch,
            (try? device.lockForConfiguration()) != nil {
             device.torchMode = .off
