@@ -66,6 +66,7 @@ struct DeckRecommendationEngine {
         "Boss's Orders": 5,
         "Prime Catcher": 4,
         "Counter Catcher": 3,
+        "Team Rocket's Giovanni": 3,
         "Arven's Toedscruel": 2,
         "Pokémon Catcher": 2,
 
