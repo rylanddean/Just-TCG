@@ -1,9 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct FeaturedDeckWidget: View {
     @State private var vm = FeaturedDeckWidgetViewModel()
     @State private var showDeckViewer = false
-    @Environment(\.modelContext) private var modelContext
+
+    @Query(filter: #Predicate<CachedCard> { $0.supertype == "Pokémon" })
+    private var pokemonCards: [CachedCard]
+
+    private let resolver = ArchetypePrimaryCardResolver()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -11,8 +16,9 @@ struct FeaturedDeckWidget: View {
             bodyContent
         }
         .padding(16)
-        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
-        .task { await vm.load(modelContext: modelContext) }
+        .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12))
+        .padding(.horizontal)
+        .task { await vm.load() }
         .sheet(isPresented: $showDeckViewer) {
             if let snapshot = vm.snapshot, let listId = snapshot.deckListId {
                 NavigationStack {
@@ -61,8 +67,8 @@ struct FeaturedDeckWidget: View {
     @ViewBuilder
     private func loadedContent(snapshot: FeaturedDeckSnapshot) -> some View {
         HStack(alignment: .top, spacing: 12) {
-            // Left: primary card thumbnail
-            if let card = vm.primaryCards.first {
+            // Left: primary card thumbnail — resolved reactively so it appears once the catalog loads
+            if let card = resolver.resolve(archetype: snapshot.archetype, from: pokemonCards) {
                 CardThumbnailView(card: card)
                     .frame(width: 72, height: 100)
             } else {

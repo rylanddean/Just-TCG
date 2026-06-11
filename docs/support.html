@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Just TCG</title>
+  <meta name="description" content="Get help with Just TCG. FAQ, troubleshooting steps, and contact information.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/icon.png" alt="Just TCG icon">
+      Just TCG
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html">Guide</a>
+      <a href="support.html" class="active">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary">App Store</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:80px;padding-bottom:48px;">
+  <div class="container">
+    <div class="section-label">Support</div>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin-bottom:16px;">How can we help?</h1>
+    <p style="font-size:18px;color:var(--text-secondary);max-width:560px;">Find answers below, or open an issue on GitHub if something isn't covered.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container" style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:flex-start;">
+
+    <!-- Contact sidebar -->
+    <div>
+      <h3 style="margin-bottom:16px;">Contact</h3>
+      <div class="card" style="margin-bottom:12px;">
+        <h4 style="margin-bottom:8px;">GitHub Issues</h4>
+        <p style="font-size:14px;">The best way to report bugs or request features. Search existing issues before opening a new one.</p>
+        <a href="#" class="btn btn-secondary" style="margin-top:14px;font-size:13px;">Open an issue →</a>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px;">Email</h4>
+        <p style="font-size:14px;">For questions not suited to GitHub, reach out directly.</p>
+        <a href="mailto:support@justtcg.app" class="btn btn-secondary" style="margin-top:14px;font-size:13px;">support@justtcg.app</a>
+      </div>
+
+      <div style="margin-top:24px;">
+        <h4 style="margin-bottom:12px;font-size:14px;color:var(--text-secondary);">Helpful links</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="guide.html" style="font-size:14px;color:var(--accent);">User Guide →</a>
+          <a href="privacy.html" style="font-size:14px;color:var(--accent);">Privacy Policy →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div>
+      <h3 style="margin-bottom:24px;">Frequently Asked Questions</h3>
+
+      <div class="accordion" id="faq">
+
+        <div class="accordion-item open">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            My card catalog is empty or showing outdated cards.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Just TCG loads its card catalog from Limitless TCG. If the catalog looks empty or stale, go to <strong>Settings → Data → Force network sync</strong> to trigger a fresh download. This requires an internet connection. The sync takes 10–30 seconds depending on your connection speed.</p>
+            <p style="margin-top:8px;">If your device has never had an internet connection after installing the app, the bundled seed data will be used as a starting point. Open any internet connection and sync to get the full current catalog.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Deck import from PTCGL isn't working.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>The import expects the standard PTCGL copy-paste format. Make sure you copy the full list from PTCGL (Deck Details → Export → Copy to Clipboard). The list should start with <code style="font-size:12px;background:var(--surface-2);padding:1px 5px;border-radius:4px;">Pokémon: X</code> and include quantity, name, set code, and collector number for each card.</p>
+            <p style="margin-top:8px;">If a card can't be matched automatically, an unmatched card swap sheet will appear so you can pick the correct version manually. Basic Energy cards sometimes use non-standard formatting — the swap sheet handles those too.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            The Card Scanner isn't recognising cards.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>For best results: hold the card steady, ensure the set symbol (bottom left of the card) and collector number (bottom right) are both fully visible and in focus. Good lighting without glare makes a significant difference.</p>
+            <p style="margin-top:8px;">The scanner reads the collector number and set code printed at the bottom of the card — not the card illustration or name. Holographic foil cards sometimes cause glare; try tilting the card slightly to reduce reflection.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            The AI features (Deck Generator, Tech Advisor, Rules Assistant) aren't available.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>AI features require <strong>iOS 18.1 or later</strong> and a device with an A17 Pro chip or later (iPhone 15 Pro, iPhone 16 family, and newer). On devices that don't meet these requirements, the AI features are hidden.</p>
+            <p style="margin-top:8px;">If your device meets the requirements but features still don't appear, ensure that Apple Intelligence is enabled in Settings → Apple Intelligence &amp; Siri.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Tournament data isn't loading or is showing old results.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Tournament data is fetched live from Limitless TCG when you open the Tournaments tab, then cached for up to 1 hour. If you're seeing older data, pull down on the tournament list to force a refresh.</p>
+            <p style="margin-top:8px;">If the refresh fails, an error banner will appear. Check your internet connection. If Limitless TCG is experiencing downtime, the cached data will be shown until the service recovers. Just TCG is not affiliated with Limitless TCG.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            My match history disappeared after switching devices.
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Match history syncs across devices via iCloud. Check the following:</p>
+            <ul style="font-size:14px;color:var(--text-secondary);margin-top:8px;padding-left:18px;">
+              <li>Both devices are signed into the same Apple ID</li>
+              <li>iCloud is enabled for Just TCG on both devices (Settings → [Your Name] → iCloud)</li>
+              <li>The new device has had a few minutes to sync after first launch</li>
+            </ul>
+            <p style="margin-top:8px;">If sync doesn't recover your data, use a backup exported from Settings → Export Backup on your original device, then import it on the new device via Settings → Import Backup.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            How do I back up my decks and match history?
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Go to <strong>Settings → Data → Export Backup</strong>. This creates a JSON file containing all your decks and match history. Share it to Files, AirDrop, or any other destination using the iOS Share Sheet.</p>
+            <p style="margin-top:8px;">To restore, go to <strong>Settings → Data → Import Backup</strong> and select the file. Decks that already exist on the device will be skipped to prevent duplicates.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            A card is showing in the wrong section of my deck (e.g. Energy in Pokémon section).
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Card sectioning is determined by the card's subtype in the local catalog. If a card appears in the wrong section, it may have incomplete or incorrect catalog data. Try forcing a card cache sync via <strong>Settings → Developer → Force network sync</strong> (visible in the release build as Force network sync under Data).</p>
+            <p style="margin-top:8px;">If the problem persists after syncing, please open a GitHub issue with the card's name, set code, and collector number so we can investigate the catalog entry.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Does Just TCG work offline?
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Yes. Deck building and match logging work completely offline using the locally cached card data. Analytics are also computed entirely from your local match records.</p>
+            <p style="margin-top:8px;">Features that require a connection: card catalog refresh, tournament feed, and fetching new deck list data. These will show cached data when offline and refresh when connectivity returns.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            What Pokémon TCG formats does the app support?
+            <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Just TCG supports the <strong>Standard format</strong> only. The card catalog, deck legality validation, and tournament data are all specific to Standard. Expanded and Pocket formats are not currently supported.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Just TCG</div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html">User Guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="footer-copy">© 2025 Just TCG</div>
+  </div>
+</footer>
+
+<script>
+function toggleAccordion(btn) {
+  const item = btn.closest('.accordion-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.accordion-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

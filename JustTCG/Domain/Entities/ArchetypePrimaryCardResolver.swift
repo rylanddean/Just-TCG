@@ -45,8 +45,10 @@ struct ArchetypePrimaryCardResolver {
 
     private func findCard(named name: String, in pokemonCards: [CachedCard]) -> CachedCard? {
         let normalised = name.lowercased()
-        return pokemonCards.first(where: { $0.name.lowercased() == normalised })
-            ?? pokemonCards.first(where: {
+        let preferred = pokemonCards.filter { $0.imageURL.contains("pokemontcg.io") }
+        let pool = preferred.isEmpty ? pokemonCards : preferred
+        return pool.first(where: { $0.name.lowercased() == normalised })
+            ?? pool.first(where: {
                 $0.name.lowercased().hasPrefix(normalised) ||
                 normalised.hasPrefix($0.name.lowercased())
             })
@@ -87,6 +89,12 @@ struct ArchetypePrimaryCardResolver {
     }
 
     func resolve(archetype: String, from cards: [CachedCard]) -> CachedCard? {
+        // Space-separated archetypes (e.g. "Dragapult Dusknoir") need the greedy word scan
+        // to correctly identify multi-word Pokémon names like "Dragapult ex".
+        if !archetype.contains("/") {
+            return resolveMultiple(archetype: archetype, from: cards, maxCount: 1).first
+        }
+
         let primaryName = archetype
             .split(separator: "/", maxSplits: 1)
             .first
@@ -96,11 +104,16 @@ struct ArchetypePrimaryCardResolver {
         let pokemonCards = cards.filter { $0.supertype == "Pokémon" }
         let normalised = primaryName.lowercased()
 
-        if let exact = pokemonCards.first(where: { $0.name.lowercased() == normalised }) {
+        // Prefer cards from the standard CDN; fall back to full pool only if none match.
+        // This avoids returning promo/alternate-set cards that use unreliable third-party image hosts.
+        let preferred = pokemonCards.filter { $0.imageURL.contains("pokemontcg.io") }
+        let pool = preferred.isEmpty ? pokemonCards : preferred
+
+        if let exact = pool.first(where: { $0.name.lowercased() == normalised }) {
             return exact
         }
 
-        return pokemonCards.first {
+        return pool.first {
             $0.name.lowercased().hasPrefix(normalised) ||
             normalised.hasPrefix($0.name.lowercased())
         }

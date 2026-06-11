@@ -1,12 +1,10 @@
 import Foundation
 import Observation
-import SwiftData
 
 @Observable
 final class FeaturedDeckWidgetViewModel {
 
     private(set) var snapshot: FeaturedDeckSnapshot? = nil
-    private(set) var primaryCards: [CachedCard] = []
     private(set) var isLoading = false
     private(set) var error: String? = nil
 
@@ -19,26 +17,24 @@ final class FeaturedDeckWidgetViewModel {
 
     // MARK: - Public API
 
-    func load(modelContext: ModelContext) async {
+    func load() async {
         if let existing = snapshot, !existing.isStale() { return }
         if let cached = loadFromDisk(), !cached.isStale() {
             snapshot = cached
-            primaryCards = resolveCards(names: cached.primaryCardNames, modelContext: modelContext)
             return
         }
-        await fetch(modelContext: modelContext)
+        await fetch()
     }
 
-    func refresh(modelContext: ModelContext) async {
+    func refresh() async {
         clearDiskCache()
         snapshot = nil
-        primaryCards = []
-        await fetch(modelContext: modelContext)
+        await fetch()
     }
 
     // MARK: - Private
 
-    private func fetch(modelContext: ModelContext) async {
+    private func fetch() async {
         isLoading = true
         error = nil
         defer { isLoading = false }
@@ -69,34 +65,9 @@ final class FeaturedDeckWidgetViewModel {
 
             saveToDisk(picked)
             snapshot = picked
-            primaryCards = resolveCards(names: picked.primaryCardNames, modelContext: modelContext)
         } catch {
             self.error = error.localizedDescription
         }
-    }
-
-    private func resolveCards(names: [String], modelContext: ModelContext) -> [CachedCard] {
-        var result: [CachedCard] = []
-        var seen = Set<String>()
-        let resolver = ArchetypePrimaryCardResolver()
-        for name in names {
-            let primary = name
-                .split(separator: "/", maxSplits: 1)
-                .first
-                .map { $0.trimmingCharacters(in: .whitespaces) }
-                ?? name
-            guard !primary.isEmpty else { continue }
-            var descriptor = FetchDescriptor<CachedCard>(predicate: #Predicate { card in
-                card.supertype == "Pokémon" && card.name.localizedStandardContains(primary)
-            })
-            descriptor.fetchLimit = 20
-            let candidates = (try? modelContext.fetch(descriptor)) ?? []
-            if let card = resolver.resolve(archetype: name, from: candidates), !seen.contains(card.id) {
-                seen.insert(card.id)
-                result.append(card)
-            }
-        }
-        return result
     }
 
     // MARK: - Disk cache

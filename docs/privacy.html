@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Just TCG</title>
+  <meta name="description" content="Just TCG privacy policy. No account required, no analytics SDK, your data stays on your device.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/icon.png" alt="Just TCG icon">
+      Just TCG
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html">Guide</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary">App Store</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:80px;padding-bottom:80px;">
+  <div class="container">
+
+    <!-- Summary cards -->
+    <div class="section-label">Privacy Policy</div>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin-bottom:16px;">Your data stays yours.</h1>
+    <p style="font-size:18px;color:var(--text-secondary);max-width:560px;margin-bottom:48px;">The short version: no account, no tracking, no third-party data sharing. Your decks and match history live on your device and sync through your personal iCloud.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:64px;">
+      <div class="card" style="display:flex;align-items:flex-start;gap:14px;">
+        <span style="font-size:28px;flex-shrink:0;">🔒</span>
+        <div>
+          <h4 style="margin-bottom:4px;">No account</h4>
+          <p style="font-size:13px;">Just TCG never asks for your name, email address, or any personal identifier.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-start;gap:14px;">
+        <span style="font-size:28px;flex-shrink:0;">📵</span>
+        <div>
+          <h4 style="margin-bottom:4px;">No analytics</h4>
+          <p style="font-size:13px;">No Mixpanel, Firebase Analytics, Amplitude, or any equivalent SDK is included in the app.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-start;gap:14px;">
+        <span style="font-size:28px;flex-shrink:0;">☁️</span>
+        <div>
+          <h4 style="margin-bottom:4px;">iCloud sync only</h4>
+          <p style="font-size:13px;">Sync is handled by Apple's CloudKit. Your data travels encrypted through Apple's infrastructure — not ours.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;align-items:flex-start;gap:14px;">
+        <span style="font-size:28px;flex-shrink:0;">🤖</span>
+        <div>
+          <h4 style="margin-bottom:4px;">AI runs on-device</h4>
+          <p style="font-size:13px;">The Deck Generator, Tech Advisor, and Rules Assistant use Apple Foundation Models. No query leaves your device.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full policy -->
+    <div class="divider" style="margin-bottom:48px;"></div>
+
+    <div class="prose">
+      <p style="color:var(--text-tertiary);font-size:13px;">Last updated: June 2025</p>
+
+      <h2>1. Overview</h2>
+      <p>Just TCG ("the App") is a competitive Pokémon TCG companion for iOS. This Privacy Policy describes what data the App collects, how it is used, and your rights as a user.</p>
+      <p>The App is designed with privacy as a default. We collect the minimum data necessary to provide the App's features, and we do not sell, share, or monetize user data.</p>
+
+      <h2>2. Data We Do Not Collect</h2>
+      <p>Just TCG does <strong>not</strong> collect:</p>
+      <ul>
+        <li>Your name, email address, or any personal identifier</li>
+        <li>Device identifiers for advertising purposes (IDFA)</li>
+        <li>Crash reports sent to any third-party service</li>
+        <li>Usage analytics (screen views, tap events, session durations)</li>
+        <li>Location data</li>
+        <li>Contact list or calendar data</li>
+      </ul>
+
+      <h2>3. Data Stored Locally on Your Device</h2>
+      <p>The following data is created by you and stored locally using Apple's SwiftData framework:</p>
+      <ul>
+        <li><strong>Decks and deck cards</strong> — names, card lists, quantities, and status you assign</li>
+        <li><strong>Match records</strong> — opponent archetype, result, date, event type, format, and any notes you write</li>
+        <li><strong>Prep plans and sessions</strong> — matchup goals and logged prep sessions you create</li>
+        <li><strong>Favourite players</strong> — player names you choose to follow</li>
+      </ul>
+      <p>None of this data is transmitted to any server operated by Just TCG. It is yours, stored on your device.</p>
+
+      <h2>4. iCloud Sync</h2>
+      <p>If you have iCloud enabled on your device, the App uses Apple's CloudKit to sync your decks, deck cards, and match records across your own Apple devices. This sync:</p>
+      <ul>
+        <li>Is encrypted end-to-end by Apple's infrastructure</li>
+        <li>Is optional — the App works fully offline without it</li>
+        <li>Can be disabled at any time in iOS Settings → [Your Name] → iCloud → Just TCG</li>
+        <li>Is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a></li>
+      </ul>
+      <p>The card catalog (CachedCard records) is explicitly excluded from iCloud sync, as it is re-fetchable from Limitless TCG on any device.</p>
+
+      <h2>5. Card Images and Tournament Data</h2>
+      <p>The App fetches Pokémon card images and tournament data from Limitless TCG (<a href="https://limitlesstcg.com">limitlesstcg.com</a>). These requests:</p>
+      <ul>
+        <li>Include standard HTTP headers (your IP address is visible to Limitless TCG's servers, as with any web request)</li>
+        <li>Are cached locally on your device to reduce repeat network requests</li>
+        <li>Do not include any personal identifiers from Just TCG</li>
+      </ul>
+      <p>Card images are loaded from Limitless TCG's CDN and cached in the app's local storage. They are not re-hosted or redistributed by Just TCG.</p>
+
+      <h2>6. Camera Access</h2>
+      <p>The Card Scanner feature requires camera access to read card set symbols and collector numbers via OCR. The camera is used only when you explicitly open the scanner. No images are stored, uploaded, or transmitted — the OCR runs entirely on-device using Apple's Vision framework.</p>
+
+      <h2>7. AI Features</h2>
+      <p>The Deck Generator, Tech Advisor, and Rules Assistant features use Apple Foundation Models, which run entirely on-device. Prompts and responses are not sent to any external AI service, including servers operated by Anthropic, OpenAI, Google, or Just TCG. These features require iOS 18.1 or later and a compatible device.</p>
+
+      <h2>8. Backup Files</h2>
+      <p>The Settings screen allows you to export a backup of your decks and match history as a JSON file. This file is created locally and shared via iOS's standard Share Sheet — you control where it goes. Just TCG does not transmit backup files anywhere automatically.</p>
+
+      <h2>9. Children</h2>
+      <p>Just TCG does not knowingly collect any personal information from children under 13. The App does not collect personal information from any user, regardless of age.</p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>If this Privacy Policy changes materially, we will update the "Last updated" date at the top of this page and note the change in the App's release notes. Continued use of the App after such changes constitutes your acceptance of the updated policy.</p>
+
+      <h2>11. Contact</h2>
+      <p>Questions about this Privacy Policy can be directed to the support contact listed on the <a href="support.html">Support page</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Just TCG</div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html">User Guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="footer-copy">© 2025 Just TCG</div>
+  </div>
+</footer>
+
+</body>
+</html>

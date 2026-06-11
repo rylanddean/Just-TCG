@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Just TCG</title>
+  <meta name="description" content="Complete user guide for Just TCG. Learn how to build decks, track matches, use analytics, and follow the tournament meta.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guide-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+    .step-text strong { color: var(--text); }
+
+    .tip {
+      background: rgba(79, 142, 247, 0.08);
+      border: 1px solid rgba(79, 142, 247, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin: 16px 0;
+    }
+    .tip strong { color: var(--accent); }
+
+    .guide-section {
+      scroll-margin-top: 80px;
+      padding-top: 48px;
+    }
+    .guide-section:first-child { padding-top: 0; }
+    .guide-section h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-section h3 {
+      font-size: 18px;
+      margin: 28px 0 12px;
+      color: var(--text);
+    }
+    .guide-section p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .guide-section ul {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .guide-section li { margin-bottom: 5px; line-height: 1.55; }
+    .guide-section strong { color: var(--text); }
+
+    .guide-nav-section {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-tertiary);
+      padding: 12px 12px 4px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/icon.png" alt="Just TCG icon">
+      Just TCG
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html" class="active">Guide</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary">App Store</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:60px;padding-bottom:32px;">
+  <div class="container">
+    <div class="section-label">User Guide</div>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin-bottom:12px;">How to use Just TCG</h1>
+    <p style="font-size:17px;color:var(--text-secondary);max-width:560px;">A complete walkthrough of every feature — from first launch to tournament prep.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section style="padding-top:0;padding-bottom:80px;">
+  <div class="container">
+    <div class="guide-layout">
+
+      <!-- Sidebar nav -->
+      <nav class="guide-nav">
+        <div class="guide-nav-section">Getting started</div>
+        <a href="#getting-started">First launch</a>
+        <a href="#tabs">App tabs</a>
+
+        <div class="guide-nav-section">Deck Builder</div>
+        <a href="#build-deck">Build a deck</a>
+        <a href="#import-deck">Import a deck</a>
+        <a href="#scan-cards">Scan cards</a>
+        <a href="#deck-generator">AI Deck Generator</a>
+        <a href="#consistency">Consistency Calculator</a>
+        <a href="#tech-advisor">Tech Advisor</a>
+        <a href="#export-deck">Export a deck</a>
+
+        <div class="guide-nav-section">Match Tracking</div>
+        <a href="#log-match">Log a match</a>
+        <a href="#live-game">Live Game Mode</a>
+        <a href="#match-history">Match history</a>
+
+        <div class="guide-nav-section">Analytics</div>
+        <a href="#analytics">Matchup analytics</a>
+        <a href="#meta-comparison">Meta comparison</a>
+        <a href="#meta-score">Meta matchup score</a>
+
+        <div class="guide-nav-section">Tournaments</div>
+        <a href="#tournament-feed">Tournament feed</a>
+        <a href="#deck-lists">Deck lists</a>
+        <a href="#meta-trends">Meta trends</a>
+        <a href="#players">Player profiles</a>
+
+        <div class="guide-nav-section">Prep</div>
+        <a href="#prep-planner">Tournament Prep</a>
+        <a href="#rules-assistant">Rules Assistant</a>
+
+        <div class="guide-nav-section">Settings</div>
+        <a href="#settings">Settings</a>
+        <a href="#backup">Backup &amp; restore</a>
+      </nav>
+
+      <!-- Content -->
+      <div class="guide-content">
+
+        <!-- GETTING STARTED -->
+        <div class="guide-section" id="getting-started">
+          <h2>First launch</h2>
+          <p>When you open Just TCG for the first time, the app loads its card catalog from the bundled seed data. This gives you immediate access to a recent snapshot of the Standard card pool without needing an internet connection.</p>
+          <p>The first time you have a connection, the app will silently refresh the catalog in the background to ensure you have the latest cards and format legality data.</p>
+          <div class="tip"><strong>Tip:</strong> If you want to verify the catalog is up to date, go to Settings → Data → Force network sync. The sync takes 10–30 seconds.</div>
+        </div>
+
+        <div class="guide-section" id="tabs">
+          <h2>App tabs</h2>
+          <p>Just TCG is organised around five tabs in the bottom navigation bar:</p>
+          <ul>
+            <li><strong>Home</strong> — Streak, activity heatmap, recent matches, Featured Deck</li>
+            <li><strong>Decks</strong> — Your saved decks and deck builder</li>
+            <li><strong>Cards</strong> — Browse and search the full Standard card catalog</li>
+            <li><strong>Analytics</strong> — Matchup win rates, meta comparison, meta matchup score</li>
+            <li><strong>Tournaments</strong> — Live tournament results and meta trends</li>
+          </ul>
+          <p>Tournament Prep and Player Profiles are accessible from the Tournaments and Analytics tabs respectively, and from the Home screen navigation.</p>
+        </div>
+
+        <!-- DECK BUILDER -->
+        <div class="guide-section" id="build-deck">
+          <h2>Build a deck</h2>
+
+          <h3>Create a new deck</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the <strong>Decks</strong> tab and tap <strong>+</strong> in the top-right corner.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Enter a deck name and tap <strong>Create</strong>. The deck opens immediately in Deck Detail.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Tap <strong>Add Cards</strong> to open the card picker.</div></div>
+
+          <h3>Adding cards</h3>
+          <p>The card picker shows the full Standard card catalog in a grid. Tap any card to add one copy; tap again to increase the count. A blue badge shows how many copies are in the deck. Hold down on a card in the Cards tab to quick-add it to the most recently edited deck.</p>
+          <p>Use the search bar to find cards by name. Use the filter button (top right) to filter by type, subtype, set, HP range, retreat cost, weakness, or role tag.</p>
+          <ul>
+            <li>Pokémon cards are capped at <strong>4 copies</strong> (or 1 for cards that specify "you may only have 1"). Basic Energy is unlimited.</li>
+            <li>The deck builder only shows <strong>Standard-legal</strong> cards.</li>
+            <li>A legality badge at the top of the deck shows the current status: Valid, Invalid (with reason), or In progress.</li>
+          </ul>
+
+          <div class="tip"><strong>Tip:</strong> The deck is automatically divided into sections — Pokémon (split by Basic/Stage 1/Stage 2), Trainer (Supporter/Item/Stadium/Tool), and Energy. Cards always appear in the correct section based on their subtype.</div>
+
+          <h3>Deck status</h3>
+          <p>Swipe left on a deck in the Decks list to change its status: <strong>Building</strong>, <strong>Playing</strong>, or <strong>Retired</strong>. Status is shown in the deck row and in the deck detail header. Retired decks are hidden by default but accessible via the filter control.</p>
+        </div>
+
+        <div class="guide-section" id="import-deck">
+          <h2>Import a deck</h2>
+          <p>Just TCG can import any deck list in PTCGL copy-paste format.</p>
+
+          <h3>Import from clipboard</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In PTCGL, open the deck and tap <strong>Export → Copy to Clipboard</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">In Just TCG, open the <strong>Decks</strong> tab, tap <strong>+</strong>, and choose <strong>Import Deck</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Tap <strong>Paste from Clipboard</strong>. The deck list is parsed automatically.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">If any cards can't be matched, an <strong>Unmatched Cards</strong> sheet appears. For each unmatched card, pick the correct version from the catalog. Tap <strong>Import</strong> when done.</div></div>
+
+          <h3>Import from file</h3>
+          <p>Tap the document icon on the Import sheet to open a file picker and select a saved deck list text file.</p>
+
+          <div class="tip"><strong>Tip:</strong> You can also import a tournament deck list directly from the deck list viewer in the Tournaments tab. Tap <strong>Import Deck</strong> from any tournament deck list screen.</div>
+        </div>
+
+        <div class="guide-section" id="scan-cards">
+          <h2>Scan cards with your camera</h2>
+          <p>The Card Scanner uses Vision OCR to read the set symbol and collector number from a physical card's lower edge, then adds the matching card to your active deck.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open your deck in Deck Detail, then tap the <strong>camera icon</strong> in the toolbar.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Hold the card so the set symbol (bottom left) and collector number (bottom right) are visible and in focus.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">When the app recognises the card, a confirmation appears at the bottom. The card is added to the deck immediately.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Continue holding cards up to scan your whole physical deck.</div></div>
+
+          <div class="tip"><strong>Tip:</strong> Good lighting matters. Avoid direct sunlight glare on holographic cards. If scanning fails, try tilting the card slightly or moving to an area with better even lighting.</div>
+        </div>
+
+        <div class="guide-section" id="deck-generator">
+          <h2>AI Deck Generator</h2>
+          <p>Describe the deck you want in plain English and the generator will build a complete 60-card list using tournament-placed decks as a source.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the <strong>Decks</strong> tab and tap <strong>+ → Generate Deck</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Type a description. For example: <em>"A budget Gardevoir ex build that can handle Charizard"</em> or <em>"Fastest possible Regidrago VSTAR setup."</em></div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Tap <strong>Generate</strong>. The AI builds the deck list and displays it for review.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Tap <strong>Import Deck</strong> to save the generated list as an editable deck.</div></div>
+
+          <div class="tip"><strong>Requires:</strong> iOS 18.1+, A17 Pro chip or later, and Apple Intelligence enabled.</div>
+        </div>
+
+        <div class="guide-section" id="consistency">
+          <h2>Consistency Calculator</h2>
+          <p>The Consistency Calculator shows the probability of drawing specific cards in your opening hand.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In Deck Detail, tap the <strong>Consistency</strong> button (chart icon).</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Select one or more cards from your deck. For each card, enter how many copies are in the deck (auto-filled) and how many you want in your opener.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">The calculator uses hypergeometric distribution to show the probability of holding at least your target count in a 7-card opening hand from a 60-card deck.</div></div>
+
+          <p>Use this to evaluate whether your Pokémon search count or Energy ratio gives you the opening consistency you need.</p>
+        </div>
+
+        <div class="guide-section" id="tech-advisor">
+          <h2>Tech Advisor</h2>
+          <p>The Tech Advisor recommends tech cards for your specific matchup problems.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In Deck Detail, tap the <strong>Tech Advisor</strong> button (wrench icon).</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Describe your problem: <em>"I keep losing to Iron Thorns because I can't set up fast enough"</em> or <em>"My Gardevoir matchup feels 50/50 — what can tilt it?"</em></div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">The advisor suggests specific Standard-legal cards with a clear explanation of why each card addresses the problem.</div></div>
+
+          <div class="tip"><strong>Requires:</strong> iOS 18.1+, A17 Pro chip or later. Runs fully on-device — your query is never sent to a server.</div>
+        </div>
+
+        <div class="guide-section" id="export-deck">
+          <h2>Export a deck</h2>
+          <p>Export any deck as a PTCGL-compatible text list.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the deck in Deck Detail.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Tap the <strong>Share</strong> button (square with arrow) in the top right.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Share to clipboard, Files, Messages, or any app. In PTCGL, use <strong>Deck → Import → Paste from Clipboard</strong>.</div></div>
+        </div>
+
+        <!-- MATCH TRACKING -->
+        <div class="guide-section" id="log-match">
+          <h2>Log a match</h2>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the deck you played in <strong>Deck Detail</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Tap <strong>Log Match</strong> (+ button in the toolbar).</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Type or select your opponent's archetype. The search box suggests from a curated list of current meta archetypes. You can also type any freeform archetype name.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Tap <strong>Win</strong>, <strong>Loss</strong>, or <strong>Tie</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">5</div><div class="step-text">Tap <strong>Log</strong> to save.</div></div>
+
+          <p>Date defaults to now. Event type defaults to the last event type you used. To add event type, format (BO1/BO3), or notes, tap <strong>More options</strong> before logging.</p>
+
+          <div class="tip"><strong>Faster:</strong> Use Live Game Mode before the game and the result auto-populates the log sheet when the game ends — you only need to confirm.</div>
+        </div>
+
+        <div class="guide-section" id="live-game">
+          <h2>Live Game Mode</h2>
+          <p>Track an active game in real time — prizes, opponent state, and turn notes.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">From Deck Detail, tap <strong>Live Game</strong> (joystick icon) before the game starts.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Select the opponent's archetype on the setup sheet and tap <strong>Start Game</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">During the game, use the HUD to track your prize count, opponent's prize count, and current turn. Tap <strong>Next Turn</strong> to advance, or add a turn note for anything you want to remember.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">When the game ends, tap <strong>End Game</strong> and select the result. The match log sheet pre-fills with the opponent archetype — just confirm to save.</div></div>
+        </div>
+
+        <div class="guide-section" id="match-history">
+          <h2>Match history</h2>
+          <p>Each deck has a full match history accessible from Deck Detail → <strong>History</strong> tab. Matches are shown chronologically, grouped by deck version (based on your edit history). Tap any match to see the full details and any notes you added.</p>
+          <p>The history is segmented by deck version so you can see how card changes affected your results over time.</p>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="guide-section" id="analytics">
+          <h2>Matchup analytics</h2>
+          <p>The <strong>Analytics</strong> tab shows win rate data for the selected deck.</p>
+          <ul>
+            <li><strong>Matchup Win Rates</strong> — Win/loss/tie counts and win rate % for every archetype you've faced, sorted by number of games.</li>
+            <li><strong>Favourable / Unfavourable tags</strong> — Automatically applied when you have 5+ games against an archetype. Favourable = ≥60% win rate. Unfavourable = ≤40%.</li>
+            <li><strong>Win Rate Trend</strong> — Chart of rolling win rate over time. Toggle between 30 days, 90 days, and all-time.</li>
+          </ul>
+          <div class="tip"><strong>Sample size matters.</strong> A win rate based on 2 games is nearly meaningless. The app flags thin matchups so you know to treat them with caution.</div>
+        </div>
+
+        <div class="guide-section" id="meta-comparison">
+          <h2>Meta comparison</h2>
+          <p>Meta Comparison cross-references your matchup data against the current tournament meta.</p>
+          <ul>
+            <li><strong>Practice Gaps</strong> — Top-meta archetypes where you have fewer than 5 games logged. You don't know your real win rate against these decks yet.</li>
+            <li><strong>Danger Matchups</strong> — Top-meta archetypes where your logged win rate is below 40%. These are matchups that will likely cost you at a tournament if left unaddressed.</li>
+          </ul>
+          <p>Meta share percentages are sourced from recent Limitless TCG tournament results and update automatically as new events are processed.</p>
+        </div>
+
+        <div class="guide-section" id="meta-score">
+          <h2>Meta Matchup Score</h2>
+          <p>The Meta Matchup Score is a single number that summarises how well your deck is positioned against the current tournament field.</p>
+          <p>It weights your win rate against each archetype by that archetype's current meta share percentage. A score above 50 means you're beating the field on average; below 50 means the field is beating you.</p>
+          <p>The score updates automatically as the tournament meta shifts and as you log more games.</p>
+        </div>
+
+        <!-- TOURNAMENTS -->
+        <div class="guide-section" id="tournament-feed">
+          <h2>Tournament feed</h2>
+          <p>The <strong>Tournaments</strong> tab shows recent major Pokémon TCG events sourced from Limitless TCG.</p>
+          <p>Each event row shows the event name, location, date, and player count. Tap an event to see the full results breakdown — player names, archetypes, and finishing positions for the top cut.</p>
+          <p>Tournament data is fetched fresh when you open the tab (with a 1-hour cache to avoid unnecessary requests). Pull to refresh for the latest data. Results are cached for offline reading.</p>
+        </div>
+
+        <div class="guide-section" id="deck-lists">
+          <h2>Viewing tournament deck lists</h2>
+          <p>Tap any placing in a tournament to view the full 60-card deck list inline. You can see the complete list — Pokémon, Trainers, Energy — with card thumbnails, without leaving the app.</p>
+          <p>From the deck list viewer, tap <strong>Import Deck</strong> to save the list as your own editable deck.</p>
+        </div>
+
+        <div class="guide-section" id="meta-trends">
+          <h2>Meta trends</h2>
+          <p>Meta Trends shows how each archetype's share of the tournament field has changed across recent events. Access it from the Tournaments tab.</p>
+          <p>Trend lines rise when a deck is gaining presence and fall when it's declining. Use this to:</p>
+          <ul>
+            <li>Time when to pick up a rising deck</li>
+            <li>Identify when your current deck's good matchups are disappearing from the field</li>
+            <li>Spot format shifts early — a deck spiking into the top tier before most players adapt</li>
+          </ul>
+          <p>Tap any archetype in the trends view to see its meta share percentage at each event and view recent top-placing deck lists.</p>
+        </div>
+
+        <div class="guide-section" id="players">
+          <h2>Player profiles</h2>
+          <p>Follow competitive players and track their tournament history.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the <strong>Competition</strong> tab (accessible from Home or Tournaments).</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Search any player by name. Results are sourced from Limitless TCG's player database.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Tap a player to see their full tournament history — events, finishing positions, and deck lists.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Tap the <strong>star</strong> icon to add them to your Favourites. Favourite players appear at the top of the Competition tab for fast access.</div></div>
+        </div>
+
+        <!-- PREP -->
+        <div class="guide-section" id="prep-planner">
+          <h2>Tournament Prep Planner</h2>
+          <p>The Prep Planner helps you prepare systematically for an upcoming event by setting matchup goals and logging prep sessions.</p>
+
+          <h3>Create a Prep Plan</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Open the <strong>Prep</strong> tab (accessible from Home navigation).</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Tap <strong>+ New Plan</strong>. Name it (e.g. "Portland Regionals prep") and set a target date.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Tap <strong>Add Matchup Goal</strong>. Choose an archetype and a target win rate (e.g. "Charizard ex — 60% win rate").</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Add as many goals as your prep plan needs.</div></div>
+
+          <h3>Log prep sessions</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">From a Prep Plan, tap <strong>Log Session</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Select which matchup you practiced, enter the number of games, and add any notes.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">The plan's progress bars update automatically based on your match log data for each goal archetype.</div></div>
+        </div>
+
+        <div class="guide-section" id="rules-assistant">
+          <h2>Rules Assistant</h2>
+          <p>The Rules Assistant answers rules questions grounded in the official Pokémon TCG rulebook.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Tap the <strong>?</strong> button in the top-right of the Home screen (or anywhere you see it in the nav bar).</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Type your question. For example: <em>"Can I use two Pokémon Tools on the same Pokémon?"</em> or <em>"What happens if both players draw their last prize at the same time?"</em></div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">The assistant responds with a clear answer and cites the relevant rule from the rulebook.</div></div>
+
+          <div class="tip"><strong>Works offline.</strong> The Rules Assistant runs entirely on-device using Apple Foundation Models. No internet required, no query is sent anywhere. Requires iOS 18.1+ and a compatible device.</div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="guide-section" id="settings">
+          <h2>Settings</h2>
+          <p>Access Settings via the gear icon in the Home screen navigation bar.</p>
+          <ul>
+            <li><strong>Streak goal</strong> — Set the number of games per day that counts as meeting your daily goal (1–10). Affects the streak counter and the Home widget.</li>
+            <li><strong>Preview cards</strong> — Controls how many card thumbnails appear per deck in the Decks list (1, 2, or 3).</li>
+            <li><strong>Lite mode</strong> — Disables the Featured Deck widget on Home to skip its network fetch. Enabled automatically on older devices. You can toggle it manually here.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section" id="backup">
+          <h2>Backup &amp; Restore</h2>
+
+          <h3>Export a backup</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Go to <strong>Settings → Data → Export Backup</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">A JSON file is created containing all your decks and match history.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Use the iOS Share Sheet to save the file to Files, AirDrop it to another device, or send it anywhere.</div></div>
+
+          <h3>Import a backup</h3>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">Go to <strong>Settings → Data → Import Backup</strong>.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Select the backup JSON file.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">A confirmation sheet shows how many decks and matches will be imported. Decks that already exist on the device (matched by ID) will be skipped.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">Tap <strong>Import</strong> to confirm.</div></div>
+
+          <div class="tip"><strong>Tip:</strong> Export a backup before major iOS updates or before resetting your device. iCloud sync covers most cases, but a local backup is a reliable safety net.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Just TCG</div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="screenshots.html">Screenshots</a>
+      <a href="guide.html">User Guide</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="press.html">Press</a>
+    </div>
+    <div class="footer-copy">© 2025 Just TCG</div>
+  </div>
+</footer>
+
+<script>
+// Highlight active guide nav link on scroll
+const sections = document.querySelectorAll('.guide-section');
+const navLinks = document.querySelectorAll('.guide-nav a');
+
+function updateActiveLink() {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top <= 100) current = section.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+}
+
+window.addEventListener('scroll', updateActiveLink, { passive: true });
+updateActiveLink();
+</script>
+
+</body>
+</html>
