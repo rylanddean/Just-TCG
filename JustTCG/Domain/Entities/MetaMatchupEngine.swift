@@ -17,6 +17,8 @@ struct MatchupEntry: Identifiable {
     let advantage: MatchupAdvantage
     /// Non-nil when an ability override (not the standard weakness chart) drove a Favoured result.
     let abilitySource: String?
+    /// Brief explanation of why this matchup is favoured, even, or unfavoured.
+    let reason: String
 }
 
 struct MetaMatchupBreakdown {
@@ -79,15 +81,9 @@ struct MetaMatchupEngine {
         cardByName: (String) -> CachedCard? = { _ in nil }
     ) -> MetaMatchupBreakdown {
 
-        let attackerTypes = Set(
-            deck.filter { $0.supertype == "Pokémon" }.flatMap { $0.types }
-        )
-        let userWeaknessTypes = Set(
-            deck.filter { $0.supertype == "Pokémon" }.compactMap { $0.weaknessType }
-        )
-        let abilityCardNames = Set(
-            deck.filter { $0.supertype == "Pokémon" && $0.hasAbility }.map { $0.name }
-        )
+        let pokemonEntries = deck.filter { $0.supertype == "Pokémon" }
+        let attackerTypes = Set(pokemonEntries.flatMap { $0.types })
+        let abilityCardNames = Set(pokemonEntries.filter { $0.hasAbility }.map { $0.name })
 
         let topShares = metaShares
             .filter { $0.sharePercent >= 0.5 }
@@ -133,7 +129,10 @@ struct MetaMatchupEngine {
                 }
             }
 
-            let isUnfavoured = userWeaknessTypes.contains(metaAttackType)
+            // Exposure: weighted fraction of the user's Pokémon that are weak to metaAttackType.
+            // Attackers (role or heuristic) count more because they're the primary prize targets.
+            let exposure = weaknessExposure(in: pokemonEntries, to: metaAttackType)
+            let isUnfavoured = exposure >= 0.20
 
             let advantage: MatchupAdvantage
             if isFavoured && !isUnfavoured {
@@ -151,7 +150,40 @@ struct MetaMatchupEngine {
             switch advantage {
             case .favoured:   advantageScore = 100
             case .even:       advantageScore = 50
-            case .unfavoured: advantageScore = 0
+            // Scale down from 50 as exposure grows — a 20%-exposed deck scores ~40; 100% exposed scores 0.
+            case .unfavoured: advantageScore = 50.0 * (1.0 - exposure)
+            }
+
+            let reason: String
+            switch advantage {
+            case .favoured:
+                reason = abilitySource != nil
+                    ? "Ability grants type advantage"
+                    : "Your deck hits their \(weaknessType) weakness"
+            case .unfavoured:
+                let hasAttackerWeak = pokemonEntries.contains {
+                    $0.pokemonRole == .attacker && $0.weaknessType == metaAttackType
+                }
+                let hasTechWeak = pokemonEntries.contains {
+                    $0.pokemonRole == .tech && $0.weaknessType == metaAttackType
+                }
+                if hasAttackerWeak {
+                    reason = "Your attacker is weak to \(metaAttackType)"
+                } else if hasTechWeak {
+                    reason = "Your tech cards are weak to \(metaAttackType)"
+                } else if exposure >= 0.5 {
+                    reason = "Most of your Pokémon are weak to \(metaAttackType)"
+                } else {
+                    reason = "Some of your Pokémon are weak to \(metaAttackType)"
+                }
+            case .even:
+                if exposure > 0 {
+                    reason = "Low \(metaAttackType) exposure — not a meaningful threat"
+                } else if isFavoured {
+                    reason = "Mutual weakness — advantage cancels out"
+                } else {
+                    reason = "No type interaction"
+                }
             }
 
             entries.append(MatchupEntry(
@@ -161,7 +193,8 @@ struct MetaMatchupEngine {
                 weaknessType: weaknessType,
                 metaSharePercent: share.sharePercent,
                 advantage: advantage,
-                abilitySource: abilitySource
+                abilitySource: abilitySource,
+                reason: reason
             ))
             totalShare += share.sharePercent
             weightedScore += advantageScore * share.sharePercent
@@ -181,6 +214,32 @@ struct MetaMatchupEngine {
             favouredAgainstTypes: favouredTypes.sorted(),
             unfavouredAgainstTypes: unfavouredTypes.sorted()
         )
+    }
+
+    // MARK: - Weakness exposure
+
+    /// Returns a 0–1 score for how much of the user's deck is meaningfully exposed to `attackType`.
+    /// Role weights: attacker 3×, tech 2×, unlabeled 1×.
+    /// A score ≥ 0.20 is treated as a real weakness; below that the meta deck's attack type
+    /// affects too little of the deck to matter.
+    private func weaknessExposure(in pokemonEntries: [DeckCardEntry], to attackType: String) -> Double {
+        var totalWeight = 0.0
+        var weakWeight  = 0.0
+
+        for entry in pokemonEntries {
+            let roleWeight: Double
+            switch entry.pokemonRole {
+            case .attacker: roleWeight = 3.0
+            case .tech:     roleWeight = 2.0
+            case nil:       roleWeight = 1.0
+            }
+            let w = Double(entry.copies) * roleWeight
+            totalWeight += w
+            if entry.weaknessType == attackType { weakWeight += w }
+        }
+
+        guard totalWeight > 0 else { return 0 }
+        return weakWeight / totalWeight
     }
 
     // MARK: - Archetype resolution

@@ -56,8 +56,10 @@ struct ConsistencyBreakdown {
     let keyCards: [KeyCardOdds]
 
     // ── New axes (BUG-35) ────────────────────────────────────────────────────
-    /// Probability (0–100) of being able to attack on turn 2 going second:
-    /// P(≥1 attacker in hand) × P(≥minAttackCost energy in hand) across 9 drawn cards.
+    /// Probability (0–100) of being able to attack on turn 2 going second.
+    /// Models P(≥1 attacker) × P(energy ready) over an effective hand size that accounts for
+    /// draw supporters (Lillie's Determination, Cynthia, etc.) and search supporters (Hilda,
+    /// Arven, etc.) you can play on T1 or T2 to access more of your deck.
     let turnTwoAggressionScore: Int
     /// How few prizes the deck gives up on average per Pokémon KO (0–100).
     /// Single-prize only → 100; mixed 2-prize → 50; VMAX/VSTAR-heavy → lower.
@@ -144,9 +146,11 @@ struct ConsistencyEngine {
         var basicPokeCopies  = 0
         var stage1Copies     = 0
         var stage2Copies     = 0
-        var rareCandyCopies  = 0
-        var itemCopies       = 0
-        var supporterCopies  = 0
+        var rareCandyCopies      = 0
+        var itemCopies           = 0
+        var supporterCopies      = 0
+        var drawSupporterCopies  = 0
+        var searchSupporterCopies = 0
 
         let ruleBoxSubtypes: Set<String> = ["ex", "V", "VSTAR", "VMAX", "GX", "VUNION"]
 
@@ -193,7 +197,11 @@ struct ConsistencyEngine {
 
             if entry.supertype == "Trainer" {
                 if entry.subtypes.contains("Item")      { itemCopies      += entry.copies }
-                if entry.subtypes.contains("Supporter") { supporterCopies += entry.copies }
+                if entry.subtypes.contains("Supporter") {
+                    supporterCopies += entry.copies
+                    if tags.contains("Draw")   { drawSupporterCopies   += entry.copies }
+                    if tags.contains("Search") { searchSupporterCopies += entry.copies }
+                }
             }
         }
 
@@ -258,21 +266,53 @@ struct ConsistencyEngine {
         // ── New axes ─────────────────────────────────────────────────────────
 
         // Turn-2 Aggression: P(attacker in hand) × P(energy ready) by T2 going second.
-        // Going second, T2 start = 7 opening + T1 draw + T2 draw = 9 total drawn.
+        // Going second, T2 start = 7 opening + T1 draw + T2 draw = 9 cards seen naturally.
+        //
+        // Two supporter layers model the cards that help you set up on T1/T2:
+        //
+        // 1. Draw supporters (Lillie's Determination, Cynthia, Professor's Research, etc.)
+        //    expand the random pool: holding one lets you see ~3 more cards, so their
+        //    expected contribution is added to t2EffectiveDraw.
+        //
+        // 2. Search supporters (Hilda, Arven, etc.) are treated differently — they do not
+        //    just add random cards, they GUARANTEE a specific card still in the deck.
+        //    Modeled as a parallel success path:
+        //      P(ready) = 1 − P(miss naturally) × P(search also fails to cover)
+        //    Confidence weights reflect that not every search supporter can find any card:
+        //      Attacker (a Pokémon) → 0.8  — most search supporters can find a Pokémon
+        //      Energy              → 0.5  — fewer can find basic Energy cards
+        //
         // Energy model: 2 natural attachment slots exist by T2 (one on T1, one on T2).
         // Manual energy cards cover the first min(minCost, 2) of those slots.
-        // Acceleration cards (Supporters, Items, Abilities with "Energy Acceleration" tag)
-        // cover any cost above 2; each accel card counts as one extra attachment.
+        // Acceleration cards cover any cost above 2; each counts as one extra attachment.
         let t2Drawn        = 9
         let t2AttackerPool = attackerCopies > 0 ? attackerCopies : basicPokeCopies
         let t2MinCost      = attackerAvgMinCost.map { Int(ceil($0)) } ?? 1
-        let pT2Attacker    = Self.probabilityAtLeast(copies: t2AttackerPool, deckSize: deckSize, drawn: t2Drawn, desired: 1)
-        let manualNeeded   = min(t2MinCost, 2)   // covered by normal attachments
-        let accelNeeded    = max(0, t2MinCost - 2) // extra cost that requires accel
-        let pManual        = Self.probabilityAtLeast(copies: energyCardCount, deckSize: deckSize, drawn: t2Drawn, desired: manualNeeded)
-        let pAccel         = accelNeeded == 0 ? 1.0
-            : Self.probabilityAtLeast(copies: energyAccelCount, deckSize: deckSize, drawn: t2Drawn, desired: accelNeeded)
-        let pT2Energy      = pManual * pAccel
+
+        let pHaveDrawSupporter   = Self.probabilityAtLeast(copies: drawSupporterCopies,   deckSize: deckSize, drawn: t2Drawn, desired: 1)
+        let pHaveSearchSupporter = Self.probabilityAtLeast(copies: searchSupporterCopies, deckSize: deckSize, drawn: t2Drawn, desired: 1)
+
+        // Draw supporters widen the random pool; search supporters are handled via guarantee below.
+        let supporterBonus  = pHaveDrawSupporter * 3.0
+        let t2EffectiveDraw = min(deckSize - 1, t2Drawn + Int(supporterBonus.rounded()))
+
+        let manualNeeded = min(t2MinCost, 2)    // covered by natural attachments
+        let accelNeeded  = max(0, t2MinCost - 2) // extra cost requiring accel
+
+        // Search guarantee paths — major score buff when search can cover the missing piece.
+        let searchAttackerCoverage = t2AttackerPool > 0 ? pHaveSearchSupporter * 0.8 : 0.0
+        let searchEnergyCoverage   = energyCardCount > 0 && manualNeeded > 0 ? pHaveSearchSupporter * 0.5 : 0.0
+
+        let pT2AttackerBase = Self.probabilityAtLeast(copies: t2AttackerPool, deckSize: deckSize, drawn: t2EffectiveDraw, desired: 1)
+        let pT2Attacker     = 1.0 - (1.0 - pT2AttackerBase) * (1.0 - searchAttackerCoverage)
+
+        let pManualBase = Self.probabilityAtLeast(copies: energyCardCount, deckSize: deckSize, drawn: t2EffectiveDraw, desired: manualNeeded)
+        let pManual     = manualNeeded == 0 ? 1.0
+            : 1.0 - (1.0 - pManualBase) * (1.0 - searchEnergyCoverage)
+
+        let pAccel    = accelNeeded == 0 ? 1.0
+            : Self.probabilityAtLeast(copies: energyAccelCount, deckSize: deckSize, drawn: t2EffectiveDraw, desired: accelNeeded)
+        let pT2Energy = pManual * pAccel
         let turnTwoAggressionScore = min(100, Int(pT2Attacker * pT2Energy * 100))
 
         // Prize Efficiency: weighted avg prizes given up per Pokémon KO, mapped to 0–100.

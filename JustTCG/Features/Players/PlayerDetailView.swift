@@ -27,7 +27,14 @@ struct PlayerDetailView: View {
         }
         .navigationTitle(vm.profile?.name ?? "Player")
         .navigationBarTitleDisplayMode(.large)
-        .task { await vm.load() }
+        .task {
+            await vm.load()
+            if let profile = vm.profile,
+               let stored = favourites.all.first(where: { $0.id == profile.id }),
+               stored.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                favourites.updateName(profile.name, forId: profile.id)
+            }
+        }
         .refreshable { await vm.refresh() }
         .toolbar {
             if let profile = vm.profile {

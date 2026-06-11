@@ -1,10 +1,18 @@
 import SwiftUI
+import SwiftData
 import Charts
 
 struct MetaTrendView: View {
     @Environment(MetaTrendEngine.self) private var engine
 
+    @Query(filter: #Predicate<CachedCard> { $0.supertype == "Pokémon" })
+    private var pokemonCards: [CachedCard]
+
     @State private var selectedNames: Set<String> = []
+    @State private var dayWindow = 60
+
+    private let resolver = ArchetypePrimaryCardResolver()
+
     private static let trendPalette: [Color] = [
         .blue, .orange, .purple, .green, .red,
         .teal, .pink, .yellow, .indigo, .mint, .cyan, .brown
@@ -30,18 +38,30 @@ struct MetaTrendView: View {
         .task {
             if engine.snapshots.isEmpty {
                 try? await engine.loadTrends()
-                preselectTopArchetypes()
             }
+            preselectTopArchetypes()
         }
+        .onChange(of: dayWindow) { _, _ in preselectTopArchetypes() }
     }
 
     // MARK: - Content
 
     private var contentView: some View {
-        let trends = engine.topArchetypes(n: 15)
+        let windowedSnaps = engine.snapshots(for: dayWindow)
+        let trends = engine.topArchetypes(n: 25, dayWindow: dayWindow)
         let selected = trends.filter { selectedNames.contains($0.archetypeName) }
 
         return List {
+            Section {
+                Picker("Window", selection: $dayWindow) {
+                    Text("30 days").tag(30)
+                    Text("60 days").tag(60)
+                    Text("90 days").tag(90)
+                }
+                .pickerStyle(.segmented)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            }
+
             Section {
                 pillRow(trends: trends)
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
@@ -49,7 +69,7 @@ struct MetaTrendView: View {
 
             if !selected.isEmpty {
                 Section {
-                    trendChart(selected: selected)
+                    trendChart(selected: selected, trends: trends, snapshots: windowedSnaps)
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
             }
@@ -95,8 +115,11 @@ struct MetaTrendView: View {
 
     // MARK: - Chart
 
-    private func trendChart(selected: [ArchetypeTrend]) -> some View {
-        let snapshots = engine.snapshots
+    private func trendChart(
+        selected: [ArchetypeTrend],
+        trends: [ArchetypeTrend],
+        snapshots: [WeekSnapshot]
+    ) -> some View {
         let maxShare = (selected.flatMap(\.weeklyShares).max() ?? 10) + 5
 
         return Chart {
@@ -111,8 +134,10 @@ struct MetaTrendView: View {
                 }
             }
         }
-        .chartForegroundStyleScale(domain: selected.map(\.archetypeName),
-                                    range: selected.map { color(for: $0.archetypeName, in: engine.topArchetypes(n: 15)) ?? .blue })
+        .chartForegroundStyleScale(
+            domain: selected.map(\.archetypeName),
+            range: selected.map { color(for: $0.archetypeName, in: trends) ?? .blue }
+        )
         .chartYAxis {
             AxisMarks(values: .automatic(desiredCount: 5)) { value in
                 AxisGridLine()
@@ -133,19 +158,32 @@ struct MetaTrendView: View {
 
     private func trendRow(_ trend: ArchetypeTrend, color: Color?) -> some View {
         let isSelected = selectedNames.contains(trend.archetypeName)
+        let cardImageURL = resolver.resolve(archetype: trend.archetypeName, from: pokemonCards)?.imageURL
         return Button {
             toggleSelection(trend.archetypeName)
         } label: {
             HStack(spacing: 12) {
-                if let c = color {
-                    Circle()
-                        .fill(c)
-                        .frame(width: 10, height: 10)
+                AsyncImage(url: cardImageURL.flatMap(URL.init)) { phase in
+                    if case .success(let img) = phase {
+                        img.resizable().aspectRatio(contentMode: .fill)
+                    } else {
+                        RoundedRectangle(cornerRadius: 4).fill(.quaternary)
+                    }
                 }
+                .frame(width: 34, height: 48)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(trend.archetypeName)
-                        .font(.body)
-                        .foregroundStyle(.primary)
+                    HStack(spacing: 5) {
+                        if let c = color {
+                            Circle()
+                                .fill(c)
+                                .frame(width: 8, height: 8)
+                        }
+                        Text(trend.archetypeName)
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    }
                     Text(String(format: "%.1f%%", trend.recentShare))
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -209,14 +247,13 @@ struct MetaTrendView: View {
     }
 
     private func preselectTopArchetypes() {
-        let top3 = engine.topArchetypes(n: 3).map(\.archetypeName)
+        let top3 = engine.topArchetypes(n: 3, dayWindow: dayWindow).map(\.archetypeName)
         selectedNames = Set(top3)
     }
 
     private func color(for name: String, in trends: [ArchetypeTrend]) -> Color? {
-        guard let idx = trends.firstIndex(where: { $0.archetypeName == name }),
-              idx < Self.trendPalette.count else { return nil }
-        return Self.trendPalette[idx]
+        guard let idx = trends.firstIndex(where: { $0.archetypeName == name }) else { return nil }
+        return Self.trendPalette[idx % Self.trendPalette.count]
     }
 }
 

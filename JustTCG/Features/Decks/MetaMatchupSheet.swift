@@ -74,6 +74,9 @@ struct MetaMatchupSheet: View {
                 Text(String(format: "%.1f%% meta", entry.metaSharePercent))
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                Text(entry.reason)
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
             }
 
             Spacer()

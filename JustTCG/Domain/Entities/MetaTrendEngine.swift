@@ -6,6 +6,7 @@ import Observation
 struct WeekSnapshot: Identifiable, Codable {
     let id: UUID
     let weekLabel: String
+    let date: Date
     let archetypeShares: [ArchetypeShare]
 }
 
@@ -53,7 +54,7 @@ final class MetaTrendEngine {
 
     // MARK: - Public API
 
-    func loadTrends(weekCount: Int = 8, forceRefresh: Bool = false) async throws {
+    func loadTrends(weekCount: Int = 13, forceRefresh: Bool = false) async throws {
         if !forceRefresh, !snapshots.isEmpty, !isCacheStale() { return }
         if snapshots.isEmpty, let cached = loadFromDisk() { snapshots = cached }
         if !forceRefresh, !snapshots.isEmpty, !isCacheStale() { return }
@@ -64,7 +65,8 @@ final class MetaTrendEngine {
 
         do {
             let tournaments = try await client.fetchRecentTournaments(limit: weekCount * 3)
-            let toFetch = Array(tournaments.prefix(weekCount * 2))
+            let standardOnly = tournaments.filter { $0.format.lowercased().contains("standard") }
+            let toFetch = Array(standardOnly.prefix(weekCount * 2))
 
             // Fetch details concurrently; keep only those with placements
             var details: [(detail: LimitlessTournamentDetail, date: Date)] = []
@@ -103,12 +105,12 @@ final class MetaTrendEngine {
                 result.append(WeekSnapshot(
                     id: UUID(),
                     weekLabel: Self.weekLabel(for: earliestDate),
+                    date: earliestDate,
                     archetypeShares: shares
                 ))
             }
 
-            // Sort oldest → newest by reconstructing the sort key from the label
-            // (simpler: sort by the raw date we already have)
+            // Sort oldest → newest
             let labelToDate: [String: Date] = {
                 var d: [String: Date] = [:]
                 for item in sorted {
@@ -129,19 +131,27 @@ final class MetaTrendEngine {
 
     private static let blockedArchetypes: Set<String> = ["regidrago"]
 
-    func topArchetypes(n: Int) -> [ArchetypeTrend] {
-        guard !snapshots.isEmpty else { return [] }
+    /// Returns snapshots within the given day window, falling back to all snapshots
+    /// if the window contains fewer than 2 entries.
+    func snapshots(for dayWindow: Int) -> [WeekSnapshot] {
+        let cutoff = Calendar.current.date(byAdding: .day, value: -dayWindow, to: Date()) ?? .distantPast
+        let filtered = snapshots.filter { $0.date >= cutoff }
+        return filtered.count >= 2 ? filtered : snapshots
+    }
 
-        // Collect all archetype names
+    func topArchetypes(n: Int, dayWindow: Int = 90) -> [ArchetypeTrend] {
+        let windowedSnapshots = snapshots(for: dayWindow)
+        guard !windowedSnapshots.isEmpty else { return [] }
+
         var allNames: Set<String> = []
-        for snap in snapshots {
+        for snap in windowedSnapshots {
             for share in snap.archetypeShares { allNames.insert(share.archetypeName) }
         }
 
         return allNames
             .filter { !Self.blockedArchetypes.contains($0.lowercased()) }
             .map { name -> ArchetypeTrend in
-                let weekly = snapshots.map { snap in
+                let weekly = windowedSnapshots.map { snap in
                     snap.archetypeShares.first { $0.archetypeName == name }?.sharePercent ?? 0
                 }
                 let average = weekly.reduce(0, +) / Double(weekly.count)
@@ -170,7 +180,6 @@ final class MetaTrendEngine {
             for p in detail.placements {
                 let key = p.archetype.trimmingCharacters(in: .whitespaces)
                 let norm = key.lowercased()
-                // Use first encountered casing
                 if counts[norm] == nil { counts[norm] = 0 }
                 counts[norm]! += 1
                 total += 1
@@ -178,7 +187,6 @@ final class MetaTrendEngine {
         }
         guard total > 0 else { return [] }
 
-        // Recover canonical casing from first encountered placement
         var canonicalNames: [String: String] = [:]
         for detail in details {
             for p in detail.placements {
@@ -199,7 +207,6 @@ final class MetaTrendEngine {
     }
 
     private static func weekLabel(for date: Date) -> String {
-        // Use Monday of the ISO week
         let weekStart = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date))!
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"

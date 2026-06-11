@@ -159,12 +159,21 @@ private struct TournamentCard: View {
                 Spacer()
                 tierBadge(tournament.tier)
             }
-            HStack(spacing: 12) {
-                Label(tournament.date.formatted(date: .abbreviated, time: .omitted), systemImage: "calendar")
-                if !tournament.country.isEmpty {
-                    Label(tournament.country, systemImage: "mappin")
+            HStack(spacing: 10) {
+                HStack(spacing: 3) {
+                    Image(systemName: "calendar")
+                    Text(tournament.date.formatted(date: .abbreviated, time: .omitted))
                 }
-                Label("\(tournament.playerCount)", systemImage: "person.2")
+                if !tournament.country.isEmpty {
+                    HStack(spacing: 3) {
+                        Image(systemName: "mappin")
+                        Text(tournament.country)
+                    }
+                }
+                HStack(spacing: 3) {
+                    Image(systemName: "person.2")
+                    Text("\(tournament.playerCount)")
+                }
             }
             .font(.caption)
             .foregroundStyle(.secondary)

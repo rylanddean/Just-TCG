@@ -288,16 +288,20 @@ struct DeckGeneratorView: View {
             importWarning = "Could not match: \(names)\(unresolved.count > 3 ? " and \(unresolved.count - 3) more" : "")"
         }
 
-        let deck = DeckRepository(modelContext: context).createDeck(name: name.isEmpty ? "Generated Deck" : name)
+        let repo = DeckRepository(modelContext: context)
+        let deck = repo.createDeck(name: name.isEmpty ? "Generated Deck" : name)
         for match in matches where match.isMatched {
             let entry = match.entry
-            DeckRepository(modelContext: context).addCard(
-                cardId: match.cardId!,
-                to: deck,
-                isBasicEnergy: entry.name.contains("Energy"),
-                cardName: entry.name
-            )
+            for _ in 0 ..< entry.quantity {
+                repo.addCard(
+                    cardId: match.cardId!,
+                    to: deck,
+                    isBasicEnergy: entry.name.contains("Energy"),
+                    cardName: entry.name
+                )
+            }
         }
+        repo.saveNow()
 
         isImporting = false
         showImportSheet = false

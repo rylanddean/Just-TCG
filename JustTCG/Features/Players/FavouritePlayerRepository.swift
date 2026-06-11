@@ -30,6 +30,14 @@ final class FavouritePlayerRepository {
         fetchAll()
     }
 
+    func updateName(_ name: String, forId id: String) {
+        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let player = all.first(where: { $0.id == id }), !trimmed.isEmpty else { return }
+        player.name = trimmed
+        try? context.save()
+        fetchAll()
+    }
+
     private func fetchAll() {
         let descriptor = FetchDescriptor<FavouritePlayer>(
             sortBy: [SortDescriptor(\.addedAt, order: .reverse)]

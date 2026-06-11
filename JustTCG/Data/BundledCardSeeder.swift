@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v12"
+    static let seededKey = "bundled_cards_seeded_v13"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -159,12 +159,16 @@ private enum CardTagClassifier {
             if text.localizedCaseInsensitiveContains("more damage") || text.localizedCaseInsensitiveContains("additional damage") {
                 result.insert("Damage Boost")
             }
-            if text.localizedCaseInsensitiveContains("discard")
+            // "from your discard pile" describes retrieval — that's Recovery, not Disruption.
+            let isRecoveryEffect = text.localizedCaseInsensitiveContains("from your discard pile")
+            if !isRecoveryEffect && (
+                text.localizedCaseInsensitiveContains("discard")
                 || text.localizedCaseInsensitiveContains("lost zone")
                 || text.localizedCaseInsensitiveContains("can't play")
                 || text.localizedCaseInsensitiveContains("devolve")
                 || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("opponent's hand"))
-                || (text.localizedCaseInsensitiveContains("opponent") && text.localizedCaseInsensitiveContains("cost") && text.localizedCaseInsensitiveContains("more")) {
+                || (text.localizedCaseInsensitiveContains("opponent") && text.localizedCaseInsensitiveContains("cost") && text.localizedCaseInsensitiveContains("more"))
+            ) {
                 result.insert("Disruption")
             }
             // Status uses exact capitalised strings as printed on cards

@@ -30,8 +30,10 @@ struct DeckBuilderView: View {
     @State private var showConsistency = false
     @State private var showTechAdvisor = false
     @State private var showMatchupSheet = false
+    @State private var showAbilityCompatSheet = false
     @State private var deckBreakdown: ConsistencyBreakdown? = nil
     @State private var matchupBreakdown: MetaMatchupBreakdown? = nil
+    @State private var abilityCompatBreakdown: AbilityCompatibilityBreakdown? = nil
     @State private var deckWeaknessTypes: [String] = []
     @State private var mergedDeckEntries: [DeckCardEntry] = []
     @State private var allRecommendations: [CardRecommendation] = []
@@ -48,6 +50,9 @@ struct DeckBuilderView: View {
     @State private var cleanupSuggestions: [CleanupSuggestion] = []
     @State private var dismissedCleanupNames: Set<String> = []
     @State private var cleanupToPreview: CleanupSuggestion? = nil
+    @State private var isGeneratingSnapshot = false
+    @State private var showSnapshotShare = false
+    @State private var snapshotShareImage: UIImage? = nil
 
     var body: some View {
         Group {
@@ -95,11 +100,22 @@ struct DeckBuilderView: View {
                 MetaMatchupSheet(breakdown: mb, deckEntries: mergedDeckEntries)
             }
         }
+        .sheet(isPresented: $showAbilityCompatSheet) {
+            if let acb = abilityCompatBreakdown {
+                AbilityCompatibilitySheet(breakdown: acb)
+            }
+        }
         .sheet(item: $recommendationToPreview) { rec in
             RecommendationCardDetailSheet(rec: rec)
         }
         .sheet(item: $cleanupToPreview) { sug in
             CleanupCardDetailSheet(sug: sug)
+        }
+        .sheet(isPresented: $showSnapshotShare) {
+            if let image = snapshotShareImage {
+                ActivityViewController(activityItems: [image])
+                    .ignoresSafeArea()
+            }
         }
         .overlay(alignment: .bottom) {
             if showGameSavedBanner {
@@ -127,6 +143,11 @@ struct DeckBuilderView: View {
             if metaTrendEngine.snapshots.isEmpty {
                 try? await metaTrendEngine.loadTrends()
             }
+            // Recompute after trends load — onChange may not be attached yet if the view
+            // hadn't rendered when snapshots were first set from the disk cache.
+            if let vm = viewModel {
+                computeBreakdown(vm: vm)
+            }
         }
     }
 
@@ -138,6 +159,7 @@ struct DeckBuilderView: View {
             List {
                 validationSection(vm: vm, proxy: proxy)
                 deckStatsSection(vm: vm)
+                abilityConflictsSection
                 recommendationsSection
                 cleanupSection
                 pokemonSection(vm: vm)
@@ -250,10 +272,15 @@ struct DeckBuilderView: View {
         if !vm.pokemonCards.isEmpty {
             Section(sectionTitle("Pokémon", cards: vm.pokemonCards)) {
                 ForEach(vm.pokemonCards) { dc in
+                    let cardName = vm.cachedCards[dc.cardId]?.name ?? ""
+                    let conflictResult = abilityCompatBreakdown?.results.first(where: { $0.cardName == cardName })
+                    let conflictSeverity = conflictResult?.severity
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
                         isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        abilityConflictSeverity: conflictSeverity,
+                        onConflictTap: conflictSeverity != nil && conflictSeverity != .ok ? { showAbilityCompatSheet = true } : nil,
                         onQuantityChange: { vm.setQuantity($0, for: dc) },
                         onRoleChange: { newRole in
                             dc.pokemonRole = newRole
@@ -525,6 +552,73 @@ struct DeckBuilderView: View {
     }
 
 
+    // MARK: - Ability conflicts section
+
+    @ViewBuilder
+    private var abilityConflictsSection: some View {
+        if let acb = abilityCompatBreakdown, acb.hasIssues {
+            let issues = acb.conflicts + acb.cautions
+            Section {
+                ForEach(issues, id: \.cardName) { result in
+                    Button {
+                        showAbilityCompatSheet = true
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: result.severity == .conflict
+                                  ? "exclamationmark.triangle.fill"
+                                  : "exclamationmark.circle.fill")
+                                .foregroundStyle(result.severity == .conflict ? Color.red : Color.orange)
+                                .font(.body)
+
+                            VStack(alignment: .leading, spacing: 3) {
+                                HStack(spacing: 6) {
+                                    Text(result.cardName)
+                                        .font(.subheadline.weight(.medium))
+                                        .foregroundStyle(.primary)
+                                    Text("×\(result.copies)")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                    Spacer()
+                                    Text(result.abilityName)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(1)
+                                }
+                                if let warning = result.warningMessage {
+                                    Text(warning)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(2)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
+                            }
+                        }
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+            } header: {
+                HStack {
+                    Text("Ability Issues")
+                    Spacer()
+                    Button("Full Analysis") {
+                        showAbilityCompatSheet = true
+                    }
+                    .font(.caption)
+                    .textCase(nil)
+                }
+            } footer: {
+                let nc = acb.conflicts.count
+                let nw = acb.cautions.count
+                let conflictLabel = nc > 0 ? "\(nc) conflict\(nc == 1 ? "" : "s")" : ""
+                let cautionLabel  = nw > 0 ? "\(nw) caution\(nw == 1 ? "" : "s")"  : ""
+                let sep = nc > 0 && nw > 0 ? ", " : ""
+                Text("\(conflictLabel)\(sep)\(cautionLabel). These abilities may not fire reliably. Tap any row for scoring details.")
+                    .font(.caption)
+            }
+        }
+    }
+
     // MARK: - Cleanup section
 
     @ViewBuilder
@@ -684,6 +778,31 @@ struct DeckBuilderView: View {
         .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
     }
 
+    // MARK: - Deck snapshot
+
+    private func generateSnapshot(vm: DeckBuilderViewModel) {
+        guard !isGeneratingSnapshot else { return }
+        isGeneratingSnapshot = true
+        Task {
+            defer { isGeneratingSnapshot = false }
+            let items = snapshotItems(vm: vm)
+            guard let image = try? await DeckSnapshotGenerator.generate(cards: items, deckName: deck.name)
+            else { return }
+            snapshotShareImage = image
+            showSnapshotShare = true
+        }
+    }
+
+    private func snapshotItems(vm: DeckBuilderViewModel) -> [DeckSnapshotGenerator.CardItem] {
+        (vm.pokemonCards + vm.supporterCards + vm.itemCards
+            + vm.toolCards + vm.stadiumCards + vm.aceSpecCards + vm.energyCards)
+            .compactMap { dc in
+                guard let card = vm.cachedCards[dc.cardId] else { return nil }
+                return DeckSnapshotGenerator.CardItem(
+                    imageURL: card.imageURL, name: card.name, quantity: dc.quantity)
+            }
+    }
+
     // MARK: - Deck stats section
 
     private func computeBreakdown(vm: DeckBuilderViewModel) {
@@ -731,6 +850,20 @@ struct DeckBuilderView: View {
                 deck: merged, metaShares: shares, cardByName: cardByName
             )
         }
+        let abilityTexts: (String) -> [(name: String, text: String)] = { name in
+            let rulesText = vm.cachedCards.values.first { $0.name == name }?.rulesText ?? []
+            return AbilityCompatibilityEngine.parseAbilities(from: rulesText)
+        }
+        let abilityRoleTags: (String) -> [String] = { name in
+            vm.cachedCards.values.first { $0.name == name }?.roleTags ?? []
+        }
+        if merged.contains(where: { $0.supertype == "Pokémon" && $0.hasAbility }) {
+            abilityCompatBreakdown = AbilityCompatibilityEngine().breakdown(
+                entries: merged, abilityTexts: abilityTexts, roleTags: abilityRoleTags
+            )
+        } else {
+            abilityCompatBreakdown = nil
+        }
         computeRecommendations()
     }
 
@@ -769,6 +902,13 @@ struct DeckBuilderView: View {
                     "Ability Impact", score: bd.abilityImpactScore,
                     explainer: "How powerful your Pokémon ability package is. Scores each ability Pokémon by the competitive value of its role tags — draw engines and search rank highest (e.g. Bibarel, Pidgeot ex), followed by energy acceleration, prize control, and lock effects, then disruption and recovery, with mobility and healing lowest. Running multiple copies and multiple distinct ability roles increases the score."
                 )
+                if let acb = abilityCompatBreakdown, acb.hasIssues {
+                    statsSubScoreRow(
+                        "Ability Compat", score: acb.compatibilityScore,
+                        explainer: abilityCompatExplainer(acb)
+                    )
+                    .onTapGesture { showAbilityCompatSheet = true }
+                }
                 statsSubScoreRow(
                     "Energy Setup", score: bd.energyScore,
                     explainer: energySetupExplainer(bd)
@@ -913,6 +1053,17 @@ struct DeckBuilderView: View {
         }
     }
 
+    private func abilityCompatExplainer(_ acb: AbilityCompatibilityBreakdown) -> String {
+        let first = acb.conflicts.first ?? acb.cautions.first
+        guard let result = first, let warning = result.warningMessage else {
+            return "Some ability conditions may not be met with the current deck composition. Tap to see details."
+        }
+        let issueCount = acb.conflicts.count + acb.cautions.count
+        let label = acb.conflicts.isEmpty ? "caution" : "conflict"
+        let tail = issueCount > 1 ? " +\(issueCount - 1) more." : ""
+        return "\(issueCount) ability \(label)\(issueCount == 1 ? "" : "s"): \(warning)\(tail) Tap for details."
+    }
+
     private func energySetupExplainer(_ bd: ConsistencyBreakdown) -> String {
         var parts: [String] = []
         if bd.identifiedAttackerCopies > 0, let avg = bd.attackerAvgMinCost {
@@ -1021,6 +1172,16 @@ struct DeckBuilderView: View {
                 Button { showEditLog = true } label: {
                     Label("Edit History", systemImage: "clock.arrow.circlepath")
                 }
+                Divider()
+                Button {
+                    generateSnapshot(vm: vm)
+                } label: {
+                    Label(
+                        isGeneratingSnapshot ? "Generating…" : "Save as Image",
+                        systemImage: isGeneratingSnapshot ? "photo.badge.clock" : "photo.badge.arrow.down"
+                    )
+                }
+                .disabled(isGeneratingSnapshot)
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
@@ -1059,6 +1220,8 @@ private struct DeckCardRow: View {
     let deckCard: DeckCard
     let cachedCard: CachedCard?
     var isHighlighted: Bool = false
+    var abilityConflictSeverity: AbilitySeverity? = nil
+    var onConflictTap: (() -> Void)? = nil
     let onQuantityChange: (Int) -> Void
     var onRoleChange: ((PokemonRole?) -> Void)? = nil
 
@@ -1090,6 +1253,23 @@ private struct DeckCardRow: View {
                     if let role = deckCard.pokemonRole {
                         RoleBadge(role: role)
                     }
+                }
+                if let severity = abilityConflictSeverity, severity != .ok {
+                    let warningColor: Color = severity == .conflict ? .red : .orange
+                    Button {
+                        onConflictTap?()
+                    } label: {
+                        HStack(spacing: 3) {
+                            Image(systemName: severity == .conflict
+                                  ? "exclamationmark.triangle.fill"
+                                  : "exclamationmark.circle.fill")
+                                .font(.system(size: 9))
+                            Text(severity == .conflict ? "Ability conflict" : "Ability warning")
+                                .font(.caption2.weight(.medium))
+                        }
+                        .foregroundStyle(warningColor)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -1360,4 +1540,16 @@ private struct RecommendationCardDetailSheet: View {
             }
         }
     }
+}
+
+// MARK: - Activity view controller
+
+private struct ActivityViewController: UIViewControllerRepresentable {
+    let activityItems: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ vc: UIActivityViewController, context: Context) {}
 }
