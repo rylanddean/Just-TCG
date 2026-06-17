@@ -250,13 +250,14 @@
 
         <div class="guide-section" id="consistency">
           <h2>Consistency Calculator</h2>
-          <p>The Consistency Calculator shows the probability of drawing specific cards in your opening hand.</p>
+          <p>The Consistency Calculator has two tools: per-card Opening Hand Odds and a Combo Calculator for modelling multi-card requirements.</p>
 
-          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In Deck Detail, tap the <strong>Consistency</strong> button (chart icon).</div></div>
-          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Select one or more cards from your deck. For each card, enter how many copies are in the deck (auto-filled) and how many you want in your opener.</div></div>
-          <div class="guide-step"><div class="step-num">3</div><div class="step-text">The calculator uses hypergeometric distribution to show the probability of holding at least your target count in a 7-card opening hand from a 60-card deck.</div></div>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In Deck Detail, tap the <strong>Consistency</strong> button (chart icon) to open the sheet.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text"><strong>Opening Hand Odds</strong> — the list shows every card in your deck with its probability of appearing in your opening 7, using exact hypergeometric math. Tap any row to expand turn-2 odds for going first and second.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text"><strong>Combo Calculator</strong> — tap <em>Add Requirement</em> to pick a card. Each requirement must be satisfied for the combo to succeed (AND logic). Within a requirement, tap <em>Add alternative</em> to add a second card that can substitute (OR logic). For example: Arven as one requirement, then Boss's Orders and Counter Catcher as alternatives in a second requirement models "Arven AND (Boss's Orders OR Counter Catcher)".</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">The Combo Calculator shows joint probabilities for your opening hand (7 cards), turn 2, turn 3, and turn 4 going second. Up to 5 cards across all requirements.</div></div>
 
-          <p>Use this to evaluate whether your Pokémon search count or Energy ratio gives you the opening consistency you need.</p>
+          <p>Use Opening Hand Odds to evaluate search and draw density. Use the Combo Calculator to stress-test specific set-up lines — if your key turn-1 play only hits 40% of games, it is likely not reliable enough for a tournament.</p>
         </div>
 
         <div class="guide-section" id="tech-advisor">

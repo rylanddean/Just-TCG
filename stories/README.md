@@ -242,6 +242,12 @@ Stories are ordered by dependency. Work top to bottom.
 | [M36-02](backlog/M36-02-digest-feed-engine.md) | Digest Feed Engine | todo |
 | [M36-03](backlog/M36-03-digest-feed-view.md) | Digest Feed View | todo |
 
+## M38 — Opening Hand Combo Calculator
+| Story | Title | Status |
+|---|---|---|
+| [M38-01](completed/M38-01-combo-odds-engine.md) | Combo Odds Engine | done |
+| [M38-02](completed/M38-02-combo-calculator-ui.md) | Combo Calculator UI | done |
+
 ## Bugs
 | Bug | Title | Status |
 |---|---|---|
