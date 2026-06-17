@@ -268,13 +268,13 @@
 		7CFD4E8E9C14A2EA998C957C /* PFL.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PFL.json; sourceTree = "<group>"; };
 		7EF408A4D8F2347380004EE6 /* JustTCGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustTCGApp.swift; sourceTree = "<group>"; };
 		801DF201F0CB7DDDF1F115B9 /* CardFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFilterView.swift; sourceTree = "<group>"; };
-		82E0DE0C2016219C6954F694 /* DeckSnapshotGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeckSnapshotGenerator.swift; path = DeckSnapshotGenerator.swift; sourceTree = "<group>"; };
+		82E0DE0C2016219C6954F694 /* DeckSnapshotGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeckSnapshotGenerator.swift; sourceTree = "<group>"; };
 		88BD6DB6505515DACEA59CDF /* DRI.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DRI.json; sourceTree = "<group>"; };
 		89683DB41C8547198F898F89 /* DeckEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEdit.swift; sourceTree = "<group>"; };
 		89739E9641ED0CFDBA8C92C9 /* LimitlessTCGClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessTCGClient.swift; sourceTree = "<group>"; };
 		8A23BEB0C7D19B741C113C5B /* MetaShareEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaShareEngine.swift; sourceTree = "<group>"; };
 		8A3D65C5B2B40D3F117AE5A9 /* DeckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRepository.swift; sourceTree = "<group>"; };
-		8B305482CC64508AC2156868 /* LaunchLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LaunchLoadingView.swift; path = LaunchLoadingView.swift; sourceTree = "<group>"; };
+		8B305482CC64508AC2156868 /* LaunchLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LaunchLoadingView.swift; sourceTree = "<group>"; };
 		8C1407251B14D2C6292AC2C4 /* DeckBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckBuilderViewModel.swift; sourceTree = "<group>"; };
 		8D5888581E152914FC0289D3 /* LimitlessClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitlessClientError.swift; sourceTree = "<group>"; };
 		8EB4462C87FC6DE12E3A66D9 /* PRE.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PRE.json; sourceTree = "<group>"; };
@@ -1242,7 +1242,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rylanddean.JustTCG;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1302,7 +1302,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rylanddean.JustTCG;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
