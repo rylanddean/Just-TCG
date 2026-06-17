@@ -5,6 +5,9 @@ struct CompetitorsView: View {
     @State private var searchQuery = ""
     @State private var searchTask: Task<Void, Never>? = nil
     @Environment(FavouritePlayerRepository.self) private var favourites
+    @Environment(\.openURL) private var openURL
+
+    private let officialStandingsURL = URL(string: "https://www.pokemon.com/us/play-pokemon/leaderboards/tcg-masters/")!
 
     var body: some View {
         List {
@@ -114,19 +117,41 @@ struct CompetitorsView: View {
     // MARK: - Filter header (sticky, sits above rankings)
 
     private var filterHeader: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
-                    FilterChip(
-                        title: zone.displayName,
-                        isSelected: vm.zone == zone
-                    ) { vm.zone = zone }
+        VStack(alignment: .leading, spacing: 0) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
+                        FilterChip(
+                            title: zone.displayName,
+                            isSelected: vm.zone == zone
+                        ) { vm.zone = zone }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 4)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            HStack(spacing: 4) {
+                Text("Rankings via Limitless TCG")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                Text("·")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                Button {
+                    openURL(officialStandingsURL)
+                } label: {
+                    HStack(spacing: 2) {
+                        Text("Official CP Standings")
+                        Image(systemName: "arrow.up.right")
+                    }
+                    .font(.caption2)
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.bottom, 4)
+            .padding(.bottom, 6)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .background {
             Color(.systemBackground)
                 .padding(.horizontal, -1000)
@@ -260,7 +285,7 @@ private struct PlayerCard: View {
 
                 VStack(alignment: .trailing, spacing: 2) {
                     if let pts = player.points {
-                        Text("\(pts) pts")
+                        Text("\(pts) Limitless pts")
                             .font(.caption.monospacedDigit())
                             .foregroundStyle(.secondary)
                     }

@@ -13,6 +13,13 @@ struct ConsistencySheet: View {
     @State private var mergedEntries: [DeckCardEntry] = []
     @State private var dealtHand: [(name: String, imageURL: String?)] = []
 
+    @State private var comboGroups: [ComboGroup] = []
+    @State private var targetGroupID: UUID? = nil
+    @State private var comboOdds: ComboOdds? = nil
+    @State private var comboComputing: Bool = false
+    @State private var comboTask: Task<Void, Never>? = nil
+    @State private var showComboCardPicker: Bool = false
+
     private static let percentFormatter: NumberFormatter = {
         let f = NumberFormatter()
         f.numberStyle = .percent
@@ -50,7 +57,23 @@ struct ConsistencySheet: View {
             summarySection(bd)
             openingHandSimSection
             oddsSection(bd)
+            comboCalculatorSection
             aboutSection
+        }
+        .onChange(of: comboGroups) { _, newValue in
+            recomputeCombo(groups: newValue)
+        }
+        .sheet(isPresented: $showComboCardPicker) {
+            let excluded = Set(comboGroups.flatMap { $0.cards.map(\.name) })
+            ComboCardPickerSheet(entries: mergedEntries, excluded: excluded) { picked in
+                if let id = targetGroupID,
+                   let idx = comboGroups.firstIndex(where: { $0.id == id }) {
+                    comboGroups[idx].cards.append(picked)
+                } else {
+                    comboGroups.append(ComboGroup(cards: [picked]))
+                }
+                showComboCardPicker = false
+            }
         }
     }
 
@@ -206,6 +229,144 @@ struct ConsistencySheet: View {
         }
     }
 
+    // MARK: - Combo Calculator
+
+    private var totalComboCardCount: Int { comboGroups.reduce(0) { $0 + $1.cards.count } }
+
+    private var comboCalculatorSection: some View {
+        Section("Combo Calculator") {
+            ForEach(comboGroups) { group in
+                let groupIdx = comboGroups.firstIndex(where: { $0.id == group.id }) ?? 0
+
+                // AND separator between groups
+                if groupIdx > 0 {
+                    HStack(spacing: 8) {
+                        VStack { Divider() }
+                        Text("AND")
+                            .font(.caption2.bold())
+                            .foregroundStyle(.tertiary)
+                            .fixedSize()
+                        VStack { Divider() }
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                }
+
+                // Cards within the group (OR'd)
+                ForEach(Array(group.cards.enumerated()), id: \.element.name) { cardIdx, card in
+                    if cardIdx > 0 {
+                        Text("or")
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                            .padding(.leading, 46)
+                            .listRowInsets(EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 16))
+                    }
+                    comboGroupCardRow(card: card, groupID: group.id)
+                }
+
+                // Add alternative within this group
+                if totalComboCardCount < 5 {
+                    Button {
+                        targetGroupID = group.id
+                        showComboCardPicker = true
+                    } label: {
+                        Label("Add alternative", systemImage: "arrow.triangle.branch")
+                            .font(.subheadline)
+                            .foregroundStyle(Color.accentColor)
+                    }
+                    .padding(.leading, 38)
+                }
+            }
+
+            // Add new requirement (new AND group)
+            Button {
+                targetGroupID = nil
+                showComboCardPicker = true
+            } label: {
+                Label(
+                    totalComboCardCount >= 5 ? "Max 5 cards" : "Add Requirement",
+                    systemImage: "plus.circle"
+                )
+                .foregroundStyle(totalComboCardCount >= 5 ? Color.secondary : Color.accentColor)
+            }
+            .disabled(totalComboCardCount >= 5)
+
+            // Empty state or probability table
+            if comboGroups.isEmpty {
+                Text("Add a requirement to calculate combo odds")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            } else if comboComputing {
+                HStack { Spacer(); ProgressView(); Spacer() }
+            } else if let odds = comboOdds {
+                comboOddsRow(label: "Opening Hand (7 cards)", value: odds.opening)
+                comboOddsRow(label: "Turn 2 (9 cards)",       value: odds.byTurn2)
+                comboOddsRow(label: "Turn 3 (10 cards)",      value: odds.byTurn3)
+                comboOddsRow(label: "Turn 4 (11 cards)",      value: odds.byTurn4)
+            }
+        }
+    }
+
+    private func comboGroupCardRow(card: ComboCardSelection, groupID: UUID) -> some View {
+        HStack(spacing: 10) {
+            let entry = mergedEntries.first { $0.name == card.name }
+            AsyncImage(url: URL(string: entry?.imageURL ?? "")) { phase in
+                if case .success(let image) = phase {
+                    image.resizable().aspectRatio(contentMode: .fill)
+                } else {
+                    RoundedRectangle(cornerRadius: 3).fill(.quaternary)
+                }
+            }
+            .frame(width: 28, height: 38)
+            .clipShape(RoundedRectangle(cornerRadius: 3))
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(card.name).lineLimit(1)
+                Text("×\(card.copies)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            Button {
+                guard let idx = comboGroups.firstIndex(where: { $0.id == groupID }) else { return }
+                comboGroups[idx].cards.removeAll { $0.name == card.name }
+                if comboGroups[idx].cards.isEmpty { comboGroups.remove(at: idx) }
+            } label: {
+                Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+
+    private func comboOddsRow(label: String, value: Double) -> some View {
+        HStack {
+            Text(label)
+                .foregroundStyle(.secondary)
+                .font(.subheadline)
+            Spacer()
+            Text(formatPercent(value))
+                .font(.subheadline.monospacedDigit())
+                .foregroundStyle(scoreColor(Int(value * 100)))
+        }
+    }
+
+    private func recomputeCombo(groups: [ComboGroup]) {
+        comboTask?.cancel()
+        guard !groups.isEmpty else {
+            comboOdds = nil
+            comboComputing = false
+            return
+        }
+        comboComputing = true
+        comboTask = Task.detached(priority: .userInitiated) {
+            let odds = ConsistencyEngine.comboOdds(groups: groups, deckSize: 60)
+            await MainActor.run {
+                self.comboOdds = odds
+                self.comboComputing = false
+            }
+        }
+    }
+
     // MARK: - About
 
     private var aboutSection: some View {
@@ -274,6 +435,57 @@ struct ConsistencySheet: View {
     private func formatPercent(_ value: Double) -> String {
         if value < 0.01 { return "< 1%" }
         return Self.percentFormatter.string(from: NSNumber(value: value)) ?? "\(Int(value * 100))%"
+    }
+}
+
+// MARK: - ComboCardPickerSheet
+
+private struct ComboCardPickerSheet: View {
+    let entries: [DeckCardEntry]
+    let excluded: Set<String>
+    let onPick: (ComboCardSelection) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            List(entries.sorted { $0.copies != $1.copies ? $0.copies > $1.copies : $0.name < $1.name }, id: \.name) { entry in
+                let isExcluded = excluded.contains(entry.name)
+                Button {
+                    guard !isExcluded else { return }
+                    onPick(ComboCardSelection(name: entry.name, copies: entry.copies))
+                } label: {
+                    HStack(spacing: 10) {
+                        AsyncImage(url: URL(string: entry.imageURL ?? "")) { phase in
+                            if case .success(let image) = phase {
+                                image.resizable().aspectRatio(contentMode: .fill)
+                            } else {
+                                RoundedRectangle(cornerRadius: 3).fill(.quaternary)
+                            }
+                        }
+                        .frame(width: 28, height: 38)
+                        .clipShape(RoundedRectangle(cornerRadius: 3))
+
+                        Text(entry.name)
+                            .lineLimit(1)
+                            .foregroundStyle(isExcluded ? Color.secondary : Color.primary)
+                        Spacer()
+                        Text("×\(entry.copies)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .opacity(isExcluded ? 0.4 : 1.0)
+                }
+                .disabled(isExcluded)
+            }
+            .navigationTitle("Add Card")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+            }
+        }
     }
 }
 

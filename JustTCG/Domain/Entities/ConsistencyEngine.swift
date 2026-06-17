@@ -1,5 +1,34 @@
 import Foundation
 
+enum ComboLogic: Equatable {
+    case and  // P(every selected card appears at least once)
+    case or   // P(at least one selected card appears)
+}
+
+struct ComboCardSelection: Equatable {
+    let name: String
+    let copies: Int
+}
+
+struct ComboOdds {
+    let opening: Double       // probability at opening 7
+    let byTurn2: Double       // probability by turn 2 going second (9 cards)
+    let byTurn3: Double       // probability by turn 3 going second (10 cards)
+    let byTurn4: Double       // probability by turn 4 going second (11 cards)
+}
+
+/// A single AND-requirement in a combo. Cards within the group are OR'd —
+/// the requirement is satisfied when at least one card from the group is drawn.
+struct ComboGroup: Identifiable, Equatable {
+    let id: UUID
+    var cards: [ComboCardSelection]
+
+    init(cards: [ComboCardSelection]) {
+        self.id = UUID()
+        self.cards = cards
+    }
+}
+
 struct DeckCardEntry {
     let name: String
     let copies: Int
@@ -446,5 +475,101 @@ struct ConsistencyEngine {
             benchFlexibilityScore: benchFlexibilityScore,
             openingReliabilityScore: openingReliabilityScore
         )
+    }
+
+    // MARK: - Combo odds
+
+    /// Core group-based engine. Groups are AND'd; cards within each group are OR'd.
+    ///
+    /// - Single group: exact hypergeometric over the combined copy pool (no simulation).
+    /// - Multiple groups: Monte Carlo — each deck slot is labeled with its group index
+    ///   (-1 for non-selected cards); a trial is a hit when every group index appears
+    ///   at least once in the drawn prefix.
+    static func comboOdds(
+        groups: [ComboGroup],
+        deckSize: Int = 60,
+        simCount: Int = 50_000
+    ) -> ComboOdds {
+        guard !groups.isEmpty else {
+            return ComboOdds(opening: 1.0, byTurn2: 1.0, byTurn3: 1.0, byTurn4: 1.0)
+        }
+
+        let allCards = groups.flatMap(\.cards)
+        guard allCards.allSatisfy({ $0.copies > 0 }) else {
+            return ComboOdds(opening: 0.0, byTurn2: 0.0, byTurn3: 0.0, byTurn4: 0.0)
+        }
+
+        let totalSelected = allCards.reduce(0) { $0 + $1.copies }
+        guard totalSelected <= deckSize else {
+            return ComboOdds(opening: 0.0, byTurn2: 0.0, byTurn3: 0.0, byTurn4: 0.0)
+        }
+
+        let drawCounts = [7, 9, 10, 11]
+
+        // Single group = OR over its cards: exact combined-pool hypergeometric.
+        if groups.count == 1 {
+            let totalCopies = groups[0].cards.reduce(0) { $0 + $1.copies }
+            let probs = drawCounts.map { drawn in
+                probabilityAtLeast(copies: totalCopies, deckSize: deckSize, drawn: min(drawn, deckSize), desired: 1)
+            }
+            return ComboOdds(opening: probs[0], byTurn2: probs[1], byTurn3: probs[2], byTurn4: probs[3])
+        }
+
+        // Multi-group Monte Carlo: slot value = group index, -1 = other.
+        var deck = [Int]()
+        deck.reserveCapacity(deckSize)
+        for (groupIndex, group) in groups.enumerated() {
+            let total = group.cards.reduce(0) { $0 + $1.copies }
+            deck.append(contentsOf: repeatElement(groupIndex, count: total))
+        }
+        deck.append(contentsOf: repeatElement(-1, count: deckSize - totalSelected))
+
+        let maxDrawn = min(drawCounts.max()!, deckSize)
+        let groupCount = groups.count
+        var hits = [Int](repeating: 0, count: drawCounts.count)
+
+        for _ in 0..<simCount {
+            var shuffled = deck
+            shuffled.shuffle()
+
+            var satisfiedGroups = 0
+            var groupSatisfied = [Bool](repeating: false, count: groupCount)
+
+            for slotIndex in 0..<maxDrawn {
+                let v = shuffled[slotIndex]
+                if v >= 0 && !groupSatisfied[v] {
+                    groupSatisfied[v] = true
+                    satisfiedGroups += 1
+                }
+                let drawn = slotIndex + 1
+                if let checkIndex = drawCounts.firstIndex(of: drawn), satisfiedGroups == groupCount {
+                    hits[checkIndex] += 1
+                }
+            }
+        }
+
+        let simCountD = Double(simCount)
+        return ComboOdds(
+            opening: max(0, min(1, Double(hits[0]) / simCountD)),
+            byTurn2: max(0, min(1, Double(hits[1]) / simCountD)),
+            byTurn3: max(0, min(1, Double(hits[2]) / simCountD)),
+            byTurn4: max(0, min(1, Double(hits[3]) / simCountD))
+        )
+    }
+
+    /// Convenience wrapper over `comboOdds(groups:)` preserving the old flat API.
+    /// `.and` → each card in its own single-card group; `.or` → all cards in one group.
+    static func comboOdds(
+        selectedCards: [ComboCardSelection],
+        deckSize: Int = 60,
+        logic: ComboLogic = .and,
+        simCount: Int = 50_000
+    ) -> ComboOdds {
+        let groups: [ComboGroup]
+        switch logic {
+        case .and: groups = selectedCards.map { ComboGroup(cards: [$0]) }
+        case .or:  groups = selectedCards.isEmpty ? [] : [ComboGroup(cards: selectedCards)]
+        }
+        return comboOdds(groups: groups, deckSize: deckSize, simCount: simCount)
     }
 }
