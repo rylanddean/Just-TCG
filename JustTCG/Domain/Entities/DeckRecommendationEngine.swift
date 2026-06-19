@@ -81,7 +81,7 @@ struct DeckRecommendationEngine {
         "Switch": 3,
         "Escape Rope": 3,
 
-        // ── Energy Acceleration (Supporters / Items) ───────────────────────
+        // ── Acceleration (Supporters / Items) ───────────────────────
         "Crispin": 4,          // Fire
         "Elesa's Sparkle": 3,  // Special Energy
 
@@ -131,8 +131,8 @@ struct DeckRecommendationEngine {
                 scoreLabel: "Ability Impact",
                 scoreSystemImage: "pawprint.fill",
                 score: breakdown.abilityImpactScore,
-                requiredTags: ["Draw", "Search", "Energy Acceleration", "Lock", "Prize Control"],
-                tagWeights: ["Draw": 4, "Search": 4, "Energy Acceleration": 3,
+                requiredTags: ["Draw", "Search", "Acceleration", "Lock", "Prize Control"],
+                tagWeights: ["Draw": 4, "Search": 4, "Acceleration": 3,
                               "Prize Control": 3, "Lock": 3],
                 reason: "High-impact ability for your bench",
                 requiresAbility: true,
@@ -142,8 +142,8 @@ struct DeckRecommendationEngine {
                 scoreLabel: "Energy Setup",
                 scoreSystemImage: "bolt.fill",
                 score: breakdown.energyScore,
-                requiredTags: ["Energy Acceleration"],
-                tagWeights: ["Energy Acceleration": 3],
+                requiredTags: ["Acceleration"],
+                tagWeights: ["Acceleration": 3],
                 reason: "Accelerates energy attachment",
                 requiresAbility: false,
                 supertypeFilter: nil

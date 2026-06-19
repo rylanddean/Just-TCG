@@ -112,6 +112,7 @@
 		A90315772FD70F0A0072D8B1 /* StreakEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B6C7D8E9F0A1B2 /* StreakEngineTests.swift */; };
 		A929D2D83FF18C97CEC3575A /* SSP.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E13B127D61A721C867E5CF /* SSP.json */; };
 		AA11BB22CC33DD44EE55FF66 /* CardSwapSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */; };
+		DD11EE22FF33AA44BB55CC66 /* DeckSwapPreviewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22FF33AA44BB55CC66DD77 /* DeckSwapPreviewSheet.swift */; };
 		AA1B2C3D4E5F6A7B8C9D0E20 /* FeaturedDeckEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B2C3D4E5F6A7B8C9D0E1F /* FeaturedDeckEngine.swift */; };
 		AA2B3C4D5E6F7A8B9C0D1E41 /* DevicePerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B3C4D5E6F7A8B9C0D1E40 /* DevicePerformance.swift */; };
 		AAB1C2D3E4F5678901234567 /* SVE.json in Resources */ = {isa = PBXBuildFile; fileRef = BBF1C2D3E4F5678901234567 /* SVE.json */; };
@@ -321,6 +322,7 @@
 		B83908958E3047C79988E133 /* DeckEditLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEditLogView.swift; sourceTree = "<group>"; };
 		BB1B2C3D4E5F6A7B8C9D0E1F /* FeaturedDeckWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedDeckWidgetViewModel.swift; sourceTree = "<group>"; };
 		BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwapSheet.swift; sourceTree = "<group>"; };
+		EE22FF33AA44BB55CC66DD77 /* DeckSwapPreviewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckSwapPreviewSheet.swift; sourceTree = "<group>"; };
 		BB608DEF985492EF9ED10FBE /* MatchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRepository.swift; sourceTree = "<group>"; };
 		BBF1C2D3E4F5678901234567 /* SVE.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SVE.json; sourceTree = "<group>"; };
 		BD2399790E5C41478A0C7231 /* PrepPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepPlanRepository.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				6DFC1BF7B9DC52AD69F3ADD4 /* DecksView.swift */,
 				A5D4C3B2E1F0987654321098 /* CoverCardPickerSheet.swift */,
 				BB22CC33DD44EE55FF667788 /* CardSwapSheet.swift */,
+				EE22FF33AA44BB55CC66DD77 /* DeckSwapPreviewSheet.swift */,
 				36564E430F4D47048A64CD06 /* CardCompetitiveDeckSheet.swift */,
 				16FB1D8F04C841C1B0469CD0 /* ImportDeckSheet.swift */,
 				96C8C10D565D7C6CD8E8E399 /* LogMatchSheet.swift */,
@@ -977,6 +980,7 @@
 				759FE409FAF54EF9AA5A8781 /* DeckListParser.swift in Sources */,
 				C7E7C923598B409BA423756A /* DeckImportLookup.swift in Sources */,
 				AA11BB22CC33DD44EE55FF66 /* CardSwapSheet.swift in Sources */,
+				DD11EE22FF33AA44BB55CC66 /* DeckSwapPreviewSheet.swift in Sources */,
 				51658C78D355439D87E6A573 /* CardCompetitiveDeckSheet.swift in Sources */,
 				4DA6AC3E9A484803A97D20EF /* ImportDeckSheet.swift in Sources */,
 				D9407C2AB518110FD5AD7D77 /* JustTCGApp.swift in Sources */,

@@ -53,6 +53,13 @@ struct DeckBuilderView: View {
     @State private var isGeneratingSnapshot = false
     @State private var showSnapshotShare = false
     @State private var snapshotShareImage: UIImage? = nil
+    @State private var swapTarget: SwapTarget? = nil
+
+    private struct SwapTarget: Identifiable {
+        let id = UUID()
+        let deckCard: DeckCard
+        let cachedCard: CachedCard
+    }
 
     var body: some View {
         Group {
@@ -110,6 +117,15 @@ struct DeckBuilderView: View {
         }
         .sheet(item: $cleanupToPreview) { sug in
             CleanupCardDetailSheet(sug: sug)
+        }
+        .sheet(item: $swapTarget) { target in
+            DeckSwapPreviewSheet(
+                outCard: target.cachedCard,
+                outCopies: target.deckCard.quantity,
+                baseEntries: mergedDeckEntries,
+                allCards: standardLegalCards,
+                onCommit: { newCard in commitSwap(removing: target, adding: newCard) }
+            )
         }
         .sheet(isPresented: $showSnapshotShare) {
             if let image = snapshotShareImage {
@@ -285,6 +301,10 @@ struct DeckBuilderView: View {
                         onRoleChange: { newRole in
                             dc.pokemonRole = newRole
                             computeBreakdown(vm: vm)
+                        },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
                         }
                     )
                     .id(dc.cardId)
@@ -302,8 +322,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) { vm.setQuantity($0, for: dc) }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .supporter)) }
@@ -319,8 +344,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) { vm.setQuantity($0, for: dc) }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .item)) }
@@ -336,8 +366,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) { vm.setQuantity($0, for: dc) }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .tool)) }
@@ -353,8 +388,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) { vm.setQuantity($0, for: dc) }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .stadium)) }
@@ -370,8 +410,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) { vm.setQuantity($0, for: dc) }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .aceSpec)) }
@@ -387,10 +432,13 @@ struct DeckBuilderView: View {
                     DeckCardRow(
                         deckCard: dc,
                         cachedCard: vm.cachedCards[dc.cardId],
-                        isHighlighted: highlightedCardIds.contains(dc.cardId)
-                    ) {
-                        vm.setQuantity($0, for: dc)
-                    }
+                        isHighlighted: highlightedCardIds.contains(dc.cardId),
+                        onQuantityChange: { vm.setQuantity($0, for: dc) },
+                        onSwap: {
+                            guard let card = vm.cachedCards[dc.cardId] else { return }
+                            swapTarget = SwapTarget(deckCard: dc, cachedCard: card)
+                        }
+                    )
                     .id(dc.cardId)
                 }
                 addMoreButton { openPicker(filter: CardFilterState(cardGroup: .energy)) }
@@ -691,6 +739,18 @@ struct DeckBuilderView: View {
         .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
     }
 
+    private func commitSwap(removing target: SwapTarget, adding newCard: CachedCard) {
+        guard let vm = viewModel else { return }
+        let repo = DeckRepository(modelContext: context)
+        let qty = target.deckCard.quantity
+        repo.removeCard(cardId: target.deckCard.cardId, from: deck, cardName: target.cachedCard.name)
+        for _ in 0..<qty {
+            repo.addCard(cardId: newCard.id, to: deck, isBasicEnergy: newCard.isBasicEnergy, cardName: newCard.name)
+        }
+        vm.loadCards()
+        computeBreakdown(vm: vm)
+    }
+
     private func addRecommendedCard(_ rec: CardRecommendation) {
         DeckRepository(modelContext: context)
             .addCard(cardId: rec.card.id, to: deck, isBasicEnergy: rec.card.isBasicEnergy, cardName: rec.card.name)
@@ -812,7 +872,8 @@ struct DeckBuilderView: View {
                                  subtypes: card.subtypes, retreatCost: card.retreatCost,
                                  imageURL: card.imageURL, hasAbility: card.hasAbility,
                                  types: card.types, weaknessType: card.weaknessType,
-                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost)
+                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost,
+                                 hp: card.hp)
         }
         guard !entries.isEmpty else { return }
         // Merge copies of the same card from different sets, preserving role from first entry
@@ -829,7 +890,8 @@ struct DeckBuilderView: View {
                                  types: first.types,
                                  weaknessType: first.weaknessType,
                                  pokemonRole: first.pokemonRole,
-                                 minAttackCost: first.minAttackCost)
+                                 minAttackCost: first.minAttackCost,
+                                 hp: first.hp)
         }
         let roleTags: (String) -> [String] = { name in
             vm.cachedCards.values.first { $0.name == name }?.roleTags ?? []
@@ -953,6 +1015,10 @@ struct DeckBuilderView: View {
                 statsSubScoreRow(
                     "Opening Reliability", score: bd.openingReliabilityScore,
                     explainer: "Probability of not being forced to mulligan: the chance of having at least one Basic Pokémon in your opening hand of 7. Most competitive decks run 10–15 Basics and score 95%+. Scores below 80 signal that mulligan hands are a real risk — each mulligan gives your opponent a free card draw and can snowball into early-game disadvantage."
+                )
+                statsSubScoreRow(
+                    "Durability", score: bd.durabilityScore,
+                    explainer: "How well your deck can withstand hits. Based on the HP of your attackers (scaled 60–400 HP), weighted so main attackers count twice. Bonus points for HP-boosting Tools like Hero's Cape (+10 per copy), Damage Reduction cards (+4 per copy), and Healing cards (+2 per copy), capped at +20. Higher scores mean your Pokémon take more attacks to knock out."
                 )
             }
 
@@ -1112,7 +1178,7 @@ struct DeckBuilderView: View {
         Task {
             defer { isGeneratingNarrative = false }
             do {
-                narrative = try await ConsistencyNarrativeEngine().generate(for: bd, deckName: deck.name)
+                narrative = try await ConsistencyNarrativeEngine().generate(for: bd, deckName: deck.name, deckEntries: mergedDeckEntries)
             } catch {
                 narrativeError = error.localizedDescription
             }
@@ -1224,6 +1290,7 @@ private struct DeckCardRow: View {
     var onConflictTap: (() -> Void)? = nil
     let onQuantityChange: (Int) -> Void
     var onRoleChange: ((PokemonRole?) -> Void)? = nil
+    var onSwap: (() -> Void)? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -1252,6 +1319,15 @@ private struct DeckCardRow: View {
                     }
                     if let role = deckCard.pokemonRole {
                         RoleBadge(role: role)
+                    }
+                }
+                if let card = cachedCard, !card.roleTags.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 4) {
+                            ForEach(card.roleTags.sorted(), id: \.self) { tag in
+                                RoleTagChip(tag: tag)
+                            }
+                        }
                     }
                 }
                 if let severity = abilityConflictSeverity, severity != .ok {
@@ -1303,7 +1379,15 @@ private struct DeckCardRow: View {
         .listRowBackground(isHighlighted ? Color.yellow.opacity(0.25) : nil)
         .animation(.easeInOut(duration: 0.3), value: isHighlighted)
         .contextMenu {
+            if let onSwap {
+                Button {
+                    onSwap()
+                } label: {
+                    Label("Swap Card", systemImage: "arrow.left.arrow.right")
+                }
+            }
             if let onChange = onRoleChange {
+                Divider()
                 if deckCard.pokemonRole != .attacker {
                     Button {
                         onChange(.attacker)
@@ -1346,6 +1430,21 @@ private struct RoleBadge: View {
                 (role == .attacker ? Color.blue : Color.secondary).opacity(0.12),
                 in: Capsule()
             )
+    }
+}
+
+// MARK: - Role tag chip
+
+private struct RoleTagChip: View {
+    let tag: String
+
+    var body: some View {
+        Text(tag)
+            .font(.system(size: 9, weight: .medium))
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 2)
+            .background(.fill.tertiary, in: Capsule())
     }
 }
 

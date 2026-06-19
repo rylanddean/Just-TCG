@@ -46,9 +46,9 @@ struct CardFilterState: Equatable {
     var roleTags: Set<String> = []
 
     static let allRoleTags: [String] = [
-        "Draw", "Search", "Energy Acceleration", "Healing",
-        "Damage Reduction", "Damage Boost", "Disruption", "Gusting", "Status",
-        "Spread Damage", "Survivability", "Mobility", "Prize Control", "Lock",
+        "Draw", "Search", "Acceleration", "Healing",
+        "Damage Reduction", "Damage Boost", "HP Boost", "Disruption", "Gusting", "Status",
+        "Spread", "Spread Protection", "Survivability", "Mobility", "Prize Control", "Lock",
     ]
 
     // True when any active filter cannot be pushed to the DB predicate and must

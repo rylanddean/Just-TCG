@@ -46,6 +46,8 @@ struct DeckCardEntry {
     var pokemonRole: PokemonRole? = nil
     /// Minimum number of energy attachments required to use any attack. Nil for non-Pokémon or unknown.
     var minAttackCost: Int? = nil
+    /// Pokémon HP. Nil for Trainers and Energy.
+    var hp: Int? = nil
 }
 
 struct KeyCardOdds {
@@ -98,6 +100,10 @@ struct ConsistencyBreakdown {
     let benchFlexibilityScore: Int
     /// Probability (0–100) of not mulliganing: P(≥1 Basic Pokémon in opening 7).
     let openingReliabilityScore: Int
+    /// How much damage is required to KO your Pokémon, factoring in HP and damage-reduction effects.
+    /// Scaled 0–100: 60 HP = 0, 400 HP = 100. Attackers weighted 2×. Damage Reduction and Healing
+    /// cards add a bonus up to 20 pts.
+    let durabilityScore: Int
 }
 
 struct ConsistencyEngine {
@@ -187,7 +193,7 @@ struct ConsistencyEngine {
             let tags = roleTags(entry.name)
             if tags.contains("Draw")               { drawCount        += entry.copies }
             if tags.contains("Search")             { searchCount      += entry.copies }
-            if tags.contains("Energy Acceleration") { energyAccelCount += entry.copies }
+            if tags.contains("Acceleration") { energyAccelCount += entry.copies }
             if tags.contains("Disruption")         { disruptionCount  += entry.copies }
             if tags.contains("Gusting")            { gustingCount     += entry.copies }
             if tags.contains("Recovery")           { recoveryCount    += entry.copies }
@@ -203,7 +209,7 @@ struct ConsistencyEngine {
                     // Ability Impact: weight each role tag by competitive value, cap per card
                     let abilityTagImpact: [String: Int] = [
                         "Draw": 4, "Search": 4,
-                        "Energy Acceleration": 3, "Prize Control": 3, "Lock": 3,
+                        "Acceleration": 3, "Prize Control": 3, "Lock": 3,
                         "Disruption": 2, "Recovery": 2, "Survivability": 2,
                         "Mobility": 1, "Healing": 1, "Damage Boost": 1, "Damage Reduction": 1,
                     ]
@@ -363,7 +369,7 @@ struct ConsistencyEngine {
 
         // Bench Flexibility: 5 bench slots minus distinct engine Pokémon SPECIES (not copies).
         // Running 3× Bibarel still occupies 1 bench slot, not 3.
-        // Engine sitters = ability-Pokémon whose role tags include Draw / Search / Energy Acceleration.
+        // Engine sitters = ability-Pokémon whose role tags include Draw / Search / Acceleration.
         // entries is already merged by name (one entry per unique card name), so the Set
         // deduplicates across any same-named printings that may remain after merging.
         //
@@ -374,7 +380,7 @@ struct ConsistencyEngine {
         var engineBenchNames = Set<String>()
         for entry in entries where entry.supertype == "Pokémon" && entry.hasAbility {
             let tags = roleTags(entry.name)
-            if tags.contains("Draw") || tags.contains("Search") || tags.contains("Energy Acceleration") {
+            if tags.contains("Draw") || tags.contains("Search") || tags.contains("Acceleration") {
                 engineBenchNames.insert(entry.name)
             }
         }
@@ -386,6 +392,28 @@ struct ConsistencyEngine {
 
         let totalPokemon = singlePrizeCopies + rulePokemonCopies
         let prizeResilienceScore = totalPokemon == 0 ? 50 : singlePrizeCopies * 100 / totalPokemon
+
+        // Durability: how much damage is needed to KO your Pokémon.
+        // HP mapped linearly from 60 → 0 to 400 → 100. Attackers weighted 2×.
+        // HP Boost tools (e.g. Hero's Cape) add +10/copy, Damage Reduction +4/copy, Healing +2/copy, capped at +20.
+        var durabilityHPSum   = 0.0
+        var durabilityWeight  = 0.0
+        var durabilityBonus   = 0.0
+        for entry in entries {
+            if entry.supertype == "Pokémon", let hp = entry.hp {
+                let hpClamped = Double(max(60, min(400, hp)))
+                let hpScore   = (hpClamped - 60.0) / (400.0 - 60.0) * 100.0
+                let weight    = Double(entry.copies) * (entry.pokemonRole == .attacker ? 2.0 : 1.0)
+                durabilityHPSum  += hpScore * weight
+                durabilityWeight += weight
+            }
+            let tags = roleTags(entry.name)
+            if tags.contains("HP Boost")         { durabilityBonus += Double(entry.copies) * 10.0 }
+            if tags.contains("Damage Reduction") { durabilityBonus += Double(entry.copies) * 4.0 }
+            if tags.contains("Healing")          { durabilityBonus += Double(entry.copies) * 2.0 }
+        }
+        let durabilityBase  = durabilityWeight > 0 ? durabilityHPSum / durabilityWeight : 50.0
+        let durabilityScore = min(100, max(0, Int(durabilityBase + min(20.0, durabilityBonus))))
 
         let disruptionScore = min(100, min(disruptionCount, 10) * 10)
         // Gusting: 5 copies = 100 (a full playset of Boss's Orders scores 80)
@@ -473,7 +501,8 @@ struct ConsistencyEngine {
             turnTwoAggressionScore: turnTwoAggressionScore,
             prizeEfficiencyScore: prizeEfficiencyScore,
             benchFlexibilityScore: benchFlexibilityScore,
-            openingReliabilityScore: openingReliabilityScore
+            openingReliabilityScore: openingReliabilityScore,
+            durabilityScore: durabilityScore
         )
     }
 

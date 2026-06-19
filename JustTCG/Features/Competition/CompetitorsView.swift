@@ -41,7 +41,7 @@ struct CompetitorsView: View {
     @ViewBuilder
     private var defaultContent: some View {
         if !favourites.all.isEmpty {
-            Section("Favourites") {
+            Section {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(favourites.all) { player in
@@ -110,28 +110,7 @@ struct CompetitorsView: View {
             }
         } header: {
             filterHeader
-        }
-        .textCase(nil)
-    }
-
-    // MARK: - Filter header (sticky, sits above rankings)
-
-    private var filterHeader: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
-                        FilterChip(
-                            title: zone.displayName,
-                            isSelected: vm.zone == zone
-                        ) { vm.zone = zone }
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 4)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-
+        } footer: {
             HStack(spacing: 4) {
                 Text("Rankings via Limitless TCG")
                     .font(.caption2)
@@ -149,9 +128,27 @@ struct CompetitorsView: View {
                     .font(.caption2)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 6)
+            .padding(.top, 4)
         }
+        .textCase(nil)
+    }
+
+    // MARK: - Filter header (sticky, sits above rankings)
+
+    private var filterHeader: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(PlayerZone.allCases, id: \.rawValue) { zone in
+                    FilterChip(
+                        title: zone.displayName,
+                        isSelected: vm.zone == zone
+                    ) { vm.zone = zone }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 4)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background {
             Color(.systemBackground)
                 .padding(.horizontal, -1000)

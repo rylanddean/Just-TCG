@@ -231,8 +231,6 @@ struct ConsistencySheet: View {
 
     // MARK: - Combo Calculator
 
-    private var totalComboCardCount: Int { comboGroups.reduce(0) { $0 + $1.cards.count } }
-
     private var comboCalculatorSection: some View {
         Section("Combo Calculator") {
             ForEach(comboGroups) { group in
@@ -264,32 +262,31 @@ struct ConsistencySheet: View {
                     comboGroupCardRow(card: card, groupID: group.id)
                 }
 
-                // Add alternative within this group
-                if totalComboCardCount < 5 {
-                    Button {
-                        targetGroupID = group.id
-                        showComboCardPicker = true
-                    } label: {
-                        Label("Add alternative", systemImage: "arrow.triangle.branch")
-                            .font(.subheadline)
-                            .foregroundStyle(Color.accentColor)
-                    }
-                    .padding(.leading, 38)
+                // Add alternative within this group (OR) — unlimited
+                Button {
+                    targetGroupID = group.id
+                    showComboCardPicker = true
+                } label: {
+                    Label("Add alternative", systemImage: "arrow.triangle.branch")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.accentColor)
                 }
+                .padding(.leading, 38)
             }
 
-            // Add new requirement (new AND group)
+            // Add new requirement (new AND group) — max 5
+            let atAndLimit = comboGroups.count >= 5
             Button {
                 targetGroupID = nil
                 showComboCardPicker = true
             } label: {
                 Label(
-                    totalComboCardCount >= 5 ? "Max 5 cards" : "Add Requirement",
+                    atAndLimit ? "Max 5 requirements" : "Add Requirement",
                     systemImage: "plus.circle"
                 )
-                .foregroundStyle(totalComboCardCount >= 5 ? Color.secondary : Color.accentColor)
+                .foregroundStyle(atAndLimit ? Color.secondary : Color.accentColor)
             }
-            .disabled(totalComboCardCount >= 5)
+            .disabled(atAndLimit)
 
             // Empty state or probability table
             if comboGroups.isEmpty {
@@ -394,7 +391,8 @@ struct ConsistencySheet: View {
                                  subtypes: card.subtypes, retreatCost: card.retreatCost,
                                  imageURL: card.imageURL, hasAbility: card.hasAbility,
                                  types: card.types, weaknessType: card.weaknessType,
-                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost)
+                                 pokemonRole: dc.pokemonRole, minAttackCost: card.minAttackCost,
+                                 hp: card.hp)
         }
 
         let merged: [DeckCardEntry] = Dictionary(grouping: entries, by: \.name).map { name, group in
@@ -409,7 +407,8 @@ struct ConsistencySheet: View {
                 types: group[0].types,
                 weaknessType: group[0].weaknessType,
                 pokemonRole: group[0].pokemonRole,
-                minAttackCost: group[0].minAttackCost
+                minAttackCost: group[0].minAttackCost,
+                hp: group[0].hp
             )
         }
 

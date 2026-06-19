@@ -221,14 +221,15 @@ private struct DeckRowView: View {
             return DeckCardEntry(name: card.name, copies: dc.quantity, supertype: card.supertype,
                                  subtypes: card.subtypes, retreatCost: card.retreatCost,
                                  hasAbility: card.hasAbility, types: card.types,
-                                 weaknessType: card.weaknessType)
+                                 weaknessType: card.weaknessType, hp: card.hp)
         }
         guard !entries.isEmpty else { return nil }
         let merged = Dictionary(grouping: entries, by: \.name).map { name, group in
             DeckCardEntry(name: name, copies: group.reduce(0) { $0 + $1.copies },
                           supertype: group[0].supertype, subtypes: group[0].subtypes,
                           retreatCost: group[0].retreatCost, hasAbility: group[0].hasAbility,
-                          types: group[0].types, weaknessType: group[0].weaknessType)
+                          types: group[0].types, weaknessType: group[0].weaknessType,
+                          hp: group[0].hp)
         }
         let roleTags: (String) -> [String] = { name in
             cardMap.values.first { $0.name == name }?.roleTags ?? []

@@ -6,7 +6,7 @@ import SwiftData
 // When new regulation sets ship in an app update, bump seededKey's version suffix.
 enum BundledCardSeeder {
 
-    static let seededKey = "bundled_cards_seeded_v13"
+    static let seededKey = "bundled_cards_seeded_v19"
 
     private static let setFiles = [
         "TEF", "TWM", "SFA", "SCR", "SSP",
@@ -133,7 +133,11 @@ private enum CardTagClassifier {
         var result: Set<String> = []
 
         for text in allTexts where !text.isEmpty {
-            if text.localizedCaseInsensitiveContains("draw") && text.localizedCaseInsensitiveContains("card") {
+            // Exclude draw effects where the opponent is the one drawing (e.g. Special Red Card:
+            // "Your opponent shuffles their hand… and draws 4 cards"). Only tag as Draw when
+            // the player draws.
+            let opponentDraws = text.range(of: "opponent.*draws?\\b", options: [.regularExpression, .caseInsensitive]) != nil
+            if !opponentDraws && text.localizedCaseInsensitiveContains("draw") && text.localizedCaseInsensitiveContains("card") {
                 result.insert("Draw")
             }
             if text.localizedCaseInsensitiveContains("search your deck") || text.localizedCaseInsensitiveContains("look at the top") {
@@ -142,31 +146,52 @@ private enum CardTagClassifier {
             if text.localizedCaseInsensitiveContains("from your discard pile") {
                 result.insert("Recovery")
             }
-            if (text.localizedCaseInsensitiveContains("attach") && text.localizedCaseInsensitiveContains("energy"))
-                || (text.localizedCaseInsensitiveContains("move") && text.localizedCaseInsensitiveContains("energy")) {
-                result.insert("Energy Acceleration")
+            // Acceleration: extra energy attachment/movement, or evolving outside normal rules.
+            // Use \battach\b (word boundary) to exclude "attached" (past tense describing existing
+            // state) — e.g. "if this Pokémon has any Special Energy attached" is not acceleration.
+            if (text.range(of: "\\battach\\b", options: [.regularExpression, .caseInsensitive]) != nil
+                    && text.localizedCaseInsensitiveContains("energy"))
+                || (text.localizedCaseInsensitiveContains("move") && text.localizedCaseInsensitiveContains("energy"))
+                || text.localizedCaseInsensitiveContains("to evolve it")
+                || (text.localizedCaseInsensitiveContains("can evolve") && text.localizedCaseInsensitiveContains("turn")) {
+                result.insert("Acceleration")
             }
             if text.localizedCaseInsensitiveContains("heal")
                 || text.range(of: "remove.*damage counter", options: [.regularExpression, .caseInsensitive]) != nil {
                 result.insert("Healing")
             }
-            if text.localizedCaseInsensitiveContains("less damage")
+            // Tera bench protection is a passive game rule ("As long as this Pokémon is on your Bench,
+            // prevent all damage done to this Pokémon by attacks") — not a card effect that reduces
+            // damage or shields the bench from spread. Exclude it from both Damage Reduction and
+            // Spread Protection so Tera ex Pokémon aren't falsely tagged.
+            let isTeraBenchProtection = text.localizedCaseInsensitiveContains("as long as this pokémon is on your bench")
+                && text.localizedCaseInsensitiveContains("prevent all damage done to this pokémon")
+            if !isTeraBenchProtection && (
+                text.localizedCaseInsensitiveContains("less damage")
                 || text.range(of: "prevent.*damage", options: [.regularExpression, .caseInsensitive]) != nil
                 || text.range(of: "reduce.*damage", options: [.regularExpression, .caseInsensitive]) != nil
-                || text.localizedCaseInsensitiveContains("prevent all effects") {
+                || text.localizedCaseInsensitiveContains("prevent all effects")
+            ) {
                 result.insert("Damage Reduction")
             }
             if text.localizedCaseInsensitiveContains("more damage") || text.localizedCaseInsensitiveContains("additional damage") {
                 result.insert("Damage Boost")
             }
+            if text.range(of: "\\+\\d+\\s*hp", options: [.regularExpression, .caseInsensitive]) != nil {
+                result.insert("HP Boost")
+            }
             // "from your discard pile" describes retrieval — that's Recovery, not Disruption.
+            // Disruption must impact the opponent: self-discard costs (energy, hand cards, deck mills)
+            // and self-Lost-Zone effects (Colress's Experiment, Mirage Gate) are not disruption.
             let isRecoveryEffect = text.localizedCaseInsensitiveContains("from your discard pile")
+            let affectsOpponent = text.localizedCaseInsensitiveContains("opponent")
             if !isRecoveryEffect && (
-                text.localizedCaseInsensitiveContains("discard")
-                || text.localizedCaseInsensitiveContains("lost zone")
+                (text.localizedCaseInsensitiveContains("discard") && affectsOpponent)
+                || (text.localizedCaseInsensitiveContains("lost zone") && affectsOpponent)
                 || text.localizedCaseInsensitiveContains("can't play")
                 || text.localizedCaseInsensitiveContains("devolve")
                 || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("opponent's hand"))
+                || (affectsOpponent && text.localizedCaseInsensitiveContains("shuffle") && text.localizedCaseInsensitiveContains("their hand"))
                 || (text.localizedCaseInsensitiveContains("opponent") && text.localizedCaseInsensitiveContains("cost") && text.localizedCaseInsensitiveContains("more"))
             ) {
                 result.insert("Disruption")
@@ -176,11 +201,23 @@ private enum CardTagClassifier {
                 || text.contains("Asleep") || text.contains("Confused") {
                 result.insert("Status")
             }
-            // Spread Damage uses exact capitalised strings for bench/each cases; regex for placed counters
-            if (text.localizedCaseInsensitiveContains("damage counter")
-                && (text.contains("Benched") || text.contains("each of your opponent's Pokémon")))
-                || text.range(of: #"(?:put|place) \d+ damage counter"#, options: [.regularExpression, .caseInsensitive]) != nil {
-                result.insert("Spread Damage")
+            // Spread: damage specifically targeting opponent's bench or multiple opponent Pokémon.
+            // Excludes: single-target active hits ("1 of your opponent's Active Pokémon"),
+            // counters MOVED from opponent's bench (not placing damage), and own-bench conditionals.
+            let isSpreadBench = text.contains("opponent's Benched")
+                && text.localizedCaseInsensitiveContains("damage")
+                && !text.localizedCaseInsensitiveContains("from your opponent's Benched")
+            let isSpreadMulti = text.localizedCaseInsensitiveContains("each of your opponent's")
+                && text.localizedCaseInsensitiveContains("damage")
+            let isSpreadDistribute = text.contains("opponent's")
+                && text.localizedCaseInsensitiveContains("damage counter")
+                && text.localizedCaseInsensitiveContains("in any way")
+            let isSpreadEach = text.localizedCaseInsensitiveContains("each of")
+                && text.contains("opponent's")
+                && text.localizedCaseInsensitiveContains("damage")
+                && !text.localizedCaseInsensitiveContains("from your opponent's")
+            if isSpreadBench || isSpreadMulti || isSpreadDistribute || isSpreadEach {
+                result.insert("Spread")
             }
             // Gusting: forces the opponent's Active Pokémon to change.
             // Canonical pattern: "switch in" + "opponent" + "benched" — covers Boss's Orders,
@@ -192,36 +229,59 @@ private enum CardTagClassifier {
             if isGust {
                 result.insert("Gusting")
             }
-            // Mobility: lets YOUR Active Pokémon retreat or switch freely.
-            // The plain "switch" check is scoped to self-switch effects:
-            //   - "switch your active" / "switch this pokémon with" → Item/ability self-switch
-            //   - no "opponent" context + no "switch in" → basic Switch, Escape Rope, etc.
-            // Pure gust cards (Boss's Orders, Prime Catcher) only hit the Gusting branch above.
-            // A self-switch exists when the card explicitly moves YOUR Active Pokémon, or when
-            // "switch" appears in any context that isn't the pure-gust pattern (isGust).
-            // This correctly handles Escape Rope ("Your opponent switches first." contains
-            // "opponent" but is not a gust card) and dual-effect cards like Prime Catcher.
-            let hasSelfSwitch = text.localizedCaseInsensitiveContains("switch your active")
+            // Mobility: moves YOUR Pokémon between Active and Bench, or enables free/reduced retreat.
+            // Excludes: opponent-forcing switches (Gusting), hand/energy/deck shuffles,
+            // and Retreat-Cost damage scalers that reference the opponent or where "less"
+            // is a substring of "Colorless" rather than the word "less".
+            let isSelfSwitch = text.localizedCaseInsensitiveContains("switch your active")
                 || text.localizedCaseInsensitiveContains("switch this pokémon with")
                 || text.localizedCaseInsensitiveContains("switch this pokemon with")
-                || (text.localizedCaseInsensitiveContains("switch") && !isGust)
-            if hasSelfSwitch
-                || text.contains("no Retreat Cost")
-                || (text.contains("Retreat Cost") && text.localizedCaseInsensitiveContains("less"))
-                || (text.localizedCaseInsensitiveContains("shuffle") && text.contains("into your deck")) {
+                || text.localizedCaseInsensitiveContains("switch their active")
+                || (text.localizedCaseInsensitiveContains("switch")
+                    && text.localizedCaseInsensitiveContains("pokémon")
+                    && !isGust
+                    && !text.localizedCaseInsensitiveContains("opponent's active"))
+            let hasNoRetreat = text.contains("no Retreat Cost")
+                && !text.localizedCaseInsensitiveContains("opponent's Active Pokémon has no Retreat Cost")
+            let hasReducedRetreat = text.contains("Retreat Cost")
+                && text.range(of: "\\bless\\b", options: [.regularExpression, .caseInsensitive]) != nil
+                && !text.localizedCaseInsensitiveContains("opponent")
+            // Picking up: "put this Pokémon and all attached cards into your hand"
+            let hasPokemonPickup = text.localizedCaseInsensitiveContains("put this pokémon and all")
+                && text.localizedCaseInsensitiveContains("into your")
+            // Shuffling into deck: "shuffle this Pokémon into your deck" or the pronoun form
+            // "and all attached cards into your deck" (Abra, Lokix). Excludes energy-only shuffles.
+            let hasShuffleToDeck = (text.localizedCaseInsensitiveContains("shuffle this pokémon")
+                    && text.localizedCaseInsensitiveContains("into your deck"))
+                || text.localizedCaseInsensitiveContains("and all attached cards into your deck")
+            if isSelfSwitch || hasNoRetreat || hasReducedRetreat || hasPokemonPickup || hasShuffleToDeck {
                 result.insert("Mobility")
             }
-            if text.contains("Prize card")
-                && (text.localizedCaseInsensitiveContains("take") || text.localizedCaseInsensitiveContains("more")
-                    || text.localizedCaseInsensitiveContains("fewer") || text.localizedCaseInsensitiveContains("additional")) {
+            // Prize Control: reduces or blocks opponent prize taking when your Pokémon is KO'd.
+            // Excludes: ex/VMAX rule boxes ("opponent takes 2 Prize cards"), counter damage scaling
+            // ("30 more damage per Prize taken"), and prize-count conditions ("3 or fewer remaining").
+            if (text.localizedCaseInsensitiveContains("fewer Prize card") && text.contains("Knocked Out"))
+                || (text.localizedCaseInsensitiveContains("can't take") && text.contains("Prize")) {
                 result.insert("Prize Control")
             }
-            if text.localizedCaseInsensitiveContains("can't play")
+            // Spread Protection: cards that protect your bench Pokémon from spread/snipe damage.
+            // Excludes the Tera bench rule (self-protection while benched, not bench-wide shielding).
+            if !isTeraBenchProtection
+                && (text.localizedCaseInsensitiveContains("bench") || text.localizedCaseInsensitiveContains("benched"))
+                && text.localizedCaseInsensitiveContains("prevent")
+                && text.localizedCaseInsensitiveContains("damage") {
+                result.insert("Spread Protection")
+            }
+            // Lock must restrict the OPPONENT — recharge attacks ("this Pokémon can't use X next turn")
+            // and rule clarifications ("can't be put into your hand") are not lock effects.
+            if affectsOpponent && (
+                text.localizedCaseInsensitiveContains("can't play")
                 || text.localizedCaseInsensitiveContains("can't use")
                 || text.localizedCaseInsensitiveContains("can't be put")
                 || text.localizedCaseInsensitiveContains("can't be moved")
                 || text.range(of: "lose.*Ability", options: [.regularExpression, .caseInsensitive]) != nil
-                || text.contains("no Abilities") {
+                || text.contains("no Abilities")
+            ) {
                 result.insert("Lock")
             }
         }

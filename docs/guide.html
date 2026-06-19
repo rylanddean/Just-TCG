@@ -132,6 +132,8 @@
         <a href="#scan-cards">Scan cards</a>
         <a href="#deck-generator">AI Deck Generator</a>
         <a href="#consistency">Consistency Calculator</a>
+        <a href="#deck-profile">Deck Profile</a>
+        <a href="#swap-card">Swap Card Preview</a>
         <a href="#tech-advisor">Tech Advisor</a>
         <a href="#export-deck">Export a deck</a>
 
@@ -254,10 +256,48 @@
 
           <div class="guide-step"><div class="step-num">1</div><div class="step-text">In Deck Detail, tap the <strong>Consistency</strong> button (chart icon) to open the sheet.</div></div>
           <div class="guide-step"><div class="step-num">2</div><div class="step-text"><strong>Opening Hand Odds</strong> — the list shows every card in your deck with its probability of appearing in your opening 7, using exact hypergeometric math. Tap any row to expand turn-2 odds for going first and second.</div></div>
-          <div class="guide-step"><div class="step-num">3</div><div class="step-text"><strong>Combo Calculator</strong> — tap <em>Add Requirement</em> to pick a card. Each requirement must be satisfied for the combo to succeed (AND logic). Within a requirement, tap <em>Add alternative</em> to add a second card that can substitute (OR logic). For example: Arven as one requirement, then Boss's Orders and Counter Catcher as alternatives in a second requirement models "Arven AND (Boss's Orders OR Counter Catcher)".</div></div>
-          <div class="guide-step"><div class="step-num">4</div><div class="step-text">The Combo Calculator shows joint probabilities for your opening hand (7 cards), turn 2, turn 3, and turn 4 going second. Up to 5 cards across all requirements.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text"><strong>Combo Calculator</strong> — tap <em>Add Requirement</em> to pick a card. Each requirement must be satisfied for the combo to succeed (AND logic). Within a requirement, tap <em>Add alternative</em> to add a second card that can substitute (OR logic). For example: Arven as one requirement, then Boss's Orders, Counter Catcher, and Iono as alternatives in a second requirement models "Arven AND (Boss's Orders OR Counter Catcher OR Iono)". You can add as many alternatives as you like within each requirement.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">The Combo Calculator shows joint probabilities for your opening hand (7 cards), turn 2, turn 3, and turn 4 going second. You can have up to <strong>5 AND requirements</strong>, each with unlimited OR alternatives.</div></div>
 
           <p>Use Opening Hand Odds to evaluate search and draw density. Use the Combo Calculator to stress-test specific set-up lines — if your key turn-1 play only hits 40% of games, it is likely not reliable enough for a tournament.</p>
+        </div>
+
+        <div class="guide-section" id="deck-profile">
+          <h2>Deck Profile</h2>
+          <p>The Deck Profile gives your deck a scored breakdown across twelve dimensions. Access it by scrolling down in the Deck Builder — the profile panel sits below your card list.</p>
+
+          <h3>The twelve scores</h3>
+          <ul>
+            <li><strong>Overall</strong> — A composite of all subscores.</li>
+            <li><strong>Consistency</strong> — Draw and search engine density relative to deck size.</li>
+            <li><strong>Ability Impact</strong> — How much work your Pokémon abilities are doing relative to your Trainer engine.</li>
+            <li><strong>Energy Setup</strong> — Energy count, acceleration copies, and how reliably your attacker can power up.</li>
+            <li><strong>Mobility</strong> — Low retreat costs and switching cards that keep your active slot flexible.</li>
+            <li><strong>Disruption</strong> — Hand disruption, gusting, and lock effects you can apply to the opponent.</li>
+            <li><strong>Recovery</strong> — Cards that retrieve Pokémon, Supporters, or Energy from the discard pile.</li>
+            <li><strong>Item Dependency</strong> — What share of your Trainer engine is Items vs. Supporters. Higher means more exposure to Item lock.</li>
+            <li><strong>Turn-2 Aggression</strong> — Estimated probability of being able to attack on turn 2 going second.</li>
+            <li><strong>Bench Flexibility</strong> — How many bench slots remain free after accounting for engine sitter Pokémon.</li>
+            <li><strong>Opening Reliability</strong> — Probability of having at least one Basic in your opening hand of 7.</li>
+            <li><strong>Durability</strong> — How much damage is needed to knock out your Pokémon. Scored from attacker HP (60–400 scale, attackers weighted 2×), with bonuses for HP-boosting Tools like Hero's Cape (+10 per copy), Damage Reduction cards (+4 per copy), and Healing cards (+2 per copy).</li>
+          </ul>
+
+          <p>Tap any score row to read a plain-English explainer of exactly how it is calculated and what a high or low value means for your deck.</p>
+
+          <div class="tip"><strong>Apple Intelligence analysis:</strong> If you're on iOS 26 with Apple Intelligence enabled, the Deck Profile also generates a written paragraph analysis of your deck's consistency — referencing your actual card list. Runs entirely on-device. Requires an A17 Pro chip or later.</div>
+        </div>
+
+        <div class="guide-section" id="swap-card">
+          <h2>Swap Card Preview</h2>
+          <p>Swap Card Preview lets you compare a potential card change against all twelve deck profile scores before committing to it.</p>
+
+          <div class="guide-step"><div class="step-num">1</div><div class="step-text">In the Deck Builder, <strong>long press</strong> any card row to open the context menu.</div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-text">Tap <strong>Swap Card</strong>. A sheet appears showing the card being removed.</div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-text">Search for a replacement card by name. Tap a result to select it as the candidate.</div></div>
+          <div class="guide-step"><div class="step-num">4</div><div class="step-text">A <strong>Swap Preview</strong> panel appears showing before → after for all twelve scores — green for improvements, red for regressions.</div></div>
+          <div class="guide-step"><div class="step-num">5</div><div class="step-text">Tap <strong>Swap</strong> to commit the change, or <strong>Cancel</strong> to leave your deck unchanged.</div></div>
+
+          <div class="tip"><strong>Tip:</strong> Use the Durability score when comparing bulky Tools like Hero's Cape against other Ace Specs or utility cards — the before/after diff shows exactly how much HP-based resilience you gain or lose.</div>
         </div>
 
         <div class="guide-section" id="tech-advisor">

@@ -202,7 +202,7 @@ struct DeckCleanupEngine {
     /// Fires even when some recovery exists — 1-2 copies is not enough for a deep attacker bench.
     ///
     /// "Dedicated recovery" excludes cards whose primary purpose is energy attachment from the
-    /// discard pile (e.g. Wondrous Patch), which carry both "Recovery" and "Energy Acceleration"
+    /// discard pile (e.g. Wondrous Patch), which carry both "Recovery" and "Acceleration"
     /// tags. Those cards shouldn't mask a real gap in Pokémon retrieval.
     private func recoveryRule(
         deck: [DeckCardEntry],
@@ -210,10 +210,10 @@ struct DeckCleanupEngine {
         roleTags: (String) -> [String]
     ) -> [CleanupSuggestion] {
         // Count only cards whose primary purpose is retrieval, not energy-attachment-from-discard.
-        // Cards with both "Recovery" + "Energy Acceleration" (e.g. Wondrous Patch) are excluded.
+        // Cards with both "Recovery" + "Acceleration" (e.g. Wondrous Patch) are excluded.
         let recoveryCount = deck.filter { entry in
             let tags = roleTags(entry.name)
-            return tags.contains("Recovery") && !tags.contains("Energy Acceleration")
+            return tags.contains("Recovery") && !tags.contains("Acceleration")
         }.reduce(0) { $0 + $1.copies }
 
         // recoveryScore proxy: min(recoveryCount, 8) * 12 — fire when fewer than 3 dedicated cards.

@@ -34,7 +34,7 @@
   <div class="container">
     <div class="section-label">Features</div>
     <h1 style="font-size:clamp(34px,5vw,56px);">Every tool a competitive player needs.</h1>
-    <p class="hero-sub">19 features covering the full competitive loop — from building your first deck to preparing for Regionals.</p>
+    <p class="hero-sub">21 features covering the full competitive loop — from building your first deck to preparing for Regionals.</p>
   </div>
 </section>
 
@@ -54,7 +54,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/><rect x="14" y="16" width="7" height="5" rx="1"/></svg>
         </div>
         <h3>Deck Builder</h3>
-        <p>Build Standard-legal decks up to 60 cards. Browse the full card catalog with search and advanced filters — type, subtype, HP, retreat cost, weakness, set, and role tags. Live legality validation enforces the 4-copy rule, card count, and Standard legality. Deck sections split Pokémon by stage and Trainers by sub-type (Supporter, Item, Stadium, Tool).</p>
+        <p>Build Standard-legal decks up to 60 cards. Browse the full card catalog with search and advanced filters — type, subtype, HP, retreat cost, weakness, set, and role tags. Live legality validation enforces the 4-copy rule, card count, and Standard legality. Deck sections split Pokémon by stage and Trainers by sub-type (Supporter, Item, Stadium, Tool). Each card row shows role tag chips — Draw, Search, Acceleration, Disruption, and more — so you can read your engine's makeup at a glance.</p>
       </div>
 
       <div class="card">
@@ -102,7 +102,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
         </div>
         <h3>Consistency Calculator</h3>
-        <p>Opening Hand Odds shows the hypergeometric probability of drawing each card in your opening 7, with a tap-to-expand breakdown for turn 2 going first and second. The Combo Calculator lets you model up to 5 cards with full AND/OR group logic — "Arven AND (Boss's Orders OR Counter Catcher)" — and shows joint probabilities through turn 4. Useful for stress-testing search density, Energy ratios, and multi-card set-up lines before a tournament.</p>
+        <p>Opening Hand Odds shows the hypergeometric probability of drawing each card in your opening 7, with a tap-to-expand breakdown for turn 2 going first and second. The Combo Calculator lets you build up to 5 AND requirements, each with unlimited OR alternatives — "Arven AND (Boss's Orders OR Counter Catcher OR Iono)" — and shows joint probabilities through turn 4. Useful for stress-testing search density, Energy ratios, and multi-card set-up lines before a tournament.</p>
       </div>
 
       <div class="card">
@@ -111,6 +111,22 @@
         </div>
         <h3>Tech Advisor</h3>
         <p>Describe a matchup problem or meta challenge. The Tech Advisor — powered by on-device Apple Foundation Models — suggests specific tech cards from the current Standard format, with clear reasoning for each recommendation. No internet required.</p>
+      </div>
+
+      <div class="card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/><circle cx="18" cy="7" r="3"/><circle cx="6" cy="11" r="3"/></svg>
+        </div>
+        <h3>Deck Profile</h3>
+        <p>Twelve scored dimensions of your deck's strengths and weaknesses — Overall, Consistency, Ability Impact, Energy Setup, Mobility, Disruption, Recovery, Item Dependency, Turn-2 Aggression, Bench Flexibility, Opening Reliability, and Durability. Each score has a plain-English explainer. Durability factors in attacker HP (60–400 scale), HP-boosting Tools like Hero's Cape, Damage Reduction cards, and Healing cards. An Apple Intelligence narrative ties all scores into a single written analysis paragraph — on-device, no account required.</p>
+      </div>
+
+      <div class="card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4m0 0L3 8m4-4 4 4"/><path d="M17 8v12m0 0 4-4m-4 4-4-4"/></svg>
+        </div>
+        <h3>Swap Card Preview</h3>
+        <p>Long press any card in the deck editor and tap Swap Card. Search any replacement from the full Standard catalog and see a live before/after comparison across all twelve deck profile scores before committing. Overall, Consistency, Durability, and nine more scores update instantly. Confirm the swap or cancel — your deck is never changed until you commit.</p>
       </div>
 
     </div>
